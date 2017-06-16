@@ -1,0 +1,311 @@
+/* CSS Document */
+
+/* Float Elements 
+---------------------------------*/
+.fl-lt {float:left;}
+.fl-rt {float:right;}
+
+/* Clear Floated Elements
+---------------------------------*/
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: '\0020';
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.figure{ margin:0px;}
+
+img{ max-width:100%;}
+
+a, a:hover, a:active{ outline:0px !important}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.1.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Primary Styles
+---------------------------------*/
+body {
+	background:#fff;
+	font-family: 'Open Sans', sans-serif;
+	font-size:14px;
+	font-weight:normal;
+	color:#888888;
+	margin:0;
+}
+h2{
+	font-size:34px;
+	color:#222222;
+	font-family: 'Montserrat', sans-serif;
+	font-weight:700;
+	letter-spacing: -1px;
+	margin:0 0 15px 0;
+	text-align:center;
+	text-transform:uppercase;
+}
+h3{
+	font-family: 'Montserrat', sans-serif;
+	color:#222222;
+	font-size:16px;
+	margin:0 0 5px 0;
+	text-transform:uppercase;
+	font-weight:400;
+}
+h6{
+	font-size:16px;
+	color:#888888;
+	font-family: 'Open Sans', sans-serif;
+	font-weight:400;
+	text-align:center;
+	margin:0 0 60px 0;
+}
+p{
+	line-height:24px;
+	margin:0;
+}
+
+/* Header Styles
+---------------------------------*/
+
+.header{
+	text-align:center;
+	background:url(../img/pw_maze_black_2X.png) left top repeat;
+	padding:280px 0;
+}
+.logo{
+	width:130px;
+	margin:0 auto 35px;
+}
+.header h1{
+	font-family: 'Montserrat',sans-serif;
+	font-size:50px;
+	font-weight:400;
+	letter-spacing: -1px;
+	margin:0 0 22px 0 ;
+	color:#fff;
+}
+
+.we-create{
+	padding:0;
+	margin:35px 0 55px;
+}
+.wp-pic{
+	margin-bottom:20px;
+}
+.we-create li{
+	display:inline-block;
+	font-family: 'Montserrat',sans-serif;
+	font-size:14px;
+	color: #bcbcbc;
+	text-transform: uppercase;
+	font-weight: 400;
+	margin:0 5px 0 0;
+	padding:0 0 0 15px;
+}
+.we-create li:first-child{
+	background:none;
+}
+
+.start-button {
+	padding-left: 0px;
+}
+
+.start-button li a{
+color: #fff;
+}
+
+
+.link{
+	padding:15px 35px;
+	background:#7cc576;
+	color:#fff !important;
+	font-size:16px;
+	font-weight:400;
+	font-family: 'Montserrat', sans-serif;
+	display:inline-block;
+	border-radius:3px;
+	text-transform:uppercase;
+	line-height:25px;
+	margin-bottom:20px;
+	transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-webkit-transition:all 0.3s ease-in-out;
+}
+.link:hover {
+	text-decoration:none;
+	color:#7cc576 !important;
+	background:#fff;
+}
+
+.link:active, .link:focus {
+	background: #7cc576;
+	text-decoration:none;
+	color:#fff !important;
+}
+
+/* Navigation
+---------------------------------*/
+.main-nav-outer{
+	padding:0px;
+	border-bottom:1px solid #dddddd;
+	box-shadow:0 4px 5px -3px #ececec;
+	position:relative;
+	background:#fff;
+}
+.main-nav{
+	text-align:center;
+	margin:10px 0 0px;
+	padding:0;
+	list-style:none;
+}
+.main-nav li{
+	display:inline;
+	margin:0 1px;
+}
+.main-nav li a{
+	display:inline-block;
+	color:#222222;
+	text-transform:uppercase;
+	font-family: 'Montserrat', sans-serif;
+	text-decoration: none;
+	line-height:20px;
+	margin:17px 32px;
+	transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-webkit-transition:all 0.3s ease-in-out;
+}
+
+.main-nav li a:hover{ 
+	text-decoration:none;
+	color: #7cc576;
+}
+
+.small-logo{ 
+	padding:0 32px;
+}
+
+.main-section{
+	padding:90px 0 110px;
+}
+
+/* Footer
+---------------------------------*/
+
+.footer{
+	background:url(../img/pw_maze_black_2X.png) left top repeat;
+	padding:35px 0 35px;
+}
+.footer-logo{
+	margin:15px auto 35px;
+	width: 76px;
+}
+.copyright, .credits{
+	color:#cccccc;
+	font-size:14px;
+	display:block;
+	text-align:center;
+}
+.copyright a, .credits a{
+	color:#7cc576;
+	font-weight:600;
+	text-decoration: none;
+	transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-webkit-transition:all 0.3s ease-in-out;
+}
+
+.copyright a:hover, .credits a:hover {
+	color: #fff;
+}
+
+.res-nav_click {
+	line-height:38px;
+	font-family: 'FontAwesome';
+	font-size:38px;
+	text-decoration: none !important;
+	color:#777777;
+	font-style:normal;
+	display:none;
+	width:42px;
+	height:27px;
+	margin:20px auto;
+	transition:all 0.3s ease-in-out;
+	-moz-transition:all 0.3s ease-in-out;
+	-webkit-transition:all 0.3s ease-in-out;
+}
+
+.res-nav_click:hover, .res-nav_click:active, .res-nav_click:focus {
+	color: #7cc576 !important;
+}
+
+.portfolioContainer{
+	max-width: 1140px;
+}
+
+
+/* Animation Timers
+---------------------------------*/
+.delay-02s { 
+	animation-delay: 0.2s; 
+	-webkit-animation-delay: 0.2s; 
+}
+.delay-03s { 
+	animation-delay: 0.3s; 
+	-webkit-animation-delay: 0.3s; 
+}
+.delay-04s { 
+	animation-delay: 0.4s; 
+	-webkit-animation-delay: 0.4s; 
+}
+
+.delay-05s { 
+	animation-delay: 0.5s; 
+	-webkit-animation-delay: 0.5s; 
+}
+.delay-06s { 
+	animation-delay: 0.6s; 
+	-webkit-animation-delay: 0.6s; 
+}
+
+.delay-07s { 
+	animation-delay: 0.7s; 
+	-webkit-animation-delay: 0.7s; 
+}
+.delay-08s { 
+	animation-delay: 0.8s; 
+	-webkit-animation-delay: 0.8s; 
+}
+
+.delay-09s { 
+	animation-delay: 0.9s; 
+	-webkit-animation-delay: 0.9s; 
+}
+.delay-1s { 
+	animation-delay: 1s; 
+	-webkit-animation-delay: 1s; 
+}
+.delay-12s { 
+	animation-delay: 1.2s; 
+	-webkit-animation-delay: 1.2s; 
+}
