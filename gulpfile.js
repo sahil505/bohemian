@@ -12,6 +12,6 @@ var sorting = require('postcss-sorting');
 
 // Config
 var build = {
-	css: './assets/css',
+  css: './assets/css',
 	scss: './src/scss/'
 };
