@@ -27,74 +27,74 @@
 <!-- <script src="contactform/contactform.js"></script> -->
 
 <!-- =======================================================
-    Author: Sahil Khokhar
-    Author URL: https://sahil505.com
+		Author: Sahil Khokhar
+		Author URL: https://sahil505.com
 ======================================================= -->
 
 </head>
 <body>
 <header class="header" id="header"><!--header-start-->
 	<div class="container">
-    	<figure class="logo animated fadeInDown delay-07s">
-        	<a href="#">RDV-Logo</a>	
-        </figure>	
-        <h1 class="animated fadeInDown delay-07s">Welcome To Rendezvous</h1>
-        <ul class="we-create animated fadeInUp delay-1s">
-        	<li>Rendezvous is the annual cultural festival of IIT Delhi; an amalgamation of art, activities and attractions.</li>
-        </ul>
-            <a class="link animated fadeInUp delay-1s" href="#">Get Started</a>
-    </div>
+			<figure class="logo animated fadeInDown delay-07s">
+					<a href="#">RDV-Logo</a>	
+				</figure>	
+				<h1 class="animated fadeInDown delay-07s">Welcome To Rendezvous</h1>
+				<ul class="we-create animated fadeInUp delay-1s">
+					<li>Rendezvous is the annual cultural festival of IIT Delhi; an amalgamation of art, activities and attractions.</li>
+				</ul>
+						<a class="link animated fadeInUp delay-1s" href="#">Get Started</a>
+		</div>
 </header><!--header-end-->
 
 <nav class="main-nav-outer" id="test"><!--main-nav-start-->
 	<div class="container">
-        <ul class="main-nav">
-        	<li><a href="#header">Home</a></li>
-            <li><a href="#events">Events</a></li>
-            <li><a href="#sponsors">Sponsors</a></li>
-            <li class="small-logo"><a href="#header">RDV Logo</a></li>
-            <li><a href="#joinus">Join Us</a></li>
-            <li><a href="#team">Team</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
-    </div>
+				<ul class="main-nav">
+					<li><a href="#header">Home</a></li>
+						<li><a href="#events">Events</a></li>
+						<li><a href="#sponsors">Sponsors</a></li>
+						<li class="small-logo"><a href="#header">RDV Logo</a></li>
+						<li><a href="#joinus">Join Us</a></li>
+						<li><a href="#team">Team</a></li>
+						<li><a href="#contact">Contact</a></li>
+				</ul>
+				<a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
+		</div>
 </nav><!--main-nav-end-->
 <footer class="footer">
-    <div class="container">
-        <div class="footer-logo">RDV-Logo</div>
-        <span class="copyright">&copy; 2017. All Rights Reserved</span>
-        <div class="credits">
-            <!-- 
-                All the links in the footer should remain intact.
-            -->
-           <!--  Made by <a href="https://sahil505.com/">Sahil Khokhar</a> -->
-        </div>
-    </div>
+		<div class="container">
+				<div class="footer-logo">RDV-Logo</div>
+				<span class="copyright">&copy; 2017. All Rights Reserved</span>
+				<div class="credits">
+						<!-- 
+								All the links in the footer should remain intact.
+						-->
+					 <!--  Made by <a href="https://sahil505.com/">Sahil Khokhar</a> -->
+				</div>
+		</div>
 </footer>
 
 
 <script type="text/javascript">
-    $(document).ready(function(e) {
-        $('#test').scrollToFixed();
-        $('.res-nav_click').click(function(){
-            $('.main-nav').slideToggle();
-            return false    
-            
-        });
-        
-    });
+		$(document).ready(function(e) {
+				$('#test').scrollToFixed();
+				$('.res-nav_click').click(function(){
+						$('.main-nav').slideToggle();
+						return false    
+						
+				});
+				
+		});
 </script>
 
-  <script>
-    wow = new WOW(
-      {
-        animateClass: 'animated',
-        offset:       100
-      }
-    );
-    wow.init();
-  </script>
+	<script>
+		wow = new WOW(
+			{
+				animateClass: 'animated',
+				offset:       100
+			}
+		);
+		wow.init();
+	</script>
 
 
 <script type="text/javascript">
@@ -120,46 +120,46 @@
 <script type="text/javascript">
 
 $(window).load(function(){
-  
-  
-  var $container = $('.portfolioContainer'),
-      $body = $('body'),
-      colW = 375,
-      columns = null;
+	
+	
+	var $container = $('.portfolioContainer'),
+			$body = $('body'),
+			colW = 375,
+			columns = null;
 
-  
-  $container.isotope({
-    // disable window resizing
-    resizable: true,
-    masonry: {
-      columnWidth: colW
-    }
-  });
-  
-  $(window).smartresize(function(){
-    // check if columns has changed
-    var currentColumns = Math.floor( ( $body.width() -30 ) / colW );
-    if ( currentColumns !== columns ) {
-      // set new column count
-      columns = currentColumns;
-      // apply width to container manually, then trigger relayout
-      $container.width( columns * colW )
-        .isotope('reLayout');
-    }
-    
-  }).smartresize(); // trigger resize to set container width
-  $('.portfolioFilter a').click(function(){
-        $('.portfolioFilter .current').removeClass('current');
-        $(this).addClass('current');
+	
+	$container.isotope({
+		// disable window resizing
+		resizable: true,
+		masonry: {
+			columnWidth: colW
+		}
+	});
+	
+	$(window).smartresize(function(){
+		// check if columns has changed
+		var currentColumns = Math.floor( ( $body.width() -30 ) / colW );
+		if ( currentColumns !== columns ) {
+			// set new column count
+			columns = currentColumns;
+			// apply width to container manually, then trigger relayout
+			$container.width( columns * colW )
+				.isotope('reLayout');
+		}
+		
+	}).smartresize(); // trigger resize to set container width
+	$('.portfolioFilter a').click(function(){
+				$('.portfolioFilter .current').removeClass('current');
+				$(this).addClass('current');
  
-        var selector = $(this).attr('data-filter');
-        $container.isotope({
+				var selector = $(this).attr('data-filter');
+				$container.isotope({
 			
-            filter: selector,
-         });
-         return false;
-    });
-  
+						filter: selector,
+				 });
+				 return false;
+		});
+	
 });
 
 </script>
