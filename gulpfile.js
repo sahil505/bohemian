@@ -15,3 +15,13 @@ var build = {
   css: './assets/css',
 	scss: './src/scss/'
 };
+
+var AUTOPREFIXER_BROWSERS = [
+  'ie >= 11',
+  'edge >= 12',
+  'ff >= 38',
+  'chrome >= 35',
+  'safari >= 8',
+  'opera >= 35',
+  'ios >= 8'
+];
