@@ -38,4 +38,30 @@ gulp.task('css', function () {
     onError: console.error.bind(console, 'Sass error:')
   }))
   .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+  .pipe(
+    postcss([
+      sorting(sortOrder),
+      torem({
+        rootValue: 16,
+        unitPrecision: 7,
+        propWhiteList: [
+          'font',
+          'font-size',
+          'margin',
+          'margin-left',
+          'margin-right',
+          'margin-top',
+          'margin-bottom',
+          'padding',
+          'padding-left',
+          'padding-right',
+          'padding-top',
+          'padding-bottom'],
+        selectorBlackList: [],
+        replace: true,
+        mediaQuery: false,
+        minPixelValue: 0
+      })
+    ])
+  )
 })
