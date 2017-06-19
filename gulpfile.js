@@ -13,17 +13,17 @@ var sorting = require('postcss-sorting');
 // Config
 var build = {
   css: './assets/css',
-	scss: './src/scss/'
+  scss: './src/scss/'
 };
 
 var AUTOPREFIXER_BROWSERS = [
-  'ie >= 11',
-  'edge >= 12',
-  'ff >= 38',
-  'chrome >= 35',
-  'safari >= 8',
-  'opera >= 35',
-  'ios >= 8'
+'ie >= 11',
+'edge >= 12',
+'ff >= 38',
+'chrome >= 35',
+'safari >= 8',
+'opera >= 35',
+'ios >= 8'
 ];
 
 gulp.task('css', function () {
@@ -62,6 +62,11 @@ gulp.task('css', function () {
         mediaQuery: false,
         minPixelValue: 0
       })
-    ])
-  )
-})
+      ])
+    )
+  .pipe(stylefmt())
+  .pipe(sourcemaps.write('./'))
+  .pipe(gulp.dest(build.css));
+
+  return css;
+});
