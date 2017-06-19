@@ -25,3 +25,17 @@ var AUTOPREFIXER_BROWSERS = [
   'opera >= 35',
   'ios >= 8'
 ];
+
+gulp.task('css', function () {
+  var css = gulp
+  .src(build.scss + '*.scss')
+  .pipe(sourcemaps.init())
+  .pipe(sass({
+    indentType: 'tab',
+    indemtWidth: 1,
+    outputStyle: 'expanded',
+    precision: 10,
+    onError: console.error.bind(console, 'Sass error:')
+  }))
+  .pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
+})
