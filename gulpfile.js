@@ -70,3 +70,22 @@ gulp.task('css', function () {
 
   return css;
 });
+
+gulp.task('clean', function () {
+  del(['dist']);
+});
+
+gulp.task('minify', ['css'], function () {
+  var css = gulp
+  .src(build.css + '/theme.css')
+  .pipe(sourcemaps.init())
+  .pipe(cssnano())
+  .pipe(rename({
+    suffix: '.min',
+    extname: '.css'
+  }))
+  .pipe(sourcemaps.write('./'))
+  .pipe(gulp.dest(build.css));
+
+  return css;
+});
