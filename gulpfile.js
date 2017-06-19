@@ -89,3 +89,7 @@ gulp.task('minify', ['css'], function () {
 
   return css;
 });
+
+gulp.task('watch', function () {
+  gulp.watch('src/scss/**/*.scss', ['css', 'minify']);
+});
