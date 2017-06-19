@@ -93,3 +93,7 @@ gulp.task('minify', ['css'], function () {
 gulp.task('watch', function () {
   gulp.watch('src/scss/**/*.scss', ['css', 'minify']);
 });
+
+gulp.task('serve', ['watch']);
+gulp.task('test', ['css', 'minify']);
+gulp.task('default', ['css', 'minify', 'watch']);
