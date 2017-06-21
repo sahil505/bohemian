@@ -8,26 +8,26 @@
 /* Clear Floated Elements
 ---------------------------------*/
 .clear {
-  clear: both;
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-  height: 0;
+	clear: both;
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
 }
 
 .clearfix:before,
 .clearfix:after {
-  content: '\0020';
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-  height: 0;
+	content: '\0020';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0;
 }
 
 .clearfix:after {
-  clear: both;
+	clear: both;
 }
 
 .figure{ margin:0px;}
@@ -37,11 +37,11 @@ img{ max-width:100%;}
 a, a:hover, a:active{ outline:0px !important}
 
 @font-face {
-  font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot?v=4.1.0');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'FontAwesome';
+	src: url('../fonts/fontawesome-webfont.eot?v=4.1.0');
+	src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 /* Primary Styles
@@ -132,7 +132,7 @@ p{
 }
 
 .start-button li a{
-color: #fff;
+	color: #fff;
 }
 
 
@@ -368,22 +368,22 @@ color: #fff;
 	text-decoration:none;
 }
 img {
-   max-width:100%;
+	max-width:100%;
 }
 
 /* no transition on .isotope container */
 
 .isotope .isotope-item {
-  /* change duration value to whatever you like */
-  -webkit-transition-duration: 0.6s;
-     -moz-transition-duration: 0.6s;
-          transition-duration: 0.6s;
+	/* change duration value to whatever you like */
+	-webkit-transition-duration: 0.6s;
+	-moz-transition-duration: 0.6s;
+	transition-duration: 0.6s;
 }
 
 .isotope .isotope-item {
-  -webkit-transition-property: -webkit-transform, opacity;
-     -moz-transition-property:    -moz-transform, opacity;
-          transition-property:         transform, opacity;
+	-webkit-transition-property: -webkit-transform, opacity;
+	-moz-transition-property:    -moz-transform, opacity;
+	transition-property:         transform, opacity;
 }
 
 .main-section.paddind{
@@ -452,14 +452,14 @@ img {
 }
 
 .quote-right:hover{
-color: #fff;
-border: 2px solid #fff;
+	color: #fff;
+	border: 2px solid #fff;
 }
 
 .c-logo-part{
 	background:#7cc576;
 	padding:25px 0;
-    filter: alpha(opacity=60);
+	filter: alpha(opacity=60);
 }
 .c-logo-part ul{
 	padding:0;
@@ -730,31 +730,31 @@ border: 2px solid #fff;
 }
 
 .validation {
-    color: red;
-    display:none;
-    margin: 0 0 20px;
-    font-weight:400;
-    font-size:13px;
+	color: red;
+	display:none;
+	margin: 0 0 20px;
+	font-weight:400;
+	font-size:13px;
 }
 
 #sendmessage {
-    color: #7cc576;
-    border:1px solid #7cc576;
-    display:none;
-    text-align:center;
-    padding:15px;
-    font-weight:600;
-    margin-bottom:15px;
+	color: #7cc576;
+	border:1px solid #7cc576;
+	display:none;
+	text-align:center;
+	padding:15px;
+	font-weight:600;
+	margin-bottom:15px;
 }
 
 #errormessage {
-    color: red;
-    display:none;
-    border:1px solid red;
-    text-align:center;
-    padding:15px;
-    font-weight:600;
-    margin-bottom:15px;
+	color: red;
+	display:none;
+	border:1px solid red;
+	text-align:center;
+	padding:15px;
+	font-weight:600;
+	margin-bottom:15px;
 }
 
 #sendmessage.show, #errormessage.show, .show {
