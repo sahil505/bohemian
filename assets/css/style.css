@@ -209,6 +209,11 @@ p{
 	padding:90px 0 110px;
 }
 
+.main-section.introduction {
+	background-image: url("../img/main_background.png");
+	background-size: cover;
+}
+
 /* Services
 ---------------------------------*/
 
