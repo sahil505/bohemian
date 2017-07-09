@@ -263,9 +263,10 @@ p{
 	line-height: 1.4;
 }
 
-
-
 /* Buttons Start */
+.button-wrap {
+	margin-top: 24px;
+}
 .rad-button {
 	white-space: nowrap;
 	top: 0px;
@@ -277,12 +278,12 @@ p{
 	width: 200px;
 	height: 50px;
 	cursor: pointer;
-	transition: 0.1s all ease;
+	transition: 0.15s all ease;
 	font-size: 16px;
 	font-weight: 300;
 	color: #777;
 	border-bottom: 1px solid #ccc;
-	box-shadow: 2px 2px 2px 2px #B8B8B8;
+	box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
 }
 .rad-button.flat {
 	background: #f0f0f0;
@@ -334,6 +335,9 @@ p{
 .rad-button.dark {
 	border-bottom: 1px solid #5e5e5e;
 	color: #f5f5f5;
+}
+.rad-button.dark.pass {
+	margin-left: 16px;
 }
 .rad-button.dark.flat {
 	background: #a1a1a1;
