@@ -234,15 +234,15 @@ i {
 
 @media screen and (max-width: 500px) {
 /* applies only if the screen is narrower than 500px */
-i {
-  font: normal 50px/ 120px 'Nixie One', Helvetica, Arial;
-	/*color: #EEDDE0;*/
-	text-shadow: 0 0 30px #EC637B, 
-		0 0 10px rgba(230, 161, 173, 0.41), 
-		0 0 100px #E6A1AD, 
-		0 0 500px #F36780, 
-		5px 9px 5px rgba(0, 0, 0, 0.5);
-}
+	i {
+	  font: normal 50px 'Nixie One', Helvetica, Arial;
+		/*color: #EEDDE0;*/
+		text-shadow: 0 0 30px #EC637B, 
+			0 0 10px rgba(230, 161, 173, 0.41), 
+			0 0 100px #E6A1AD, 
+			0 0 500px #F36780, 
+			5px 9px 5px rgba(0, 0, 0, 0.5);
+	}
 }
 
 i.off {
