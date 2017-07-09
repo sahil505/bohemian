@@ -224,9 +224,10 @@ p{
 		text-shadow: 2px 2px 8px grey;
 	}
 
-	i {
+	.cover-head i {
 		font: normal 96px/ 120px 'Nixie One', Helvetica, Arial;
-		/*color: #EEDDE0;*/
+		letter-spacing: -2px;
+		/*font-weight: 700;*/
 		text-shadow: 0 0 30px #EC637B, 
 		0 0 10px rgba(230, 161, 173, 0.41), 
 		0 0 100px #E6A1AD, 
@@ -234,7 +235,7 @@ p{
 		5px 9px 5px rgba(0, 0, 0, 0.5);
 	}
 
-	i.off {
+	.cover-head i.off {
 		color: rgba(46, 46, 46, 0.61);
 		text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
 	}
@@ -903,7 +904,7 @@ img {
 /*  align-items: center;*/
 }
 
-i {
+.social-wrapper i {
   padding: 0px 10px;
 }
 
