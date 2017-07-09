@@ -67,7 +67,12 @@ Author URL: https://sahil505.com
 	<!--main-section-start-->
 	<section class="main-section introduction" id="events">
 		<div class="container">
-			<h2>Main Heading-1</h2>
+			<h1 class="cover-head">A Bohemian Getaway</h1>
+			<h1>Feel the Freedom</h1>
+			<p>Bohemian depics unconventional way of living. Nit living by the rules of the society. One can be what they want to be for as long as they want to be.</p>
+			<button>Events at a glance</button>
+			<button>Book your pass</button>
+			<!-- <h2>Main Heading-1</h2>
 			<h6>Description of Main Heading-1.</h6>
 			<div class="row">
 				<div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
@@ -111,7 +116,7 @@ Author URL: https://sahil505.com
 				<figure class="col-lg-8 col-sm-6  text-right wow fadeInUp delay-02s">
 					<img src="assets/img/temp-image.png" alt="Image-1">
 				</figure>
-			</div>
+			</div> -->
 		</div>
 	</section>
 	<!--main-section-end-->
@@ -396,6 +401,70 @@ Author URL: https://sahil505.com
 				return false
 			});
 		});
+	</script>
+
+	<script type="text/javascript">
+		var textHolder = document.getElementsByClassName("cover-head")[0],
+			text = textHolder.innerHTML,
+			chars = text.length,
+			newText = '',
+			i;
+		console.log(chars);
+
+		for (i = 0; i < chars; i += 1) {
+			newText += '<i>' + text.charAt(i) + '</i>';
+		}
+
+		textHolder.innerHTML = newText;
+
+		var letters = document.getElementsByTagName('i'),
+			flickers = [5, 7, 9, 11, 13, 15, 17],
+			randomLetter,
+			flickerNumber,
+			counter;
+
+		function randomFromInterval(from,to) {
+			return Math.floor(Math.random()*(to-from+1)+from);
+		}
+
+		function hasClass(element, cls) {
+		    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+		}
+
+		function flicker() {		
+			counter += 1;
+			
+			if (counter === flickerNumber) {
+				return;
+			}
+
+			setTimeout(function () {
+				if(hasClass(randomLetter, 'off')) {
+					randomLetter.className = '';
+				}
+				else {
+					randomLetter.className = 'off';
+				}
+
+				flicker();
+			}, 30);
+		}
+
+		(function loop() {
+		    var rand = randomFromInterval(300,700);
+
+			randomLetter = randomFromInterval(0, 18);
+			randomLetter = letters[randomLetter];
+			
+			flickerNumber = randomFromInterval(0, 3);
+			flickerNumber = flickers[flickerNumber];
+
+		    setTimeout(function() {
+		            counter = 0;
+		            flicker();
+		            loop();  
+		    }, rand);
+		}());
 	</script>
 
 	<script>
