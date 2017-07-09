@@ -947,7 +947,7 @@ img {
   transform: translate(0, -5);
 }
 .social-wrapper i:nth-child(4) {
-  color: #fffc00;
+  color: #e62117;
   cursor: pointer;
   text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
   transition: all ease-in-out 150ms;
