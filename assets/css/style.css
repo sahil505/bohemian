@@ -215,8 +215,9 @@ p{
 	background-size: cover;
 }
 
+@media screen and (min-width: 500px) {
+/* applies only if the screen is more than 500px */
 .cover-head {
-	/*font-size: 20px;*/
 	color: #222222;
 	margin: 0 0 15px 0;
 	text-shadow: 2px 2px 8px grey;
@@ -237,14 +238,21 @@ i.off {
 	text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
 }
 
+}
+
 @media screen and (max-width: 500px) {
 /* applies only if the screen is narrower than 500px */
 	.cover-head {
-		font-size: 20px;
+		font-size: 70px;
 		color: #222222;
 		margin: 0 0 15px 0;
 		text-shadow: 2px 2px 8px grey;
 	}
+}
+
+.para {
+	font-size: 20px;
+	line-height: 1.4;
 }
 
 /* Services
