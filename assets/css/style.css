@@ -206,7 +206,7 @@ p{
 .small-logo{ 
 	padding:0 32px;
 }
-
+/* Main section */
 .main-section{
 	padding:90px 0 110px;
 }
@@ -263,6 +263,8 @@ p{
 	font-size: 20px;
 	line-height: 1.4;
 }
+
+/* Main section end */
 
 /* Buttons Start */
 .button-wrap {
