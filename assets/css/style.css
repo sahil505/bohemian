@@ -869,42 +869,17 @@ img {
 /* Contact
 ---------------------------------*/
 .main-section.contact{
-	padding:90px 0 100px;
+	/*padding:90px 0 100px;*/
 }
 
 .main-section.contact{
-	background:url(../img/bg-map.png) left 190px no-repeat;
-}
-.contact-info-box{
-	font-size:15px;
-	margin:0 0 14px 68px;
-	padding-left:0;
-}
-.contact-info-box h3{
-	font-size: 15px;
-	font-weight:400;
-	float:left;
-	width:102px;
-	margin-right:12px;
-	line-height:28px;
-}
-.contact-info-box h3 i{
-	font-style:normal;
-	font-size:18px;
-	color:#222222;
-	font-family: 'FontAwesome';
-	font-weight:normal;
-	margin-right:7px;
-}
-.contact-info-box span{
-	line-height:28px;
-	display:block;
-	overflow:hidden;
+	/*background:url(../img/bg-map.png) left 190px no-repeat;*/
+	text-align: center;
 }
 
 .social-wrapper {
   display: inline-flex;
-/*  align-items: center;*/
+  align-items: center;
 }
 
 .social-wrapper i {
@@ -966,20 +941,21 @@ img {
 ---------------------------------*/
 
 .footer{
-	background:url(../img/pw_maze_black_2X.png) left top repeat;
-	padding:35px 0 35px;
+	/*background:url(../img/pw_maze_black_2X.png) left top repeat;*/
+	padding:0px 0 35px;
 }
 .footer-logo{
-	margin:15px auto 35px;
+	margin:-40px auto 35px;
 	width: 76px;
 }
+
 .copyright, .credits{
-	color:#cccccc;
+	color:black;
 	font-size:14px;
 	display:block;
 	text-align:center;
 }
-.copyright a, .credits a{
+/*.copyright a, .credits a{
 	color:#7cc576;
 	font-weight:600;
 	text-decoration: none;
@@ -990,7 +966,7 @@ img {
 
 .copyright a:hover, .credits a:hover {
 	color: #fff;
-}
+}*/
 
 .res-nav_click {
 	line-height:38px;
