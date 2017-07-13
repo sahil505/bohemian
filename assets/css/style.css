@@ -749,8 +749,14 @@ img {
 }
 
 .team-head {
-	color: #222222;
-	font-size: 56px;
+	font: normal 80px/ 120px 'Nixie One', Helvetica, Arial;
+		letter-spacing: -2px;
+		/*font-weight: 700;*/
+		text-shadow: 0 0 30px #EC637B, 
+		0 0 10px rgba(230, 161, 173, 0.41), 
+		0 0 100px #E6A1AD, 
+		0 0 500px #F36780, 
+		5px 9px 5px rgba(0, 0, 0, 0.5);
 	text-align: center;
 	margin: 0 0 15px 0;
 	text-shadow: 2px 2px 8px grey;
