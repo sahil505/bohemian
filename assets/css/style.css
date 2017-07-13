@@ -748,6 +748,15 @@ img {
 	margin-bottom:40px;
 }
 
+.team-head {
+		color: #222222;
+		font-size: 56px;
+		text-align: center;
+		margin: 0 0 15px 0;
+		text-shadow: 2px 2px 8px grey;
+		text-transform: uppercase;
+	}
+
 
 /* Team
 ---------------------------------*/
@@ -1021,8 +1030,8 @@ h1 + p, p + p {
 .card-bg {
 	opacity: 0.5;
 	position: absolute;
-	top: -20px;
-	left: -20px;
+	/*top: -20px;
+	left: -20px;*/
 	width: 100%;
 	height: 100%;
 	padding: 20px;
