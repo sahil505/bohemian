@@ -513,6 +513,13 @@ p{
 	text-shadow: 2px 2px 8px grey;
 	text-transform: uppercase;
 }
+.show-content {
+	font: 20px/56px 'Nixie One', Helvetica, Arial;
+	font-weight: 500;
+	color: black;
+	text-shadow: 0px 0px 2px grey;
+	line-height: 1.6;
+}
 
 
 /* Featured Work
