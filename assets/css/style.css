@@ -214,13 +214,14 @@ p{
 }
 
 .main-section.introduction {
-	background:url(../img/pw_maze_black_2X.png) left top repeat;
+	background-image: url("../img/main_background.png");
+	background-size: cover;
 }
 
 @media screen and (min-width: 500px) {
 	/* applies only if the screen is more than 500px */
 	.cover-head {
-		color: grey;
+		color: #222222;
 		margin: 0 0 15px 0;
 		text-shadow: 2px 2px 8px grey;
 	}
