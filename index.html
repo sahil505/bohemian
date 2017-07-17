@@ -11,9 +11,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
-	<link rel="stylesheet" type="text/css" href="assets/css/scrollbar/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="assets/css/scrollbar/demo.css" />
-	<link rel="stylesheet" type="text/css" href="assets/css/scrollbar/component.css" />
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
@@ -23,7 +20,6 @@
 
 	<script type="text/javascript" src="assets/js/jquery.1.8.3.min.js"></script>
 	<script type="text/javascript" src="assets/js/bootstrap.js"></script>
-	<script src="assets/js/app/modernizr.min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery-scrolltofixed.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.isotope.js"></script>
@@ -52,20 +48,6 @@ Author URL: https://sahil505.com
 	</header> -->
 	<!--header-end-->
 
-	<!--main-nav-start-->
-	<nav class="main-nav-scroll">
-		<div class="dotstyle dotstyle-hop">
-			<ul class="nav-main">
-				<li class="current"><a href="#header"></a></li>
-				<li><a href="#events"></a></li>
-				<li><a href="#sponsors"></a></li>
-				<li><a href="#team"></a></li>
-				<li><a href="#contact"></a></li>
-			</ul>
-		</div>
-	</nav>
-
-	<!-- new nav start here  -->
 	<div class="burger">
 		<div class="burger__patty"></div>
 		<div class="burger__patty"></div>
@@ -82,6 +64,7 @@ Author URL: https://sahil505.com
 
 		</ul>
 	</nav>
+
 	<!--main-section-start-->
 	<section class="introduction" id="events">
 		<div class="container cover-neon">
@@ -224,9 +207,6 @@ Author URL: https://sahil505.com
 	<!--footer begins-->
 	<footer class="footer">
 		<div class="container">
-			<div class="footer-quote">
-				<img src="./assets/img/quote-2.png">
-			</div>
 			<div class="main-section contact" id="contact">
 				<div class="social-wrapper wow fadeInUp delay-05s">
 					<i class="fa fa-5x fa-facebook-square"></i>
@@ -246,16 +226,13 @@ Author URL: https://sahil505.com
 	<!--Cards vuejs-->
 	<script type="text/javascript">
 		'use strict';
-
 		Vue.config.devtools = true;
-
 		Vue.component('card', {
 			template: '\n    <div class="card-wrap"\n      @mousemove="handleMouseMove"\n      @mouseenter="handleMouseEnter"\n      @mouseleave="handleMouseLeave"\n      ref="card">\n      <div class="card"\n        :style="cardStyle">\n        <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>\n        <div class="card-info">\n          <slot name="header"></slot>\n          <slot name="content"></slot>\n        </div>\n      </div>\n    </div>',
 			mounted: function mounted() {
 				this.width = this.$refs.card.offsetWidth;
 				this.height = this.$refs.card.offsetHeight;
 			},
-
 			props: ['dataImage'],
 			data: function data() {
 				return {
@@ -303,7 +280,6 @@ Author URL: https://sahil505.com
 				},
 				handleMouseLeave: function handleMouseLeave() {
 					var _this = this;
-
 					this.mouseLeaveDelay = setTimeout(function () {
 						_this.mouseX = 0;
 						_this.mouseY = 0;
@@ -311,7 +287,6 @@ Author URL: https://sahil505.com
 				}
 			}
 		});
-
 		var app = new Vue({
 			el: '#app'
 		});
@@ -337,34 +312,27 @@ Author URL: https://sahil505.com
 		newText = '',
 		i;
 		console.log(chars);
-
 		for (i = 0; i < chars; i += 1) {
 			newText += '<i>' + text.charAt(i) + '</i>';
 		}
-
 		textHolder.innerHTML = newText;
-
 		var letters = document.getElementsByTagName('i'),
 		flickers = [5, 7, 9, 11, 13, 15, 17],
 		randomLetter,
 		flickerNumber,
 		counter;
-
 		function randomFromInterval(from,to) {
 			return Math.floor(Math.random()*(to-from+1)+from);
 		}
-
 		function hasClass(element, cls) {
 			return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
 		}
-
-		function flicker() {
+		function flicker() {		
 			counter += 1;
-
+			
 			if (counter === flickerNumber) {
 				return;
 			}
-
 			setTimeout(function () {
 				if(hasClass(randomLetter, 'off')) {
 					randomLetter.className = '';
@@ -372,24 +340,20 @@ Author URL: https://sahil505.com
 				else {
 					randomLetter.className = 'off';
 				}
-
 				flicker();
 			}, 30);
 		}
-
 		(function loop() {
 			var rand = randomFromInterval(300,700);
-
 			randomLetter = randomFromInterval(0, 18);
 			randomLetter = letters[randomLetter];
-
+			
 			flickerNumber = randomFromInterval(0, 3);
 			flickerNumber = flickers[flickerNumber];
-
 			setTimeout(function() {
 				counter = 0;
 				flicker();
-				loop();
+				loop();  
 			}, rand);
 		}());
 	</script>
@@ -409,7 +373,7 @@ Author URL: https://sahil505.com
 
 	<script type="text/javascript">
 		$(window).load(function(){
-			$('.nav-main li a').bind('click',function(event){
+			$('.main-nav li a').bind('click',function(event){
 				var $anchor = $(this);
 				$('html, body').stop().animate({
 					scrollTop: $($anchor.attr('href')).offset().top - 102
@@ -436,7 +400,6 @@ Author URL: https://sahil505.com
 					columnWidth: colW
 				}
 			});
-
 			$(window).smartresize(function(){
 				// check if columns has changed
 				var currentColumns = Math.floor( ( $body.width() -30 ) / colW );
@@ -448,30 +411,62 @@ Author URL: https://sahil505.com
 					.isotope('reLayout');
 				}
 			}).smartresize(); // trigger resize to set container width
-
+			
 			$('.main-heading-3Filter a').click(function(){
 				$('.main-heading-3Filter .current').removeClass('current');
 				$(this).addClass('current');
-
 				var selector = $(this).attr('data-filter');
 				$container.isotope({
-
 					filter: selector,
 				});
 				return false;
 			});
 		});
 	</script>
-	<script>
-		[].slice.call( document.querySelectorAll( '.dotstyle > ul' ) ).forEach( function( nav ) {
-			new DotNav( nav, {
-				callback : function( idx ) {
-					//console.log( idx )
-				}
-			} );
-		} );
+
+	<script type="text/javascript">
+		(function() {
+			var Menu = (function() {
+				var burger = document.querySelector('.burger');
+				var menu = document.querySelector('.menu');
+				var menuList = document.querySelector('.menu__list');
+				var brand = document.querySelector('.menu__brand');
+				var menuItems = document.querySelectorAll('.menu__item');
+				var active = false;
+				var toggleMenu = function() {
+					if (!active) {
+						menu.classList.add('menu--active');
+						menuList.classList.add('menu__list--active');
+						brand.classList.add('menu__brand--active');
+						burger.classList.add('burger--close');
+						for (var i = 0, ii = menuItems.length; i < ii; i++) {
+							menuItems[i].classList.add('menu__item--active');
+						}
+						active = true;
+					} else {
+						menu.classList.remove('menu--active');
+						menuList.classList.remove('menu__list--active');
+						brand.classList.remove('menu__brand--active');
+						burger.classList.remove('burger--close');
+						for (var i = 0, ii = menuItems.length; i < ii; i++) {
+							menuItems[i].classList.remove('menu__item--active');
+						}
+						active = false;
+					}
+				};
+				var bindActions = function() {
+					burger.addEventListener('click', toggleMenu, false);
+					console.log("nav working");
+				};
+				var init = function() {
+					bindActions();
+				};
+				return {
+					init: init
+				};
+			}());
+			Menu.init();
+		}());
 	</script>
-	<script type="text/javascript" src="assets/js/app/app.js"></script>
-	<script type="text/javascript" src="assets/js/app/dots.js"></script>
 </body>
 </html>
