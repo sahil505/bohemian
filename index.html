@@ -56,18 +56,31 @@ Author URL: https://sahil505.com
 
 	<!--main-nav-start-->
 	<nav class="main-nav-scroll">
-		<div class="dotstyle dotstyle-puff">
-			<ul>
-				<li class="current"><a href="#">Home</a></li>
-				<li><a>About</a></li>
-				<li><a>Products</a></li>
-				<li><a>Portfolio</a></li>
-				<li><a>Blog</a></li>
-				<li><a>Contact</a></li>
+		<div class="dotstyle dotstyle-hop">
+			<ul class="nav-main">
+				<li class="current"><a href="#header"></a></li>
+				<li><a href="#events"></a></li>
+				<li><a href="#sponsors"></a></li>
+				<li><a href="#team"></a></li>
+				<li><a href="#contact"></a></li>
 
 			</ul>
 		</div>
 	</nav>
+	<!-- <nav class="main-nav-outer" id="test">
+		<div class="container">
+			<ul class="main-nav">
+				<li><a href="#header">Home</a></li>
+				<li><a href="#events">Events</a></li>
+				<li><a href="#sponsors">Sponsors</a></li>
+				<li class="small-logo"><a href="#header"><img src="assets/img/small-logo-rdv.png" alt=""></a></li>
+				<li><a href="#joinus">Join Us</a></li>
+				<li><a href="#team">Team</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+			<a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
+		</div>
+	</nav> -->
 
 	<!--main-nav-end-->
 
@@ -80,11 +93,11 @@ Author URL: https://sahil505.com
   </div>
 	<nav class="menu">
     <div class="menu__brand">
-      <a href=""><div class="nav-logo"></div></a>
+      <a href="#"><img src="assets/img/logo.png" alt=""></a>
     </div>
-    <ul class="menu__list">
-      <li class="menu__item"><a  href="" class="menu__link">Work</a></li>
-      <li class="menu__item"><a  href="" class="menu__link">About</a></li>
+    <ul class="menu__list nav-main">
+      <li class="menu__item"><a href="#"  class="menu__link">Home</a></li>
+      <li class="menu__item"><a href="#" class="menu__link">Events</a></li>
 
     </ul>
   </nav>
@@ -429,7 +442,7 @@ Author URL: https://sahil505.com
 
 	<script type="text/javascript">
 		$(window).load(function(){
-			$('.main-nav li a').bind('click',function(event){
+			$('.nav-main li a').bind('click',function(event){
 				var $anchor = $(this);
 				$('html, body').stop().animate({
 					scrollTop: $($anchor.attr('href')).offset().top - 102

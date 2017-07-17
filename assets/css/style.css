@@ -211,8 +211,8 @@ p{
 
 /*new nav bar */
 .burger {
-  position: absolute;
-  z-index: 10;
+  position: fixed;
+  z-index: 2001;
   right: 25px;
   top: 25px;
   cursor: pointer;
@@ -225,7 +225,7 @@ p{
   width: 28px;
   height: 2px;
   margin: 0 0 4px 0;
-  background: white;
+  background: rgba(229,57,53 ,1);
   -webkit-transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -253,6 +253,7 @@ p{
   top: 0;
   width: 100%;
   visibility: hidden;
+	z-index: 2000;
 }
 .menu--active {
   visibility: visible;
@@ -277,7 +278,7 @@ p{
 .menu__list {
   margin: 0;
   padding: 0;
-  background: #2d9e94;
+  background: rgba(96,125,139 ,0.5);
   list-style-type: none;
   -webkit-transform: translate3d(0, -100%, 0);
           transform: translate3d(0, -100%, 0);
@@ -289,7 +290,7 @@ p{
           transform: translate3d(0, 0, 0);
 }
 .menu__brand {
-  background: #38C5B9;
+  background: rgba(96,125,139 ,0.5);
   -webkit-transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   -webkit-transform: translate3d(0, 100%, 0);
@@ -433,12 +434,9 @@ p{
 	width: 100%;
 	text-align: center;
 	padding: 10px;
-	z-index: 1000;
+	z-index: 100;
 }
 
-.dotstyle-edit{
-	background-color: transparent;
-}
 
 .test{
 	border: 1px solid red;

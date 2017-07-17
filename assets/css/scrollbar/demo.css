@@ -25,7 +25,7 @@ body {
 	content: '';
 	display: table;
 }
- 
+
 .clearfix:after {
 	clear: both;
 }
@@ -164,7 +164,7 @@ a:hover, a:focus {
 
 .dotstyle:nth-child(4n),
 .dotstyle:nth-child(4n-3) {
-	background-color: rgba(0, 0, 0, 0.05);
+	background-color: transparent;
 }
 
 @media screen and (max-width: 42em) {
@@ -175,11 +175,11 @@ a:hover, a:focus {
 
 	.dotstyle:nth-child(4n),
 	.dotstyle:nth-child(4n-3) {
-		background-color: rgba(0, 0, 0, 0);
+		background-color: transparent;
 	}
 
 	.dotstyle:nth-child(odd) {
-		background-color: rgba(0, 0, 0, 0.05);
+		background-color: transparent;
 	}
 }
 

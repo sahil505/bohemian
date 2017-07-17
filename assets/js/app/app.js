@@ -35,6 +35,7 @@
 
     var bindActions = function() {
       burger.addEventListener('click', toggleMenu, false);
+      console.log("nav working");
     };
 
     var init = function() {
