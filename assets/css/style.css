@@ -785,6 +785,7 @@ img {
 }
 .team{
 	padding:32px 0;
+	background-image: url("../img/main_background.png");
 }
 .team h6{
 	margin-bottom:40px;
@@ -1014,7 +1015,7 @@ h1 + p, p + p {
 */
 
 .container_card {
-	padding: 40px 80px;
+	padding: 24px 80px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1151,6 +1152,10 @@ h1 + p, p + p {
 .footer-logo{
 	margin:-40px auto 35px;
 	width: 76px;
+}
+.footer-quote {
+	padding-top: 40px;
+	text-align: center;
 }
 
 .copyright, .credits{
