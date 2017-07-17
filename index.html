@@ -38,7 +38,7 @@ Author URL: https://sahil505.com
 	<header class="header" id="header">
 		<div class="container">
 			<figure class="logo animated fadeInDown delay-07s">
-				<a href="#"><img src="assets/img/logo.png" alt=""></a>	
+				<a href="#"><img src="assets/img/logo.png" alt=""></a>
 			</figure>
 			<h1 class="animated fadeInDown delay-07s">Welcome To Rendezvous</h1>
 			<ul class="we-create animated fadeInUp delay-1s">
@@ -50,7 +50,7 @@ Author URL: https://sahil505.com
 	<!--header-end-->
 
 	<!--main-nav-start-->
-	<nav class="main-nav-outer" id="test">
+	<!-- <nav class="main-nav-outer" id="test">
 		<div class="container">
 			<ul class="main-nav">
 				<li><a href="#header">Home</a></li>
@@ -63,7 +63,7 @@ Author URL: https://sahil505.com
 			</ul>
 			<a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
 		</div>
-	</nav>
+	</nav> -->
 	<!--main-nav-end-->
 
 	<!--main-section-start-->
@@ -135,9 +135,9 @@ Author URL: https://sahil505.com
 	<!--main-section3-start-->
 	<section class="main-section paddind" id="sponsors">
 		<div class="container">
-			<h1 class="high-head">highlights</h1>
+			<h1 class="high-head cover-head">highlights</h1>
 			<hr>
-			<div class="main-heading-3Filter">  
+			<div class="main-heading-3Filter">
 				<ul class="main-heading-3-nav wow fadeIn delay-02s">
 					<li><a href="#" data-filter="*" class="current" >All</a></li>
 					<li><a href="#" data-filter=".branding" >Pronites</a></li>
@@ -145,37 +145,37 @@ Author URL: https://sahil505.com
 					<li><a href="#" data-filter=".printdesign" >Hip-Hop Fiesta</a></li>
 					<li><a href="#" data-filter=".photography" >Photography</a></li>
 				</ul>
-			</div> 
+			</div>
 
 		</div>
 		<div class="main-heading-3Container wow fadeInUp delay-04s">
 			<div class=" main-heading-3-box printdesign">
-				<a href="#"><img src= "assets/img/Portfolio-pic1.jpg" alt="img"></a> 
+				<a href="#"><img src= "assets/img/Portfolio-pic1.jpg" alt="img"></a>
 				<h3>Foto Album</h3>
 				<p>Print Design</p>
 			</div>
 			<div class="main-heading-3-box webdesign">
-				<a href="#"><img src= "assets/img/Portfolio-pic2.jpg" alt="img"></a> 
+				<a href="#"><img src= "assets/img/Portfolio-pic2.jpg" alt="img"></a>
 				<h3>Luca Theme</h3>
 				<p>Web Design</p>
 			</div>
 			<div class=" main-heading-3-box branding">
-				<a href="#"><img src= "assets/img/Portfolio-pic3.jpg" alt="img"></a> 
+				<a href="#"><img src= "assets/img/Portfolio-pic3.jpg" alt="img"></a>
 				<h3>Uni Sans</h3>
 				<p>Branding</p>
 			</div>
 			<div class=" main-heading-3-box photography" >
-				<a href="#"><img src= "assets/img/Portfolio-pic4.jpg" alt="img"></a> 
+				<a href="#"><img src= "assets/img/Portfolio-pic4.jpg" alt="img"></a>
 				<h3>Vinyl Record</h3>
 				<p>Photography</p>
 			</div>
 			<div class=" main-heading-3-box branding">
-				<a href="#"><img src= "assets/img/Portfolio-pic5.jpg" alt="img"></a> 
+				<a href="#"><img src= "assets/img/Portfolio-pic5.jpg" alt="img"></a>
 				<h3>Hipster</h3>
 				<p>Branding</p>
 			</div>
 			<div class=" main-heading-3-box photography">
-				<a href="#"><img src= "assets/img/Portfolio-pic6.jpg" alt="img"></a> 
+				<a href="#"><img src= "assets/img/Portfolio-pic6.jpg" alt="img"></a>
 				<h3>Windmills</h3>
 				<p>Photography</p>
 			</div>
@@ -348,9 +348,9 @@ Author URL: https://sahil505.com
 			return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
 		}
 
-		function flicker() {		
+		function flicker() {
 			counter += 1;
-			
+
 			if (counter === flickerNumber) {
 				return;
 			}
@@ -372,14 +372,14 @@ Author URL: https://sahil505.com
 
 			randomLetter = randomFromInterval(0, 18);
 			randomLetter = letters[randomLetter];
-			
+
 			flickerNumber = randomFromInterval(0, 3);
 			flickerNumber = flickers[flickerNumber];
 
 			setTimeout(function() {
 				counter = 0;
 				flicker();
-				loop();  
+				loop();
 			}, rand);
 		}());
 	</script>
@@ -435,7 +435,7 @@ Author URL: https://sahil505.com
 					.isotope('reLayout');
 				}
 			}).smartresize(); // trigger resize to set container width
-			
+
 			$('.main-heading-3Filter a').click(function(){
 				$('.main-heading-3Filter .current').removeClass('current');
 				$(this).addClass('current');
