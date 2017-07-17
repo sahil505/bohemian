@@ -209,11 +209,11 @@ p{
 }
 
 /* Main section */
-.main-section{
-	padding:90px 0 110px;
+.introduction{
+	padding:64px 0 110px;
 }
 
-.main-section.introduction {
+.introduction {
 	background-image: url("../img/main_background.png");
 	background-size: cover;
 }
@@ -497,7 +497,9 @@ p{
 	font-size: 20px;
 }
 
-.main-section.alabaster{
+.alabaster{
+	padding-top: 72px;
+	padding-bottom: 64px;
 	background:#fafafa;
 }
 
@@ -687,7 +689,8 @@ img {
 	transition-property:         transform, opacity;
 }
 
-.main-section.paddind{
+.paddind{
+	padding-top: 32px;
 	padding-bottom:60px;
 }
 
@@ -776,10 +779,10 @@ img {
 	display:inline-block;
 	margin: 0 20px;
 }
-.main-section.team{
-	padding:85px 0;
+.team{
+	padding:32px 0;
 }
-.main-section.team h6{
+.team h6{
 	margin-bottom:40px;
 }
 
