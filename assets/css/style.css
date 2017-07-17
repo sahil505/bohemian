@@ -209,6 +209,10 @@ p{
 }
 
 /* Main section */
+.main-section{
+	padding:56px 0 80px;
+}
+
 .introduction{
 	padding:64px 0 110px;
 }
