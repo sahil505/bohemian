@@ -650,9 +650,9 @@ p{
 	-webkit-transition:all 0.3s ease-in-out;	
 }
 
-.main-heading-3-box img:hover {
+/*.main-heading-3-box img:hover {
 	opacity: 0.6;
-}
+}*/
 
 .main-heading-3-nav li a.current{
 	background:#7cc576;
