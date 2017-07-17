@@ -11,6 +11,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="assets/css/scrollbar/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/scrollbar/demo.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/scrollbar/component.css" />
 	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/font-awesome.css" rel="stylesheet" type="text/css">
 	<link href="assets/css/responsive.css" rel="stylesheet" type="text/css">
@@ -25,6 +28,8 @@
 	<script type="text/javascript" src="assets/js/jquery.isotope.js"></script>
 	<script type="text/javascript" src="assets/js/wow.js"></script>
 	<script type="text/javascript" src="assets/js/classie.js"></script>
+	<script src="assets/js/app/modernizr.min.js"></script>
+
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
 	<!-- <script src="contactform/contactform.js"></script> -->
 
@@ -38,7 +43,7 @@ Author URL: https://sahil505.com
 	<header class="header" id="header">
 		<div class="container">
 			<figure class="logo animated fadeInDown delay-07s">
-				<a href="#"><img src="assets/img/logo.png" alt=""></a>	
+				<a href="#"><img src="assets/img/logo.png" alt=""></a>
 			</figure>
 			<h1 class="animated fadeInDown delay-07s">Welcome To Rendezvous</h1>
 			<ul class="we-create animated fadeInUp delay-1s">
@@ -50,7 +55,19 @@ Author URL: https://sahil505.com
 	<!--header-end-->
 
 	<!--main-nav-start-->
-	<nav class="main-nav-outer" id="test">
+	<nav class="main-nav-scroll">
+		<div class="dotstyle dotstyle-hop">
+			<ul class="nav-main">
+				<li class="current"><a href="#header"></a></li>
+				<li><a href="#events"></a></li>
+				<li><a href="#sponsors"></a></li>
+				<li><a href="#team"></a></li>
+				<li><a href="#contact"></a></li>
+
+			</ul>
+		</div>
+	</nav>
+	<!-- <nav class="main-nav-outer" id="test">
 		<div class="container">
 			<ul class="main-nav">
 				<li><a href="#header">Home</a></li>
@@ -63,9 +80,27 @@ Author URL: https://sahil505.com
 			</ul>
 			<a class="res-nav_click" href="#"><i class="fa-bars"></i></a>
 		</div>
-	</nav>
+	</nav> -->
+
 	<!--main-nav-end-->
 
+	<!-- new nav start here  -->
+
+	<div class="burger">
+    <div class="burger__patty"></div>
+    <div class="burger__patty"></div>
+    <div class="burger__patty"></div>
+  </div>
+	<nav class="menu">
+    <div class="menu__brand">
+      <a href="#"><img src="assets/img/logo.png" alt=""></a>
+    </div>
+    <ul class="menu__list nav-main">
+      <li class="menu__item"><a href="#"  class="menu__link">Home</a></li>
+      <li class="menu__item"><a href="#" class="menu__link">Events</a></li>
+
+    </ul>
+  </nav>
 	<!--main-section-start-->
 	<section class="introduction" id="events">
 		<div class="container cover-neon">
@@ -135,9 +170,9 @@ Author URL: https://sahil505.com
 	<!--main-section3-start-->
 	<section class="paddind" id="sponsors">
 		<div class="container">
-			<h1 class="high-head">highlights</h1>
+			<h1 class="high-head cover-head">highlights</h1>
 			<hr>
-			<div class="main-heading-3Filter">  
+			<div class="main-heading-3Filter">
 				<ul class="main-heading-3-nav wow fadeIn delay-02s">
 					<li><a href="#" data-filter="*" class="current" >All</a></li>
 					<li><a href="#" data-filter=".branding" >Pronites</a></li>
@@ -145,7 +180,7 @@ Author URL: https://sahil505.com
 					<li><a href="#" data-filter=".printdesign" >Hip-Hop Fiesta</a></li>
 					<li><a href="#" data-filter=".photography" >Photography</a></li>
 				</ul>
-			</div> 
+			</div>
 
 		</div>
 		<div class="main-heading-3Container wow fadeInUp delay-04s">
@@ -205,7 +240,7 @@ Author URL: https://sahil505.com
 	</section>
 	<!--main-section cards-end-->
 
-	<!--footer begins--> 
+	<!--footer begins-->
 	<footer class="footer">
 		<div class="container">
 			<div class="footer-quote">
@@ -223,11 +258,13 @@ Author URL: https://sahil505.com
 			<span class="copyright">&copy; 2017. All Rights Reserved<br />BRCA IIT DELHI</span>
 		</div>
 	</footer>
-	<!--footer ends--> 
+	<!--footer ends-->
 
 	<!-- Created & Developed by Sahil Khokhar (sahil505.com) -->
 
 	<!--Cards vuejs-->
+	<script type="text/javascript" src="assets/js/app/app.js"></script>
+	<script type="text/javascript" src="assets/js/app/dots.js"></script>
 	<script type="text/javascript">
 		'use strict';
 
@@ -342,9 +379,9 @@ Author URL: https://sahil505.com
 			return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
 		}
 
-		function flicker() {		
+		function flicker() {
 			counter += 1;
-			
+
 			if (counter === flickerNumber) {
 				return;
 			}
@@ -366,14 +403,14 @@ Author URL: https://sahil505.com
 
 			randomLetter = randomFromInterval(0, 18);
 			randomLetter = letters[randomLetter];
-			
+
 			flickerNumber = randomFromInterval(0, 3);
 			flickerNumber = flickers[flickerNumber];
 
 			setTimeout(function() {
 				counter = 0;
 				flicker();
-				loop();  
+				loop();
 			}, rand);
 		}());
 	</script>
@@ -393,7 +430,7 @@ Author URL: https://sahil505.com
 
 	<script type="text/javascript">
 		$(window).load(function(){
-			$('.main-nav li a').bind('click',function(event){
+			$('.nav-main li a').bind('click',function(event){
 				var $anchor = $(this);
 				$('html, body').stop().animate({
 					scrollTop: $($anchor.attr('href')).offset().top - 102
@@ -432,7 +469,7 @@ Author URL: https://sahil505.com
 					.isotope('reLayout');
 				}
 			}).smartresize(); // trigger resize to set container width
-			
+
 			$('.main-heading-3Filter a').click(function(){
 				$('.main-heading-3Filter .current').removeClass('current');
 				$(this).addClass('current');
@@ -445,6 +482,15 @@ Author URL: https://sahil505.com
 				return false;
 			});
 		});
+	</script>
+	<script>
+		[].slice.call( document.querySelectorAll( '.dotstyle > ul' ) ).forEach( function( nav ) {
+			new DotNav( nav, {
+				callback : function( idx ) {
+					//console.log( idx )
+				}
+			} );
+		} );
 	</script>
 </body>
 </html>
