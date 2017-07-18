@@ -1,7 +1,7 @@
 *, *:after, *::before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html, body, .vs-container {
@@ -11,18 +11,18 @@ html, body, .vs-container {
 }
 
 a {
-  color: #428bca;
-  text-decoration: none;
+	color: #428bca;
+	text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2a6496;
-  text-decoration: underline;
+	color: #2a6496;
+	text-decoration: underline;
 }
 a:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+	outline: thin dotted;
+	outline: 5px auto -webkit-focus-ring-color;
+	outline-offset: -2px;
 }
 
 .no-touch .vs-container {
@@ -526,25 +526,25 @@ a:focus {
 }
 
 .fa-facebook-square:before {
-  content: "\f082";
+	content: "\f082";
 }
 
 .fa-facebook:before {
-  content: "\f09a";
+	content: "\f09a";
 }
 
 .fa-twitter:before {
-  content: "\f099";
+	content: "\f099";
 }
 
 .fa-pinterest:before {
-  content: "\f0d2";
+	content: "\f0d2";
 }
 .fa-google-plus:before {
-  content: "\f0d5";
+	content: "\f0d5";
 }
 
 .fa-apple:before {
-  content: "\f179";
+	content: "\f179";
 }
 
