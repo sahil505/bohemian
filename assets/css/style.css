@@ -50,7 +50,8 @@ a, a:hover, a:active{ outline:0px !important}
 /* Primary Styles
 ---------------------------------*/
 body {
-	background:#fff;
+	background-image: url("../img/main_background.png");
+	background-size: contain;
 	font-family: 'Open Sans', sans-serif;
 	font-size:14px;
 	font-weight:normal;
@@ -479,8 +480,8 @@ p{
 }
 
 .introduction {
-	background-image: url("../img/main_background.png");
-	background-size: cover;
+	/*background-image: url("../img/main_background.png");
+	background-size: cover;*/
 }
 
 @media screen and (min-width: 500px) {
@@ -765,7 +766,6 @@ p{
 .alabaster{
 	padding-top: 72px;
 	padding-bottom: 64px;
-	background:#fafafa;
 }
 
 .show-head {
@@ -1046,7 +1046,7 @@ img {
 }
 .team{
 	padding:32px 0;
-	background-image: url("../img/main_background.png");
+	/*background-image: url("../img/main_background.png");*/
 }
 .team h6{
 	margin-bottom:40px;
