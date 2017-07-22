@@ -1,0 +1,68 @@
+<manifest alg="2" build="2017.0.0.363" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster" exportTarget="other" domain="RDV'17.com" resolutions="1x,2x" timestamp="1500577178663">
+  <folder name="css">
+    <file name="site_global.css" crc="443350757"/>
+    <file name="master_a-master.css" crc="4249647868" ref="index"/>
+    <file name="index.css" crc="3995952552" ref="index"/>
+  </folder>
+  <folder name="assets">
+    <file name="pexels-photo-370284.mp4" crc="471076313" seo="true" mt="1500377150000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index"/>
+    <file name="museutils.js" crc="163421577" ref="index"/>
+    <file name="whatinput.js" crc="86476730" ref="index"/>
+    <file name="museconfig.js" crc="168988563" ref="index"/>
+    <file name="jquery.watch.js" crc="104486786" ref="index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="379354253" ref="index"/>
+    <file name="jquery.scrolleffects.js" crc="4065090679" ref="index"/>
+    <file name="require.js" crc="244322403" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="bfly.svg" crc="2367656" seo="true" ref="index"/>
+    <file name="bfly_poster_.png" crc="195226134" ref="index"/>
+    <file name="floral.svg" crc="4013162361" seo="true" ref="index"/>
+    <file name="floral_poster_.png" crc="3906842536" ref="index"/>
+    <file name="arrow-01.svg" crc="3983454435" seo="true" ref="index"/>
+    <file name="arrow-01_poster_.png" crc="463068929" ref="index"/>
+    <file name="765924-01.svg" crc="3861032984" seo="true" ref="index"/>
+    <file name="765924-01_poster_.png" crc="231607123" ref="index"/>
+    <file name="arrow-2-01-01.svg" crc="379580036" seo="true" ref="index"/>
+    <file name="arrow 2-01-01_poster_.png" crc="434443924" ref="index"/>
+    <file name="feathers.svg" crc="479010936" seo="true" ref="index"/>
+    <file name="feathers_poster_.png" crc="4117644068" ref="index"/>
+    <file name="arrow-3.svg" crc="3999856126" seo="true" ref="index"/>
+    <file name="arrow 3_poster_.png" crc="4236461329" ref="index"/>
+    <file name="41 kaleidoscope - copy - copy.jpg" crc="4008832894" ref="index"/>
+    <file name="6 beatboxing.jpg" crc="4171924277" ref="index"/>
+    <file name="dsc_0471.jpg" crc="4167640379" ref="index"/>
+    <file name="dsc_0471_2x.jpg" crc="4132414335" ref="index"/>
+    <file name="dsc_0116.jpg" crc="4214273492" ref="index"/>
+    <file name="dsc_0116_2x.jpg" crc="4062752311" ref="index"/>
+    <file name="dsc_0521.jpg" crc="4118344100" ref="index"/>
+    <file name="dsc_0521_2x.jpg" crc="4056097500" ref="index"/>
+    <file name="_dsc0213.jpg" crc="4218538991" ref="index"/>
+    <file name="_dsc0213_2x.jpg" crc="3865188618" ref="index"/>
+    <file name="_dsc1131.jpg" crc="3978496795" ref="index"/>
+    <file name="_dsc1131_2x.jpg" crc="125933059" ref="index"/>
+    <file name="dsc_0464.jpg" crc="4151006327" ref="index"/>
+    <file name="dsc_0464_2x.jpg" crc="3818954134" ref="index"/>
+    <file name="hands small.jpg" crc="206488037" ref="index"/>
+    <file name="team small.jpg" crc="4200409272" ref="index"/>
+    <file name="hospitality small.jpg" crc="439609497" ref="index"/>
+    <file name="arrow-4.svg" crc="106939987" seo="true" ref="index"/>
+    <file name="arrow 4_poster_.png" crc="101699897" ref="index"/>
+    <file name="mandala-2-01.svg" crc="3905795765" seo="true" ref="index"/>
+    <file name="mandala 2-01_poster_.png" crc="166700969" ref="index"/>
+    <file name="mandala-01.svg" crc="4172824622" seo="true" ref="index"/>
+    <file name="mandala-01_poster_.png" crc="529869935" ref="index"/>
+    <file name="fb-01.svg" crc="90439065" seo="true" ref="index"/>
+    <file name="fb-01_poster_.png" crc="4243086350" ref="index"/>
+    <file name="tw-01.svg" crc="3919125876" seo="true" ref="index"/>
+    <file name="tw-01_poster_.png" crc="4076602980" ref="index"/>
+    <file name="y-01.svg" crc="4255433201" seo="true" ref="index"/>
+    <file name="y-01_poster_.png" crc="167835265" ref="index"/>
+    <file name="rdv logo vector text-01.png" crc="184400070" seo="true" ref="index"/>
+    <file name="rdv logo vector text-01_2x.png" crc="88574863" seo="true" ref="index"/>
+  </folder>
+  <file name="index.html" crc="3883497736" seo="true" mt="1500577168358" redirect="true"/>
+</manifest>
