@@ -33,17 +33,17 @@ Author URL: https://sahil505.com
 ======================================================= -->
 </head>
 <body>
-	<!--header-start-->
-	<header class="header" id="header">
-		<div class="container">
-			<video  class="land-video" autoplay playsinline muted loop>
-				<source src="assets/img/video.mp4" type="video/mp4">
-			 	<source src="movie.ogg" type="video/ogg">
-			 	Your browser does not support the video tag.
-			</video>
-		</div>
-	</header>
-	<!--header-end-->
+	<div class="video-container">
+		<h1 class="video-head"></h1>
+		<div class="filter"></div>
+		<video autoplay loop class="fillWidth">
+			<source src="assets/img/video.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+			<source src="http://s3.frantic.com/korkeasaari-fi/2016/07/Busy.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+		</video>
+		<div class="poster hidden">
+			<img src="" alt="">
+		</div> <!-- poster hidden -->
+	</div> <!-- end of video-container -->
 
 	<div class="burger">
 		<div class="burger__patty"></div>
