@@ -52,13 +52,7 @@ a, a:hover, a:active{ outline:0px !important}
 /* Primary Styles
 ---------------------------------*/
 body {
-	background-image: url("../img/main_background.png");
-	background-size: contain;
-	font-family: 'Open Sans', sans-serif;
-	font-size:14px;
-	font-weight:normal;
-	color:#888888;
-	margin:0;
+	background-color: #eaeaff;
 }
 h2{
 	font-size:34px;
@@ -97,7 +91,6 @@ h6{
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	background: #000;
 }
 
 .video-container .fillWidth {
@@ -442,7 +435,7 @@ h6{
 	/*background-image: url("../img/main_background.png");
 	background-size: cover;*/
     margin: auto;
-    padding: 10px;
+    padding: 20px;
 }
 
 #u338 {
@@ -480,7 +473,7 @@ h6{
 #u289-7 {
 	margin-left: 40px;
 	line-height: 46px;
-	font-size: 28px;
+	font-size: 24px;
 	font-family: 'Dosis', sans-serif;
 	font-weight: 400;
 }
@@ -1406,7 +1399,6 @@ h1 + p, p + p {
 ---------------------------------*/
 
 .footer{
-	background-color: #F2F2F2;
 	padding:0px 0 35px;
 }
 .footer-logo{
