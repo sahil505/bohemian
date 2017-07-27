@@ -441,6 +441,22 @@ h6{
 .introduction {
 	/*background-image: url("../img/main_background.png");
 	background-size: cover;*/
+    margin: auto;
+    padding: 10px;
+}
+
+#u338 {
+	z-index: 37;
+	width: 64px;
+	float: left;
+	background-color: transparent;
+	position: relative;
+}
+.rdv-content {
+	margin-left: 10%;
+}
+.rdv-head {
+
 }
 
 #u345 {
@@ -458,20 +474,13 @@ h6{
 }
 
 .para-content {
-	display: block;
-	margin: 0px;
-	padding: 0px;
-	border-width: 0px;
-	border-style: solid;
-	border-color: transparent;
-	transform-origin: left top;
-	background-repeat: no-repeat;
 }
 
 
 #u289-7 {
+	margin-left: 40px;
 	line-height: 46px;
-	font-size: 32px;
+	font-size: 28px;
 	font-family: 'Dosis', sans-serif;
 	font-weight: 400;
 }
