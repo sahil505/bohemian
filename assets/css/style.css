@@ -54,32 +54,6 @@ a, a:hover, a:active{ outline:0px !important}
 body {
 	background-color: #eaeaff;
 }
-h2{
-	font-size:34px;
-	color:#222222;
-	font-family: 'Montserrat', sans-serif;
-	font-weight:700;
-	letter-spacing: -1px;
-	margin:0 0 15px 0;
-	text-align:center;
-	text-transform:uppercase;
-}
-h3{
-	font-family: 'Montserrat', sans-serif;
-	color:#222222;
-	font-size:16px;
-	margin:0 0 5px 0;
-	text-transform:uppercase;
-	font-weight:400;
-}
-h6{
-	font-size:16px;
-	color:#888888;
-	font-family: 'Open Sans', sans-serif;
-	font-weight:400;
-	text-align:center;
-	margin:0 0 60px 0;
-}
 /* Header Styles
 ---------------------------------*/
 
@@ -466,12 +440,11 @@ h6{
 	list-style: none;
 }
 
-.para-content {
+.para-wrap {
+	margin-left: 40px;
 }
 
-
-#u289-7 {
-	margin-left: 40px;
+.para-content {
 	line-height: 46px;
 	font-size: 24px;
 	font-family: 'Dosis', sans-serif;
