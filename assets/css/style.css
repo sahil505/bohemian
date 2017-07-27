@@ -91,34 +91,6 @@ p{
 
 /* Header Styles
 ---------------------------------*/
-.video-head {
-	z-index: 1;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	color: #fff;
-	font-family: Roboto;
-	font-size: 0em;
-}
-
-/* FULL SCREEN VIDEO COVER */
-.homepage-hero-module {
-	border-right: none;
-	border-left: none;
-	position: relative;
-	margin-bottom: 50px;
-}
-.no-video .video-container video,
-.touch .video-container video {
-	display: none;
-}
-.no-video .video-container .poster,
-.touch .video-container .poster {
-	display: block !important;
-}
 .video-container {
 	position: relative;
 	bottom: 0%;
@@ -128,23 +100,11 @@ p{
 	overflow: hidden;
 	background: #000;
 }
-.video-container .poster img {
-	width: 100%;
-	bottom: 0;
-	position: absolute;
-}
-.video-container .filter {
-	z-index: 100;
-	position: absolute;
-	background: rgba(0, 0, 0, 0.4);
-	width: 100%;
-}
-.video-container video {
-	position: absolute;
+
+.video-container .fillWidth {
+	position: relative;
 	z-index: 0;
 	bottom: 0;
-}
-.video-container video.fillWidth {
 	width: 100%;
 	height: 100%;
 }
