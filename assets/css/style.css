@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nixie+One');
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro:400,700');
 
 /* Float Elements
 ---------------------------------*/
@@ -88,13 +89,14 @@ p{
 	line-height:24px;
 	margin:0;
 }
-
 /* Header Styles
 ---------------------------------*/
+
+/*Video Starts*/
 .video-container {
 	position: relative;
-	bottom: 0%;
-	left: 0%;
+	bottom: 0;
+	left: 0;
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
@@ -108,7 +110,7 @@ p{
 	width: 100%;
 	height: 100%;
 }
-
+/*Video Ends*/
 
 .logo{
 	width:130px;
@@ -442,6 +444,20 @@ p{
 .introduction {
 	/*background-image: url("../img/main_background.png");
 	background-size: cover;*/
+}
+
+#u345 {
+	color: #000000;
+	font-size: 80px;
+	line-height:96px;
+	font-family: 'Advent Pro', sans-serif;
+	font-weight: 700;
+	text-decoration: none;
+
+}
+
+#ticker {
+	list-style: none;
 }
 
 @media screen and (min-width: 500px) {
