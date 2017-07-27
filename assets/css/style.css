@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
 @import url('https://fonts.googleapis.com/css?family=Advent+Pro:400,700');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
 
 /* Float Elements
 ---------------------------------*/
@@ -84,10 +85,6 @@ h6{
 	font-weight:400;
 	text-align:center;
 	margin:0 0 60px 0;
-}
-p{
-	line-height:24px;
-	margin:0;
 }
 /* Header Styles
 ---------------------------------*/
@@ -460,6 +457,29 @@ p{
 	list-style: none;
 }
 
+.para-content {
+	display: block;
+	margin: 0px;
+	padding: 0px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: transparent;
+	transform-origin: left top;
+	background-repeat: no-repeat;
+}
+
+
+#u289-7 {
+	line-height: 46px;
+	font-size: 32px;
+	font-family: 'Dosis', sans-serif;
+	font-weight: 400;
+}
+
+#u289-2 {
+	color: #E21E79;
+}
+
 @media screen and (min-width: 500px) {
 	/* applies only if the screen is more than 500px */
 	.cover-head {
@@ -501,11 +521,6 @@ p{
 	font-family: 'Nunito', sans-serif;
 	font-weight: 
 	line-height: 1.6;
-}
-
-.para {
-	font-size: 20px;
-	line-height: 1.4;
 }
 
 /* Main section end */
