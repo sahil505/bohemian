@@ -1012,7 +1012,7 @@ img {
 }
 .team{
 	padding:32px 0;
-	/*background-image: url("../img/main_background.png");*/
+	padding-bottom: 56px;
 }
 .team h6{
 	margin-bottom:40px;
@@ -1159,15 +1159,6 @@ img {
 	color: #5D4037;
 	text-align: center;
 }
-
-/*
-p {
-	line-height: 1.5em;
-}
-h1 + p, p + p {
-	margin-top: 10px;
-}
-*/
 
 .container_card {
 	padding: 24px 80px;
