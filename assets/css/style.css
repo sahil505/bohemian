@@ -864,28 +864,25 @@ body {
 .main-heading-3-box{
 	text-align:center;
 	margin-bottom:30px;
-	height:350px;
-	width:350px;
 	overflow:hidden;
-	float:left;
-	padding:0;
 }
 .main-heading-3-box img{
-	margin-bottom:25px;
+	/*margin-bottom:25px;
 	transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
-	-webkit-transition:all 0.3s ease-in-out;	
+	-webkit-transition:all 0.3s ease-in-out;	*/
 }
 
-.main-heading-3-box img:hover {
+/*.main-heading-3-box img:hover {
 	opacity: 0.6;
-}
+}*/
 
 .main-heading-3-nav li a.current{
 	background:#7cc576;
 	color:#fff;
 	text-decoration:none;
 }
+
 img {
 	max-width:100%;
 }
