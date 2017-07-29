@@ -1150,6 +1150,78 @@ img {
 	color:#fff;
 }
 
+
+.main-section.contact{
+	/*padding:90px 0 100px;*/
+}
+
+.main-section.contact{
+	/*background:url(../img/bg-map.png) left 190px no-repeat;*/
+	text-align: center;
+}
+
+.social-wrapper {
+	display: inline-flex;
+	align-items: center;
+}
+
+.social-wrapper i {
+	padding: 0px 10px;
+}
+
+.social-wrapper i:nth-child(1) {
+	color: #4867AA;
+	cursor: pointer;
+	text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+	transition: all ease-in-out 150ms;
+}
+
+.social-wrapper i:nth-child(1):hover {
+	margin-top: -10px;
+	text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+	transform: translate(0, -8);
+}
+
+.social-wrapper i:nth-child(2) {
+	color: #1DA1F2;
+	cursor: pointer;
+	text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+	transition: all ease-in-out 150ms;
+}
+
+.social-wrapper i:nth-child(2):hover {
+	margin-top: -10px;
+	text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+	transform: translate(0, -8);
+}
+
+.social-wrapper i:nth-child(3) {
+	color: #3f729b;
+	cursor: pointer;
+	text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+	transition: all ease-in-out 150ms;
+}
+
+.social-wrapper i:nth-child(3):hover {
+	margin-top: -10px;
+	text-shadow: 0px 14px 10px rgba(0, 0, 0, 0.4);
+	transform: translate(0, -5);
+}
+.social-wrapper i:nth-child(4) {
+	color: #e62117;
+	cursor: pointer;
+	text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+	transition: all ease-in-out 150ms;
+}
+.social-wrapper i:nth-child(4):hover {
+	margin-top: -10px;
+	text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+	transform: translate(0, -8);
+}
+
+
+
+
 /*cards begin*/
 
 .title {
@@ -1291,7 +1363,7 @@ img {
 /* Footer
 ---------------------------------*/
 
-.footer{
+/*.footer{
 	padding:0px 0 35px;
 }
 
@@ -1304,6 +1376,26 @@ padding-left: 48PX;
 
 .social-img {
 	width: 56px;
+}*/
+
+.footer{
+	padding:0px 0 35px;
+	padding-top: 24px;
+}
+.footer-logo{
+	margin:-40px auto;
+	text-align: center;
+}
+.footer-quote {
+	padding-top: 40px;
+	text-align: center;
+}
+
+.copyright, .credits{
+	color:black;
+	font-size:14px;
+	display:block;
+	text-align:center;
 }
 
 .res-nav_click {
