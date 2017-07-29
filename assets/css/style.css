@@ -1375,8 +1375,6 @@ h1 + p, p + p {
 	padding:0px 0 35px;
 }
 .footer-logo{
-	margin:-40px auto 35px;
-	width: 76px;
 }
 .footer-quote {
 	padding-top: 40px;
@@ -1389,19 +1387,6 @@ h1 + p, p + p {
 	display:block;
 	text-align:center;
 }
-/*
-.copyright a, .credits a{
-	color:#7cc576;
-	font-weight:600;
-	text-decoration: none;
-	transition:all 0.3s ease-in-out;
-	-moz-transition:all 0.3s ease-in-out;
-	-webkit-transition:all 0.3s ease-in-out;
-}
-.copyright a:hover, .credits a:hover{
-	color: #fff;
-}
-*/
 
 .res-nav_click {
 	line-height:38px;
