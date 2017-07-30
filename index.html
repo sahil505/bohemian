@@ -6,7 +6,7 @@
 
 	<title>Rendezvous | 2017</title>
 	<!--Remember to include the two links below locally before deploying the website-->
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -37,7 +37,7 @@ Author URL: https://sahil505.com
 		<video autoplay loop class="fillWidth">
 			<source src="assets/img/video.mp4" type="video/mp4" />Your browser does not support the video tags. We suggest you upgrade your browser.
 		</video>
-	</div> 
+	</div>
 	<!-- end of video-container -->
 
 	<div class="burger">
@@ -48,11 +48,31 @@ Author URL: https://sahil505.com
 
 	<nav class="menu">
 		<div class="menu__brand">
-			<a href="#"><img src="assets/img/footer-logo.png" alt=""></a>
+			<a href="#" class=""><img src="assets/img/footer-logo.png" alt=""></a>
+			<ul class="center">
+				<li class="menu__item"><a href="#"  class="menu__link">The Squad</a></li>
+				<li class="menu__item"><a href="#"  class="menu__link">Log in</a></li>
+				<li class="menu__item"><a href="#"  class="menu__link">Contact Us</a></li>
+				<li class="menu__item"><a href="#"  class="menu__link">About Us</a></li>
+			</ul>
 		</div>
+
 		<ul class="menu__list nav-main">
-			<li class="menu__item"><a href="#"  class="menu__link">Home</a></li>
-			<li class="menu__item"><a href="#" class="menu__link">Events</a></li>
+			<li class="menu__item"><a href="#"  class="menu__link">A show for Everyone</a></li>
+			<li class="menu__item"><a href="#"  class="menu__link">Events<i class="fa fa-angle-down fa-events"></i></a></li>
+			<ul class="menu_events">
+				<li class="menu__item"><a href="#"  class="menu__link">Competitive Events</a></li>
+				<li class="menu__item"><a href="#"  class="menu__link">Informal Events</a></li>
+			</ul>
+			<li class="menu__item"><a href="#" class="menu__link">Starnight<i class="fa fa-angle-down fa-starnight"></i></a></li>
+			<ul class="menu_starnight">
+				<li class="menu__item"><a href="#"  class="menu__link">Pronight</a></li>
+				<li class="menu__item"><a href="#"  class="menu__link">Confluence</a></li>
+			</ul>
+			<li class="menu__item"><a href="#" class="menu__link">Workshop</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">Social</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">Dreamville</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">Sponsors</a></li>
 
 		</ul>
 	</nav>
@@ -143,12 +163,12 @@ Author URL: https://sahil505.com
 		</div>
 		<div class="main-heading-3Container wow fadeInUp delay-04s">
 			<div class=" main-heading-3-box printdesign">
-				<img src= "assets/img/high-9.jpg" alt="img"> 
+				<img src= "assets/img/high-9.jpg" alt="img">
 				<h3>Description</h3>
 				<p>Description</p>
 			</div>
 			<div class="main-heading-3-box webdesign">
-				<img src= "assets/img/high-2.JPG" alt="img"> 
+				<img src= "assets/img/high-2.JPG" alt="img">
 				<h3>Description</h3>
 				<p>Description</p>
 			</div>
@@ -168,7 +188,7 @@ Author URL: https://sahil505.com
 				<p>Description</p>
 			</div>
 			<div class="main-heading-3-box photography">
-				<img src= "assets/img/high-7.JPG" alt="img"> 
+				<img src= "assets/img/high-7.JPG" alt="img">
 				<h3>Description</h3>
 				<p>Description</p>
 			</div>
@@ -409,7 +429,7 @@ Author URL: https://sahil505.com
 					.isotope('reLayout');
 				}
 			}).smartresize(); // trigger resize to set container width
-			
+
 			$('.main-heading-3Filter a').click(function(){
 				$('.main-heading-3Filter .current').removeClass('current');
 				$(this).addClass('current');
@@ -466,5 +486,19 @@ Author URL: https://sahil505.com
 			Menu.init();
 		}());
 	</script>
+
+	<script>
+$(document).ready(function(){
+    $(".fa-events").click(function(){
+        $(".menu_events").toggle();
+				$(".menu_starnight").hide();
+    });
+
+		$(".fa-starnight").click(function(){
+        $(".menu_starnight").toggle();
+				$(".menu_events").hide();
+    });
+});
+</script>
 </body>
 </html>
