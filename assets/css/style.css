@@ -400,6 +400,12 @@ body {
 /*.main-section{
 	padding:56px 0 80px;
 }*/
+.main-fool {
+	background-image: url("../img/main-fool.svg");
+    background-repeat: no-repeat;
+    background-size: 1000px 800px;
+    background-position: 140% -200%;
+}
 
 .introduction{
 	padding:64px 0 110px;
