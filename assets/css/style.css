@@ -924,7 +924,7 @@ img {
 }
 
 .card-wrap {
-	margin: 24px;
+	margin: 32px;
 	-webkit-transform: perspective(800px);
 	transform: perspective(800px);
 	-webkit-transform-style: preserve-3d;
