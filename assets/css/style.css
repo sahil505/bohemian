@@ -895,6 +895,12 @@ img {
 	color:#dd4b39;
 }
 
+.team-fool {
+	background-image: url("../img/team-fool.svg");
+    background-repeat: no-repeat;
+    background-position: 0% 75%;
+}
+
 /*cards begin*/
 
 .container_card {
