@@ -1047,6 +1047,11 @@ img {
 
 /* Footer
 ---------------------------------*/
+.footer-fool {
+	background-image: url("../img/footer-background.svg");
+    background-repeat: no-repeat;
+    background-position: 135% 100%;
+}
 
 .footer{
 	padding:0px 0 35px;
