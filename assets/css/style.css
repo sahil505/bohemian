@@ -551,9 +551,10 @@ body {
 
 .show-head {
 	color: #000000;
-	font-size: 48px;
+	font-size: 56px;
 	font-family: 'Advent Pro', sans-serif;
 	text-transform: uppercase;
+	font-weight: 700;
 }
 .show-content {
 	line-height: 40px;
@@ -649,45 +650,46 @@ body {
 	opacity: 0.6;
 	}*/
 
-	.main-heading-3-nav li a.current{
-		background:#dddddd;
-		text-decoration:none;
-	}
+.main-heading-3-nav li a.current{
+	background:#dddddd;
+	text-decoration:none;
+}
 
-	.high-head {
-		float: left;
-		color: #000000;
-		margin-top: 56px;
-		font-size: 80px;
-		font-family: 'Advent Pro', sans-serif;
-		text-transform: uppercase;
-	}
-	.high-arrow {
-		width: 48px;
-		margin-left: 104px;
-		-ms-transform: rotate(90deg);
-		-webkit-transform: rotate(90deg);
-	}
+.high-head {
+	float: left;
+	color: #000000;
+	font-size: 56px;
+	margin-top: 56px;
+	font-weight: 700;
+	font-family: 'Advent Pro', sans-serif;
+	text-transform: uppercase;
+}
+.high-arrow {
+	width: 40px;
+	margin-left: 104px;
+	-ms-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+}
 
-	/* no transition on .isotope container */
+/* no transition on .isotope container */
 
-	.isotope .isotope-item {
-		/* change duration value to whatever you like */
-		-webkit-transition-duration: 0.6s;
-		-moz-transition-duration: 0.6s;
-		transition-duration: 0.6s;
-	}
+.isotope .isotope-item {
+	/* change duration value to whatever you like */
+	-webkit-transition-duration: 0.6s;
+	-moz-transition-duration: 0.6s;
+	transition-duration: 0.6s;
+}
 
-	.isotope .isotope-item {
-		-webkit-transition-property: -webkit-transform, opacity;
-		-moz-transition-property:    -moz-transform, opacity;
-		transition-property:         transform, opacity;
-	}
+.isotope .isotope-item {
+	-webkit-transition-property: -webkit-transform, opacity;
+	-moz-transition-property:    -moz-transform, opacity;
+	transition-property:         transform, opacity;
+}
 
-	.paddind{
-		/*padding-top: 32px;*/
-		padding-bottom:60px;
-	}
+.paddind{
+	/*padding-top: 32px;*/
+	padding-bottom:60px;
+}
 
 
 /* Clients
@@ -784,8 +786,8 @@ body {
 
 .team-head {
 	color: #000000;
-	font-size: 80px;
-	line-height:96px;
+	font-size: 56px;
+	font-weight: 700;
 	font-family: 'Advent Pro', sans-serif;
 	text-align: center;
 }
