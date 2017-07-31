@@ -477,6 +477,7 @@ body {
 	color:#222222;
 	text-transform: uppercase;
 	font-family: 'Dosis', sans-serif;
+	letter-spacing: 2px;
 }
 .outline-button::before, .outline-button::after {
 	content: "";
