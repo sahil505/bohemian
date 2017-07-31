@@ -403,8 +403,7 @@ body {
 .main-fool {
 	background-image: url("../img/main-fool.svg");
 	background-repeat: no-repeat;
-	background-size: 1000px 800px;
-	background-position: 140% -200%;
+	background-position: right -340px;
 }
 
 .introduction{
@@ -545,8 +544,12 @@ body {
 }
 
 .alabaster{
-	padding-top: 72px;
+	padding-top: 320px;
 	padding-bottom: 64px;
+	background-image: url("../img/bandi-fool.svg");
+	background-repeat: no-repeat;
+	background-size: 300px 650px;
+	background-position: left 300px;
 }
 
 .show-head {
@@ -564,10 +567,10 @@ body {
 }
 
 .bandi-fool {
-	background-image: url("../img/bandi-fool.svg");
+	background-image: url("../img/fly-fool.svg");
 	background-repeat: no-repeat;
-	background-size: 400px 650px;
-	background-position: left bottom;
+	background-size: 300px 650px;
+	background-position: 0 -100px;
 }
 
 .foot-list {
