@@ -412,24 +412,18 @@ body {
 }
 
 .introduction {
-	/*background-image: url("../img/main_background.png");
-	background-size: cover;*/
     margin: auto;
     padding: 20px;
 }
 
 #u338 {
-	z-index: 37;
 	width: 64px;
 	float: left;
-	background-color: transparent;
-	position: relative;
 }
 .rdv-content {
-	margin-left: 10%;
+	margin-left: 40px;
 }
 .rdv-head {
-
 }
 
 #u345 {
@@ -446,11 +440,11 @@ body {
 }
 
 .para-wrap {
-	margin-left: 40px;
+	margin-left: 48px;
 }
 
 .para-content {
-	line-height: 46px;
+	line-height: 40px;
 	font-size: 24px;
 	font-family: 'Dosis', sans-serif;
 	font-weight: 400;
@@ -458,6 +452,11 @@ body {
 
 .dates {
 	color: #E21E79;
+}
+
+.main-btn-wrap {
+	padding-top: 32px;
+	margin-left: 48px;
 }
 
 @media screen and (min-width: 500px) {
