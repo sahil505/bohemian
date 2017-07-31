@@ -602,14 +602,16 @@ body {
 .main-heading-3-nav li a{
 	display:inline-block;
 	padding:10px 22px;
-	font-size:12px;
+	font-size:16px;
 	line-height:20px;
 	color:#222222;
 	border-radius:4px;
 	text-transform:uppercase;
-	font-family: 'Montserrat', sans-serif;
 	background:#f7f7f7;
 	margin-bottom:5px;
+	font-family: 'Dosis', sans-serif;
+	font-weight: bold;
+	letter-spacing: 1px;
 	transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
 	-webkit-transition:all 0.3s ease-in-out;
@@ -645,14 +647,6 @@ body {
 	text-decoration:none;
 }
 
-img {
-	max-width:100%;
-}
-
-/*.high-name-image {
-	display: block;
-}*/
-
 .high-head {
 	float: left;
 	color: #000000;
@@ -684,7 +678,7 @@ img {
 }
 
 .paddind{
-	padding-top: 32px;
+	/*padding-top: 32px;*/
 	padding-bottom:60px;
 }
 
