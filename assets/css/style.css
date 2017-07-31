@@ -615,8 +615,7 @@ body {
 	-webkit-transition:all 0.3s ease-in-out;
 }
 .main-heading-3-nav li a:hover{
-	background:#7cc576;
-	color:#fff;
+	background:#dddddd;
 	text-decoration:none;
 }
 
@@ -642,8 +641,7 @@ body {
 }*/
 
 .main-heading-3-nav li a.current{
-	background:#7cc576;
-	color:#fff;
+	background:#dddddd;
 	text-decoration:none;
 }
 
