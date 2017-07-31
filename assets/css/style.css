@@ -688,8 +688,11 @@ body {
 }
 
 .paddind{
-	/*padding-top: 32px;*/
 	padding-bottom:60px;
+	background-image: url("../img/feathers.svg");
+	background-repeat: no-repeat;
+	/*background-size: 1000px 1000px;*/
+	background-position: -300px bottom;
 }
 
 
