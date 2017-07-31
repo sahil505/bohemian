@@ -588,13 +588,11 @@ body {
 }
 
 .show-arrow {
-	text-align: center;
-	-ms-transform: rotate(90deg);
-	-webkit-transform: rotate(90deg);
+	margin-top: 32px;
 }
 
 .show-arrow img {
-	width: 32px;
+	width: 128px;
 }
 
 
