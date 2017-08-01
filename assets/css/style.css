@@ -397,13 +397,27 @@ body {
 /*side menu bar ends*/
 
 /* Main section */
-/*.main-section{
+
+/*
+.main-section{
 	padding:56px 0 80px;
-	}*/
+}
+*/
+
 .main-fool {
 	background-image: url("../img/main-fool.svg");
 	background-repeat: no-repeat;
 	background-position: right -340px;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+	.main-fool {
+	background-image: url("../img/main-fool.svg");
+	background-repeat: no-repeat;
+	background-position: 420px -340px;
+}
+
 }
 
 .introduction{
