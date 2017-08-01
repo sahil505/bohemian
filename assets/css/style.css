@@ -469,14 +469,14 @@ body {
 	box-shadow: 0 0 0 2px #868686 inset;
 	color: #000000;
 	margin: auto;
-	padding: 16px 32px;
+	padding: 10px 24px;
 	position: relative;
 	cursor: pointer;
-	font-size:16px;
-	line-height:20px;
 	color:#222222;
 	text-transform: uppercase;
+	font-size: 20px;
 	font-family: 'Dosis', sans-serif;
+	font-weight: 400;
 	letter-spacing: 2px;
 }
 .outline-button::before, .outline-button::after {
@@ -525,26 +525,25 @@ body {
 /* Services
 ---------------------------------*/
 
-.service-list{
-	padding:0 0 0 0;
-	font-size:14px;
-	margin-bottom:40px;
-}
-.service-list-col1{
-	width:60px;
-	display: inline-block;
-}
-.service-list-col2{
-	margin-left: 40px;
-	display: inline-block;
+.service-list {
 }
 
-.service-list-col2 h3{
-	font-size: 20px;
+.service-list-col1 {
+	width:60px;
+	float: left;
+}
+
+.service-list-col2 {
+	margin-left:96px;
+	margin-top: 40px;
+}
+
+.service-list-col2 h3 {
+	font-size: 24px;
 	font-family: 'Dosis', sans-serif;
 }
 
-.alabaster{
+.alabaster {
 	padding-top: 320px;
 	padding-bottom: 64px;
 	background-image: url("../img/bandi-fool.svg");
