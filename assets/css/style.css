@@ -16,17 +16,14 @@ img{ max-width:100%;}
 /*Video Starts*/
 .video-container {
 	position: relative;
-	bottom: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
-	overflow: hidden;
 }
 
 .video-container .fillWidth {
 	position: relative;
 	z-index: 0;
-	bottom: 0;
 	width: 100%;
 	height: 100%;
 }
@@ -287,13 +284,12 @@ img{ max-width:100%;}
 
 }
 
-.introduction{
+/*.introduction{
 	padding:64px 0 110px;
-}
+}*/
 
 .introduction {
-	margin: auto;
-	padding: 20px;
+	padding-left: 20px;
 }
 
 #u338 {
@@ -304,9 +300,6 @@ img{ max-width:100%;}
 	margin-left: 40px;
 }
 .rdv-head {
-}
-
-#u345 {
 	color: #000000;
 	font-size: 80px;
 	line-height:96px;
@@ -317,6 +310,7 @@ img{ max-width:100%;}
 
 #ticker {
 	list-style: none;
+	min-height: 100px;
 }
 
 .para-wrap {
@@ -709,9 +703,9 @@ img{ max-width:100%;}
 	justify-content: center;
 }
 
-.card-team {
-	margin-top: 24px;
-}
+/*.card-team {
+	margin-top: 0px;
+}*/
 
 .card-arrow {
 	text-align: center;
@@ -844,12 +838,22 @@ img{ max-width:100%;}
 .footer-fool {
 	background-image: url("../img/footer-background.svg");
 	background-repeat: no-repeat;
-	background-position: 135% 100%;
+	background-size: 600px 600px;
+	background-position: right bottom;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+	.footer-fool {
+	background-image: url("../img/footer-background.svg");
+	background-repeat: no-repeat;
+	background-size: 450px 450px;
+	background-position: right bottom;
+	}
 }
 
 .footer{
 	padding:0px 0 35px;
-	padding-top: 24px;
 }
 .footer-logo{
 	text-align: center;
