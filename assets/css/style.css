@@ -271,7 +271,7 @@ img{ max-width:100%;}
 .main-fool {
 	background-image: url("../img/main-fool.svg");
 	background-repeat: no-repeat;
-	background-position: right -340px;
+	background-position: right -100px;
 }
 
 @media screen and (min-width: 500px) and (max-width: 1500px) {
@@ -299,13 +299,13 @@ img{ max-width:100%;}
 }
 
 .rdv-content {
-	margin-left: 40px;
+	margin-left: 80px;
 	max-width: 1400px;
 }
 
 .rdv-head {
 	color: #000000;
-	font-size: 80px;
+	font-size: 88px;
 	line-height:96px;
 	font-family: 'Advent Pro', sans-serif;
 	font-weight: 700;
@@ -318,6 +318,16 @@ img{ max-width:100%;}
 		margin-left: 40px;
 		max-width: 1000px;
 	}
+
+	.rdv-head {
+		color: #000000;
+		font-size: 80px;
+		line-height:96px;
+		font-family: 'Advent Pro', sans-serif;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
 	.break {
 		display: none;
 	}
@@ -453,13 +463,25 @@ img{ max-width:100%;}
 }
 
 .alabaster {
-	padding-top: 320px;
+	padding-top: 600px;
 	padding-bottom: 64px;
 	background-image: url("../img/bandi-fool.svg");
 	background-repeat: no-repeat;
-	background-size: 368px 650px;
-	background-position: left 272px;
+	background-position: left bottom;
 }
+
+@media screen and (min-width: 500px) and (max-width: 1500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+	.alabaster {
+		padding-top: 352px;
+		padding-bottom: 64px;
+		background-image: url("../img/bandi-fool.svg");
+		background-repeat: no-repeat;
+		background-size: 368px 650px;
+		background-position: left 272px;
+	}
+}
+
 
 .show-head {
 	color: #000000;
