@@ -83,7 +83,7 @@ Author URL: https://sahil505.com
 		<!--main-section-end-->
 		<div class="bandi-fool">
 			<!--main-section2-start-->
-			<section class="alabaster">
+			<section class="alabaster" id="counter">
 				<div class="container">
 					<div class="row">
 						<div class="foot-list wow fadeInLeft delay-05s">
@@ -92,7 +92,7 @@ Author URL: https://sahil505.com
 									<img src="assets/img/footfall_new.svg">
 								</div>
 								<div class="service-list-col2">
-									<h3>70,000+<br/>footfall</h3>
+									<h3><span class="counter-value" data-count="70000">0</span>+<br/>footfall</h3>
 								</div>
 							</div>
 							<div class="service-list">
@@ -100,7 +100,7 @@ Author URL: https://sahil505.com
 									<img src="assets/img/world_new.svg">
 								</div>
 								<div class="service-list-col2">
-									<h3>170 artists from<br/>20 countries</h3>
+									<h3><span class="counter-value" data-count="170">0</span> artists from<br/><span class="counter-value" data-count="20">0</span> countries</h3>
 								</div>
 							</div>
 							<div class="service-list">
@@ -108,7 +108,7 @@ Author URL: https://sahil505.com
 									<img src="assets/img/trophy_new.svg">
 								</div>
 								<div class="service-list-col2">
-									<h3>50+ competitive<br/>events</h3>
+									<h3><span class="counter-value" data-count="50">0</span>+ competitive<br/>events</h3>
 								</div>
 							</div>
 							<div class="service-list">
@@ -116,7 +116,7 @@ Author URL: https://sahil505.com
 									<img src="assets/img/rupee_new.svg">
 								</div>
 								<div class="service-list-col2">
-									<h3>14,00,000 INR<br/>prize money</h3>
+									<h3><span class="counter-value" data-count="1400000">0</span> INR<br/>prize money</h3>
 								</div>
 							</div>
 						</div>
@@ -241,6 +241,37 @@ Author URL: https://sahil505.com
 </div>
 
 <!-- Created & Developed by Sahil Khokhar (sahil505.com) -->
+
+<!-- Number Counter -->
+<script type="text/javascript">
+	var a = 0;
+	$(window).scroll(function() {
+		var oTop = $('#counter').offset().top - window.innerHeight;
+		if (a == 0 && $(window).scrollTop() > oTop) {
+			$('.counter-value').each(function() {
+				var $this = $(this),
+				countTo = $this.attr('data-count');
+				$({
+					countNum: $this.text()
+				}).animate({
+					countNum: countTo
+				},
+				{
+					duration: 3000,
+					easing: 'swing',
+					step: function() {
+						$this.text(Math.floor(this.countNum));
+					},
+					complete: function() {
+						$this.text(this.countNum);
+					}
+				});
+			});
+			a = 1;
+		}
+	});
+</script>
+<!-- Number Counter Ends -->
 
 <!--Cards vuejs-->
 <script type="text/javascript">
