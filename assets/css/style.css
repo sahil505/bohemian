@@ -687,11 +687,20 @@ img{ max-width:100%;}
 .team-fool {
 	background-image: url("../img/team-fool.svg");
 	background-repeat: no-repeat;
-	background-position: -37% 75%;
+	background-position: -16% 75%;
 }
 
-/*cards begin*/
+@media screen and (min-width: 500px) and (max-width: 1500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+	.team-fool {
+		background-image: url("../img/team-fool.svg");
+		background-repeat: no-repeat;
+		background-position: -37% 75%;
+	}
+}
 
+
+/*cards begin*/
 .container_card {
 	padding: 24px 80px;
 	display: -webkit-box;
@@ -703,10 +712,6 @@ img{ max-width:100%;}
 	-ms-flex-pack: center;
 	justify-content: center;
 }
-
-/*.card-team {
-	margin-top: 0px;
-}*/
 
 .card-arrow {
 	text-align: center;
