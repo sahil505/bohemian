@@ -40,6 +40,9 @@ Author URL: https://sahil505.com
 		<video autoplay loop class="fillWidth">
 			<source src="assets/img/video.mp4" type="video/mp4" />Your browser does not support the video tags. We suggest you upgrade your browser.
 		</video>
+		<div id="scroll-btn" class="scroll">
+			<a href="#introduction"><span></span></a>
+		</div>
 	</div> 
 	<!-- end of video-container -->
 
@@ -62,7 +65,7 @@ Author URL: https://sahil505.com
 
 	<div class="main-fool">
 		<!--main-section-start-->
-		<section class="introduction" id="events">
+		<section class="introduction" id="introduction">
 			<div id="u338"><!-- svg -->
 				<img class="svg" src="assets/img/arrow-01.svg" alt="element-image"/>
 			</div>
@@ -423,12 +426,13 @@ Author URL: https://sahil505.com
 	</script>
 	<!--onscroll delay ends-->
 
+	<!-- Scroll Down Animation -->
 	<script type="text/javascript">
 		$(window).load(function(){
-			$('.main-nav li a').bind('click',function(event){
+			$('.scroll a').bind('click',function(event){
 				var $anchor = $(this);
 				$('html, body').stop().animate({
-					scrollTop: $($anchor.attr('href')).offset().top - 102
+					scrollTop: $($anchor.attr('href')).offset().top
 				}, 1500,'easeInOutExpo');
 				/* if you don't want to use the easing effects:
 				$('html, body').stop().animate({
@@ -438,6 +442,7 @@ Author URL: https://sahil505.com
 			});
 		})
 	</script>
+	<!-- Scroll Down Animation Ends -->
 
 	<script type="text/javascript">
 		$(window).load(function(){
