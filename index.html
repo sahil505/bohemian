@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, maximum-scale=1">
 
 	<title>Rendezvous | 2017</title>
+	<link rel="icon" href="assets/img/rdv-bruh.png" type="image/png">
+	<link rel="shortcut icon" href="assets/img/rdv-bruh.ico" type="img/x-icon">
+
 	<!--Remember to include the two links below locally before deploying the website-->
 	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600' rel='stylesheet' type='text/css'>
@@ -236,221 +239,220 @@ Author URL: https://sahil505.com
 			</footer>
 			<!--footer ends-->
 		</div>
+		<!-- Div for team fool background ends -->
 	</div>
-	<!-- Div for team fool background ends -->
-</div>
 
-<!-- Created & Developed by Sahil Khokhar (sahil505.com) -->
+	<!-- Created & Developed by Sahil Khokhar (sahil505.com) -->
 
-<!-- Number Counter -->
-<script type="text/javascript">
-	var a = 0;
-	$(window).scroll(function() {
-		var oTop = $('#counter').offset().top - window.innerHeight;
-		if (a == 0 && $(window).scrollTop() > oTop) {
-			$('.counter-value').each(function() {
-				var $this = $(this),
-				countTo = $this.attr('data-count');
-				$({
-					countNum: $this.text()
-				}).animate({
-					countNum: countTo
-				},
-				{
-					duration: 3000,
-					easing: 'swing',
-					step: function() {
-						$this.text(Math.floor(this.countNum));
+	<!-- Number Counter -->
+	<script type="text/javascript">
+		var a = 0;
+		$(window).scroll(function() {
+			var oTop = $('#counter').offset().top - window.innerHeight;
+			if (a == 0 && $(window).scrollTop() > oTop) {
+				$('.counter-value').each(function() {
+					var $this = $(this),
+					countTo = $this.attr('data-count');
+					$({
+						countNum: $this.text()
+					}).animate({
+						countNum: countTo
 					},
-					complete: function() {
-						$this.text(this.countNum);
-					}
+					{
+						duration: 3000,
+						easing: 'swing',
+						step: function() {
+							$this.text(Math.floor(this.countNum));
+						},
+						complete: function() {
+							$this.text(this.countNum);
+						}
+					});
 				});
-			});
-			a = 1;
-		}
-	});
-</script>
-<!-- Number Counter Ends -->
-
-<!--Cards vuejs-->
-<script type="text/javascript">
-	'use strict';
-	Vue.config.devtools = true;
-	Vue.component('card', {
-		template: '\n    <div class="card-wrap"\n      @mousemove="handleMouseMove"\n      @mouseenter="handleMouseEnter"\n      @mouseleave="handleMouseLeave"\n      ref="card">\n      <div class="card"\n        :style="cardStyle">\n        <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>\n        <div class="card-info">\n          <slot name="header"></slot>\n          <slot name="content"></slot>\n        </div>\n      </div>\n    </div>',
-		mounted: function mounted() {
-			this.width = this.$refs.card.offsetWidth;
-			this.height = this.$refs.card.offsetHeight;
-		},
-		props: ['dataImage'],
-		data: function data() {
-			return {
-				width: 0,
-				height: 0,
-				mouseX: 0,
-				mouseY: 0,
-				mouseLeaveDelay: null
-			};
-		},
-		computed: {
-			mousePX: function mousePX() {
-				return this.mouseX / this.width;
-			},
-			mousePY: function mousePY() {
-				return this.mouseY / this.height;
-			},
-			cardStyle: function cardStyle() {
-				var rX = this.mousePX * 30;
-				var rY = this.mousePY * -30;
-				return {
-					transform: 'rotateY(' + rX + 'deg) rotateX(' + rY + 'deg)'
-				};
-			},
-			cardBgTransform: function cardBgTransform() {
-				var tX = this.mousePX * -40;
-				var tY = this.mousePY * -40;
-				return {
-					transform: 'translateX(' + tX + 'px) translateY(' + tY + 'px)'
-				};
-			},
-			cardBgImage: function cardBgImage() {
-				return {
-					backgroundImage: 'url(' + this.dataImage + ')'
-				};
+				a = 1;
 			}
-		},
-		methods: {
-			handleMouseMove: function handleMouseMove(e) {
-				this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
-				this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
+		});
+	</script>
+	<!-- Number Counter Ends -->
+
+	<!--Cards vuejs-->
+	<script type="text/javascript">
+		'use strict';
+		Vue.config.devtools = true;
+		Vue.component('card', {
+			template: '\n    <div class="card-wrap"\n      @mousemove="handleMouseMove"\n      @mouseenter="handleMouseEnter"\n      @mouseleave="handleMouseLeave"\n      ref="card">\n      <div class="card"\n        :style="cardStyle">\n        <div class="card-bg" :style="[cardBgTransform, cardBgImage]"></div>\n        <div class="card-info">\n          <slot name="header"></slot>\n          <slot name="content"></slot>\n        </div>\n      </div>\n    </div>',
+			mounted: function mounted() {
+				this.width = this.$refs.card.offsetWidth;
+				this.height = this.$refs.card.offsetHeight;
 			},
-			handleMouseEnter: function handleMouseEnter() {
-				clearTimeout(this.mouseLeaveDelay);
+			props: ['dataImage'],
+			data: function data() {
+				return {
+					width: 0,
+					height: 0,
+					mouseX: 0,
+					mouseY: 0,
+					mouseLeaveDelay: null
+				};
 			},
-			handleMouseLeave: function handleMouseLeave() {
-				var _this = this;
-				this.mouseLeaveDelay = setTimeout(function () {
-					_this.mouseX = 0;
-					_this.mouseY = 0;
-				}, 1000);
+			computed: {
+				mousePX: function mousePX() {
+					return this.mouseX / this.width;
+				},
+				mousePY: function mousePY() {
+					return this.mouseY / this.height;
+				},
+				cardStyle: function cardStyle() {
+					var rX = this.mousePX * 30;
+					var rY = this.mousePY * -30;
+					return {
+						transform: 'rotateY(' + rX + 'deg) rotateX(' + rY + 'deg)'
+					};
+				},
+				cardBgTransform: function cardBgTransform() {
+					var tX = this.mousePX * -40;
+					var tY = this.mousePY * -40;
+					return {
+						transform: 'translateX(' + tX + 'px) translateY(' + tY + 'px)'
+					};
+				},
+				cardBgImage: function cardBgImage() {
+					return {
+						backgroundImage: 'url(' + this.dataImage + ')'
+					};
+				}
+			},
+			methods: {
+				handleMouseMove: function handleMouseMove(e) {
+					this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
+					this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
+				},
+				handleMouseEnter: function handleMouseEnter() {
+					clearTimeout(this.mouseLeaveDelay);
+				},
+				handleMouseLeave: function handleMouseLeave() {
+					var _this = this;
+					this.mouseLeaveDelay = setTimeout(function () {
+						_this.mouseX = 0;
+						_this.mouseY = 0;
+					}, 1000);
+				}
 			}
-		}
-	});
-	var app = new Vue({
-		el: '#app'
-	});
-</script>
-<!--Cards vuejs ends-->
+		});
+		var app = new Vue({
+			el: '#app'
+		});
+	</script>
+	<!--Cards vuejs ends-->
 
-<!-- Ticker starts -->
-<script type="text/javascript">
-	(function($){
-		$.fn.list_ticker = function(options){
+	<!-- Ticker starts -->
+	<script type="text/javascript">
+		(function($){
+			$.fn.list_ticker = function(options){
 
-			var defaults = {
-				speed:4000,
-				effect:'slide'
-			};
+				var defaults = {
+					speed:4000,
+					effect:'slide'
+				};
 
-			var options = $.extend(defaults, options);
+				var options = $.extend(defaults, options);
 
-			return this.each(function(){
+				return this.each(function(){
 
-				var obj = $(this);
-				var list = obj.children();
-				list.not(':first').hide();
-
-				setInterval(function(){
-
-					list = obj.children();
+					var obj = $(this);
+					var list = obj.children();
 					list.not(':first').hide();
 
-					var first_li = list.eq(0)
-					var second_li = list.eq(1)
+					setInterval(function(){
 
-					if(options.effect == 'slide'){
-						first_li.slideUp();
-						second_li.slideDown(function(){
-							first_li.remove().appendTo(obj);
-						});
-					} else if(options.effect == 'fade'){
-						first_li.fadeOut(function(){
-							second_li.fadeIn();
-							first_li.remove().appendTo(obj);
-						});
-					}
-				}, options.speed)
+						list = obj.children();
+						list.not(':first').hide();
+
+						var first_li = list.eq(0)
+						var second_li = list.eq(1)
+
+						if(options.effect == 'slide'){
+							first_li.slideUp();
+							second_li.slideDown(function(){
+								first_li.remove().appendTo(obj);
+							});
+						} else if(options.effect == 'fade'){
+							first_li.fadeOut(function(){
+								second_li.fadeIn();
+								first_li.remove().appendTo(obj);
+							});
+						}
+					}, options.speed)
+				});
+			};
+		})(jQuery);
+	</script>
+	<!-- Ticker Ends -->
+
+	<!-- Ticker Initiate -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#ticker').list_ticker({
+				speed:3000,
+				effect:'slide'
 			});
-		};
-	})(jQuery);
-</script>
-<!-- Ticker Ends -->
+		})
+	</script>
+	<!--Ticker Terminate-->
 
-<!-- Ticker Initiate -->
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#ticker').list_ticker({
-			speed:3000,
-			effect:'slide'
+
+	<script type="text/javascript">
+		$(document).ready(function(e) {
+			$('#test').scrollToFixed();
+			$('.res-nav_click').click(function(){
+				$('.main-nav').slideToggle();
+				return false
+			});
 		});
-	})
-</script>
-<!--Ticker Terminate-->
+	</script>
 
+	<!--onscroll delay starts-->
+	<script>
+		wow = new WOW(
+		{
+			animateClass: 'animated',
+			offset:       100
+		}
+		);
+		wow.init();
+	</script>
+	<!--onscroll delay ends-->
 
-<script type="text/javascript">
-	$(document).ready(function(e) {
-		$('#test').scrollToFixed();
-		$('.res-nav_click').click(function(){
-			$('.main-nav').slideToggle();
-			return false
-		});
-	});
-</script>
-
-<!--onscroll delay starts-->
-<script>
-	wow = new WOW(
-	{
-		animateClass: 'animated',
-		offset:       100
-	}
-	);
-	wow.init();
-</script>
-<!--onscroll delay ends-->
-
-<script type="text/javascript">
-	$(window).load(function(){
-		$('.main-nav li a').bind('click',function(event){
-			var $anchor = $(this);
-			$('html, body').stop().animate({
-				scrollTop: $($anchor.attr('href')).offset().top - 102
-			}, 1500,'easeInOutExpo');
+	<script type="text/javascript">
+		$(window).load(function(){
+			$('.main-nav li a').bind('click',function(event){
+				var $anchor = $(this);
+				$('html, body').stop().animate({
+					scrollTop: $($anchor.attr('href')).offset().top - 102
+				}, 1500,'easeInOutExpo');
 				/* if you don't want to use the easing effects:
 				$('html, body').stop().animate({
 					scrollTop: $($anchor.attr('href')).offset().top
 				}, 1000); */
 				event.preventDefault();
 			});
-	})
-</script>
+		})
+	</script>
 
-<script type="text/javascript">
-	$(window).load(function(){
-		var $container = $('.main-heading-3Container'),
-		$body = $('body'),
-		colW = 375,
-		columns = null;
-		$container.isotope({
+	<script type="text/javascript">
+		$(window).load(function(){
+			var $container = $('.main-heading-3Container'),
+			$body = $('body'),
+			colW = 375,
+			columns = null;
+			$container.isotope({
 				// disable window resizing
 				resizable: true,
 				masonry: {
 					columnWidth: colW
 				}
 			});
-		$(window).smartresize(function(){
+			$(window).smartresize(function(){
 				// check if columns has changed
 				var currentColumns = Math.floor( ( $body.width() -30 ) / colW );
 				if ( currentColumns !== columns ) {
@@ -461,62 +463,62 @@ Author URL: https://sahil505.com
 					.isotope('reLayout');
 				}
 			}).smartresize(); // trigger resize to set container width
-		
-		$('.main-heading-3Filter a').click(function(){
-			$('.main-heading-3Filter .current').removeClass('current');
-			$(this).addClass('current');
-			var selector = $(this).attr('data-filter');
-			$container.isotope({
-				filter: selector,
-			});
-			return false;
-		});
-	});
-</script>
 
-<script type="text/javascript">
-	(function() {
-		var Menu = (function() {
-			var burger = document.querySelector('.burger');
-			var menu = document.querySelector('.menu');
-			var menuList = document.querySelector('.menu__list');
-			var brand = document.querySelector('.menu__brand');
-			var menuItems = document.querySelectorAll('.menu__item');
-			var active = false;
-			var toggleMenu = function() {
-				if (!active) {
-					menu.classList.add('menu--active');
-					menuList.classList.add('menu__list--active');
-					brand.classList.add('menu__brand--active');
-					burger.classList.add('burger--close');
-					for (var i = 0, ii = menuItems.length; i < ii; i++) {
-						menuItems[i].classList.add('menu__item--active');
+			$('.main-heading-3Filter a').click(function(){
+				$('.main-heading-3Filter .current').removeClass('current');
+				$(this).addClass('current');
+				var selector = $(this).attr('data-filter');
+				$container.isotope({
+					filter: selector,
+				});
+				return false;
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		(function() {
+			var Menu = (function() {
+				var burger = document.querySelector('.burger');
+				var menu = document.querySelector('.menu');
+				var menuList = document.querySelector('.menu__list');
+				var brand = document.querySelector('.menu__brand');
+				var menuItems = document.querySelectorAll('.menu__item');
+				var active = false;
+				var toggleMenu = function() {
+					if (!active) {
+						menu.classList.add('menu--active');
+						menuList.classList.add('menu__list--active');
+						brand.classList.add('menu__brand--active');
+						burger.classList.add('burger--close');
+						for (var i = 0, ii = menuItems.length; i < ii; i++) {
+							menuItems[i].classList.add('menu__item--active');
+						}
+						active = true;
+					} else {
+						menu.classList.remove('menu--active');
+						menuList.classList.remove('menu__list--active');
+						brand.classList.remove('menu__brand--active');
+						burger.classList.remove('burger--close');
+						for (var i = 0, ii = menuItems.length; i < ii; i++) {
+							menuItems[i].classList.remove('menu__item--active');
+						}
+						active = false;
 					}
-					active = true;
-				} else {
-					menu.classList.remove('menu--active');
-					menuList.classList.remove('menu__list--active');
-					brand.classList.remove('menu__brand--active');
-					burger.classList.remove('burger--close');
-					for (var i = 0, ii = menuItems.length; i < ii; i++) {
-						menuItems[i].classList.remove('menu__item--active');
-					}
-					active = false;
-				}
-			};
-			var bindActions = function() {
-				burger.addEventListener('click', toggleMenu, false);
-				console.log("nav working");
-			};
-			var init = function() {
-				bindActions();
-			};
-			return {
-				init: init
-			};
+				};
+				var bindActions = function() {
+					burger.addEventListener('click', toggleMenu, false);
+					console.log("nav working");
+				};
+				var init = function() {
+					bindActions();
+				};
+				return {
+					init: init
+				};
+			}());
+			Menu.init();
 		}());
-		Menu.init();
-	}());
-</script>
+	</script>
 </body>
 </html>
