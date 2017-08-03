@@ -297,9 +297,12 @@ img{ max-width:100%;}
 	float: left;
 	margin-top: 16px;
 }
+
 .rdv-content {
 	margin-left: 40px;
+	max-width: 1400px;
 }
+
 .rdv-head {
 	color: #000000;
 	font-size: 80px;
@@ -308,6 +311,20 @@ img{ max-width:100%;}
 	font-weight: 700;
 	text-decoration: none;
 }
+
+@media screen and (min-width: 500px) and (max-width: 1500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+	.rdv-content {
+		margin-left: 40px;
+		max-width: 1000px;
+	}
+	.break {
+		display: none;
+	}
+}
+
+
+
 
 #ticker {
 	list-style: none;
