@@ -323,9 +323,6 @@ img{ max-width:100%;}
 	}
 }
 
-
-
-
 #ticker {
 	list-style: none;
 	min-height: 100px;
@@ -415,6 +412,40 @@ img{ max-width:100%;}
 	margin-top: 40px;
 }
 
+.foot-list {
+	float: left;
+	margin-left: 240px;
+}
+
+.foot-description {
+	margin-left: 630px;
+	text-align: center;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+	.service-list-col1 {
+		width:60px;
+		float: left;
+	}
+
+	.service-list-col2 {
+		margin-left:96px;
+		margin-top: 40px;
+	}
+
+	.foot-list {
+		float: left;
+		margin-left: 320px;
+	}
+
+	.foot-description {
+		margin-left: 630px;
+		text-align: center;
+	}
+}
+
+
 .service-list-col2 h3 {
 	font-size: 24px;
 	font-family: 'Dosis', sans-serif;
@@ -449,16 +480,6 @@ img{ max-width:100%;}
 	background-repeat: no-repeat;
 	background-size: 300px 650px;
 	background-position: 0 -100px;
-}
-
-.foot-list {
-	float: left;
-	margin-left: 320px;
-}
-
-.foot-description {
-	margin-left: 630px;
-	text-align: center;
 }
 
 .par-btn {
