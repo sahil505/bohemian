@@ -416,7 +416,17 @@ img{ max-width:100%;}
 		font-family: 'Dosis', sans-serif;
 		font-weight: 400;
 		letter-spacing: 2px;
+		-webkit-transition: .6s; /* Safari */
+	    -webkit-transition-timing-function: ease; /* Safari */
+	    transition: .6s;
+	    transition-timing-function: ease-in-out;
+	    transition-duration: 1s;
 	}
+
+	.outline-button:hover {
+		font-weight: 700;
+	}
+
 	.outline-button::before, .outline-button::after {
 		content: "";
 		position: absolute;
@@ -425,16 +435,19 @@ img{ max-width:100%;}
 		-webkit-transition: height 0.4s 0.4s cubic-bezier(0.86, 0, 0.07, 1), width 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 		transition: height 0.4s 0.4s cubic-bezier(0.86, 0, 0.07, 1), width 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 	}
+
 	.outline-button::before {
 		box-shadow: 2px 2px 0 #000000 inset;
 		bottom: 0;
 		left: 0;
 	}
+
 	.outline-button::after {
 		box-shadow: -2px -2px 0 #000000 inset;
 		top: 0;
 		right: 0;
 	}
+
 	.outline-button:hover::before, .outline-button:hover::after {
 		height: 100%;
 		width: 100%;
@@ -608,9 +621,11 @@ img{ max-width:100%;}
 	-webkit-transition:all 0.3s ease-in-out;	*/
 }
 
-/*.main-heading-3-box img:hover {
+/*
+.main-heading-3-box img:hover {
 	opacity: 0.6;
-	}*/
+	}
+	*/
 
 	.main-heading-3-nav li a.current{
 		background:#dddddd;
