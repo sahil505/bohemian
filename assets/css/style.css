@@ -649,11 +649,12 @@ img{ max-width:100%;}
 	}
 
 	.paddind{
-		padding-bottom:60px;
+		padding-top: 160px;
+		padding-bottom: 56px;
 		background-image: url("../img/feathers.svg");
 		background-repeat: no-repeat;
-		/*background-size: 1000px 1000px;*/
-		background-position: -300px bottom;
+		background-size: 1330px;
+		background-position: right top;
 	}
 
 	.team{
