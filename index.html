@@ -36,6 +36,12 @@ Author URL: https://sahil505.com
 ======================================================= -->
 </head>
 <body>
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div>
+
 	<div class="video-container">
 		<video autoplay loop class="fillWidth">
 			<source src="assets/img/video.mp4" type="video/mp4" />Your browser does not support the video tags. We suggest you upgrade your browser.
@@ -246,6 +252,14 @@ Author URL: https://sahil505.com
 	</div>
 
 	<!-- Created & Developed by Sahil Khokhar (sahil505.com) -->
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    setTimeout(function() {
+		        $('body').addClass('loaded');
+		    }, 3500);
+		});
+	</script>
 
 	<!-- Number Counter -->
 	<script type="text/javascript">
