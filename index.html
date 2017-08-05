@@ -28,7 +28,7 @@
 	<script type="text/javascript" src="assets/js/jquery.isotope.js"></script>
 	<script type="text/javascript" src="assets/js/wow.js"></script>
 	<script type="text/javascript" src="assets/js/classie.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
 
 <!-- =======================================================
 Author: Sahil Khokhar
@@ -211,20 +211,20 @@ Author URL: https://sahil505.com
 						<div id="app" class="container_card">
 							<div class="card-social"><a href="comingsoon.html">
 								<card class="wow fadeInDown delay-03s" data-image="https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg?w=940&h=650&auto=compress&cs=tinysrgb">
-									<h1 slot="header">Social</h1>
-									<p slot="content">A fight against Thalassemia.</p>
+									<h1 class="card-head" slot="header">Social</h1>
+									<p class="card-para" slot="content">A fight against Thalassemia.</p>
 								</card>
 							</a></div>
 							<div class="card-team"><div class="card-arrow"><img src="assets/img/arrow-team.svg"></div><a href="team.html" target="_blank">
 							<card class="wow fadeInDown delay-06s" data-image="https://images.pexels.com/photos/207896/pexels-photo-207896.jpeg?w=940&h=650&auto=compress&cs=tinysrgb">
-								<h1 slot="header">Team</h1>
-								<p slot="content">Meet the soul of Rendezvous.</p>
+								<h1 class="card-head" slot="header">Team</h1>
+								<p class="card-para" slot="content">Meet the soul of Rendezvous.</p>
 							</card>
 						</a></div>
 						<div class="card-hospitality"><a href="#">
 							<card class="hospitality wow fadeInDown delay-09s" data-image="https://images.pexels.com/photos/79691/night-79691.jpeg?w=940&h=650&auto=compress&cs=tinysrgb">
-								<h1 slot="header">Hospitality</h1>
-								<p slot="content">Experience the difference a stay makes.</p>
+								<h1 class="card-head" slot="header">Hospitality</h1>
+								<p class="card-para" slot="content">The difference a stay can make.</p>
 							</card>
 						</a></div>
 					</div>
@@ -256,9 +256,9 @@ Author URL: https://sahil505.com
 	<!-- Pre-loader starts -->
 	<script type="text/javascript">
 		$(document).ready(function() {
-		    setTimeout(function() {
-		        $('body').addClass('loaded');
-		    }, 2500);
+			setTimeout(function() {
+				$('body').addClass('loaded');
+			}, 2500);
 		});
 	</script>
 	<!-- Pre-loader ends -->
