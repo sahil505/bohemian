@@ -167,6 +167,10 @@ img{ max-width:100%;}
 	height: 100%;
 }
 
+.mobile-landing {
+	display: none;
+}
+
 @media screen and (max-width: 500px) {
 	/* applies only if the screen is more than 500px & less than 1500px*/
 	.video-container {
@@ -175,6 +179,10 @@ img{ max-width:100%;}
 
 	.video-container .fillWidth {
 		display: none;
+	}
+
+	.mobile-landing {
+		display: block;
 	}
 }
 
@@ -475,6 +483,13 @@ img{ max-width:100%;}
 	}
 }
 
+@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+	.main-fool {
+		background-image: none !important;
+	}
+}
+
 /*
 .introduction{
 	padding:64px 0 110px;
@@ -688,6 +703,13 @@ img{ max-width:100%;}
 	}
 }
 
+@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+	.alabaster {
+		background-image: none !important;
+	}
+}
+
 .show-head {
 	color: #000000;
 	font-size: 56px;
@@ -707,6 +729,13 @@ img{ max-width:100%;}
 	background-repeat: no-repeat;
 	background-size: 300px 650px;
 	background-position: 0 -100px;
+}
+
+@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+	.bandi-fool {
+		background-image: none !important;
+	}
 }
 
 .par-btn {
@@ -968,6 +997,15 @@ img{ max-width:100%;}
 	}
 }
 
+@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+	.team-fool {
+		background-image: none !important;
+	}
+}
+
+
+
 
 /*cards begin*/
 
@@ -1130,6 +1168,13 @@ img{ max-width:100%;}
 		background-repeat: no-repeat;
 		background-size: 450px 450px;
 		background-position: right bottom;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+	.footer-fool {
+		background-image: none !important;
 	}
 }
 
