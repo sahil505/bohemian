@@ -784,6 +784,13 @@ img{ max-width:100%;}
 	text-decoration:none;
 }
 
+@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+	.main-heading-3-nav {
+		display: none;
+	}
+}
+
 .main-heading-3Container{
 	margin:0 auto;
 	padding-left:15px;
@@ -850,6 +857,13 @@ img{ max-width:100%;}
 		background-repeat: no-repeat;
 		background-size: 1330px;
 		background-position: right top;
+	}
+
+	@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+		.paddind {
+			background-image: none !important;
+		}
 	}
 
 	.team{
