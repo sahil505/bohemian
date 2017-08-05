@@ -740,6 +740,8 @@ img{ max-width:100%;}
 @media screen and (max-width: 500px) {
 	/*applies only if the screen is less than 500px*/
 	.alabaster {
+		padding-top: 40px;
+		padding-bottom: 40px;
 		background-image: none !important;
 	}
 }
@@ -782,6 +784,32 @@ img{ max-width:100%;}
 
 .show-arrow img {
 	width: 128px;
+}
+
+
+@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+	.foot-description {
+		margin-left: 0;
+		text-align: center;
+	}
+
+	.foot-list {
+		display: none;
+	}
+
+	.show-head {
+		color: #000000;
+		font-size: 32px;
+		font-family: 'Advent Pro', sans-serif;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	.show-content {
+		font-size: 16px;
+		font-family: 'Dosis', sans-serif;
+		font-weight: 400;
+	}
 }
 
 /* main-heading-3
@@ -896,6 +924,8 @@ img{ max-width:100%;}
 	@media screen and (max-width: 500px) {
 	/*applies only if the screen is less than 500px*/
 		.paddind {
+			padding-top: 40px;
+			padding-bottom: 40px;
 			background-image: none !important;
 		}
 	}
