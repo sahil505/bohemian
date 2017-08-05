@@ -54,7 +54,10 @@ Author URL: https://sahil505.com
 	</div>
 	<!-- end of video-container -->
 
-	<div class="burger">
+
+	<!-- full screen menu bar  -->
+
+	 <div class="burger">
 		<div class="burger__patty"></div>
 		<div class="burger__patty"></div>
 		<div class="burger__patty"></div>
@@ -62,14 +65,30 @@ Author URL: https://sahil505.com
 
 	<nav class="menu">
 		<div class="menu__brand">
-			<a href="#"><img src="assets/img/footer-logo.png" alt=""></a>
-		</div>
-		<ul class="menu__list nav-main">
-			<li class="menu__item"><a href="#"  class="menu__link">Home</a></li>
-			<li class="menu__item"><a href="#" class="menu__link">Events</a></li>
+			<!-- <a href="#"><img src="assets/img/footer-logo.png" alt=""></a> -->
+			<ul class="menu-list-left ">
+				<li class="menu__item"><a href="#"  class="menu__link">Login</a></li>
+				<li class="menu__item"><a href="#" class="menu__link">Contact Us</a></li>
+				<li class="menu__item"><a href="#" class="menu__link">About Us</a></li>
 
+			</ul>
+
+		</div>
+		<ul  class="menu__list">
+			<li class="menu__item"><a href="#"  class="menu__link">Events</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">StarNights</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">Workshop</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">Social</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">Dreamville</a></li>
+			<li class="menu__item"><a href="#" class="menu__link">Sponsors</a></li>
 		</ul>
+
 	</nav>
+
+
+
+
+	<!-- full screen menu bar ends -->
 
 	<div class="main-fool">
 		<!--main-section-start-->
@@ -424,7 +443,7 @@ Author URL: https://sahil505.com
 
 	<script type="text/javascript">
 		$(document).ready(function(e) {
-			$('#test').scrollToFixed();
+			$('#').scrollToFixed();
 			$('.res-nav_click').click(function(){
 				$('.main-nav').slideToggle();
 				return false
