@@ -166,6 +166,18 @@ img{ max-width:100%;}
 	width: 100%;
 	height: 100%;
 }
+
+@media screen and (max-width: 500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+	.video-container {
+		display: none;
+	}
+
+	.video-container .fillWidth {
+		display: none;
+	}
+}
+
 /*Video Ends*/
 
 /*Scroll Button*/
@@ -461,7 +473,6 @@ img{ max-width:100%;}
 		background-repeat: no-repeat;
 		background-position: 420px -340px;
 	}
-
 }
 
 /*
