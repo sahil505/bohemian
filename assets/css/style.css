@@ -541,26 +541,6 @@ img{ max-width:100%;}
 	}
 }
 
-@media screen and (max-width: 500px) {
-	/*applies only if the screen is less than 500px*/
-	#u338 {
-		display: none;
-	}
-
-	.rdv-content {
-		margin-left: 0;
-		text-align: left;
-	}
-
-	.rdv-head {
-		color: #000000;
-		font-size: 32px;
-		font-family: 'Advent Pro', sans-serif;
-		font-weight: 700;
-		text-decoration: none;
-	}
-}
-
 #ticker {
 	list-style: none;
 	min-height: 100px;
@@ -645,6 +625,40 @@ img{ max-width:100%;}
 .pass {
 	margin-left: 16px;
 }
+
+
+@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+	#u338 {
+		display: none;
+	}
+
+	.rdv-content {
+		margin-left: 0;
+		text-align: left;
+	}
+
+	.rdv-head {
+		color: #000000;
+		font-size: 32px;
+		font-family: 'Advent Pro', sans-serif;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.para-content {
+		font-size: 16px;
+		font-family: 'Dosis', sans-serif;
+		font-weight: 400;
+	}
+
+	.main-btn-wrap {
+		padding-top: 32px;
+		margin-left: 48px;
+	}
+}
+
+
 /* Main section end */
 
 /* Services
