@@ -6,6 +6,9 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
   $routeProvider.when("/", {
     controller: "MainCtrl",
     templateUrl: "templates/home.html"
+  }).when("/register", {
+    controller: "MainCtrl",
+    templateUrl: "templates/register.html"
   }).when("/competetions", {
     controller: "MainCtrl",
     templateUrl: "templates/competetion.html"
