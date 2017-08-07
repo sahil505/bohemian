@@ -30,12 +30,13 @@
   </div>
 
   <div class="container events-grid" layout = "row" layout-wrap layout-xs = "column" layout-align = "center center">
-    <div md-whiteframe = "2" class="center events-col" flex-gt-sm = "30"  ng-repeat = "data in compevents" layout = "center center" style="background-image:{{data.image}}">
+      <div md-whiteframe = "2" class="center events-col" flex-gt-sm = "30"  ng-repeat = "data in compevents" layout = "center center" style="background-image:{{data.image}}">
 
-      <div class="events-grid-overlay">
-        <h1>{{data.title}}</h1>
+        <div class="events-grid-overlay">
+          <a ng-href = {{data.href}}>
+            <h1>{{data.title}}</h1>
+          </a>
+        </div>
       </div>
-    </div>
-
   </div>
 </div>

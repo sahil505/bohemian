@@ -1,0 +1,15 @@
+<div  ng-controller = "RegisterCtrl" class="otp-dialog">
+  <h1>An OTP has been set to your email</h1>
+ <form name = "userForm">
+  <md-input-container class="md-icon-float md-block ">
+    <label>Enter the OTP</label>
+      <input md-maxlength="30" required md-no-asterisk name="otp" ng-model="user.otp">
+      <div ng-messages="userForm.firstname.$error">
+        <div ng-message="required">This is required.</div>
+      </div>
+    </md-input-container>
+    <div layout = "row" layout-align = "center center">
+    <md-button value = "Submit valid inputs" ng-disabled="userForm.$invalid" class="md-raised md-primary" ng-click = "submitOtp(user); answer('useful')">Submit</md-button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="main-div" layout = "row" ng-controller = "CompetetionCtrl">
+  <div class="main-left " flex = "70">
+
+      <img class = "rdv-tag" src="images/rdvtag.png" alt="">
+
+      <div class="left-content">
+
+        <h1 class="headline">{{debateData[debateIndex].name}} <button class="outline-button pass"><a href = "events.html">Register</a></button></h1>
+        <h3>{{debateData[debateIndex].subheading}}</h2>
+          <span>
+            {{debateData[debateIndex].description}}
+          </span>
+        </div>
+  </div>
+  <div class="main-right" flex = "30" layout-align = "center center">
+    <h1 class="center " md-whiteframe = "1">Debate and Mun</h1>
+    <ul class="tab-list">
+      <li class="" ng-repeat = "x in debateData" ng-click = "tabDebate($index)">{{x.name}}</li>
+    </ul>
+  </div>
+
+</div>

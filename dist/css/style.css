@@ -416,6 +416,12 @@
   width: 100%;
   background-color: rgba(176, 190, 197, 0.5);
 }
+.events-grid .events-col .events-grid-overlay a {
+  text-decoration: none;
+}
+.events-grid .events-col .events-grid-overlay a h1 {
+  font-size: 1.7em;
+}
 @media only screen and (min-width: 992px) {
   .events-grid .events-col {
     height: 30vh !important;
@@ -457,17 +463,21 @@
   width: 100%;
 }
 
-.register-page {
+.login-page {
   height: 100vh;
   background-image: url("../images/bg1.png");
+  font-family: "Dosis", sans-serif;
+}
+.login-page .signup-link a {
+  text-decoration: none;
+  color: #263238;
+  font-size: 1.2em;
 }
 
 .login-card {
   min-height: 40%;
   width: 25%;
   text-align: center;
-  box-shadow: 4px -2px 10px 3px rgba(0, 0, 0, 0.12), -4px -2px 10px 3px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   background-color: #ffffff;
   transition: box-shadow 0.3s ease-in-out;
   padding: 20px;
@@ -476,6 +486,9 @@
 }
 .login-card md-icon {
   color: #0D47A1;
+}
+.login-card .login-head {
+  font-size: 2em;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 992px) {
@@ -487,4 +500,12 @@
   .login-card {
     width: 80%;
   }
+}
+.otp-dialog {
+  padding: 20px;
+}
+.otp-dialog h1 {
+  font-size: 1.5em;
+  font-size: "Dosis", sans-serif;
+  padding: 10px;
 }

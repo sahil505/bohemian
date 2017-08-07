@@ -1,0 +1,22 @@
+<div class="main-div" layout = "row" ng-controller = "CompetetionCtrl">
+  <div class="main-left " flex = "70">
+
+      <img class = "rdv-tag" src="images/rdvtag.png" alt="">
+
+      <div class="left-content">
+
+        <h1 class="headline">{{facData[facIndex].name}} <button class="outline-button pass"><a href = "events.html">Register</a></button></h1>
+        <h3>{{facData[facIndex].subheading}}</h2>
+          <span>
+            {{facData[facIndex].description}}
+          </span>
+        </div>
+  </div>
+  <div class="main-right" flex = "30" layout-align = "center center">
+    <h1 class="center " md-whiteframe = "1">Fine Arts</h1>
+    <ul class="tab-list">
+      <li class="" ng-repeat = "x in facData" ng-click = "tabFac($index)">{{x.name}}</li>
+    </ul>
+  </div>
+
+</div>
