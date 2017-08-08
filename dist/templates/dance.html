@@ -1,11 +1,11 @@
 <div class="main-div" layout = "row" ng-controller = "DanceCtrl">
-  <div class="main-left " flex = "70">
+  <div class="main-left " flex = "70" style={{imgLink}}>
 
       <img class = "rdv-tag" src="images/rdvtag.png" alt="">
 
       <div class="left-content">
 
-        <h1 class="headline">{{danceData[danceIndex].name}} <button class="outline-button pass"><a href = "events.html">Register</a></button></h1>
+        <h1 class="headline">{{danceData[danceIndex].name}} <button class="outline-button pass"><a ng-click = "Register(danceData[danceIndex])">Register</a></button></h1>
         <h3>{{danceData[danceIndex].subheading}}</h2>
           <span>
             {{danceData[danceIndex].description}}
