@@ -138,7 +138,7 @@
 
 .main-left {
   min-height: 100%;
-  background-image: url("../images/acapella.png");
+  background-color: #455A64;
   background-size: cover;
   position: relative;
   padding: 150px 20px 20px 150px;
@@ -209,9 +209,15 @@
   height: 10vh;
   padding: 10px 20px;
   border-bottom: 1px solid #BDBDBD;
+  -webkit-transition-property: background-color;
+  /* Safari */
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-property: background-color;
+  transition-duration: 0.7s;
 }
 .main-right .tab-list li:hover {
-  background-image: url("../images/acapella.png");
+  background-color: #212121;
   background-size: cover;
   cursor: pointer;
 }

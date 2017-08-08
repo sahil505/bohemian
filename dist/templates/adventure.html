@@ -1,11 +1,11 @@
 <div class="main-div" layout = "row" ng-controller = "AdventureCtrl">
-  <div class="main-left " flex = "70">
+  <div class="main-left " flex = "70" style={{imgLink}}>
 
-      <img class = "rdv-tag" src="images/rdvtag.png" alt="">
+      <img class = "rdv-tag" src="images/rdvtag.png" alt="" ng-style = >
 
       <div class="left-content">
 
-        <h1 class="headline">{{adventureData[adventureIndex].name}} <button class="outline-button pass"><a href = "events.html">Register</a></button></h1>
+        <h1 class="headline">{{adventureData[adventureIndex].name}} <button ng-click = "Register(adventureData[adventureIndex].name)"class="outline-button pass">Register</button></h1>
         <h3>{{adventureData[adventureIndex].subheading}}</h2>
           <span>
             {{adventureData[adventureIndex].description}}

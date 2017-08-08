@@ -1,9 +1,8 @@
 app.controller('AdventureCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
 
-$scope.isDance = true;
-
-
 $scope.adventureIndex = 0;
+var adventureIndex = $scope.adventureIndex;
+
 
 $scope.init = function(){
 
@@ -17,6 +16,8 @@ $scope.init = function(){
   }).then(function (response) {
       $scope.isDance = false;
       $scope.adventureData = response.data.events;
+      var imageLink = response.data.events[adventureIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
@@ -27,8 +28,26 @@ $scope.init();
   $scope.tabAdventure = function(a) {
     // console.log(a);
     $scope.adventureIndex = a;
+    var adventureIndex =a;
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/adventure",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        // $scope.adventureData = response.data.events;
+        var imageLink = response.data.events[adventureIndex].photos[0];
+        $scope.imgLink = 'background-image:url('+imageLink+')';
+
+    });
 
   };
+
+  $scope.register = function(register){
+    console.log(resgister);
+  }
 
 
 
@@ -42,6 +61,7 @@ $scope.isDance = true;
 
 
 $scope.comedyIndex = 0;
+var comedyIndex = $scope.comedyIndex;
 
 $scope.init = function(){
   $http({
@@ -52,7 +72,9 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.comedyData = response.data.events;
+      // $scope.comedyData = response.data.events;
+      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
@@ -62,6 +84,22 @@ $scope.init();
 $scope.tabComedy = function(a) {
   // console.log(a);
   $scope.comedyIndex = a;
+  var comedyIndex =a;
+
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/comedy",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        $scope.comedyData = response.data.events;
+        var imageLink = $scope.danceData[danceIndex].photos[0];
+        $scope.imgLink = 'background-image:url('+imageLink+')';
+
+    });
+
 
 };
 
@@ -76,6 +114,7 @@ app.controller('CulinaryCtrl', function($scope,$http, $document,$timeout, $log, 
 
 
 $scope.culinaryIndex = 0;
+var culinaryIndex = $scope.culinaryIndex;
 $scope.init = function(){
     $http({
         method: "GET",
@@ -86,6 +125,8 @@ $scope.init = function(){
     }).then(function (response) {
         $scope.isDance = false;
         $scope.culinaryData = response.data.events;
+        var imageLink = response.data.events[danceIndex].photos[0];
+        $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
 
@@ -97,6 +138,21 @@ $scope.init();
 $scope.tabCulinary = function(a) {
   // console.log(a);
   $scope.culinaryIndex = a;
+  var culinaryIndex =a;
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/culinary",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      // $scope.culinaryData = response.data.events;
+      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
+
+  });
+
 
 };
 
@@ -105,11 +161,14 @@ $scope.tabCulinary = function(a) {
 
 });
 
-app.controller('DanceCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('DanceCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
 
 $scope.danceIndex = 0;
+var danceIndex = $scope.danceIndex;
+
+console.log(danceIndex);
 
 $scope.init = function(){
 
@@ -122,8 +181,12 @@ $scope.init = function(){
   }).then(function (response) {
       $scope.isDance = false;
       $scope.danceData = response.data.events;
-  });
+      $scope.data = $scope.danceData;
+      // $scope.danceImage = "background-image:url('')"$scope.danceData[danceIndex].photos[0];
+      var imageLink = $scope.danceData[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
 
+  });
 
 
 };
@@ -132,12 +195,75 @@ $scope.init();
 
 $scope.tabDance = function(a) {
   // console.log(a);
+  // $scope.init();
   $scope.danceIndex = a;
+  var danceIndex = a;
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/dance",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      // $scope.danceData = response.data.events;
+      // $scope.danceImage = "background-image:url('')"$scope.danceData[danceIndex].photos[0];
+      var imageLink = response.data.events[danceIndex].photos[0];
+      console.log(danceIndex);
+      $scope.imgLink = 'background-image:url('+imageLink+')';
+      console.log(imageLink);
+      console.log($scope.imgLink);
+
+  });
+  // $scope.imgLink = 'background-image:url('+imageLink+')';
 
 };
 
+$rootScope.showAdvanced = function(ev) {
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: '../templates/registeremail.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
 
 
+
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+  };
+
+
+  function DialogController($scope, $mdDialog) {
+
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
+
+
+$scope.Register = function(data){
+
+  if(data.reg_mode == "Email"){
+      $rootScope.showAdvanced();
+      console.log(data.reg_mode);
+
+  }
+
+
+}
 
 
 
@@ -158,6 +284,7 @@ $scope.isDance = true;
 
 
 $scope.debateIndex = 0;
+var debateIndex = $scope.debateIndex;
 
 $scope.init = function(){
 
@@ -170,7 +297,9 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.debateData = response.data.events;
+      // $scope.debateData = response.data.events;
+      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
@@ -181,6 +310,25 @@ $scope.init();
   $scope.tabDebate = function(a) {
     // console.log(a);
     $scope.debateIndex = a;
+    var debateIndex =a;
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/dance",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        $scope.danceData = response.data.events;
+        $scope.data = $scope.danceData;
+        // $scope.danceImage = "background-image:url('')"$scope.danceData[danceIndex].photos[0];
+        var imageLink = $scope.danceData[danceIndex].photos[0];
+        console.log(danceIndex);
+        $scope.imgLink = 'background-image:url('+imageLink+')';
+        console.log(imageLink);
+        console.log($scope.imgLink);
+
+    });
 
   };
 
@@ -194,7 +342,8 @@ app.controller('DramaCtrl', function($scope,$http, $document,$timeout, $log, Aut
 $scope.isDance = true;
 
 
-$scope.dramaticsIndex = 0;
+$scope.dramaticsIndex = 0
+var dramaticsIndex = $scope.dramaticsIndex;
 
 $scope.init = function(){
 
@@ -207,7 +356,9 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.dramaticsData = response.data.events;
+      // $scope.dramaticsData = response.data.events;
+      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
   });
 
 
@@ -218,6 +369,19 @@ $scope.init();
 $scope.tabDramatics = function(a) {
   // console.log(a);
   $scope.dramaticsIndex = a;
+  var dramaticsIndex =a;
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/dramatics",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      $scope.dramaticsData = response.data.events;
+      var imageLink = $scope.danceData[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
+  });
 
 };
 
@@ -232,6 +396,7 @@ $scope.isDance = true;
 
 
 $scope.facIndex = 0;
+var facIndex = $scope.facIndex;
 
 $scope.init = function(){
 
@@ -243,7 +408,9 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.facData = response.data.events;
+      // $scope.facData = response.data.events;
+      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
@@ -255,6 +422,21 @@ $scope.init();
   $scope.tabFac = function(a) {
     // console.log(a);
     $scope.facIndex = a;
+    var facIndex =a;
+
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/FACC",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        $scope.facData = response.data.events;
+        var imageLink = $scope.danceData[danceIndex].photos[0];
+        $scope.imgLink = 'background-image:url('+imageLink+')';
+
+    });
 
   };
 
@@ -268,6 +450,7 @@ $scope.isDance = true;
 
 
 $scope.glamourIndex = 0;
+var glamourIndex = $scope.glamourIndex;
 
 $scope.init = function(){
 
@@ -280,7 +463,9 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.glamourData = response.data.events;
+      // $scope.glamourData = response.data.events;
+      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
@@ -292,6 +477,21 @@ $scope.init();
   $scope.tabGlamour = function(a) {
     // console.log(a);
     $scope.glamourIndex = a;
+    var glamourIndex =a;
+
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/glamour",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        $scope.glamourData = response.data.events;
+        var imageLink = $scope.danceData[danceIndex].photos[0];
+        $scope.imgLink = 'background-image:url('+imageLink+')';
+
+    });
 
   };
 
@@ -306,6 +506,7 @@ $scope.isDance = true;
 
 
 $scope.hindiIndex = 0;
+var hindiIndex = $scope.hindiIndex;
 
 $scope.init = function(){
 
@@ -318,7 +519,9 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.hindiData = response.data.events;
+      // $scope.hindiData = response.data.events;
+      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
@@ -329,6 +532,20 @@ $scope.init();
   $scope.tabHindi = function(a) {
     // console.log(a);
     $scope.hindiIndex = a;
+    var hindiIndex = a;
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/hindisamiti",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        $scope.hindiData = response.data.events;
+        var imageLink = $scope.danceData[danceIndex].photos[0];
+        $scope.imgLink = 'background-image:url('+imageLink+')';
+
+    });
 
   };
 
@@ -572,6 +789,7 @@ $scope.isDance = true;
 
 
 $scope.literaryIndex = 0;
+var literaryIndex = $scope.literaryIndex;
 
 $scope.init = function(){
 
@@ -584,7 +802,9 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.literaryData = response.data.events;
+      // $scope.literaryData = response.data.events;
+      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
@@ -595,6 +815,20 @@ $scope.init();
   $scope.tabLiterary = function(a) {
     // console.log(a);
     $scope.literaryIndex = a;
+    var literaryIndex =a;
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/literary",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        $scope.literaryData = response.data.events;
+        var imageLink = $scope.danceData[danceIndex].photos[0];
+        $scope.imgLink = 'background-image:url('+imageLink+')';
+
+    });
 
   };
 
@@ -609,6 +843,7 @@ $scope.isDance = true;
 
 
 $scope.magicIndex = 0;
+var magicIndex = $scope.magicIndex;
 
 $scope.init = function(){
 
@@ -622,7 +857,9 @@ $scope.init = function(){
             }
     }).then(function (response) {
         $scope.isDance = false;
-        $scope.magicData = response.data.events;
+        // $scope.magicData = response.data.events;
+        var imageLink = response.data.events[danceIndex].photos[0];
+        $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
 
@@ -633,6 +870,21 @@ $scope.init();
     $scope.tabMagic = function(a) {
       // console.log(a);
       $scope.magicIndex = a;
+      var magicIndex =a;
+      $http({
+          method: "GET",
+          url: URL_PREFIX+"category-event/magic",
+          headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+              }
+      }).then(function (response) {
+          $scope.isDance = false;
+          $scope.magicData = response.data.events;
+          var imageLink = $scope.danceData[danceIndex].photos[0];
+          $scope.imgLink = 'background-image:url('+imageLink+')';
+
+      });
+
 
     };
 
@@ -647,6 +899,7 @@ $scope.isDance = true;
 
 
 $scope.musicIndex = 0;
+var musicIndex = $scope.musicIndex;
 
 $scope.init = function(){
 
@@ -659,7 +912,9 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.musicData = response.data.events;
+      // $scope.musicData = response.data.events;
+      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
@@ -672,6 +927,20 @@ $scope.init();
   $scope.tabMusic = function(a) {
     // console.log(a);
     $scope.musicIndex = a;
+    var musicIndex = a;
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/music",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        $scope.musicData = response.data.events;
+        var imageLink = $scope.danceData[danceIndex].photos[0];
+        $scope.imgLink = 'background-image:url('+imageLink+')';
+
+    });
 
   };
 
@@ -685,6 +954,7 @@ $scope.isDance = true;
 
 
 $scope.pfcIndex = 0;
+var pfcIndex = $scope.pfcIndex;
 
 $scope.init = function(){
 
@@ -697,7 +967,9 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.pfcData = response.data.events;
+      // $scope.pfcData = response.data.events;
+      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
@@ -708,6 +980,22 @@ $scope.init();
   $scope.tabPfc = function(a) {
     // console.log(a);
     $scope.pfcIndex = a;
+    var pfcIndex =a;
+
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/pfc",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        $scope.pfcData = response.data.events;
+        var imageLink = $scope.danceData[danceIndex].photos[0];
+        $scope.imgLink = 'background-image:url('+imageLink+')';
+
+    });
+
 
   };
 
@@ -721,6 +1009,7 @@ $scope.isDance = true;
 
 
 $scope.quizIndex = 0;
+var quizIndex = $scope.quizIndex;
 
 $scope.bro = function(){
 
@@ -732,7 +1021,9 @@ $scope.bro = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.quizData = response.data.events;
+      // $scope.quizData = response.data.events;
+      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
@@ -744,6 +1035,21 @@ $scope.bro();
   $scope.tabQuiz = function(a) {
     // console.log(a);
     $scope.quizIndex = a;
+    var quizIndex = a;
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/quizzing",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        $scope.quizData = response.data.events;
+        var imageLink = $scope.danceData[danceIndex].photos[0];
+        $scope.imgLink = 'background-image:url('+imageLink+')';
+
+    });
+
 
   };
 
