@@ -5,13 +5,13 @@ var URL_PREFIX = 'http://rdv-iitd.com/api/'
 app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
   $routeProvider.when("/", {
     controller: "MainCtrl",
-    templateUrl: "templates/login.html"
+    templateUrl: "templates/home.html"
   }).when("/register", {
     controller: "RegisterCtrl",
     templateUrl: "templates/register.html"
-  }).when("/home", {
+  }).when("/login", {
     controller: "MainCtrl",
-    templateUrl: "templates/home.html"
+    templateUrl: "templates/login.html"
   }).when("/compevents", {
     controller: "MainCtrl",
     templateUrl: "templates/compevents.html"
@@ -19,46 +19,46 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
     controller: "MainCtrl",
     templateUrl: "templates/pronites.html"
   }).when("/dance", {
-    controller: "CompetetionCtrl",
+    controller: "DanceCtrl",
     templateUrl: "templates/dance.html"
   }).when("/music", {
-    controller: "CompetetionCtrl",
+    controller: "MusicCtrl",
     templateUrl: "templates/music.html"
   }).when("/drama", {
-    controller: "CompetetionCtrl",
+    controller: "DramaCtrl",
     templateUrl: "templates/drama.html"
   }).when("/pfc", {
-    controller: "CompetetionCtrl",
+    controller: "PfcCtrl",
     templateUrl: "templates/pfc.html"
   }).when("/adventure", {
-    controller: "CompetetionCtrl",
+    controller: "AdventureCtrl",
     templateUrl: "templates/adventure.html"
   }).when("/quiz", {
-    controller: "CompetetionCtrl",
+    controller: "QuizCtrl",
     templateUrl: "templates/quiz.html"
   }).when("/culinary", {
-    controller: "CompetetionCtrl",
+    controller: "CulinaryCtrl",
     templateUrl: "templates/culinary.html"
   }).when("/magic", {
-    controller: "CompetetionCtrl",
+    controller: "MagicCtrl",
     templateUrl: "templates/magic.html"
   }).when("/literary", {
-    controller: "CompetetionCtrl",
+    controller: "LiteraryCtrl",
     templateUrl: "templates/literary.html"
   }).when("/glamour", {
-    controller: "CompetetionCtrl",
+    controller: "GlamourCtrl",
     templateUrl: "templates/glamour.html"
   }).when("/hindi", {
-    controller: "CompetetionCtrl",
+    controller: "HindiCtrl",
     templateUrl: "templates/hindi.html"
   }).when("/debate", {
-    controller: "CompetetionCtrl",
+    controller: "DebateCtrl",
     templateUrl: "templates/debate.html"
   }).when("/fac", {
-    controller: "CompetetionCtrl",
+    controller: "FacCtrl",
     templateUrl: "templates/fac.html"
   }).when("/comedy", {
-    controller: "CompetetionCtrl",
+    controller: "ComedyCtrl",
     templateUrl: "templates/comedy.html"
   }).otherwise({
     controller: "MainCtrl",

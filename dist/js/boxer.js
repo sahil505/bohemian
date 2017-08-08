@@ -1,79 +1,12 @@
-app.controller('CompetetionCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('AdventureCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
 
 $scope.isDance = true;
 
-$scope.danceIndex = 0;
-$scope.dramaticsIndex = 0;
-$scope.musicIndex = 0;
-$scope.pfcIndex = 0;
-$scope.comedyIndex = 0;
+
 $scope.adventureIndex = 0;
-$scope.culinaryIndex = 0;
-$scope.debateIndex = 0;
-$scope.pfcIndex = 0;
-$scope.facIndex = 0;
-$scope.glamourIndex = 0;
-$scope.hindiIndex = 0;
-$scope.literaryIndex = 0;
-$scope.magicIndex = 0;
-$scope.quizIndex = 0;
+
 $scope.init = function(){
 
-  $http({
-      method: "GET",
-      url: URL_PREFIX+"category-event/dance",
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-          }
-  }).then(function (response) {
-      $scope.isDance = false;
-      $scope.danceData = response.data.events;
-  });
-
-  $http({
-      method: "GET",
-      url: URL_PREFIX+"category-event/dramatics",
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-          }
-  }).then(function (response) {
-      $scope.isDance = false;
-      $scope.dramaticsData = response.data.events;
-  });
-
-  $http({
-      method: "GET",
-      url: URL_PREFIX+"category-event/music",
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-          }
-  }).then(function (response) {
-      $scope.isDance = false;
-      $scope.musicData = response.data.events;
-
-  });
-  $http({
-      method: "GET",
-      url: URL_PREFIX+"category-event/pfc",
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-          }
-  }).then(function (response) {
-      $scope.isDance = false;
-      $scope.pfcData = response.data.events;
-
-  });
-  $http({
-      method: "GET",
-      url: URL_PREFIX+"category-event/comedy",
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-          }
-  }).then(function (response) {
-      $scope.isDance = false;
-      $scope.comedyData = response.data.events;
-
-  });
 
   $http({
       method: "GET",
@@ -87,21 +20,151 @@ $scope.init = function(){
 
   });
 
+};
+
+$scope.init();
+
+  $scope.tabAdventure = function(a) {
+    // console.log(a);
+    $scope.adventureIndex = a;
+
+  };
+
+
+
+
+
+});
+
+app.controller('CompetetionCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+
+$scope.comedyIndex = 0;
+
+$scope.init = function(){
   $http({
       method: "GET",
-      url: URL_PREFIX+"category-event/culinary",
+      url: URL_PREFIX+"category-event/comedy",
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.culinaryData = response.data.events;
+      $scope.comedyData = response.data.events;
 
   });
 
+};
+
+$scope.init();
+$scope.tabComedy = function(a) {
+  // console.log(a);
+  $scope.comedyIndex = a;
+
+};
+
+
+
+
+});
+
+app.controller('CulinaryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+
+
+
+$scope.culinaryIndex = 0;
+$scope.init = function(){
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/culinary",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        $scope.culinaryData = response.data.events;
+
+    });
+
+};
+
+
+$scope.init();
+
+$scope.tabCulinary = function(a) {
+  // console.log(a);
+  $scope.culinaryIndex = a;
+
+};
+
+
+
+
+});
+
+app.controller('DanceCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+$scope.danceIndex = 0;
+
+$scope.init = function(){
+
   $http({
       method: "GET",
-      url: URL_PREFIX+"category-event/debate",
+      url: URL_PREFIX+"category-event/dance",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      $scope.danceData = response.data.events;
+  });
+
+
+
+};
+
+$scope.init();
+
+$scope.tabDance = function(a) {
+  // console.log(a);
+  $scope.danceIndex = a;
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
+
+app.controller('DebateCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+
+$scope.debateIndex = 0;
+
+$scope.init = function(){
+
+
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/debating",
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
           }
@@ -111,9 +174,70 @@ $scope.init = function(){
 
   });
 
+};
+
+$scope.init();
+
+  $scope.tabDebate = function(a) {
+    // console.log(a);
+    $scope.debateIndex = a;
+
+  };
+
+
+
+
+});
+
+app.controller('DramaCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+
+$scope.dramaticsIndex = 0;
+
+$scope.init = function(){
+
+
   $http({
       method: "GET",
-      url: URL_PREFIX+"category-event/fac",
+      url: URL_PREFIX+"category-event/dramatics",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      $scope.dramaticsData = response.data.events;
+  });
+
+
+};
+
+$scope.init();
+
+$scope.tabDramatics = function(a) {
+  // console.log(a);
+  $scope.dramaticsIndex = a;
+
+};
+
+
+
+
+});
+
+app.controller('FacCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+
+$scope.facIndex = 0;
+
+$scope.init = function(){
+
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/FACC",
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
           }
@@ -122,6 +246,31 @@ $scope.init = function(){
       $scope.facData = response.data.events;
 
   });
+
+};
+
+$scope.init();
+
+
+  $scope.tabFac = function(a) {
+    // console.log(a);
+    $scope.facIndex = a;
+
+  };
+
+
+
+});
+
+app.controller('GlamourCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+
+$scope.glamourIndex = 0;
+
+$scope.init = function(){
+
 
   $http({
       method: "GET",
@@ -135,9 +284,35 @@ $scope.init = function(){
 
   });
 
+};
+
+
+$scope.init();
+
+  $scope.tabGlamour = function(a) {
+    // console.log(a);
+    $scope.glamourIndex = a;
+
+  };
+
+
+
+
+});
+
+app.controller('HindiCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+
+$scope.hindiIndex = 0;
+
+$scope.init = function(){
+
+
   $http({
       method: "GET",
-      url: URL_PREFIX+"category-event/hindi",
+      url: URL_PREFIX+"category-event/hindisamiti",
       headers: {
         'Content-Type': 'application/json; charset=UTF-8',
           }
@@ -147,124 +322,22 @@ $scope.init = function(){
 
   });
 
-  $http({
-      method: "GET",
-      url: URL_PREFIX+"category-event/literary",
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-          }
-  }).then(function (response) {
-      $scope.isDance = false;
-      $scope.literaryData = response.data.events;
-
-  });
-
-  $http({
-      method: "GET",
-      url: URL_PREFIX+"category-event/quiz",
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-          }
-  }).then(function (response) {
-      $scope.isDance = false;
-      $scope.quizData = response.data.events;
-
-  });
-
-  $http({
-      method: "GET",
-      url: URL_PREFIX+"category-event/magic",
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-          }
-  }).then(function (response) {
-      $scope.isDance = false;
-      $scope.magicData = response.data.events;
-
-  });
-
-
-}
+};
 
 $scope.init();
 
-$scope.tabDance = function(a) {
-  // console.log(a);
-  $scope.danceIndex = a;
+  $scope.tabHindi = function(a) {
+    // console.log(a);
+    $scope.hindiIndex = a;
 
-};
-$scope.tabMusic = function(a) {
-  // console.log(a);
-  $scope.musicIndex = a;
-
-};
-$scope.tabPfc = function(a) {
-  // console.log(a);
-  $scope.pfcIndex = a;
-
-};
-$scope.tabDramatics = function(a) {
-  // console.log(a);
-  $scope.dramaticsIndex = a;
-
-}
-$scope.tabCulinary = function(a) {
-  // console.log(a);
-  $scope.culinaryIndex = a;
-
-}
-$scope.tabDebate = function(a) {
-  // console.log(a);
-  $scope.debateIndex = a;
-
-}
-$scope.tabFac = function(a) {
-  // console.log(a);
-  $scope.facIndex = a;
-
-}
-$scope.tabGlamour = function(a) {
-  // console.log(a);
-  $scope.glamourIndex = a;
-
-}
-$scope.tabHindi = function(a) {
-  // console.log(a);
-  $scope.hindiIndex = a;
-
-}
-$scope.tabLiterary = function(a) {
-  // console.log(a);
-  $scope.literaryIndex = a;
-
-}
-$scope.tabMagic = function(a) {
-  // console.log(a);
-  $scope.magicIndex = a;
-
-}
-$scope.tabQuiz = function(a) {
-  // console.log(a);
-  $scope.quizIndex = a;
-
-}
-$scope.tabAdventure = function(a) {
-  // console.log(a);
-  $scope.adventureIndex = a;
-
-}
-$scope.tabComedy = function(a) {
-  // console.log(a);
-  $scope.comedyIndex = a;
-
-}
+  };
 
 
 
 
 });
 
-app.controller('MainCtrl', function($scope, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('MainCtrl', function($scope, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$http) {
 
   $rootScope.isPath= function(viewLocation) {
       return viewLocation === $location.path();
@@ -273,10 +346,10 @@ app.controller('MainCtrl', function($scope, $document,$timeout, $log, Auth,$loca
 
     // console.log($scope.userDetails);
 
-  if($rootScope.isPath('/')===true && $scope.userDetails !=undefined){
-    $location.path("/home");
-
-  }
+  // if($rootScope.isPath('/')===true && $scope.userDetails !=undefined){
+  //   $location.path("/home");
+  //
+  // }
 
 
     $scope.logInUser=function (user) {
@@ -489,6 +562,194 @@ $scope.pronitesCarousel = [
 
 
 
+
+
+});
+
+app.controller('LiteraryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+
+$scope.literaryIndex = 0;
+
+$scope.init = function(){
+
+
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/literary",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      $scope.literaryData = response.data.events;
+
+  });
+
+};
+
+$scope.init();
+
+  $scope.tabLiterary = function(a) {
+    // console.log(a);
+    $scope.literaryIndex = a;
+
+  };
+
+
+
+
+});
+
+app.controller('MagicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+
+$scope.magicIndex = 0;
+
+$scope.init = function(){
+
+
+
+    $http({
+        method: "GET",
+        url: URL_PREFIX+"category-event/magic",
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+            }
+    }).then(function (response) {
+        $scope.isDance = false;
+        $scope.magicData = response.data.events;
+
+    });
+
+};
+
+$scope.init();
+
+    $scope.tabMagic = function(a) {
+      // console.log(a);
+      $scope.magicIndex = a;
+
+    };
+
+
+
+
+});
+
+app.controller('MusicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+
+$scope.musicIndex = 0;
+
+$scope.init = function(){
+
+
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/music",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      $scope.musicData = response.data.events;
+
+  });
+
+};
+
+$scope.init();
+
+
+
+  $scope.tabMusic = function(a) {
+    // console.log(a);
+    $scope.musicIndex = a;
+
+  };
+
+
+
+});
+
+app.controller('PfcCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+
+$scope.pfcIndex = 0;
+
+$scope.init = function(){
+
+
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/pfc",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      $scope.pfcData = response.data.events;
+
+  });
+
+};
+
+$scope.init();
+
+  $scope.tabPfc = function(a) {
+    // console.log(a);
+    $scope.pfcIndex = a;
+
+  };
+
+
+
+});
+
+app.controller('QuizCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+
+$scope.isDance = true;
+
+
+$scope.quizIndex = 0;
+
+$scope.bro = function(){
+
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/quizzing",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      $scope.quizData = response.data.events;
+
+  });
+
+};
+
+
+$scope.bro();
+
+  $scope.tabQuiz = function(a) {
+    // console.log(a);
+    $scope.quizIndex = a;
+
+  };
+
+
+
+
 });
 
 app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToast,$http,$mdDialog,$rootScope,$window,$location,Auth) {
@@ -531,7 +792,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
       $scope.answer = function(answer) {
         $mdDialog.hide(answer);
       };
-    };
+    }
   $scope.signUp=function (user) {
     $rootScope.preuser = user;
       if(user.password == user.confirm_password){
