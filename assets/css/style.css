@@ -1022,10 +1022,7 @@ img{ max-width:100%;}
 		-webkit-transition-duration: 0.8s;
 		transition-duration: 0.8s;
 	}
-	.main-heading-3-box a:hover:hover img {
-		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-		opacity: 0.5;
-	}
+	
 	.main-heading-3-box a img {
 		margin: 0 auto;
 		display: inline-block;
