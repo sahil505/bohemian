@@ -1,4 +1,4 @@
-app.controller('AdventureCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('AdventureCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.adventureIndex = 0;
 var adventureIndex = $scope.adventureIndex;
@@ -23,7 +23,7 @@ $scope.init = function(){
 
 };
 
-$scope.init();
+// $scope.init();
 
   $scope.tabAdventure = function(a) {
     // console.log(a);
@@ -47,15 +47,78 @@ $scope.init();
 
   $scope.register = function(register){
     console.log(resgister);
-  }
+  };
 
+
+  $rootScope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: '../templates/registeremail.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+      })
+      .then(function(answer) {
+        $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+    };
+
+
+    function DialogController($scope, $mdDialog) {
+
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+
+
+  $rootScope.Register = function(data,email,path){
+
+  $rootScope.reg_path = path;
+  console.log(path);
+  $rootScope.data_regemail = email;
+  $rootScope.data_reg = data;
+  console.log(data);
+    console.log(data.reg_mode);
+
+    if(data.reg_mode == "Email"){
+        $rootScope.showAdvanced();
+        console.log(data.reg_mode);
+        $rootScope.reg_modeEmail = true;
+        $rootScope.reg_modeWebsite = false;
+
+    }
+
+    else if (data.reg_mode == "Website") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = true;
+        $rootScope.reg_modeEmail = false;
+
+        // console.log(fullData);
+    }
+
+
+  }
 
 
 
 
 });
 
-app.controller('CompetetionCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('ComedyCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
 
@@ -72,15 +135,15 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      // $scope.comedyData = response.data.events;
-      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.comedyData = response.data.events;
+      var imageLink = response.data.events[comedyIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
 };
 
-$scope.init();
+// $scope.init();
 $scope.tabComedy = function(a) {
   // console.log(a);
   $scope.comedyIndex = a;
@@ -94,8 +157,8 @@ $scope.tabComedy = function(a) {
             }
     }).then(function (response) {
         $scope.isDance = false;
-        $scope.comedyData = response.data.events;
-        var imageLink = $scope.danceData[danceIndex].photos[0];
+        // $scope.comedyData = response.data.events;
+        var imageLink = response.data.events[comedyIndex].photos[0];
         $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
@@ -104,11 +167,74 @@ $scope.tabComedy = function(a) {
 };
 
 
+$rootScope.showAdvanced = function(ev) {
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: '../templates/registeremail.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+  };
+
+
+  function DialogController($scope, $mdDialog) {
+
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
+
+
+$rootScope.Register = function(data,email,path){
+
+$rootScope.reg_path = path;
+console.log(path);
+$rootScope.data_regemail = email;
+$rootScope.data_reg = data;
+console.log(data);
+  console.log(data.reg_mode);
+
+  if(data.reg_mode == "Email"){
+      $rootScope.showAdvanced();
+      console.log(data.reg_mode);
+      $rootScope.reg_modeEmail = true;
+      $rootScope.reg_modeWebsite = false;
+
+  }
+
+  else if (data.reg_mode == "Website") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = true;
+      $rootScope.reg_modeEmail = false;
+
+      // console.log(fullData);
+  }
+
+
+}
+
 
 
 });
 
-app.controller('CulinaryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('CulinaryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 
 
@@ -125,7 +251,7 @@ $scope.init = function(){
     }).then(function (response) {
         $scope.isDance = false;
         $scope.culinaryData = response.data.events;
-        var imageLink = response.data.events[danceIndex].photos[0];
+        var imageLink = response.data.events[culinaryIndex].photos[0];
         $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
@@ -133,7 +259,7 @@ $scope.init = function(){
 };
 
 
-$scope.init();
+// $scope.init();
 
 $scope.tabCulinary = function(a) {
   // console.log(a);
@@ -148,13 +274,76 @@ $scope.tabCulinary = function(a) {
   }).then(function (response) {
       $scope.isDance = false;
       // $scope.culinaryData = response.data.events;
-      var imageLink = response.data.events[danceIndex].photos[0];
+      var imageLink = response.data.events[culinaryIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
 
 };
+
+$rootScope.showAdvanced = function(ev) {
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: '../templates/registeremail.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+  };
+
+
+  function DialogController($scope, $mdDialog) {
+
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
+
+
+$rootScope.Register = function(data,email,path){
+
+$rootScope.reg_path = path;
+console.log(path);
+$rootScope.data_regemail = email;
+$rootScope.data_reg = data;
+console.log(data);
+  console.log(data.reg_mode);
+
+  if(data.reg_mode == "Email"){
+      $rootScope.showAdvanced();
+      console.log(data.reg_mode);
+      $rootScope.reg_modeEmail = true;
+      $rootScope.reg_modeWebsite = false;
+
+  }
+
+  else if (data.reg_mode == "Website") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = true;
+      $rootScope.reg_modeEmail = false;
+
+      // console.log(fullData);
+  }
+
+
+}
 
 
 
@@ -164,13 +353,15 @@ $scope.tabCulinary = function(a) {
 app.controller('DanceCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
-
+$rootScope.reg_modeEmail = false;
+$rootScope.reg_modeWebsite = false;
 $scope.danceIndex = 0;
+// $rootScope.data_reg = [];
 var danceIndex = $scope.danceIndex;
 
 console.log(danceIndex);
 
-$scope.init = function(){
+$scope.load = function(){
 
   $http({
       method: "GET",
@@ -191,7 +382,7 @@ $scope.init = function(){
 
 };
 
-$scope.init();
+// $scope.init();
 
 $scope.tabDance = function(a) {
   // console.log(a);
@@ -254,12 +445,29 @@ $rootScope.showAdvanced = function(ev) {
   }
 
 
-$scope.Register = function(data){
+$rootScope.Register = function(data,email,path){
+
+$rootScope.reg_path = path;
+console.log(path);
+$rootScope.data_regemail = email;
+$rootScope.data_reg = data;
+console.log(data);
+  console.log(data.reg_mode);
 
   if(data.reg_mode == "Email"){
       $rootScope.showAdvanced();
       console.log(data.reg_mode);
+      $rootScope.reg_modeEmail = true;
+      $rootScope.reg_modeWebsite = false;
 
+  }
+
+  else if (data.reg_mode == "Website") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = true;
+      $rootScope.reg_modeEmail = false;
+
+      // console.log(fullData);
   }
 
 
@@ -278,7 +486,7 @@ $scope.Register = function(data){
 
 });
 
-app.controller('DebateCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('DebateCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
 
@@ -297,15 +505,15 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      // $scope.debateData = response.data.events;
-      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.debateData = response.data.events;
+      var imageLink = response.data.events[debateIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
 };
 
-$scope.init();
+// $scope.init();
 
   $scope.tabDebate = function(a) {
     // console.log(a);
@@ -320,10 +528,9 @@ $scope.init();
     }).then(function (response) {
         $scope.isDance = false;
         $scope.danceData = response.data.events;
-        $scope.data = $scope.danceData;
         // $scope.danceImage = "background-image:url('')"$scope.danceData[danceIndex].photos[0];
-        var imageLink = $scope.danceData[danceIndex].photos[0];
-        console.log(danceIndex);
+        var imageLink = response.data.events[debateIndex].photos[0];
+        // console.log(danceIndex);
         $scope.imgLink = 'background-image:url('+imageLink+')';
         console.log(imageLink);
         console.log($scope.imgLink);
@@ -334,12 +541,77 @@ $scope.init();
 
 
 
+  $rootScope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: '../templates/registeremail.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+      })
+      .then(function(answer) {
+        $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+    };
+
+
+    function DialogController($scope, $mdDialog) {
+
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+
+
+  $rootScope.Register = function(data,email,path){
+
+  $rootScope.reg_path = path;
+  console.log(path);
+  $rootScope.data_regemail = email;
+  $rootScope.data_reg = data;
+  console.log(data);
+    console.log(data.reg_mode);
+
+    if(data.reg_mode == "Email"){
+        $rootScope.showAdvanced();
+        console.log(data.reg_mode);
+        $rootScope.reg_modeEmail = true;
+        $rootScope.reg_modeWebsite = false;
+
+    }
+
+    else if (data.reg_mode == "Website") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = true;
+        $rootScope.reg_modeEmail = false;
+
+        // console.log(fullData);
+    }
+
+
+  }
+
+
+
 
 });
 
-app.controller('DramaCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('DramaCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
-$scope.isDance = true;
+$scope.isDrama = true;
 
 
 $scope.dramaticsIndex = 0
@@ -355,16 +627,15 @@ $scope.init = function(){
         'Content-Type': 'application/json; charset=UTF-8',
           }
   }).then(function (response) {
-      $scope.isDance = false;
-      // $scope.dramaticsData = response.data.events;
-      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.isDrama = false;
+      $scope.dramaticsData = response.data.events;
+      var imageLink = response.data.events[dramaticsIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
   });
 
 
 };
 
-$scope.init();
 
 $scope.tabDramatics = function(a) {
   // console.log(a);
@@ -378,19 +649,84 @@ $scope.tabDramatics = function(a) {
           }
   }).then(function (response) {
       $scope.isDance = false;
-      $scope.dramaticsData = response.data.events;
-      var imageLink = $scope.danceData[danceIndex].photos[0];
+      // $scope.dramaticsData = response.data.events;
+      var imageLink = response.data.events[dramaticsIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
   });
 
 };
 
 
+$rootScope.showAdvanced = function(ev) {
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: '../templates/registeremail.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+  };
+
+
+  function DialogController($scope, $mdDialog) {
+
+    $scope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
+
+
+// $scope.init();
+
+$rootScope.Register = function(data,email,path){
+console.log(data);
+$rootScope.reg_path = path;
+console.log(path);
+$rootScope.data_regemail = email;
+$rootScope.data_reg = data;
+console.log(data);
+  console.log(data.reg_mode);
+
+  if(data.reg_mode == "Email"){
+      $rootScope.showAdvanced();
+      console.log(data.reg_mode);
+      $rootScope.reg_modeEmail = true;
+      $rootScope.reg_modeWebsite = false;
+
+  }
+
+  else if (data.reg_mode == "Website") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = true;
+      $rootScope.reg_modeEmail = false;
+
+      // console.log(fullData);
+  }
+
+
+}
+
 
 
 });
 
-app.controller('FacCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('FacCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
 
@@ -408,15 +744,15 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      // $scope.facData = response.data.events;
-      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.facData = response.data.events;
+      var imageLink = response.data.events[facIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
 };
 
-$scope.init();
+// $scope.init();
 
 
   $scope.tabFac = function(a) {
@@ -432,8 +768,8 @@ $scope.init();
             }
     }).then(function (response) {
         $scope.isDance = false;
-        $scope.facData = response.data.events;
-        var imageLink = $scope.danceData[danceIndex].photos[0];
+        // $scope.facData = response.data.events;
+        var imageLink = response.data.events[facIndex].photos[0];
         $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
@@ -441,10 +777,75 @@ $scope.init();
   };
 
 
+  $rootScope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: '../templates/registeremail.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+      })
+      .then(function(answer) {
+        $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+    };
+
+
+    function DialogController($scope, $mdDialog) {
+
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+
+
+  $rootScope.Register = function(data,email,path){
+
+  $rootScope.reg_path = path;
+  console.log(path);
+  $rootScope.data_regemail = email;
+  $rootScope.data_reg = data;
+  console.log(data);
+    console.log(data.reg_mode);
+
+    if(data.reg_mode == "Email"){
+        $rootScope.showAdvanced();
+        console.log(data.reg_mode);
+        $rootScope.reg_modeEmail = true;
+        $rootScope.reg_modeWebsite = false;
+
+    }
+
+    else if (data.reg_mode == "Website") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = true;
+        $rootScope.reg_modeEmail = false;
+
+        // console.log(fullData);
+    }
+
+
+  }
+
+
+
 
 });
 
-app.controller('GlamourCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('GlamourCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
 
@@ -463,8 +864,8 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      // $scope.glamourData = response.data.events;
-      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.glamourData = response.data.events;
+      var imageLink = response.data.events[glamourIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
@@ -472,7 +873,7 @@ $scope.init = function(){
 };
 
 
-$scope.init();
+// $scope.init();
 
   $scope.tabGlamour = function(a) {
     // console.log(a);
@@ -487,20 +888,83 @@ $scope.init();
             }
     }).then(function (response) {
         $scope.isDance = false;
-        $scope.glamourData = response.data.events;
-        var imageLink = $scope.danceData[danceIndex].photos[0];
+        // $scope.glamourData = response.data.events;
+        var imageLink = response.data.events[glamourIndex].photos[0];
         $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
 
   };
 
+  $rootScope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: '../templates/registeremail.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+      })
+      .then(function(answer) {
+        $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+    };
+
+
+    function DialogController($scope, $mdDialog) {
+
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+
+
+  $rootScope.Register = function(data,email,path){
+
+  $rootScope.reg_path = path;
+  console.log(path);
+  $rootScope.data_regemail = email;
+  $rootScope.data_reg = data;
+  console.log(data);
+    console.log(data.reg_mode);
+
+    if(data.reg_mode == "Email"){
+        $rootScope.showAdvanced();
+        console.log(data.reg_mode);
+        $rootScope.reg_modeEmail = true;
+        $rootScope.reg_modeWebsite = false;
+
+    }
+
+    else if (data.reg_mode == "Website") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = true;
+        $rootScope.reg_modeEmail = false;
+
+        // console.log(fullData);
+    }
+
+
+  }
+
 
 
 
 });
 
-app.controller('HindiCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('HindiCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
 
@@ -519,15 +983,15 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      // $scope.hindiData = response.data.events;
-      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.hindiData = response.data.events;
+      var imageLink = response.data.events[hindiIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
 };
 
-$scope.init();
+// $scope.init();
 
   $scope.tabHindi = function(a) {
     // console.log(a);
@@ -541,8 +1005,8 @@ $scope.init();
             }
     }).then(function (response) {
         $scope.isDance = false;
-        $scope.hindiData = response.data.events;
-        var imageLink = $scope.danceData[danceIndex].photos[0];
+        // $scope.hindiData = response.data.events;
+        var imageLink = response.data.events[hindiIndex].photos[0];
         $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
@@ -550,23 +1014,93 @@ $scope.init();
   };
 
 
+  $rootScope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: '../templates/registeremail.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+      })
+      .then(function(answer) {
+        $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+    };
+
+
+    function DialogController($scope, $mdDialog) {
+
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+
+
+  $rootScope.Register = function(data,email,path){
+
+  $rootScope.reg_path = path;
+  console.log(path);
+  $rootScope.data_regemail = email;
+  $rootScope.data_reg = data;
+  console.log(data);
+    console.log(data.reg_mode);
+
+    if(data.reg_mode == "Email"){
+        $rootScope.showAdvanced();
+        console.log(data.reg_mode);
+        $rootScope.reg_modeEmail = true;
+        $rootScope.reg_modeWebsite = false;
+
+    }
+
+    else if (data.reg_mode == "Website") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = true;
+        $rootScope.reg_modeEmail = false;
+
+        // console.log(fullData);
+    }
+
+
+  }
+
+
 
 
 });
 
-app.controller('MainCtrl', function($scope, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$http) {
+app.controller('MainCtrl', function($scope, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$http,$window) {
+
+
+if($rootScope.reg_path != '/home'){
+  REGISTER_PATH = $rootScope.reg_path;
+}
+
 
   $rootScope.isPath= function(viewLocation) {
       return viewLocation === $location.path();
     };
-    $scope.userDetails = Auth.getuserFullDetails();
+    $rootScope.userDetails = Auth.getuserFullDetails();
 
     // console.log($scope.userDetails);
 
-  // if($rootScope.isPath('/')===true && $scope.userDetails !=undefined){
-  //   $location.path("/home");
-  //
-  // }
+  if($rootScope.isPath('/login')===true && $rootScope.userDetails !=undefined){
+    $location.path("/home");
+
+  }
 
 
     $scope.logInUser=function (user) {
@@ -580,7 +1114,13 @@ app.controller('MainCtrl', function($scope, $document,$timeout, $log, Auth,$loca
     }
     Auth.login(user).then(function(response) {
       $scope.userDetails = response;
-      $location.path("/home");
+      if(REGISTER_PATH == undefined){
+        $window.location.href = "https://sahil505.github.io/bohemian/";
+      }
+      else{
+        $location.path(REGISTER_PATH);
+      }
+
       $mdToast.show(
         $mdToast.simple()
         .textContent('User sucessfully logged in!')
@@ -625,7 +1165,7 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#FFECB3",
                 "href":"#!/dance",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/dance.jpg')"
               },
               {
                 "title":"Drama",
@@ -634,7 +1174,7 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#FF8A65",
                 "href":"#!/drama",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/drama.jpg')"
               },
               {
                 "title":"Photography and Films",
@@ -643,7 +1183,7 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#E64A19",
                 "href":"#!/pfc",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/pfc.jpg')"
               },
               {
                 "title":"Fine Arts and Crafts",
@@ -652,7 +1192,7 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#43A047",
                 "href":"#!/fac",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/finearts.jpg')"
               },
               {
                 "title":"Music",
@@ -661,16 +1201,16 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#512DA8",
                 "href":"#!/music",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/music.jpg')"
               },
               {
-                "title":"Debate and MUN",
+                "title":"Debate",
                 "row":1,
                 "col":1,
                 "class":"tile1",
                 "bg":"#4A148C",
                 "href":"#!/debate",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/debate.jpg')"
               },
               {
                 "title":"Literary",
@@ -679,16 +1219,16 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#ef5350",
                 "href":"#!/literary",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/lit.jpg')"
               },
               {
-                "title":"Quiz",
+                "title":"Quizzing",
                 "row":1,
                 "col":1,
                 "class":"tile1",
                 "bg":"#536DFE",
                 "href":"#!/quiz",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/quiz.jpg')"
               },
               {
                 "title":"Hindi Samiti",
@@ -697,7 +1237,7 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#00ACC1",
                 "href":"#!/hindi",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/hindi.jpg')"
               },
               {
                 "title":"Magic",
@@ -706,7 +1246,7 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#00695C",
                 "href":"#!/magic",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/magic.jpg')"
               },
               {
                 "title":"Comedy",
@@ -715,7 +1255,7 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#424242",
                 "href":"#!/comedy",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/comedy.jpg')"
               },
               {
                 "title":"Glamour",
@@ -724,7 +1264,7 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#FFECB3",
                 "href":"#!/glamour",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/glamour.jpg')"
               },
               {
                 "title":"Adventure",
@@ -733,7 +1273,7 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#ff1744",
                 "href":"#!/adventure",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/adventure.jpg')"
               },
               {
                 "title":"Culinary",
@@ -742,7 +1282,7 @@ $scope.compevents=[
                 "class":"tile1",
                 "bg":"#FF8F00",
                 "href":"#!/culinary",
-                "image":"url('images/pic01.jpg')"
+                "image":"url('images/culinary.jpg')"
               }
 ];
 
@@ -783,7 +1323,7 @@ $scope.pronitesCarousel = [
 
 });
 
-app.controller('LiteraryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('LiteraryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
 
@@ -802,15 +1342,15 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      // $scope.literaryData = response.data.events;
-      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.literaryData = response.data.events;
+      var imageLink = response.data.events[literaryIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
 };
 
-$scope.init();
+// $scope.init();
 
   $scope.tabLiterary = function(a) {
     // console.log(a);
@@ -824,8 +1364,8 @@ $scope.init();
             }
     }).then(function (response) {
         $scope.isDance = false;
-        $scope.literaryData = response.data.events;
-        var imageLink = $scope.danceData[danceIndex].photos[0];
+        // $scope.literaryData = response.data.events;
+        var imageLink = response.data.events[literaryIndex].photos[0];
         $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
@@ -833,11 +1373,75 @@ $scope.init();
   };
 
 
+  $rootScope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: '../templates/registeremail.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+      })
+      .then(function(answer) {
+        $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+    };
+
+
+    function DialogController($scope, $mdDialog) {
+
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+
+
+  $rootScope.Register = function(data,email,path){
+
+  $rootScope.reg_path = path;
+  console.log(path);
+  $rootScope.data_regemail = email;
+  $rootScope.data_reg = data;
+  console.log(data);
+    console.log(data.reg_mode);
+
+    if(data.reg_mode == "Email"){
+        $rootScope.showAdvanced();
+        console.log(data.reg_mode);
+        $rootScope.reg_modeEmail = true;
+        $rootScope.reg_modeWebsite = false;
+
+    }
+
+    else if (data.reg_mode == "Website") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = true;
+        $rootScope.reg_modeEmail = false;
+
+        // console.log(fullData);
+    }
+
+
+  }
+
+
 
 
 });
 
-app.controller('MagicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('MagicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
 
@@ -857,15 +1461,15 @@ $scope.init = function(){
             }
     }).then(function (response) {
         $scope.isDance = false;
-        // $scope.magicData = response.data.events;
-        var imageLink = response.data.events[danceIndex].photos[0];
+        $scope.magicData = response.data.events;
+        var imageLink = response.data.events[magicIndex].photos[0];
         $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
 
 };
 
-$scope.init();
+// $scope.init();
 
     $scope.tabMagic = function(a) {
       // console.log(a);
@@ -879,8 +1483,8 @@ $scope.init();
               }
       }).then(function (response) {
           $scope.isDance = false;
-          $scope.magicData = response.data.events;
-          var imageLink = $scope.danceData[danceIndex].photos[0];
+          // $scope.magicData = response.data.events;
+          var imageLink = response.data.events[magicIndex].photos[0];
           $scope.imgLink = 'background-image:url('+imageLink+')';
 
       });
@@ -889,11 +1493,75 @@ $scope.init();
     };
 
 
+    $rootScope.showAdvanced = function(ev) {
+        $mdDialog.show({
+          controller: DialogController,
+          templateUrl: '../templates/registeremail.html',
+          parent: angular.element(document.body),
+          targetEvent: ev,
+          clickOutsideToClose:true,
+        })
+        .then(function(answer) {
+          $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+        }, function() {
+          $scope.status = 'You cancelled the dialog.';
+        });
+      };
+
+
+      function DialogController($scope, $mdDialog) {
+
+        $scope.hide = function() {
+          $mdDialog.hide();
+        };
+
+        $scope.cancel = function() {
+          $mdDialog.cancel();
+        };
+
+        $scope.answer = function(answer) {
+          $mdDialog.hide(answer);
+        };
+      }
+
+
+    $rootScope.Register = function(data,email,path){
+
+    $rootScope.reg_path = path;
+    console.log(path);
+    $rootScope.data_regemail = email;
+    $rootScope.data_reg = data;
+    console.log(data);
+      console.log(data.reg_mode);
+
+      if(data.reg_mode == "Email"){
+          $rootScope.showAdvanced();
+          console.log(data.reg_mode);
+          $rootScope.reg_modeEmail = true;
+          $rootScope.reg_modeWebsite = false;
+
+      }
+
+      else if (data.reg_mode == "Website") {
+        $rootScope.showAdvanced();
+          $rootScope.reg_modeWebsite = true;
+          $rootScope.reg_modeEmail = false;
+
+          // console.log(fullData);
+      }
+
+
+    }
+
+
 
 
 });
 
-app.controller('MusicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('MusicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
 
@@ -912,15 +1580,15 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      // $scope.musicData = response.data.events;
-      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.musicData = response.data.events;
+      var imageLink = response.data.events[musicIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
 };
 
-$scope.init();
+// $scope.init();
 
 
 
@@ -936,19 +1604,82 @@ $scope.init();
             }
     }).then(function (response) {
         $scope.isDance = false;
-        $scope.musicData = response.data.events;
-        var imageLink = $scope.danceData[danceIndex].photos[0];
+        // $scope.musicData = response.data.events;
+        var imageLink = response.data.events[musicIndex].photos[0];
         $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
 
   };
 
+  $rootScope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: '../templates/registeremail.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+      })
+      .then(function(answer) {
+        $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+    };
+
+
+    function DialogController($scope, $mdDialog) {
+
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+
+
+  $rootScope.Register = function(data,email,path){
+
+  $rootScope.reg_path = path;
+  console.log(path);
+  $rootScope.data_regemail = email;
+  $rootScope.data_reg = data;
+  console.log(data);
+    console.log(data.reg_mode);
+
+    if(data.reg_mode == "Email"){
+        $rootScope.showAdvanced();
+        console.log(data.reg_mode);
+        $rootScope.reg_modeEmail = true;
+        $rootScope.reg_modeWebsite = false;
+
+    }
+
+    else if (data.reg_mode == "Website") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = true;
+        $rootScope.reg_modeEmail = false;
+
+        // console.log(fullData);
+    }
+
+
+  }
+
 
 
 });
 
-app.controller('PfcCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('PfcCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
 
@@ -967,15 +1698,15 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      // $scope.pfcData = response.data.events;
-      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.pfcData = response.data.events;
+      var imageLink = response.data.events[pfcIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
 
 };
 
-$scope.init();
+// $scope.init();
 
   $scope.tabPfc = function(a) {
     // console.log(a);
@@ -990,8 +1721,8 @@ $scope.init();
             }
     }).then(function (response) {
         $scope.isDance = false;
-        $scope.pfcData = response.data.events;
-        var imageLink = $scope.danceData[danceIndex].photos[0];
+        // $scope.pfcData = response.data.events;
+        var imageLink = response.data.events[pfcIndex].photos[0];
         $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
@@ -999,11 +1730,74 @@ $scope.init();
 
   };
 
+  $rootScope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: '../templates/registeremail.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+      })
+      .then(function(answer) {
+        $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+    };
+
+
+    function DialogController($scope, $mdDialog) {
+
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+
+
+  $rootScope.Register = function(data,email,path){
+
+  $rootScope.reg_path = path;
+  console.log(path);
+  $rootScope.data_regemail = email;
+  $rootScope.data_reg = data;
+  console.log(data);
+    console.log(data.reg_mode);
+
+    if(data.reg_mode == "Email"){
+        $rootScope.showAdvanced();
+        console.log(data.reg_mode);
+        $rootScope.reg_modeEmail = true;
+        $rootScope.reg_modeWebsite = false;
+
+    }
+
+    else if (data.reg_mode == "Website") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = true;
+        $rootScope.reg_modeEmail = false;
+
+        // console.log(fullData);
+    }
+
+
+  }
+
 
 
 });
 
-app.controller('QuizCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope) {
+app.controller('QuizCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 $scope.isDance = true;
 
@@ -1011,7 +1805,7 @@ $scope.isDance = true;
 $scope.quizIndex = 0;
 var quizIndex = $scope.quizIndex;
 
-$scope.bro = function(){
+$scope.init = function(){
 
   $http({
       method: "GET",
@@ -1021,8 +1815,8 @@ $scope.bro = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
-      // $scope.quizData = response.data.events;
-      var imageLink = response.data.events[danceIndex].photos[0];
+      $scope.quizData = response.data.events;
+      var imageLink = response.data.events[quizIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
 
   });
@@ -1030,7 +1824,7 @@ $scope.bro = function(){
 };
 
 
-$scope.bro();
+// $scope.bro();
 
   $scope.tabQuiz = function(a) {
     // console.log(a);
@@ -1044,14 +1838,78 @@ $scope.bro();
             }
     }).then(function (response) {
         $scope.isDance = false;
-        $scope.quizData = response.data.events;
-        var imageLink = $scope.danceData[danceIndex].photos[0];
+        // $scope.quizData = response.data.events;
+        var imageLink = response.data.events[quizIndex].photos[0];
         $scope.imgLink = 'background-image:url('+imageLink+')';
 
     });
 
 
   };
+
+
+  $rootScope.showAdvanced = function(ev) {
+      $mdDialog.show({
+        controller: DialogController,
+        templateUrl: '../templates/registeremail.html',
+        parent: angular.element(document.body),
+        targetEvent: ev,
+        clickOutsideToClose:true,
+      })
+      .then(function(answer) {
+        $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+      }, function() {
+        $scope.status = 'You cancelled the dialog.';
+      });
+    };
+
+
+    function DialogController($scope, $mdDialog) {
+
+      $scope.hide = function() {
+        $mdDialog.hide();
+      };
+
+      $scope.cancel = function() {
+        $mdDialog.cancel();
+      };
+
+      $scope.answer = function(answer) {
+        $mdDialog.hide(answer);
+      };
+    }
+
+
+  $rootScope.Register = function(data,email,path){
+
+  $rootScope.reg_path = path;
+  console.log(path);
+  $rootScope.data_regemail = email;
+  $rootScope.data_reg = data;
+  console.log(data);
+    console.log(data.reg_mode);
+
+    if(data.reg_mode == "Email"){
+        $rootScope.showAdvanced();
+        console.log(data.reg_mode);
+        $rootScope.reg_modeEmail = true;
+        $rootScope.reg_modeWebsite = false;
+
+    }
+
+    else if (data.reg_mode == "Website") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = true;
+        $rootScope.reg_modeEmail = false;
+
+        // console.log(fullData);
+    }
+
+
+  }
 
 
 
@@ -1201,6 +2059,94 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
 
   };
 
+
+
+
+
+});
+
+app.controller('RegisterDialogCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$location) {
+
+// console.log($rootScope.userDetails);
+var RDVdetails = $rootScope.userDetails;
+console.log(RDVdetails);
+
+// $scope.regPath = $rootScope.reg_path;
+// REGISTER_PATH = $rootScope.reg_path;
+console.log(REGISTER_PATH);
+console.log($scope.regPath);
+$scope.regData = $rootScope.data_reg;
+$scope.regDataEmail = $rootScope.data_regemail;
+// console.log($scope.regData);
+$scope.regWebsite = $rootScope.reg_modeWebsite;
+console.log("reg website");
+console.log($scope.regWebsite);
+$scope.regEmail = $rootScope.reg_modeEmail;
+console.log("reg email");
+console.log($scope.regEmail);
+$scope.checkRegType = function(type){
+  if(type == "Team"){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+// console.log($scope.regData);
+console.log("korku");
+
+
+$scope.submitRegister = function(user,id){
+  console.log(user.username);
+  console.log(id);
+
+if(RDVdetails != null){
+
+      $http({
+        url:URL_PREFIX+"event/register/"+id,
+        method:"POST",
+        headers:{
+          'Content-Type': 'application/json; charset=UTF-8'
+        },
+        data:{
+          'team_name':user.username,
+          'register':RDVdetails.rdv_number
+        }
+      }).then(function sucessCallback(response) {
+        console.log(response);
+        if (response.status===200){
+          console.log(response);
+          $mdToast.show(
+            $mdToast.simple()
+            .textContent(response)
+            .position('bottom right')
+            .hideDelay(3000)
+          );
+        }
+      }, function errorCallback(error) {
+        console.log(error);
+
+          $mdToast.show(
+            $mdToast.simple()
+            .textContent(error.data.message)
+            .position('top left')
+            .hideDelay(3000)
+          );
+
+      });
+    }
+
+    else{
+      $location.path("/login");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Please Login First")
+        .position('top left')
+        .hideDelay(3000)
+      );
+    }
+
+}
 
 
 

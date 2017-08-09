@@ -143,9 +143,23 @@
   position: relative;
   padding: 150px 20px 20px 150px;
   font-family: "Dosis", sans-serif;
+  overflow: scroll;
+  z-index: 0;
+}
+.main-left:before {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, #263238, #37474f);
+  opacity: .6;
 }
 .main-left .left-content {
   max-width: 87%;
+  position: relative;
+  z-index: 4;
 }
 .main-left .left-content span {
   color: #ffffff;
@@ -186,6 +200,7 @@
   font-family: "Dosis", sans-serif;
   color: #ffffff;
   padding: 0;
+  z-index: 4;
 }
 .main-right h1 {
   color: #ffffff;
@@ -229,8 +244,10 @@
   background-repeat: repeat;
   background-position: center;
   z-index: 5;
-  position: relative;
+  position: fixed;
+  top: 0;
   line-height: 80%;
+  width: 100%;
 }
 .events-at-glance-head .r1 {
   position: absolute;
@@ -269,8 +286,12 @@
   color: #ffffff;
 }
 
+.home-glance {
+  padding-top: 15vh;
+}
+
 .events-at-glance .div-flex {
-  height: 45vh;
+  height: 55vh;
   position: relative;
 }
 .events-at-glance .div-flex .outline-button {
@@ -388,12 +409,19 @@
 }
 
 .club-events {
-  background-image: url("../images/bg1.png");
+  background-color: #f1f1f1;
   background-size: cover;
+  padding-top: 15vh;
 }
 
 .events-grid {
   padding: 10px;
+}
+.events-grid .events-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
 }
 .events-grid .events-col {
   height: 30vh;
@@ -420,13 +448,13 @@
   bottom: 0;
   height: 5vh;
   width: 100%;
-  background-color: rgba(176, 190, 197, 0.5);
+  background-color: #ECEFF1;
 }
 .events-grid .events-col .events-grid-overlay a {
   text-decoration: none;
 }
 .events-grid .events-col .events-grid-overlay a h1 {
-  font-size: 1.7em;
+  font-size: 1.4em;
 }
 @media only screen and (min-width: 992px) {
   .events-grid .events-col {
@@ -445,6 +473,9 @@
   margin: auto;
 }
 
+.pronites-page {
+  padding-top: 15vh;
+}
 .pronites-page .head-pronite {
   padding: 0;
   margin: 0;
@@ -514,4 +545,30 @@
   font-size: 1.5em;
   font-size: "Dosis", sans-serif;
   padding: 10px;
+}
+
+.register-email {
+  min-height: 20vh;
+}
+.register-email h1 {
+  font-size: 1.7em;
+  padding: 5px;
+  margin: 0;
+  font-family: "Advent Pro", sans-serif;
+}
+.register-email span {
+  font-size: 1.5em;
+  font-family: "Dosis", sans-serif;
+}
+
+.user-name {
+  position: fixed;
+  bottom: 2%;
+  left: 0;
+  padding: 10px;
+  z-index: 10000;
+  font-size: 2em;
+  font-family: "Dosis", sans-serif;
+  color: #263238;
+  background-color: #78909c;
 }

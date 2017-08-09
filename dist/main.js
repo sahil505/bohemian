@@ -1,9 +1,14 @@
-var app = angular.module('boxer', ['ngMaterial','ngRoute','ngAnimate','duScroll','angular-scroll-animate','ngParallax','angular-carousel']);
+var app = angular.module('boxer', ['ngMaterial','ngRoute','ngAnimate','duScroll','angular-scroll-animate','ngParallax','angular-carousel','ngSanitize']);
 
 var URL_PREFIX = 'http://rdv-iitd.com/api/'
+
+var REGISTER_PATH = '/home';
 // routes for the urls
 app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider) {
   $routeProvider.when("/", {
+    controller: "MainCtrl",
+    templateUrl: "templates/home.html"
+  }).when("/home", {
     controller: "MainCtrl",
     templateUrl: "templates/home.html"
   }).when("/register", {

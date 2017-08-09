@@ -1,15 +1,42 @@
-<div class="main-div" layout = "row" ng-controller = "FacCtrl">
+<div class="main-div" layout = "row" ng-controller = "FacCtrl" ng-init="init()">
   <div class="main-left " flex = "70">
 
       <img class = "rdv-tag" src="images/rdvtag.png" alt="">
 
       <div class="left-content">
 
-        <h1 class="headline">{{facData[facIndex].name}} <button class="outline-button pass"><a href = "events.html">Register</a></button></h1>
+        <h1 class="headline">{{facData[facIndex].name}} <button ng-show = facData[danceIndex].reg_status ng-click = "Register(facData[facIndex],facData[0].poc[0].email,'/fac')" class="outline-button pass"><a>Register</a></button></h1>
+        <!-- <h1 class="headline">{{facData[facIndex].name}} <button ng-click = "Register(facData[facIndex],facData[0].poc[0].email,'/fac')" class="outline-button pass"><a>Register</a></button></h1> -->
         <h3>{{facData[facIndex].subheading}}</h2>
-          <span>
-            {{facData[facIndex].description}}
+          <span ng-bind-html="facData[facIndex].description">
+
+          </span><br>
+          <h1>Rules</h1>
+          <span ng-bind-html="facData[facIndex].rules">
+          </span><br>
+          <h1>Prizes</h1>
+          <span ng-bind-html="facData[facIndex].prizes">
           </span>
+          <br>
+          <h1>Date Time Venue</h1>
+
+          <div ng-repeat = "data in facData[facIndex].dtv" layout = "column">
+            <h3>{{data.type}}</h3>
+            <div class="" layout = "column">
+              <span>Date: {{data.date}}</span><br>
+              <span>Start DateTime :{{data.start_time | date:'dd-MMM-yyyy @ h:mma'}}</span><br>
+              <span>End DateTime: {{data.end_time | date:'dd-MMM-yyyy @ h:mma'}}</span><br>
+              <span>Venue: {{data.venue}}</span>
+            </div>
+          </div>
+          <div class="" layout = "column">
+            <h3>Point of Contact</h3>
+            <span>{{facData[facIndex].poc[0].name}}</span><br>
+            <span>{{facData[facIndex].poc[0].designation}}</span><br>
+            <span>{{facData[facIndex].poc[0].email}}</span><br>
+            <span>{{facData[facIndex].poc[0].contact}}</span>
+          </div>
+
         </div>
   </div>
   <div class="main-right" flex = "30" layout-align = "center center">

@@ -1,6 +1,49 @@
-<div class="register-email" layout = "column" layout-align = "center center">
-  <h1>Please mail your registration on the following email</h1>
-  <span>
-    prateek95@gmail.com
+<div class="register-email" layout = "column" layout-align = "center center" ng-controller = "RegisterDialogCtrl">
+  <h1 ng-show = {{regEmail}}>Please mail your registration on the following email</h1>
+  <span ng-show = {{regEmail}}>
+    {{regDataEmail}}
   </span>
+  <h1 ng-show = {{regWebsite}}>Registration Form</h1>
+  <form name= "register-form"class="" ng-show = {{regWebsite}} action="index.html" method="post">
+    <!-- <md-input-container class="md-icon-float md-block ">
+      <label>RDV No</label>
+
+        <input md-maxlength="30" required md-no-asterisk name="username" ng-model="user.username">
+        <div ng-messages="userForm.username.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container> -->
+    <md-input-container class="md-icon-float md-block" ng-show = "checkRegType(regData.reg_type)">
+      <label>Team Name</label>
+      <!-- <md-icon>mail</md-icon> -->
+        <input md-maxlength="30" required md-no-asterisk name="username" ng-model="user.team_name">
+        <div ng-messages="userForm.team_name.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block " ng-show =regData.reg_link_upload >
+        <label>Upload Link</label>
+        <!-- <md-icon>mail</md-icon> -->
+          <input md-maxlength="30" required md-no-asterisk name="username" ng-model="user.upload_link">
+          <div ng-messages="userForm.upload_link.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block ">
+          <label ng-show = "checkRegType(regData.reg_type)">Team Members Name</label>
+          <label>Your Name</label>
+          <!-- <md-icon>mail</md-icon> -->
+            <input required md-no-asterisk name="username" ng-model="user.username">
+            <div ng-messages="userForm.username.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+            <md-icon ng-show = "checkRegType(regData.reg_type)">mail</md-icon>
+          </md-input-container>
+
+          <div layout = "row" layout-align = "center center">
+          <md-button value = "Submit valid inputs" ng-disabled="userForm.$invalid" class="md-raised md-primary" ng-click = "submitRegister(user,regData.id);answer('useful')">Submit</md-button>
+          </div>
+
+  </form>
+
 </div>

@@ -1,15 +1,42 @@
-<div class="main-div" layout = "row" ng-controller = "QuizCtrl">
+<div class="main-div" layout = "row" ng-controller = "QuizCtrl" ng-init="init()">
   <div class="main-left " flex = "70">
 
       <img class = "rdv-tag" src="images/rdvtag.png" alt="">
 
       <div class="left-content">
 
-        <h1 class="headline">{{quizData[quizIndex].name}} <button class="outline-button pass"><a href = "events.html">Register</a></button></h1>
+        <h1 class="headline">{{quizData[quizIndex].name}} <button ng-show = quizData[danceIndex].reg_status ng-click = "Register(quizData[quizIndex],quizData[0].poc[0].email,'/quiz')" class="outline-button pass"><a>Register</a></button></h1>
+        <!-- <h1 class="headline">{{quizData[quizIndex].name}} <button ng-click = "Register(quizData[quizIndex],quizData[0].poc[0].email,'/quiz')" class="outline-button pass"><a>Register</a></button></h1> -->
         <h3>{{quizData[quizIndex].subheading}}</h2>
-          <span>
-            {{quizData[quizIndex].description}}
+          <span ng-bind-html="quizData[quizIndex].description">
+
+          </span><br>
+          <h1>Rules</h1>
+          <span ng-bind-html="quizData[quizIndex].rules">
+          </span><br>
+          <h1>Prizes</h1>
+          <span ng-bind-html="quizData[quizIndex].prizes">
           </span>
+          <br>
+          <h1>Date Time Venue</h1>
+
+          <div ng-repeat = "data in quizData[quizIndex].dtv" layout = "column">
+            <h3>{{data.type}}</h3>
+            <div class="" layout = "column">
+              <span>Date: {{data.date}}</span><br>
+              <span>Start DateTime :{{data.start_time | date:'dd-MMM-yyyy @ h:mma'}}</span><br>
+              <span>End DateTime: {{data.end_time | date:'dd-MMM-yyyy @ h:mma'}}</span><br>
+              <span>Venue: {{data.venue}}</span>
+            </div>
+          </div>
+          <div class="" layout = "column">
+            <h3>Point of Contact</h3>
+            <span>{{quizData[quizIndex].poc[0].name}}</span><br>
+            <span>{{quizData[quizIndex].poc[0].designation}}</span><br>
+            <span>{{quizData[quizIndex].poc[0].email}}</span><br>
+            <span>{{quizData[quizIndex].poc[0].contact}}</span>
+          </div>
+
         </div>
   </div>
   <div class="main-right" flex = "30" layout-align = "center center">

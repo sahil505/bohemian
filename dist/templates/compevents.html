@@ -28,14 +28,17 @@
     </div> -->
 
   </div>
-
+  <!-- <div class="user-name" md-whiteframe = "3">
+    Hii {{userDetails.first_name}}!
+  </div> -->
   <div class="container events-grid" layout = "row" layout-wrap layout-xs = "column" layout-align = "center center">
       <div md-whiteframe = "2" class="center events-col" flex-gt-sm = "30"  ng-repeat = "data in compevents" layout = "center center" style="background-image:{{data.image}}">
-
+          <a ng-href = {{data.href}} class="events-link">
+            </a>
         <div class="events-grid-overlay">
-          <a ng-href = {{data.href}}>
+
             <h1>{{data.title}}</h1>
-          </a>
+
         </div>
       </div>
   </div>
