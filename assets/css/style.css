@@ -533,7 +533,7 @@ img{ max-width:100%;}
 */
 
 .main-fool {
-	background-image: url("../img/main-fool-2.svg");
+	background-image: url("../img/main-fool.svg");
 	background-repeat: no-repeat;
 	background-position: right -100px;
 }
@@ -541,7 +541,7 @@ img{ max-width:100%;}
 @media screen and (min-width: 500px) and (max-width: 1500px) {
 	/* applies only if the screen is more than 500px & less than 1500px*/
 	.main-fool {
-		background-image: url("../img/main-fool-2.svg");
+		background-image: url("../img/main-fool.svg");
 		background-repeat: no-repeat;
 		background-position: 420px -340px;
 	}
@@ -784,7 +784,7 @@ img{ max-width:100%;}
 .alabaster {
 	padding-top: 600px;
 	padding-bottom: 64px;
-	background-image: url("../img/bandi-fool-3.svg");
+	background-image: url("../img/bandi-fool.svg");
 	background-repeat: no-repeat;
 	background-position: left bottom;
 }
@@ -794,7 +794,7 @@ img{ max-width:100%;}
 	.alabaster {
 		padding-top: 352px;
 		padding-bottom: 64px;
-		background-image: url("../img/bandi-fool-3.svg");
+		background-image: url("../img/bandi-fool.svg");
 		background-repeat: no-repeat;
 		background-size: 368px 650px;
 		background-position: left 272px;
@@ -825,7 +825,7 @@ img{ max-width:100%;}
 }
 
 .bandi-fool {
-	background-image: url("../img/fly-fool-2.svg");
+	background-image: url("../img/fly-fool.svg");
 	background-repeat: no-repeat;
 	background-size: 300px 650px;
 	background-position: 0 -100px;
@@ -1080,7 +1080,7 @@ img{ max-width:100%;}
 	.paddind{
 		padding-top: 160px;
 		padding-bottom: 56px;
-		background-image: url("../img/feather-fool.svg");
+		background-image: url("../img/feathers.svg");
 		background-repeat: no-repeat;
 		background-size: 1330px;
 		background-position: right top;
@@ -1218,7 +1218,7 @@ img{ max-width:100%;}
 }*/
 
 .team-fool {
-	background-image: url("../img/team-fool-2.svg");
+	background-image: url("../img/team-fool.svg");
 	background-repeat: no-repeat;
 	background-position: -16% 75%;
 }
@@ -1226,7 +1226,7 @@ img{ max-width:100%;}
 @media screen and (min-width: 500px) and (max-width: 1500px) {
 	/* applies only if the screen is more than 500px & less than 1500px*/
 	.team-fool {
-		background-image: url("../img/team-fool-2.svg");
+		background-image: url("../img/team-fool.svg");
 		background-repeat: no-repeat;
 		background-position: -37% 75%;
 	}
