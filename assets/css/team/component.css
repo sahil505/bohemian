@@ -523,6 +523,10 @@ a:focus {
 	color: white;
 }
 
+.center {
+	left: 50%;
+}
+
 .fa-facebook-square:before {
 	content: "\f082";
 }
