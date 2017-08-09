@@ -964,6 +964,7 @@ img{ max-width:100%;}
 		width: 100%;
 		height: 100%;
 	}
+
 	.main-heading-3-box a .name .title {
 		display: block;
 		text-transform: none;
@@ -985,6 +986,7 @@ img{ max-width:100%;}
 		-webkit-transition-duration: 0.9s;
 		transition-duration: 0.9s;
 	}
+
 	.main-heading-3-box a:hover .name {
 		filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
 		opacity: 1;
@@ -1001,10 +1003,12 @@ img{ max-width:100%;}
 		-webkit-transition-duration: 0.6s;
 		transition-duration: 0.6s;
 	}
+
 	.main-heading-3-box a:hover .title {
 		filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
 		opacity: 1;
 	}
+
 	.main-heading-3-box a:hover img {
 		-moz-transform: scale(1, 1);
 		-ms-transform: scale(1, 1);
@@ -1022,10 +1026,7 @@ img{ max-width:100%;}
 		-webkit-transition-duration: 0.8s;
 		transition-duration: 0.8s;
 	}
-	.main-heading-3-box a:hover:hover img {
-		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-		opacity: 0.5;
-	}
+
 	.main-heading-3-box a img {
 		margin: 0 auto;
 		display: inline-block;
@@ -1113,7 +1114,7 @@ img{ max-width:100%;}
 
 /* Team
 ---------------------------------*/
-.team-leader-block{
+/*.team-leader-block{
 	max-width:993px;
 	margin:0 auto;
 }
@@ -1208,21 +1209,13 @@ img{ max-width:100%;}
 	text-decoration:none;
 }
 
-.team-leader ul li a.fa-twitter:hover{
-	color:#55acee;
-}
-
 .team-leader ul li a.fa-facebook:hover{
 	color:#3b5998;
 }
 
-.team-leader ul li a.fa-pinterest:hover{
-	color:#cb2026;
-}
-
-.team-leader ul li a.fa-google-plus:hover{
+.team-leader ul li a.fa-envelope:hover{
 	color:#dd4b39;
-}
+}*/
 
 .team-fool {
 	background-image: url("../img/team-fool.svg");
@@ -1397,7 +1390,7 @@ img{ max-width:100%;}
 /* Footer
 ---------------------------------*/
 .footer-fool {
-	background-image: url("../img/footer-background.svg");
+	background-image: url("../img/footer-fool.svg");
 	background-repeat: no-repeat;
 	background-size: 600px 600px;
 	background-position: right bottom;
@@ -1406,7 +1399,7 @@ img{ max-width:100%;}
 @media screen and (min-width: 500px) and (max-width: 1500px) {
 	/* applies only if the screen is more than 500px & less than 1500px*/
 	.footer-fool {
-		background-image: url("../img/footer-background.svg");
+		background-image: url("../img/footer-fool.svg");
 		background-repeat: no-repeat;
 		background-size: 450px 450px;
 		background-position: right bottom;

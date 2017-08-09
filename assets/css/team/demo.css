@@ -12,8 +12,11 @@
 
 body {
 	font-family: 'Lato', Arial, sans-serif;
-	color: #fff;
-	background: #e74c3c;
+	/*color: #fff;*/
+	background-color: #eaeaff;
+	background-image: url("../../img/team-back.png");
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 /* To Navigation Style */
