@@ -104,8 +104,8 @@ a:focus {
 .vs-triplelayout .vs-nav .vs-nav-current a,
 .vs-container.vs-move-left .vs-nav-right a,
 .vs-container.vs-move-right .vs-nav-left a {
-	border-color: #fff;
-	color: #fff;
+	border-color: grey;
+	color: grey;
 }
 
 .vs-container.vs-move-left .vs-nav-current a,
