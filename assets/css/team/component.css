@@ -519,6 +519,10 @@ a:focus {
 	color:#dd4b39;
 }
 
+.mob-number {
+	color: white;
+}
+
 .fa-facebook-square:before {
 	content: "\f082";
 }
