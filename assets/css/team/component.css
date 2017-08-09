@@ -512,16 +512,10 @@ a:focus {
 .team-leader ul li a:hover, .team-leader ul li a:focus{
 	text-decoration:none;
 }
-.team-leader ul li a.fa-twitter:hover{
-	color:#55acee;
-}
 .team-leader ul li a.fa-facebook:hover{
 	color:#3b5998;
 }
-.team-leader ul li a.fa-pinterest:hover{
-	color:#cb2026;
-}
-.team-leader ul li a.fa-google-plus:hover{
+.team-leader ul li a.fa-envelope:hover{
 	color:#dd4b39;
 }
 

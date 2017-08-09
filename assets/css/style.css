@@ -1114,7 +1114,7 @@ img{ max-width:100%;}
 
 /* Team
 ---------------------------------*/
-.team-leader-block{
+/*.team-leader-block{
 	max-width:993px;
 	margin:0 auto;
 }
@@ -1209,21 +1209,13 @@ img{ max-width:100%;}
 	text-decoration:none;
 }
 
-.team-leader ul li a.fa-twitter:hover{
-	color:#55acee;
-}
-
 .team-leader ul li a.fa-facebook:hover{
 	color:#3b5998;
 }
 
-.team-leader ul li a.fa-pinterest:hover{
-	color:#cb2026;
-}
-
-.team-leader ul li a.fa-google-plus:hover{
+.team-leader ul li a.fa-envelope:hover{
 	color:#dd4b39;
-}
+}*/
 
 .team-fool {
 	background-image: url("../img/team-fool-2.svg");
