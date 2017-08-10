@@ -554,12 +554,6 @@ img{ max-width:100%;}
 	}
 }
 
-/*
-.introduction{
-	padding:64px 0 110px;
-}
-*/
-
 .introduction {
 	padding-left: 20px;
 }
@@ -701,13 +695,18 @@ img{ max-width:100%;}
 
 @media screen and (max-width: 500px) {
 	/*applies only if the screen is less than 500px*/
+	.introduction {
+		padding-left: 0;
+		text-align: center;
+	}
+
 	#u338 {
 		display: none;
 	}
 
 	.rdv-content {
 		margin-left: 0;
-		text-align: left;
+		/*text-align: left;*/
 	}
 
 	.rdv-head {
@@ -769,7 +768,7 @@ img{ max-width:100%;}
 
 .foot-list {
 	float: left;
-	margin-left: 240px;
+	margin-left: 300px;
 }
 
 .foot-description {
