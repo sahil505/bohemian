@@ -46,6 +46,10 @@ Author URL: https://sahil505.com
 	</div>
 	<!-- Video Container starts -->
 	<div class="video-container" id="landing-video">
+		<div class="userDetails">
+			<h1 id = "userName"></h1>
+			<h2 id = "rdvPoints"></h1>
+		</div>
 		<video autoplay loop class="fillWidth">
 			<source src="assets/img/video-2.mp4" type="video/mp4" />Your browser does not support the video tags. We suggest you upgrade your browser.
 		</video>
@@ -556,5 +560,21 @@ Author URL: https://sahil505.com
 		}());
 	</script>
 	<!-- Side menu-bar ends -->
+
+	<!-- get userdata -->
+
+	<script type="text/javascript">
+	if(window.localStorage.getItem("userFullDetails")){
+		var userDetails =  window.localStorage.getItem("userFullDetails");
+		var userFullDetails = JSON.parse(userDetails);
+		console.log(userFullDetails);
+		// console.log(userDetails.poi);
+		document.getElementById("userName").innerHTML = "Hii  " + userFullDetails.first_name;
+		document.getElementById("rdvPoints").innerHTML = "RDV Points  " + userFullDetails.rdv_points;
+
+	}
+
+
+	</script>
 </body>
 </html>
