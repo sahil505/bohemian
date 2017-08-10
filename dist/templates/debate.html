@@ -1,11 +1,11 @@
 <div class="main-div" layout = "row" ng-controller = "DebateCtrl" ng-init="init()">
-  <div class="main-left " flex = "70">
+  <div class="main-left " flex-gt-sm = "70" style={{imgLink}}>
 
-      <img class = "rdv-tag" src="images/rdvtag.png" alt="">
+      <img class = "rdv-tag" src="images/rdvtag.png" alt="" hide-xs hide-sm>
 
       <div class="left-content">
 
-        <h1 class="headline">{{debateData[debateIndex].name}} <button ng-show = debateData[danceIndex].reg_status ng-click = "Register(debateData[debateIndex],debateData[0].poc[0].email,'/debate')" class="outline-button pass"><a>Register</a></button></h1>
+        <h1 class="headline">{{debateData[debateIndex].name}} <button ng-show = debateData[debateIndex].reg_status ng-click = "Register(debateData[debateIndex],debateData[0].poc[0].email,'/debate')" class="outline-button pass"><a>Register</a></button></h1>
         <!-- <h1 class="headline">{{debateData[debateIndex].name}} <button ng-click = "Register(debateData[debateIndex],debateData[0].poc[0].email,'/debate')" class="outline-button pass"><a>Register</a></button></h1> -->
         <h3>{{debateData[debateIndex].subheading}}</h2>
           <span ng-bind-html="debateData[debateIndex].description">
@@ -41,11 +41,22 @@
 
         </div>
   </div>
-  <div class="main-right" flex = "30" layout-align = "center center">
+  <div class="main-right" flex = "30" layout-align = "center center" hide-sm hide-xs>
     <h1 class="center " md-whiteframe = "1">Debate</h1>
     <ul class="tab-list">
       <li class="" ng-repeat = "x in debateData" ng-click = "tabDebate($index)">{{x.name}}</li>
     </ul>
   </div>
+
+  <i class="ti-menu nav-icon" ng-click="toggleLeft()" hide-gt-sm></i>
+
+    <md-sidenav class="" md-component-id="left" md-whiteframe="4">
+      <div class="main-right" flex = "100" layout-align = "center center">
+        <h1 class="center " md-whiteframe = "1">Debate</h1>
+        <ul class="tab-list">
+          <li class=""  ng-repeat = "x in debateData" ng-click = "tabDebate($index); toggleLeft()">{{x.name}}</li>
+        </ul>
+      </div>
+    </md-sidenav>
 
 </div>

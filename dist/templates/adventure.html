@@ -1,8 +1,8 @@
 <div class="main-div" layout = "row" ng-controller = "AdventureCtrl" ng-init="init()">
 
-  <div class="main-left " flex = "70" style={{imgLink}}>
+  <div class="main-left " flex-gt-sm = "70" style={{imgLink}}>
 
-      <img class = "rdv-tag" src="images/rdvtag.png" alt="" ng-style = >
+      <img class = "rdv-tag" src="images/rdvtag.png" alt="" hide-xs hide-sm >
 
       <div class="left-content">
 
@@ -39,11 +39,23 @@
 
         </div>
   </div>
-  <div class="main-right" flex = "30" layout-align = "center center">
+  <div class="main-right" flex = "30" layout-align = "center center" hide-sm hide-xs>
     <h1 class="center " md-whiteframe = "1">Adventure</h1>
     <ul class="tab-list">
       <li class="" ng-repeat = "x in adventureData" ng-click = "tabAdventure($index)">{{x.name}}</li>
     </ul>
   </div>
+
+
+  <i class="ti-menu nav-icon" ng-click="toggleLeft()" hide-gt-sm></i>
+
+    <md-sidenav class="" md-component-id="left" md-whiteframe="4">
+      <div class="main-right" flex = "100" layout-align = "center center">
+        <h1 class="center " md-whiteframe = "1">Adventure</h1>
+        <ul class="tab-list">
+          <li class="" ng-repeat = "x in adventureData" ng-click = "tabAdventure($index); toggleLeft()">{{x.name}}</li>
+        </ul>
+      </div>
+    </md-sidenav>
 
 </div>

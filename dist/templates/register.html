@@ -1,6 +1,6 @@
 <div ng-controller="RegisterCtrl" flex ng-cloak class="login-page valign-wrapper">
 
-  <div layout = "row" layout-align = "center center" class="login-card" md-whiteframe = "5">
+  <div layout = "row" layout-align = "center center" class="login-card1" md-whiteframe = "5">
 
     <form name = "userForm">
       <div class="login-head center">
@@ -31,6 +31,31 @@
                   <div ng-message="required">This is required.</div>
                 </div>
               </md-input-container>
+            </md-input-container><md-input-container class="md-icon-float md-block ">
+              <label>Gender</label>
+              <md-icon>L</md-icon>
+              <md-select required name="gender" ng-model="user.gender">
+                <md-option  value="Male">Male</md-option>
+                <md-option  value="Female">Female</md-option>
+              </md-select>
+              </md-input-container>
+              <md-input-container class="md-icon-float md-block ">
+                <label>College</label>
+                <md-icon>L</md-icon>
+                  <input md-maxlength="300" required md-no-asterisk name="college" ng-model="user.college">
+                  <div ng-messages="userForm.college.$error">
+                    <div ng-message="required">This is required.</div>
+                  </div>
+              </md-input-container>
+              <md-input-container class="md-icon-float md-block ">
+                <label>Contact no</label>
+                <md-icon>L</md-icon>
+                  <input md-maxlength="30" required md-no-asterisk name="contact_number" ng-model="user.contact_number">
+                  <div ng-messages="userForm.contact_number.$error">
+                    <div ng-message="required">This is required.</div>
+                  </div>
+              </md-input-container>
+
         <md-input-container class="md-icon-float md-block">
           <label>Password</label>
           <md-icon>vpn_key</md-icon>
