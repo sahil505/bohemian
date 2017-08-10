@@ -786,6 +786,7 @@ img{ max-width:100%;}
 	padding-bottom: 64px;
 	background-image: url("../img/bandi-fool-2.png");
 	background-repeat: no-repeat;
+	background-size: 608px 700px;
 	background-position: left bottom;
 }
 
@@ -796,8 +797,8 @@ img{ max-width:100%;}
 		padding-bottom: 64px;
 		background-image: url("../img/bandi-fool-2.png");
 		background-repeat: no-repeat;
-		background-size: 368px 650px;
-		background-position: left 272px;
+		background-size: 368px 440px;
+		background-position: left 400px;
 	}
 }
 
@@ -827,8 +828,8 @@ img{ max-width:100%;}
 .bandi-fool {
 	background-image: url("../img/fly-fool-2.png");
 	background-repeat: no-repeat;
-	background-size: 300px 650px;
-	background-position: 0 -100px;
+	background-size: 300px 400px;
+	background-position: 0 10px;
 }
 
 @media screen and (max-width: 500px) {
