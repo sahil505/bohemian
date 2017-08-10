@@ -694,6 +694,10 @@ img{ max-width:100%;}
 	margin-left: 16px;
 }
 
+.mob-btn {
+	display: none;
+}
+
 
 @media screen and (max-width: 500px) {
 	/*applies only if the screen is less than 500px*/
@@ -733,6 +737,14 @@ img{ max-width:100%;}
 		display: block;
 		list-style: none;
 		min-height: 100px;
+	}
+
+	.pass {
+		margin-left: 0;
+	}
+
+	.mob-btn {
+		display: block;
 	}
 }
 
