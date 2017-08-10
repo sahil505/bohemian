@@ -441,6 +441,16 @@ a:focus {
 	text-align: center;
 	float: left;
 }
+
+.team-leader-box-head {
+	width:30.66%;
+	margin-right: 3.82979%;
+	height: 490px;
+	overflow: hidden;
+	text-align: center;
+	margin-left: 35%;
+}
+
 .team-leader-box span{
 	margin-bottom:24px;
 	display:block;
