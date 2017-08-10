@@ -654,9 +654,9 @@ img{ max-width:100%;}
 	transition-duration: 1s;
 }
 
-.outline-button:hover {
+/*.outline-button:hover {
 	font-weight: 700;
-}
+}*/
 
 .outline-button::before, .outline-button::after {
 	content: "";
