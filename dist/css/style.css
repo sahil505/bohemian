@@ -134,6 +134,14 @@
 .main-div {
   overflow: hidden;
   height: 100vh;
+  position: relative;
+}
+.main-div .nav-icon {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  font-size: 40px;
+  color: #ffffff;
 }
 
 .main-left {
@@ -179,7 +187,7 @@
 .main-left img {
   position: absolute;
   top: 5px;
-  height: 9em;
+  height: 17%;
   left: 5%;
 }
 .main-left .headline {
@@ -194,6 +202,16 @@
   color: #ffffff;
 }
 
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .main-left {
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .main-left {
+    padding: 10px;
+  }
+}
 .main-right {
   min-height: 100%;
   background-color: #424242;
@@ -201,6 +219,7 @@
   color: #ffffff;
   padding: 0;
   z-index: 4;
+  border-left: 1px solid #9E9E9E;
 }
 .main-right h1 {
   color: #ffffff;
@@ -238,8 +257,9 @@
 }
 
 .events-at-glance-head {
-  height: 15vh;
-  background-color: #212121;
+  height: 10vh;
+  padding: 10px;
+  background-color: #ffffff;
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
@@ -248,6 +268,20 @@
   top: 0;
   line-height: 80%;
   width: 100%;
+}
+.events-at-glance-head .header-img {
+  height: 100%;
+}
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .events-at-glance-head .login-card {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .events-at-glance-head .header-img {
+    width: 50%;
+    height: 80%;
+  }
 }
 .events-at-glance-head .r1 {
   position: absolute;
@@ -287,7 +321,7 @@
 }
 
 .home-glance {
-  padding-top: 15vh;
+  padding-top: 10vh;
 }
 
 .events-at-glance .div-flex {
@@ -409,8 +443,10 @@
 }
 
 .club-events {
-  background-color: #f1f1f1;
-  background-size: cover;
+  background-image: url("../images/bg3.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   padding-top: 15vh;
 }
 
@@ -422,6 +458,19 @@
   width: 100%;
   height: 100%;
   background-color: transparent;
+}
+.events-grid .events-col1 {
+  width: 100%;
+  margin: 10px;
+  padding: 20px;
+  font-family: "Advent Pro", sans-serif;
+  color: #263238;
+  font-size: 3vh;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.events-grid .events-col1 h1 {
+  margin: 0;
 }
 .events-grid .events-col {
   height: 30vh;
@@ -474,15 +523,15 @@
 }
 
 .pronites-page {
-  padding-top: 15vh;
+  padding-top: 10vh;
 }
 .pronites-page .head-pronite {
-  padding: 0;
+  padding: 10px;
   margin: 0;
 }
 .pronites-page .carousel-pronites {
   padding: 0px;
-  height: 85vh;
+  height: 90vh;
   width: 100%;
 }
 .pronites-page .carousel-pronites ul {
@@ -536,6 +585,33 @@
 @media only screen and (max-width: 599px) {
   .login-card {
     width: 80%;
+  }
+}
+.login-card1 {
+  min-height: 60%;
+  width: 30%;
+  text-align: center;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease-in-out;
+  padding: 20px;
+  margin: 0 auto;
+  border-radius: 3px;
+}
+.login-card1 md-icon {
+  color: #0D47A1;
+}
+.login-card1 .login-head {
+  font-size: 2em;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .login-card1 {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .login-card1 {
+    width: 90%;
   }
 }
 .otp-dialog {

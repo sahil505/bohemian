@@ -1,4 +1,4 @@
-app.controller('AdventureCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('AdventureCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.adventureIndex = 0;
 var adventureIndex = $scope.adventureIndex;
@@ -111,14 +111,23 @@ $scope.init = function(){
     }
 
 
-  }
+  };
+
+  $rootScope.toggleLeft = buildToggler('left');
+      $rootScope.toggleRight = buildToggler('right');
+
+      function buildToggler(componentId) {
+        return function() {
+          $mdSidenav(componentId).toggle();
+        };
+      }
 
 
 
 
 });
 
-app.controller('ComedyCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('ComedyCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDance = true;
 
@@ -228,13 +237,22 @@ console.log(data);
   }
 
 
-}
+};
+
+$rootScope.toggleLeft = buildToggler('left');
+    $rootScope.toggleRight = buildToggler('right');
+
+    function buildToggler(componentId) {
+      return function() {
+        $mdSidenav(componentId).toggle();
+      };
+    }
 
 
 
 });
 
-app.controller('CulinaryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('CulinaryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 
 
@@ -343,14 +361,25 @@ console.log(data);
   }
 
 
-}
+};
+
+
+
+$rootScope.toggleLeft = buildToggler('left');
+    $rootScope.toggleRight = buildToggler('right');
+
+    function buildToggler(componentId) {
+      return function() {
+        $mdSidenav(componentId).toggle();
+      };
+    }
 
 
 
 
 });
 
-app.controller('DanceCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('DanceCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDance = true;
 $rootScope.reg_modeEmail = false;
@@ -471,9 +500,17 @@ console.log(data);
   }
 
 
-}
+};
 
 
+$rootScope.toggleLeft = buildToggler('left');
+    $rootScope.toggleRight = buildToggler('right');
+
+    function buildToggler(componentId) {
+      return function() {
+        $mdSidenav(componentId).toggle();
+      };
+    }
 
 
 
@@ -486,7 +523,7 @@ console.log(data);
 
 });
 
-app.controller('DebateCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('DebateCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDance = true;
 
@@ -602,19 +639,28 @@ $scope.init = function(){
     }
 
 
-  }
+  };
+
+  $rootScope.toggleLeft = buildToggler('left');
+      $rootScope.toggleRight = buildToggler('right');
+
+      function buildToggler(componentId) {
+        return function() {
+          $mdSidenav(componentId).toggle();
+        };
+      }
 
 
 
 
 });
 
-app.controller('DramaCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('DramaCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDrama = true;
 
 
-$scope.dramaticsIndex = 0
+$scope.dramaticsIndex = 0;
 var dramaticsIndex = $scope.dramaticsIndex;
 
 $scope.init = function(){
@@ -720,13 +766,22 @@ console.log(data);
   }
 
 
-}
+};
+
+$rootScope.toggleLeft = buildToggler('left');
+    $rootScope.toggleRight = buildToggler('right');
+
+    function buildToggler(componentId) {
+      return function() {
+        $mdSidenav(componentId).toggle();
+      };
+    }
 
 
 
 });
 
-app.controller('FacCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('FacCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDance = true;
 
@@ -838,14 +893,23 @@ $scope.init = function(){
     }
 
 
-  }
+  };
+
+  $rootScope.toggleLeft = buildToggler('left');
+      $rootScope.toggleRight = buildToggler('right');
+
+      function buildToggler(componentId) {
+        return function() {
+          $mdSidenav(componentId).toggle();
+        };
+      }
 
 
 
 
 });
 
-app.controller('GlamourCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('GlamourCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDance = true;
 
@@ -957,14 +1021,23 @@ $scope.init = function(){
     }
 
 
-  }
+  };
+
+  $rootScope.toggleLeft = buildToggler('left');
+      $rootScope.toggleRight = buildToggler('right');
+
+      function buildToggler(componentId) {
+        return function() {
+          $mdSidenav(componentId).toggle();
+        };
+      }
 
 
 
 
 });
 
-app.controller('HindiCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('HindiCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDance = true;
 
@@ -1075,7 +1148,16 @@ $scope.init = function(){
     }
 
 
-  }
+  };
+
+  $rootScope.toggleLeft = buildToggler('left');
+      $rootScope.toggleRight = buildToggler('right');
+
+      function buildToggler(componentId) {
+        return function() {
+          $mdSidenav(componentId).toggle();
+        };
+      }
 
 
 
@@ -1323,7 +1405,7 @@ $scope.pronitesCarousel = [
 
 });
 
-app.controller('LiteraryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('LiteraryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDance = true;
 
@@ -1434,14 +1516,23 @@ $scope.init = function(){
     }
 
 
-  }
+  };
+
+  $rootScope.toggleLeft = buildToggler('left');
+      $rootScope.toggleRight = buildToggler('right');
+
+      function buildToggler(componentId) {
+        return function() {
+          $mdSidenav(componentId).toggle();
+        };
+      }
 
 
 
 
 });
 
-app.controller('MagicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('MagicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDance = true;
 
@@ -1554,14 +1645,23 @@ $scope.init = function(){
       }
 
 
-    }
+    };
+
+    $rootScope.toggleLeft = buildToggler('left');
+        $rootScope.toggleRight = buildToggler('right');
+
+        function buildToggler(componentId) {
+          return function() {
+            $mdSidenav(componentId).toggle();
+          };
+        }
 
 
 
 
 });
 
-app.controller('MusicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('MusicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDance = true;
 
@@ -1673,13 +1773,22 @@ $scope.init = function(){
     }
 
 
-  }
+  };
+
+  $rootScope.toggleLeft = buildToggler('left');
+      $rootScope.toggleRight = buildToggler('right');
+
+      function buildToggler(componentId) {
+        return function() {
+          $mdSidenav(componentId).toggle();
+        };
+      }
 
 
 
 });
 
-app.controller('PfcCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('PfcCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDance = true;
 
@@ -1791,13 +1900,22 @@ $scope.init = function(){
     }
 
 
-  }
+  };
+
+  $rootScope.toggleLeft = buildToggler('left');
+      $rootScope.toggleRight = buildToggler('right');
+
+      function buildToggler(componentId) {
+        return function() {
+          $mdSidenav(componentId).toggle();
+        };
+      }
 
 
 
 });
 
-app.controller('QuizCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
+app.controller('QuizCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
 
 $scope.isDance = true;
 
@@ -1909,7 +2027,16 @@ $scope.init = function(){
     }
 
 
-  }
+  };
+
+  $rootScope.toggleLeft = buildToggler('left');
+      $rootScope.toggleRight = buildToggler('right');
+
+      function buildToggler(componentId) {
+        return function() {
+          $mdSidenav(componentId).toggle();
+        };
+      }
 
 
 
@@ -1971,6 +2098,9 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
         },
         data:{
           'email':user.email,
+          'gender':user.gender,
+          'college':user.college,
+          'contact_number':user.contact_number,
           'first_name':user.firstname,
           'last_name':user.lastname,
           'password':user.password
@@ -2034,6 +2164,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
           last_name: response.data.user.last_name,
           rdv_number: response.data.user.rdv_number,
           access_token:response.data.token,
+          points:response.data.rdv_points,
       };
       $window.localStorage.userFullDetails = JSON.stringify(userFullDetails);
       if (response.status===200){
@@ -2065,7 +2196,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
 
 });
 
-app.controller('RegisterDialogCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$location) {
+app.controller('RegisterDialogCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 // console.log($rootScope.userDetails);
 var RDVdetails = $rootScope.userDetails;
@@ -2091,7 +2222,7 @@ $scope.checkRegType = function(type){
   else {
     return false;
   }
-}
+};
 // console.log($scope.regData);
 console.log("korku");
 
@@ -2146,7 +2277,7 @@ if(RDVdetails != null){
       );
     }
 
-}
+};
 
 
 

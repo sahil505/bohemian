@@ -16,22 +16,25 @@
     </md-grid-tile>
   </md-grid-list> -->
 
-  <div class="events-at-glance-head" id = "section1"  md-whiteframe = "5">
+  <div class="events-at-glance-head glance-head-extra" id = "section1"  md-whiteframe = "5" md-whiteframe = "2">
     <div layout = "column" layout-align ="center center">
-      <h1 class="">Born to Rule</h1>
-      <h4>Comeptetive Events</h4>
-      <img class="r1" src="images/r1.png" alt="" hide-xs hide-sm>
-      <img class="r2" src="images/r2.png" alt="" hide-xs>
+      <!-- <h1 class="">Born to Rule</h1> -->
+      <!-- <h4>Comeptetive Events</h4> -->
+      <img class="header-img" src="images/header.png" alt="">
     </div>
-    <!-- <div class="read-more center" layout = "row" layout-align = "center center">
-      <a class=""  href="#competetions" du-smooth-scroll du-scrollspy><button class="outline-button center">Read More</button></a>
-    </div> -->
 
   </div>
   <!-- <div class="user-name" md-whiteframe = "3">
     Hii {{userDetails.first_name}}!
   </div> -->
-  <div class="container events-grid" layout = "row" layout-wrap layout-xs = "column" layout-align = "center center">
+  <div class="container events-grid " layout = "row">
+    <div class=" events-col1"  style="padding:20px;">
+        <h1>Competitive Events</h1>
+    </div>
+
+  </div>
+  <div class="container events-grid " layout = "row" layout-wrap layout-xs = "column" layout-align = "center center">
+
       <div md-whiteframe = "2" class="center events-col" flex-gt-sm = "30"  ng-repeat = "data in compevents" layout = "center center" style="background-image:{{data.image}}">
           <a ng-href = {{data.href}} class="events-link">
             </a>
