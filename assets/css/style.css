@@ -610,6 +610,22 @@ img{ max-width:100%;}
 	min-height: 100px;
 }
 
+#mob-ticker {
+	display: none;
+}
+
+@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+	#ticker {
+		display: none;
+	}
+	#mob-ticker {
+		display: block;
+		list-style: none;
+		min-height: 100px;
+	}
+}
+
 .para-wrap {
 	margin-left: 48px;
 }
