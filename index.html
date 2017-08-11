@@ -58,36 +58,19 @@ Author URL: https://sahil505.com
 		</div>
 		<!-- end of video-container -->
 
-<<<<<<< HEAD
-	<!-- full screen menu bar  -->
-	<div class="burger">
-		<div class="burger__patty"></div>
-		<div class="burger__patty"></div>
-		<div class="burger__patty"></div>
-	</div>
-	<nav class="menu">
-		<div class="menu__brand">
-			<!-- <a href="#"><img src="assets/img/footer-logo.png" alt=""></a> -->
-			<ul class="menu-list-left ">
-				<li class="menu__item"><a href="#"  class="menu__link" id= "login-button">Login</a></li>
-				<li class="menu__item"><a href="#"  class="menu__link" id= "logout-button">Logout</a></li>
-				<li class="menu__item"><a href="#" class="menu__link">Contact Us</a></li>
-				<li class="menu__item"><a href="#" class="menu__link">About Us</a></li>
 
-			</ul>
-=======
 		<!-- full screen menu bar  -->
 		<div class="burger">
 			<div class="burger__patty"></div>
 			<div class="burger__patty"></div>
 			<div class="burger__patty"></div>
->>>>>>> e70ab0852e6683673895256a973ea0178188adf1
 		</div>
 		<nav class="menu">
 			<div class="menu__brand">
 				<ul class="menu-list-left ">
 					<img class="menu-bar-img" src="assets/img/footer-logo.png" alt="rdv-logo">
-					<li class="menu__item"><a href="./dist/#!/login" class="menu__link">Login</a></li>
+					<li class="menu__item"><a href="#"  class="menu__link" id= "login-button">Login</a></li>
+					<!-- <li class="menu__item"><a href="#"  class="menu__link" id= "logout-button">Logout</a></li> -->
 					<li class="menu__item"><a href="#" class="menu__link">Contact Us</a></li>
 					<li class="menu__item"><a href="./comingsoon.html" target="_blank" class="menu__link">Sponsors</a></li>
 				</ul>
@@ -110,12 +93,7 @@ Author URL: https://sahil505.com
 				<div id="u338" class="wow fadeInLeft delay-05s"><!-- svg -->
 					<img class="svg" src="assets/img/arrow-01.svg" alt="element-image"/>
 				</div>
-<<<<<<< HEAD
-				<div class="main-btn-wrap">
-					<a href = "dist/#!/login" id= "login-button2"><button class="outline-button" >Login</button></a><br class="mob-btn" /><br class="mob-btn" />
-					<a id= "logout-button2"><button class="outline-button">Logout</button></a><br class="mob-btn" /><br class="mob-btn" />
-					<a href = "dist"><button class="outline-button pass">Events at a Glance</button></a>
-=======
+
 				<div class="rdv-content wow fadeInUp delay-02s">
 					<div class="rdv-head">
 						<ul id="ticker">
@@ -130,10 +108,11 @@ Author URL: https://sahil505.com
 						<p class="para-content">Rendezvous is the annual cultural fest of IIT Delhi. It will be held from <span class="dates">October 13th till October 16th.</span><br/>It is an inimitable product of Delhi’s unique lust for life and BRCA’s proverbial tendency towards excellence. <span class="break"><br /></span>It is a 3 day of extravaganza with equal parts of awesomeness in organization and turnout.<br />We are young, wild, free and exuberant. Come join us to celebrate the joy of life.</p>
 					</div>
 					<div class="main-btn-wrap">
-						<a href="./dist/#!/login"><button class="outline-button">Login</button></a><br class="mob-btn" /><br class="mob-btn" />
-						<a href="dist"><button class="outline-button pass">Events at a Glance</button></a>
+						<a href = "dist/#!/login" id= "login-button2"><button class="outline-button" >Login</button></a><br class="mob-btn" /><br class="mob-btn" />
+						<a id= "logout-button2"><button class="outline-button">Logout</button></a><br class="mob-btn" /><br class="mob-btn" />
+						<a href = "dist"><button class="outline-button pass">Events at a Glance</button></a>
 					</div>
->>>>>>> e70ab0852e6683673895256a973ea0178188adf1
+
 				</div>
 			</section>
 			<!--main-section-end-->
@@ -621,9 +600,6 @@ Author URL: https://sahil505.com
 				}());
 				Menu.init();
 			}());
-<<<<<<< HEAD
-			Menu.init();
-		}());
 	</script>
 	<!-- Side menu-bar ends -->
 
@@ -676,28 +652,13 @@ Author URL: https://sahil505.com
 	}
 
 	else{
-		document.getElementById("logout-button").style.display = 'none';
+		// document.getElementById("logout-button").style.display = 'none';
 		document.getElementById("logout-button2").style.display = 'none';
 		console.log("logout-hide");
 	}
 
 
 	</script>
-=======
-		</script>
-		<!-- Side menu-bar ends -->
 
-		<!-- Get userdata -->
-		<script type="text/javascript">
-			if(window.localStorage.getItem("userFullDetails")){
-				var userDetails =  window.localStorage.getItem("userFullDetails");
-				var userFullDetails = JSON.parse(userDetails);
-				console.log(userFullDetails);
-				document.getElementById("userName").innerHTML = "Hii  " + userFullDetails.first_name;
-				document.getElementById("rdvPoints").innerHTML = "RDV Points  " + userFullDetails.rdv_points;
-			}
-		</script>
-		<!-- Get userdata ends -->
->>>>>>> e70ab0852e6683673895256a973ea0178188adf1
 </body>
 </html>
