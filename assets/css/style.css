@@ -903,6 +903,10 @@ img{ max-width:100%;}
 
 /* main-heading-3
 ---------------------------------*/
+.main-heading-3Container{
+	max-width: 1140px;
+}
+
 .main-heading-3-nav{
 	padding:0;
 	margin:0 0 45px 0;
@@ -1074,6 +1078,10 @@ img{ max-width:100%;}
 	background-position: right top;
 }
 
+.mob-highlights {
+	display: none;
+}
+
 @media screen and (max-width: 500px) {
 	/*applies only if the screen is less than 500px*/
 	.paddind {
@@ -1106,12 +1114,12 @@ img{ max-width:100%;}
 		display: none;
 	}
 
-	.main-heading-3-box a img {
-		margin: 0 auto;
-		display: inline-block;
-		text-align: center;
-		width: 60px;
-		height: 60px;
+	.main-heading-3Container{
+		display: none;
+	}
+
+	.mob-highlights {
+		display: block;
 	}
 }
 
@@ -1406,11 +1414,6 @@ img{ max-width:100%;}
 .res-nav_click:hover, .res-nav_click:active, .res-nav_click:focus {
 	color: #7cc576 !important;
 }
-
-.main-heading-3Container{
-	max-width: 1140px;
-}
-
 
 /* Animation Timers
 ---------------------------------*/
