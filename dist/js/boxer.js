@@ -1198,7 +1198,7 @@ if($rootScope.reg_path != '/home'){
       console.log(response);
       $scope.userDetails = response;
       if(REGISTER_PATH == undefined){
-        $window.location.href = "https://sahil505.github.io/bohemian/";
+        $window.location.href = "http://rdv-iitd.com/test/";
       }
       else{
         $location.path(REGISTER_PATH);
@@ -2188,7 +2188,8 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
       $window.localStorage.userFullDetails = JSON.stringify(userFullDetails);
       if (response.status===200){
         console.log(response);
-        $location.path("/home");
+        // $location.path("/home");
+        $window.location.href = "http://rdv-iitd.com/test/";
         $mdToast.show(
           $mdToast.simple()
           .textContent("Successfully Logged In")
