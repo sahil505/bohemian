@@ -1,26 +1,11 @@
 <div ng-controller="MainCtrl" flex ng-cloak class="club-events">
-  <!-- <md-grid-list
-        md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
-        md-row-height-gt-md="1:1" md-row-height="4:3"
-        md-gutter="8px" md-gutter-gt-sm="4px">
 
-    <md-grid-tile ng-repeat="tile in compevents"
-                  md-rowspan="{{tile.row}}"
-                  md-colspan="{{tile.col}}"
-                  md-colspan-sm="1"
-                  md-colspan-xs="1"
-                  ng-class="tile.background"
-                  style = "background-color:{{tile.bg}}" >
-      <md-grid-tile-footer><h3>{{tile.title}}</h3></md-grid-tile-footer>
-      <a ng-href = {{tile.href}} ng-click = "bro()"><button class="outline-button pass">Register</button></a>
-    </md-grid-tile>
-  </md-grid-list> -->
-
-  <div class="events-at-glance-head glance-head-extra" id = "section1"  md-whiteframe = "5" md-whiteframe = "2">
-    <div layout = "column" layout-align ="center center">
-      <!-- <h1 class="">Born to Rule</h1> -->
-      <!-- <h4>Comeptetive Events</h4> -->
-      <img class="header-img" src="images/header.png" alt="">
+<img class="logo-header" src = "images/logo2.png" alt="" hide-xs hide-sm>
+  <div class="events-at-glance-head glance-head-extra" id = "section1"  md-whiteframe = "5" md-whiteframe = "2" hide-gt-xs>
+    <div layout = "row" layout-align ="center center">
+      <!-- <h1 class="">Born to Rule</h1>
+      <h4>Comeptetive Events</h4> -->
+      <img class="header-img" src="images/header2.png" alt="">
     </div>
 
   </div>
@@ -28,11 +13,13 @@
     Hii {{userDetails.first_name}}!
   </div> -->
   <div class="container events-grid " layout = "row">
-    <div class=" events-col1"  style="padding:20px;">
+    <div class=" events-col1 "  layout-align-xs = "center end">
         <h1>Competitive Events</h1>
     </div>
 
+
   </div>
+    <!-- <img src = "images/arrow.png"> -->
   <div class="container events-grid " layout = "row" layout-wrap layout-xs = "column" layout-align = "center center">
 
       <div md-whiteframe = "2" class="center events-col" flex-gt-sm = "30"  ng-repeat = "data in compevents" layout = "center center" style="background-image:{{data.image}}">

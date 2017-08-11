@@ -558,13 +558,13 @@ $scope.init = function(){
     var debateIndex =a;
     $http({
         method: "GET",
-        url: URL_PREFIX+"category-event/dance",
+        url: URL_PREFIX+"category-event/debating",
         headers: {
           'Content-Type': 'application/json; charset=UTF-8',
             }
     }).then(function (response) {
         $scope.isDance = false;
-        $scope.danceData = response.data.events;
+        // $scope.danceData = response.data.events;
         // $scope.danceImage = "background-image:url('')"$scope.danceData[danceIndex].photos[0];
         var imageLink = response.data.events[debateIndex].photos[0];
         // console.log(danceIndex);
@@ -2118,6 +2118,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
           'contact_number':user.contact_number,
           'first_name':user.firstname,
           'last_name':user.lastname,
+          'referral_code':user.referral_code,
           'password':user.password
         }
       }).then(function sucessCallback(response) {
@@ -2169,6 +2170,9 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
         'email':preuser.email,
         'first_name':preuser.firstname,
         'last_name':preuser.lastname,
+        'college':preuser.college,
+        'contact_number':preuser.contact_number,
+        'referral_code':preuser.referral_code,
         'password':preuser.password,
         'otp':user.otp
       }

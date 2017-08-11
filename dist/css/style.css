@@ -257,8 +257,9 @@
 }
 
 .events-at-glance-head {
-  height: 10vh;
+  height: 8vh;
   padding: 10px;
+  background-image: url("../images/bg3.png");
   background-color: #ffffff;
   background-size: cover;
   background-repeat: repeat;
@@ -269,18 +270,9 @@
   line-height: 80%;
   width: 100%;
 }
-.events-at-glance-head .header-img {
-  height: 100%;
-}
 @media only screen and (min-width: 600px) and (max-width: 992px) {
   .events-at-glance-head .login-card {
     width: 60%;
-  }
-}
-@media only screen and (max-width: 599px) {
-  .events-at-glance-head .header-img {
-    width: 50%;
-    height: 80%;
   }
 }
 .events-at-glance-head .r1 {
@@ -472,6 +464,16 @@
 .events-grid .events-col1 h1 {
   margin: 0;
 }
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .events-grid .events-col1 {
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .events-grid .events-col1 {
+    margin: 0 auto;
+  }
+}
 .events-grid .events-col {
   height: 30vh;
   width: 100%;
@@ -495,6 +497,7 @@
 .events-grid .events-col .events-grid-overlay {
   position: absolute;
   bottom: 0;
+  padding: 5px;
   height: 5vh;
   width: 100%;
   background-color: #ECEFF1;
@@ -503,7 +506,7 @@
   text-decoration: none;
 }
 .events-grid .events-col .events-grid-overlay a h1 {
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 @media only screen and (min-width: 992px) {
   .events-grid .events-col {
@@ -647,4 +650,12 @@
   font-family: "Dosis", sans-serif;
   color: #263238;
   background-color: #78909c;
+}
+
+.logo-header {
+  position: absolute;
+  left: 5%;
+  top: 1%;
+  -webkit-filter: drop-shadow(0px 2px 5px #222);
+  filter: drop-shadow(0px 2px 5px #222);
 }
