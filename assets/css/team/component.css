@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro:400,700');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
 *, *:after, *::before {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -32,18 +35,18 @@ a:focus {
 .vs-header {
 	z-index: 200;
 	margin: 0 auto;
-	padding: 2em;
+	padding: 1em;
 	width: 80%;
 	text-align: center;
 	-webkit-backface-visibility: hidden;
 }
 
 .vs-container > header h1 {
-	margin: 0 0 0 0;
-	padding: 0 0 0.8em;
-	font-weight: 300;
-	font-size: 2.4em;
-	line-height: 1.4;
+	color: #000000;
+	font-size: 56px;
+	font-family: 'Advent Pro', sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
 	-webkit-backface-visibility: hidden;
 }
 
