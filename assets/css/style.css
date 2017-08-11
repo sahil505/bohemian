@@ -504,13 +504,13 @@ img{ max-width:100%;}
 	}
 
 	.menu__brand ul li{
-		/*float: left;*/
+		float: left;
 
 	}
 
 	.menu__brand ul li a{
 
-		/*font-size: 25px;*/
+		font-size: 25px;
 	}
 
 	.menu__brand .logo {
