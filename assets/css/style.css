@@ -1094,10 +1094,6 @@ img{ max-width:100%;}
 		display: none;
 	}
 
-	.high-name-image{
-		text-align: center;
-	}
-
 	.high-head {
 		color: #000000;
 		font-size: 32px;
@@ -1119,7 +1115,11 @@ img{ max-width:100%;}
 	}
 
 	.mob-highlights {
-		display: block;
+		display: inline-block;
+	}
+
+	.main-heading-3-box img {
+		display: inline-block;
 	}
 }
 
