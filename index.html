@@ -69,7 +69,8 @@ Author URL: https://sahil505.com
 		<div class="menu__brand">
 			<!-- <a href="#"><img src="assets/img/footer-logo.png" alt=""></a> -->
 			<ul class="menu-list-left ">
-				<li class="menu__item"><a href="#"  class="menu__link">Login</a></li>
+				<li class="menu__item"><a href="#"  class="menu__link" id= "login-button">Login</a></li>
+				<li class="menu__item"><a href="#"  class="menu__link" id= "logout-button">Logout</a></li>
 				<li class="menu__item"><a href="#" class="menu__link">Contact Us</a></li>
 				<li class="menu__item"><a href="#" class="menu__link">About Us</a></li>
 
@@ -107,7 +108,8 @@ Author URL: https://sahil505.com
 					<p class="para-content">Rendezvous is the annual cultural fest of IIT Delhi. It will be held from <span class="dates">October 13th till October 16th.</span><br/>It is an inimitable product of Delhi’s unique lust for life and BRCA’s proverbial tendency towards excellence. <span class="break"><br /></span>It is a 3 day of extravaganza with equal parts of awesomeness in organization and turnout.<br />We are young, wild, free and exuberant. Come join us to celebrate the joy of life.</p>
 				</div>
 				<div class="main-btn-wrap">
-					<button class="outline-button">Login</button><br class="mob-btn" /><br class="mob-btn" />
+					<a href = "dist/#!/login" id= "login-button2"><button class="outline-button" >Login</button></a><br class="mob-btn" /><br class="mob-btn" />
+					<a id= "logout-button2"><button class="outline-button">Logout</button></a><br class="mob-btn" /><br class="mob-btn" />
 					<a href = "dist"><button class="outline-button pass">Events at a Glance</button></a>
 				</div>
 			</div>
@@ -564,14 +566,55 @@ Author URL: https://sahil505.com
 	<!-- get userdata -->
 
 	<script type="text/javascript">
+	$("#logout-button2").click(function(){
+    console.log("logout clicked");
+		localStorage.clear();
+		location.reload();
+	});
+	$("#logout-button").click(function(){
+    console.log("logout clicked");
+		localStorage.clear();
+		location.reload();
+	});
+
+
 	if(window.localStorage.getItem("userFullDetails")){
 		var userDetails =  window.localStorage.getItem("userFullDetails");
 		var userFullDetails = JSON.parse(userDetails);
 		console.log(userFullDetails);
 		// console.log(userDetails.poi);
 		document.getElementById("userName").innerHTML = "Hii  " + userFullDetails.first_name;
-		document.getElementById("rdvPoints").innerHTML = "RDV Points  " + userFullDetails.rdv_points;
 
+		// document.getElementById("login-button").innerHTML = "LOGOUT";
+		document.getElementById("login-button").style.display = 'none';
+		document.getElementById("login-button2").style.display = 'none';
+		document.getElementById("logout-button2").style.visibility = 'visible';
+		var access_token = userFullDetails.access_token;
+		console.log(access_token);
+
+		$.ajax({
+		    url: 'http://rdv-iitd.com/api/login',
+		    // dataType: 'json',
+		    type: 'post',
+		    contentType: 'application/json',
+		    data: JSON.stringify({"token":access_token}),
+		    processData: false,
+		    success: function( data, textStatus, jQxhr ){
+		       console.log(data);
+					 document.getElementById("rdvPoints").innerHTML = "RDV Points  " + data.user.rdv_points;
+		    },
+		    error: function( jqXhr, textStatus, errorThrown ){
+		        console.log( errorThrown );
+		    }
+		});
+
+
+	}
+
+	else{
+		document.getElementById("logout-button").style.display = 'none';
+		document.getElementById("logout-button2").style.display = 'none';
+		console.log("logout-hide");
 	}
 
 

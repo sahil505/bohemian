@@ -53,7 +53,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: '../templates/registeremail.html',
+        templateUrl: 'templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -179,7 +179,7 @@ $scope.tabComedy = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: '../templates/registeremail.html',
+      templateUrl: 'templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -303,7 +303,7 @@ $scope.tabCulinary = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: '../templates/registeremail.html',
+      templateUrl: 'templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -442,7 +442,7 @@ $scope.tabDance = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: '../templates/registeremail.html',
+      templateUrl: 'templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -581,7 +581,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: '../templates/registeremail.html',
+        templateUrl: 'templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -706,7 +706,7 @@ $scope.tabDramatics = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: '../templates/registeremail.html',
+      templateUrl: 'templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -835,7 +835,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: '../templates/registeremail.html',
+        templateUrl: 'templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -963,7 +963,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: '../templates/registeremail.html',
+        templateUrl: 'templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1090,7 +1090,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: '../templates/registeremail.html',
+        templateUrl: 'templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1195,6 +1195,7 @@ if($rootScope.reg_path != '/home'){
       );
     }
     Auth.login(user).then(function(response) {
+      console.log(response);
       $scope.userDetails = response;
       if(REGISTER_PATH == undefined){
         $window.location.href = "https://sahil505.github.io/bohemian/";
@@ -1209,6 +1210,20 @@ if($rootScope.reg_path != '/home'){
         .position('bottom right')
         .hideDelay(3000)
       );
+
+    }).then(function errorCallback(error){
+      console.log(error);
+      // if(error.status ==401){
+        $mdToast.show(
+          $mdToast.simple()
+          .textContent('Unauthorized')
+          .position('bottom right')
+          .hideDelay(5000)
+        );
+
+
+      // }
+
     });
   };
 
@@ -1458,7 +1473,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: '../templates/registeremail.html',
+        templateUrl: 'templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1587,7 +1602,7 @@ $scope.init = function(){
     $rootScope.showAdvanced = function(ev) {
         $mdDialog.show({
           controller: DialogController,
-          templateUrl: '../templates/registeremail.html',
+          templateUrl: 'templates/registeremail.html',
           parent: angular.element(document.body),
           targetEvent: ev,
           clickOutsideToClose:true,
@@ -1715,7 +1730,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: '../templates/registeremail.html',
+        templateUrl: 'templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1842,7 +1857,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: '../templates/registeremail.html',
+        templateUrl: 'templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1969,7 +1984,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: '../templates/registeremail.html',
+        templateUrl: 'templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2054,7 +2069,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: '../templates/otpdialog.html',
+        templateUrl: 'templates/otpdialog.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2164,7 +2179,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
           last_name: response.data.user.last_name,
           rdv_number: response.data.user.rdv_number,
           access_token:response.data.token,
-          points:response.data.rdv_points,
+          points:response.data.user.rdv_points
       };
       $window.localStorage.userFullDetails = JSON.stringify(userFullDetails);
       if (response.status===200){

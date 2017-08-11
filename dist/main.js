@@ -113,6 +113,7 @@ app.factory("Auth", ["$http","$q","$window",function ($http, $q, $window) {
                  last_name: response.data.user.last_name,
                  rdv_number: response.data.user.rdv_number,
                  access_token:response.data.token,
+                 points:response.data.user.rdv_points
              };
              $window.localStorage.userFullDetails = JSON.stringify(userFullDetails);
              deferred.resolve(userFullDetails);
@@ -131,12 +132,12 @@ app.factory("Auth", ["$http","$q","$window",function ($http, $q, $window) {
               'Content-Type': 'application/json; charset=UTF-8',
               'Authorization':'Token '+userFullDetails.access_token
             }
-        }).then(function (result) {
+        }).then(function successCallback(response) {
             // console.log(result);
             userFullDetails = null;
             $window.localStorage.userFullDetails = null;
             deferred.resolve(result);
-        }, function (error) {
+        }, function errorCallback(error) {
             deferred.reject(error);
         });
         return deferred.promise;
