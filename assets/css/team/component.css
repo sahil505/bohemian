@@ -454,10 +454,21 @@ a:focus {
 	margin-left: 35%;
 }
 
+.team-leader-box-tohead {
+	display: inline-block;
+	width:30.66%;
+	margin-right: 3.82979%;
+	height: 490px;
+	overflow: hidden;
+	text-align: center;
+	margin-left: 10%;
+}
+
 .team-leader-box span{
 	margin-bottom:24px;
 	display:block;
 }
+
 .team-leader-box:nth-of-type(3n+0){ margin:0;}
 .team-leader{
 	width:auto;
