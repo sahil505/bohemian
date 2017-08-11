@@ -723,7 +723,7 @@ img{ max-width:100%;}
 
 		.rdv-head {
 			color: #000000;
-			font-size: 32px;
+			font-size: 35px;
 			font-family: 'Advent Pro', sans-serif;
 			font-weight: 700;
 			text-decoration: none;
@@ -902,7 +902,7 @@ img{ max-width:100%;}
 
 	.show-head {
 		color: #000000;
-		font-size: 32px;
+		font-size: 35px;
 		font-family: 'Advent Pro', sans-serif;
 		text-transform: uppercase;
 		font-weight: 700;
@@ -1109,7 +1109,7 @@ img{ max-width:100%;}
 
 	.high-head {
 		color: #000000;
-		font-size: 32px;
+		font-size: 35px;
 		font-family: 'Advent Pro', sans-serif;
 		text-transform: uppercase;
 		font-weight: 700;
@@ -1320,6 +1320,14 @@ img{ max-width:100%;}
 
 @media screen and (max-width: 500px) {
 	/*applies only if the screen is less than 500px*/
+	.team-head {
+		color: #000000;
+		font-size: 35px;
+		font-family: 'Advent Pro', sans-serif;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
 	.card-arrow {
 		display: none;
 	}
