@@ -975,7 +975,9 @@ img{ max-width:100%;}
 		text-transform: uppercase;
 		text-shadow: rgba(0, 0, 0, 0.7) 1px 1px 5px;
 		color: white;
-		font-weight: lighter;
+		font-weight: bold;
+		font-family: 'Dosis', sans-serif;
+		background-color: #444444;
 		font-size: 20px;
 		letter-spacing: .1em;
 		position: absolute;
@@ -987,29 +989,7 @@ img{ max-width:100%;}
 		opacity: 0;
 		z-index: 2;
 		width: 100%;
-		height: 100%;
-	}
-
-	.main-heading-3-box a .name .title {
-		display: block;
-		text-transform: none;
-		font-style: italic;
-		font-size: 80%;
-		color: rgba(255, 255, 255, 0.7);
-		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-		opacity: 0;
-		-moz-transition-property: all;
-		-o-transition-property: all;
-		-webkit-transition-property: all;
-		transition-property: all;
-		-moz-transition-delay: 0.2s;
-		-o-transition-delay: 0.2s;
-		-webkit-transition-delay: 0.2s;
-		transition-delay: 0.2s;
-		-moz-transition-duration: 0.9s;
-		-o-transition-duration: 0.9s;
-		-webkit-transition-duration: 0.9s;
-		transition-duration: 0.9s;
+		/*height: 100%;*/
 	}
 
 	.main-heading-3-box a:hover .name {
@@ -1027,11 +1007,6 @@ img{ max-width:100%;}
 		-o-transition-duration: 0.6s;
 		-webkit-transition-duration: 0.6s;
 		transition-duration: 0.6s;
-	}
-
-	.main-heading-3-box a:hover .title {
-		filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-		opacity: 1;
 	}
 
 	.main-heading-3-box a:hover img {
