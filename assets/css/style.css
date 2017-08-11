@@ -1318,6 +1318,13 @@ img{ max-width:100%;}
 	text-shadow: rgba(0, 0, 0, 0.5) 0 10px 10px;
 }
 
+@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+	.card-arrow {
+		display: none;
+	}
+}
+
 /*cards end*/
 
 /* Footer
