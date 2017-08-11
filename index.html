@@ -598,20 +598,16 @@ Author URL: https://sahil505.com
 		</script>
 		<!-- Side menu-bar ends -->
 
-		<!-- get userdata -->
-
+		<!-- Get userdata -->
 		<script type="text/javascript">
 			if(window.localStorage.getItem("userFullDetails")){
 				var userDetails =  window.localStorage.getItem("userFullDetails");
 				var userFullDetails = JSON.parse(userDetails);
 				console.log(userFullDetails);
-		// console.log(userDetails.poi);
-		document.getElementById("userName").innerHTML = "Hii  " + userFullDetails.first_name;
-		document.getElementById("rdvPoints").innerHTML = "RDV Points  " + userFullDetails.rdv_points;
-
-	}
-
-
-</script>
+				document.getElementById("userName").innerHTML = "Hii  " + userFullDetails.first_name;
+				document.getElementById("rdvPoints").innerHTML = "RDV Points  " + userFullDetails.rdv_points;
+			}
+		</script>
+		<!-- Get userdata ends -->
 </body>
 </html>
