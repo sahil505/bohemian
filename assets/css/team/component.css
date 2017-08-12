@@ -175,6 +175,7 @@ a:focus {
 	z-index: 200;
 	margin: 0 auto;
 	padding: 1em;
+	padding-top: 0;
 	width: 80%;
 	text-align: center;
 	-webkit-backface-visibility: hidden;
@@ -186,15 +187,19 @@ a:focus {
 	font-family: 'Advent Pro', sans-serif;
 	text-transform: uppercase;
 	font-weight: 700;
+	margin-top: 24px;
+	letter-spacing: 4px;
 	-webkit-backface-visibility: hidden;
 }
 
 .vs-container > header span {
 	display: block;
 	padding: 0 0 0.6em 0.1em;
-	font-size: 60%;
-	font-weight: 400;
+	padding-top: 10px;
+	font-size: 24px;
+	font-weight: 600;
 	color: #893027;
+	letter-spacing: 1px;
 }
 
 .vs-nav {
@@ -229,16 +234,18 @@ a:focus {
 	margin: 0 10px;
 	padding: 10px 0;
 	outline: none;
-	border-top: 2px solid #893027;
-	border-bottom: 2px solid #893027;
-	color: #893027;
+	border-top: 2px solid grey;
+	border-bottom: 2px solid grey;
+	color: grey;
 	text-decoration: none;
 	text-transform: uppercase;
-	letter-spacing: 2px;
+	letter-spacing: 3px;
 	font-weight: 700;
-	font-size: 1.5em;
+	font-size: 26px;
+	/*font-family: 'Advent Pro', sans-serif;*/
 	-webkit-transition: border-color 0.3s, color 0.3s;
 	transition: border-color 0.3s, color 0.3s;
+	opacity: .5;
 }
 
 .vs-nav li a:hover,
@@ -246,8 +253,11 @@ a:focus {
 .vs-triplelayout .vs-nav .vs-nav-current a,
 .vs-container.vs-move-left .vs-nav-right a,
 .vs-container.vs-move-right .vs-nav-left a {
-	border-color: grey;
-	color: grey;
+	
+	border-top: 2px solid #893027;
+	border-bottom: 2px solid #893027;
+	color: #893027;
+	opacity: 1;
 }
 
 .vs-container.vs-move-left .vs-nav-current a,
