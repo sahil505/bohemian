@@ -590,6 +590,10 @@ img{ max-width:100%;}
 	text-decoration: none;
 }
 
+.boho-arrow {
+	display: none;
+}
+
 @media screen and (min-width: 500px) and (max-width: 1500px) {
 	/* applies only if the screen is more than 500px & less than 1500px*/
 	.rdv-content {
@@ -770,6 +774,13 @@ img{ max-width:100%;}
 	.mob-btn {
 		display: block;
 	}
+
+	.boho-arrow {
+		display: block;
+		width: 35%;
+		margin-left: 18vh;
+		margin-top: 40px;
+	}
 }
 
 @media screen and (max-width: 350px) {
@@ -834,6 +845,17 @@ img{ max-width:100%;}
 
 	.mob-btn {
 		display: block;
+	}
+
+	.boho-arrow {
+		display: block;
+	}
+
+	.boho-arrow {
+		display: block;
+		width: 35%;
+		margin-left: 104px;
+		margin-top: 40px;
 	}
 }
 
@@ -971,7 +993,6 @@ img{ max-width:100%;}
 	/*applies only if the screen is less than 500px*/
 	.foot-description {
 		margin-left: 0;
-		text-align: center;
 	}
 
 	.foot-list {
@@ -986,9 +1007,39 @@ img{ max-width:100%;}
 		font-weight: 700;
 	}
 	.show-content {
+		text-align: left;
 		font-size: 16px;
 		font-family: 'Dosis', sans-serif;
 		font-weight: 400;
+		margin-left: 16px;
+		margin-right: 16px;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	/*applies only if the screen is less than 500px*/
+	.foot-description {
+		margin-left: 0;
+	}
+
+	.foot-list {
+		display: none;
+	}
+
+	.show-head {
+		color: #000000;
+		font-size: 30px;
+		font-family: 'Advent Pro', sans-serif;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	.show-content {
+		text-align: left;
+		font-size: 13px;
+		font-family: 'Dosis', sans-serif;
+		font-weight: 400;
+		margin-left: 16px;
+		margin-right: 16px;
 	}
 }
 
