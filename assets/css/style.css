@@ -763,6 +763,10 @@ img{ max-width:100%;}
 		margin-left: 0;
 	}
 
+	.main-btn-wrap {
+		margin-left: 16px;
+	}
+
 	.mob-btn {
 		display: block;
 	}
@@ -822,6 +826,10 @@ img{ max-width:100%;}
 
 	.pass {
 		margin-left: 0;
+	}
+
+	.main-btn-wrap {
+		margin-left: 16px;
 	}
 
 	.mob-btn {
