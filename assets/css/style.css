@@ -1227,13 +1227,9 @@ img{ max-width:100%;}
 @media screen and (max-width: 500px) {
 	/*applies only if the screen is less than 500px*/
 	.paddind {
-		padding-top: 40px;
+		padding-top: 0;
 		padding-bottom: 40px;
 		background-image: none !important;
-	}
-
-	.high-arrow {
-		display: none;
 	}
 
 	.high-head {
@@ -1242,6 +1238,15 @@ img{ max-width:100%;}
 		font-family: 'Advent Pro', sans-serif;
 		text-transform: uppercase;
 		font-weight: 700;
+		margin-bottom: 40px;
+		float: left;
+	}
+
+	.high-arrow {
+		width: 28px;
+		margin-left: 64px;
+		-ms-transform: rotate(90deg);
+		margin-top: 14px;
 	}
 
 	.main-heading-3Filter {
@@ -1257,11 +1262,10 @@ img{ max-width:100%;}
 	}
 
 	.mob-highlights {
-		display: inline-block;
+		display: block;
 	}
 
 	.main-heading-3-box img {
-		display: inline-block;
 	}
 }
 
