@@ -691,6 +691,10 @@ a:focus {
 	color:#dd4b39;
 }
 
+.team-leader ul li a.fa-globe:hover{
+	color:darkgrey;
+}
+
 .mob-number {
 	color: white;
 }
