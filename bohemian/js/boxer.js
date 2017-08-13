@@ -2189,7 +2189,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
       if (response.status===200){
         console.log(response);
         // $location.path("/home");
-        $window.location.href = "http://rdv-iitd.com/test/";
+        $window.location.href = "http://rdv-iitd.com/";
         $mdToast.show(
           $mdToast.simple()
           .textContent("Successfully Logged In")
