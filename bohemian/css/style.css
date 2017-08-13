@@ -270,7 +270,7 @@
 
 .events-at-glance-head {
   min-height: 15vh;
-  padding: 10px;
+  padding: 20px 0px;
   background-image: url("../images/bg3.png");
   background-color: #ffffff;
   background-size: cover;
@@ -299,6 +299,9 @@
     height: 12vh;
     width: auto;
     margin: 0 auto;
+  }
+  .events-at-glance-head .events-at-glance-head {
+    padding: 40px 0px;
   }
 }
 .events-at-glance-head .headline-comp {
@@ -330,7 +333,8 @@
 }
 @media only screen and (max-width: 599px) {
   .events-at-glance-head h1 {
-    font-size: 2.5em;
+    font-size: 2.2em;
+    margin: auto;
   }
 }
 .events-at-glance-head h4 {

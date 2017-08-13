@@ -1211,21 +1211,19 @@ if($rootScope.reg_path != '/home'){
         .hideDelay(3000)
       );
 
-    }).then(function errorCallback(error){
+    }, function (error) {
       console.log(error);
-      // if(error.status ==401){
+      if (error.status=400) {
         $mdToast.show(
           $mdToast.simple()
-          .textContent('Unauthorized')
+          .textContent('Username or password is incorrect')
           .position('bottom right')
           .hideDelay(5000)
         );
+      }
 
-
-      // }
-
-    });
-  };
+  });
+};
 
 $scope.bro = function(){
   console.log("working");
