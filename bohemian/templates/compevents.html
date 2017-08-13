@@ -1,0 +1,39 @@
+<div ng-controller="MainCtrl" flex ng-cloak class="club-events">
+
+<a href = "../index.html"><img class="logo-header" src = "images/rdv-logo.png" alt="" hide-xs></a>
+<div layout = "row" layout-align ="center center" hide-gt-xs>
+  <a href = "../index.html"><img class="header-img" src="images/header.png" alt=""></a>
+</div>
+  <!-- <div class="events-at-glance-head glance-head-extra" id = "section1"  hide-gt-xs>
+
+
+  </div> -->
+  <div class="user-name" md-whiteframe = "3" ng-if = "userDetails">
+    Hii {{userDetails.first_name}}!
+  </div>
+  <div class="container events-grid " layout = "row">
+    <div class=" events-col1 cover-neon "  layout-align-xs = "center end">
+        <h1 class="cover-head">Competitive Events</h1>
+        <!-- <img src="images/arrow.png" alt=""> -->
+    </div>
+
+
+  </div>
+    <!-- <img src = "images/arrow.png"> -->
+  <div class="container events-grid " layout = "row" layout-wrap layout-xs = "column" layout-align = "center center">
+
+      <div md-whiteframe = "2" class="center events-col" flex-gt-sm = "30"  ng-repeat = "data in compevents" layout = "center center" style="background-image:{{data.image}}">
+          <a ng-href = {{data.href}} class="events-link ">
+            </a>
+        <div class="events-grid-overlay">
+
+            <h1>{{data.title}}</h1>
+
+        </div>
+      </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+</script>

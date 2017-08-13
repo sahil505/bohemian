@@ -1,0 +1,58 @@
+<div ng-controller="MainCtrl" flex ng-cloak class="login-page">
+
+      <!-- <a href = "../index.html"><img class="header-img" src="images/logo2.png" alt="" hide-sm hide-xs></a> -->
+
+      <div class="logo-img-header " layout = "row" md-whiteframe = "1">
+        <a href = "../index.html"><img class="logo-img" src="images/header2.png" alt=""></a>
+
+      </div>
+      <div class="logo-img-header " layout = "row" md-whiteframe = "1">
+        <a href = "../index.html"><img class="logo-img" src="images/header2.png" alt=""></a>
+
+      </div>
+<div class="" layout = "row" layout-align = "center center" layout-padding>
+  <a ng-href = "#!/login"><button class="outline-button pass">Login</button></a>
+  <a ng-href = "#!/register"><button class="outline-button pass">Register</button></a>
+</div>
+  <div layout = "row" layout-align = "center center" class="login-card" md-whiteframe = "1">
+
+    <form name = "userForm">
+      <div class="login-head center">
+        Welcome!
+      </div>
+
+        <md-input-container class="md-icon-float md-block ">
+          <label>Email or RDV no</label>
+          <md-icon>mail</md-icon>
+            <input md-maxlength="30" required md-no-asterisk name="username" ng-model="user.username">
+            <div ng-messages="userForm.username.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+          <label>Password</label>
+          <md-icon>vpn_key</md-icon>
+          <input required ng-model="user.password" md-no-asterisk type="password" name = "password">
+          <div ng-messages="userForm.password.$error" role="alert">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <div layout = "row" layout-align = "center center">
+        <md-button value = "Submit valid inputs" ng-disabled="userForm.$invalid" class="md-raised md-primary" ng-click = "logInUser(user)">Login</md-button>
+        </div>
+        <!-- <div layout="row" layout-sm="column" layout-align="space-around" >
+           <md-progress-circular ng-show = "isLoading" md-mode="indeterminate"></md-progress-circular>
+        </div> -->
+        <!-- <div class="signup-link" layout = "row">
+          <a ng-href="#!/register">
+            Dont't have an account ? <span>SignUp here</span>
+          </a>
+
+        </div> -->
+    </form>
+
+
+  </div>
+
+
+</div>

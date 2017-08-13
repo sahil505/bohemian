@@ -1,0 +1,64 @@
+<div class="main-div" layout = "row" ng-controller = "DebateCtrl" ng-init="init()">
+  <div class="main-left " flex-gt-sm = "75" style={{imgLink}}>
+
+      <a href = "../"><img class = "rdv-tag" src="images/white-logo.png" alt="" hide-xs hide-sm ></a>
+
+      <div class="left-content">
+        <div class="overlay-left">
+
+        </div>
+        <h1 class="headline">{{debateData[debateIndex].name}} <button ng-show = debateData[debateIndex].reg_status ng-click = "Register(debateData[debateIndex],debateData[0].poc[0].email,'/debate')" class="outline-button pass"><a>Register</a></button></h1>
+        <!-- <h1 class="headline">{{debateData[debateIndex].name}} <button ng-click = "Register(debateData[debateIndex],debateData[0].poc[0].email,'/debate')" class="outline-button pass"><a>Register</a></button></h1> -->
+        <h3>{{debateData[debateIndex].subheading}}</h2>
+          <span ng-bind-html="debateData[debateIndex].description">
+
+          </span><br>
+          <h1>Rules</h1>
+          <span ng-bind-html="debateData[debateIndex].rules">
+          </span><br>
+          <h1>Prizes</h1>
+          <span ng-bind-html="debateData[debateIndex].prizes">
+          </span>
+          <br>
+          <h1>Date Time Venue</h1>
+
+          <div ng-repeat = "data in debateData[debateIndex].dtv" layout = "column">
+            <h3>{{data.type}}</h3>
+            <div class="" layout = "column">
+              <span>Date: {{data.date}}</span><br>
+              <span>Start DateTime :{{data.start_time | date:'dd-MMM-yyyy @ h:mma'}}</span><br>
+              <span>End DateTime: {{data.end_time | date:'dd-MMM-yyyy @ h:mma'}}</span><br>
+              <span>Venue: {{data.venue}}</span>
+            </div>
+          </div>
+          <div class="" layout = "column">
+            <h3>Point of Contact</h3>
+            <span>{{debateData[debateIndex].poc[0].name}}</span><br>
+            <span>{{debateData[debateIndex].poc[0].designation}}</span><br>
+            <span>{{debateData[debateIndex].poc[0].email}}</span><br>
+            <span>{{debateData[debateIndex].poc[0].contact}}</span>
+          </div>
+
+
+
+        </div>
+  </div>
+  <div class="main-right" flex = "25" layout-align = "center center" hide-sm hide-xs>
+    <h1 class="center " md-whiteframe = "1">Debate</h1>
+    <ul class="tab-list">
+      <li class="" ng-repeat = "x in debateData" ng-click = "tabDebate($index)">{{x.name}}</li>
+    </ul>
+  </div>
+
+  <i class="ti-menu nav-icon" ng-click="toggleLeft()" hide-gt-sm></i>
+
+    <md-sidenav class="" md-component-id="left" md-whiteframe="4">
+      <div class="main-right" flex = "100" layout-align = "center center">
+        <h1 class="center " md-whiteframe = "1">Debate</h1>
+        <ul class="tab-list">
+          <li class=""  ng-repeat = "x in debateData" ng-click = "tabDebate($index); toggleLeft()">{{x.name}}</li>
+        </ul>
+      </div>
+    </md-sidenav>
+
+</div>

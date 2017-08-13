@@ -1,0 +1,34 @@
+<div ng-controller="MainCtrl" flex ng-cloak class="pronites-page">
+  <div class="events-at-glance-head head-pronite  " id = "section1" md-whiteframe="3">
+    <div layout = "row" layout-align ="center center" class="">
+        <a href = "../"><img class="header-img" src="images/rdv-logo.png" alt="" ></a>
+      <h1 class="cover-head">Pronites</h1>
+      <!-- <h4>Pronites</h4> -->
+      <!-- <img class="r1" src="images/r1.png" alt="" hide-xs hide-sm>
+      <img class="r2" src="images/r2.png" alt="" hide-xs> -->
+
+    </div>
+  </div>
+<div class="carousel-pronites ">
+                    <!-- index : <input type="number" class="tiny" ng-model="carouselIndex"> -->
+                    <ul class =""  rn-carousel rn-carousel-auto-slide rn-carousel-controls rn-carousel-index="carouselIndex" rn-carousel-buffered>
+                      <li ng-repeat = "data in pronitesCarousel">
+                          <div class="" layout = "row">
+                            <div class="pronite-left" flex = "70" hide-xs hide-sm>
+                              <img src={{data.image1}} alt="">
+                            </div>
+                            <div class="pronite-right" flex-gt-sm = "30" flex = "100">
+                              <img src={{data.image2}} alt="">
+                            </div>
+                          </div>
+                      </li>
+                      <!-- <li>sdff</li>
+                      <li>sfdf</li>
+                      <li>sfdf</li>
+                      <li>sfdfds</li>
+                      <li>sfdsdf</li> -->
+                    </ul>
+                </div>
+                <div rn-carousel-indicators ng-if="slides.length > 1" slides="slides" rn-carousel-index="carouselIndex"></div>
+
+</div>

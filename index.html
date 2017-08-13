@@ -40,15 +40,18 @@ Author URL: https://sahil505.com
 		<div class="loader-section section-left"></div>
 		<div class="loader-section section-right"></div>
 	</div>
+	<div class="userDetails" style="z-index:5">
+		<h1 id="userName"></h1>
+		<h2 id="rdvPoints"></h1>
+		<h2 id="rdvNo"></h1>
+		</div>
 	<div class="mobile-landing">
-		<img src="assets/img/mobile-landing.png">
+
+		<img class="landing-mobile" src="assets/img/mobile-landing.png">
 	</div>
 	<!-- Video Container starts -->
 	<div class="video-container" id="landing-video">
-		<div class="userDetails">
-			<h1 id="userName"></h1>
-			<h2 id="rdvPoints"></h1>
-			</div>
+
 			<video autoplay class="fillWidth">
 				<source src="assets/img/rdv-video.mp4" type="video/mp4" />Your browser does not support the video tags. We suggest you upgrade your browser.
 			</video>
@@ -624,6 +627,7 @@ Author URL: https://sahil505.com
 		console.log(userFullDetails);
 		// console.log(userDetails.poi);
 		document.getElementById("userName").innerHTML = "Hey, " + userFullDetails.first_name;
+		// document.getElementById("userName1").innerHTML = "Hey, " + userFullDetails.first_name;
 
 		// document.getElementById("login-button").innerHTML = "LOGOUT";
 		document.getElementById("login-button").style.display = 'none';
@@ -640,8 +644,12 @@ Author URL: https://sahil505.com
 		    data: JSON.stringify({"token":access_token}),
 		    processData: false,
 		    success: function( data, textStatus, jQxhr ){
-		       console.log(data);
+		      //  console.log(data);
 					 document.getElementById("rdvPoints").innerHTML = "RDV Points  " + data.user.rdv_points;
+					 document.getElementById("rdvNo").innerHTML = data.user.rdv_number;
+					//  document.getElementById("rdvPoints1").innerHTML = "RDV Points  " + data.user.rdv_points;
+					//  document.getElementById("rdvNo1").innerHTML = data.user.rdv_number;
+					//  console.log(data.user.rdv_number);
 		    },
 		    error: function( jqXhr, textStatus, errorThrown ){
 		        console.log( errorThrown );

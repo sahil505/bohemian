@@ -1635,10 +1635,11 @@ img{ max-width:100%;}
 
 .userDetails{
 	position: absolute;
-	top:25px;
+	top:30px;
 	padding: 0;
-	right: 10%;
+	right: 15%;
 	z-index: 2;
+	/*background-color: rgba(207,216,220 ,0.1)*/
 }
 
 .userDetails h1{
