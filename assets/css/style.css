@@ -1455,6 +1455,10 @@ img{ max-width:100%;}
 	display: none;
 }
 
+.card-team-mobile {
+	display: none;
+}
+
 @media screen and (max-width: 500px) {
 	/*applies only if the screen is less than 500px*/
 	.team-head {
@@ -1474,6 +1478,14 @@ img{ max-width:100%;}
 		width: 40%;
 		margin-left: 16vh;
 		margin-top: 40px;
+	}
+
+	.card-team {
+		display: none;
+	}
+
+	.card-team-mobile {
+		display: block;
 	}
 }
 
