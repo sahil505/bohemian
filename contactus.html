@@ -13,6 +13,10 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style>
 
+		@import url('https://fonts.googleapis.com/css?family=Nixie+One');
+		@import url('https://fonts.googleapis.com/css?family=Nunito');
+		@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+
 		body {
 			background-image: url("assets/img/coming-soon.png");
 			background-size: cover;
@@ -20,103 +24,153 @@
 		}
 
 		.coming-logo {
+			float: left;
 			margin-top: 5vh;
 		}
 
-		.row {
-			margin-top: 10vh;
-			padding-bottom: 20px;
+		.cover-head {
+			margin-top: 5vh;
 		}
 
-		.head {
-			margin-bottom: 50px;
+
+		@media screen and (min-width: 500px) {
+			/* applies only if the screen is more than 500px */
+			.cover-head {
+				font: normal 80px/ 120px 'Nixie One', Helvetica, Arial;
+				letter-spacing: -2px;
+				/*font-weight: 700;*/
+				text-shadow: 0 0 30px #EC637B, 
+				0 0 10px rgba(230, 161, 173, 0.41), 
+				0 0 100px #E6A1AD, 
+				0 0 500px #F36780, 
+				5px 9px 5px rgba(0, 0, 0, 0.5);
+			}
 		}
 
-		.footer-address {
-			padding:0 0 35px;
-			padding-top: 20px;
-			float: right;
-			text-align: left;
-			margin-right: 40px;
+		@media screen and (max-width: 500px) {
+			/* applies only if the screen is narrower than 500px */
+			.cover-head {
+				font-size: 72px;
+				color: #222222;
+				margin: 0 0 15px 0;
+				text-shadow: 2px 2px 8px grey;
+			}
 		}
 
-		.footer{
-			padding:0 0 35px;
-			padding-top: 20px;
-			float: left;
-			margin-left: 40px;
-		}
-		.footer-logo{
-			text-align: center;
-		}
+.row {
+	margin-top: 10vh;
+	padding-bottom: 40px;
+}
 
-		.footer-copyright {
-			color:black;
-			font-size:14px;
-			display:block;
-			text-align:center;
-		}
+.head {
+	margin-bottom: 50px;
+}
 
-		.social-wrapper {
-			padding-bottom: 24px;
-			text-align: center;
-		}
+.footer-address {
+	padding:0 0 35px;
+	padding-top: 20px;
+	float: right;
+	text-align: left;
+	margin-right: 40px;
+}
 
-		.social-wrapper a {
-			padding: 0px 5px;
-		}
+.footer{
+	padding:0 0 35px;
+	padding-top: 20px;
+	float: left;
+	margin-left: 40px;
+}
+.footer-logo{
+	text-align: center;
+}
 
-		.social-wrapper a:nth-child(1) {
-			color: #4867AA;
-			cursor: pointer;
-			text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
-			transition: all ease-in-out 150ms;
-		}
+.footer-copyright {
+	color:black;
+	font-size:14px;
+	display:block;
+	text-align:center;
+}
 
-		.social-wrapper a:nth-child(1):hover {
-			margin-top: -10px;
-			text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
-			transform: translate(0, -8);
-		}
+.social-wrapper {
+	padding-bottom: 24px;
+	text-align: center;
+}
 
-		.social-wrapper a:nth-child(2) {
-			color: #3f729b;
-			cursor: pointer;
-			text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
-			transition: all ease-in-out 150ms;
-		}
+.social-wrapper a {
+	padding: 0px 5px;
+}
 
-		.social-wrapper a:nth-child(2):hover {
-			margin-top: -10px;
-			text-shadow: 0px 14px 10px rgba(0, 0, 0, 0.4);
-			transform: translate(0, -5);
-		}
-		.social-wrapper a:nth-child(3) {
-			color: #e62117;
-			cursor: pointer;
-			text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
-			transition: all ease-in-out 150ms;
-		}
-		.social-wrapper a:nth-child(3):hover {
-			margin-top: -10px;
-			text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
-			transform: translate(0, -8);
-		}
+.social-wrapper a:nth-child(1) {
+	color: #4867AA;
+	cursor: pointer;
+	text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+	transition: all ease-in-out 150ms;
+}
 
-		/*Footer ends*/
+.social-wrapper a:nth-child(1):hover {
+	margin-top: -10px;
+	text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+	transform: translate(0, -8);
+}
 
-	</style>
+.social-wrapper a:nth-child(2) {
+	color: #3f729b;
+	cursor: pointer;
+	text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+	transition: all ease-in-out 150ms;
+}
+
+.social-wrapper a:nth-child(2):hover {
+	margin-top: -10px;
+	text-shadow: 0px 14px 10px rgba(0, 0, 0, 0.4);
+	transform: translate(0, -5);
+}
+.social-wrapper a:nth-child(3) {
+	color: #e62117;
+	cursor: pointer;
+	text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+	transition: all ease-in-out 150ms;
+}
+.social-wrapper a:nth-child(3):hover {
+	margin-top: -10px;
+	text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+	transform: translate(0, -8);
+}
+
+/*Footer ends*/
+
+.card-contact {
+	transition:0.2s ease-in;
+	font-family: verdana;
+	border-radius: 2px;
+}
+
+.card-contact h2 {
+	font-family: 'Nixie One', Helvetica, Arial;
+	font-weight: bold;
+}
+
+.card-contact:hover {
+	background-color: white;
+	transform:scale(1.05);
+	box-shadow:0px 0px 10px rgba(0,0,0,0.3);
+}
+
+</style>
 </head>
 <body>
-	<div class="container-fluid">
+	<div class="container-fluid" style="padding-left: 30px; padding-right: 30px;">
 		<div class="coming-logo">
 			<img src="assets/img/footer-logo.png">
 		</div>
-		<div style="background-color:lavenderblush;"><h3>Overall Coordinator</h3><p>rdv17.iitd@gmail.com</p><h4>Rishabh Nagpal<br />(+91-9650255230)</h4></div>
+		<div class="container cover-neon">
+			<h1 class="cover-head">Contact Us</h1>
+		</div>
+		<div class="card-contact" style="margin-left: 400px; margin-right: 400px;"><h2>Overall Coordinator</h2><p>master@rdv-iitd.com</p><h4>Rishabh Nagpal<br />(+91-9650255230)</h4></div>
 		<div class="row">
-			<div class="col-sm-4" style="background-color:lavender;"><h3>Marketing Team</h3><p>rdv17.marketing@gmail.com</p><h4>Manas Poddar<br />(+91-9801700960)</h4></div>
-			<div class="col-sm-4" style="background-color:lavenderblush;"><h3>Events Team</h3><p>rdv17events@gmail.com</p><h4>Sambhav Jain<br />(+91-9968933854)</h4><h4>Deevanshu Goyal<br />(+91-9971743380)</h4></div>
-			<div class="col-sm-4" style="background-color:lavender;"><h3>Publicity Team</h3><p>rdv17.marketing@gmail.com</p><h4>Akanksha Puwar<br />(+91-8376848090)</h4></div>
+			<div class="col-sm-4 card-contact"><h2>Marketing Team</h2><p>marketing@rdv-iitd.com</p><h4>Manas Poddar<br />(+91-9801700960)</h4></div>
+			<div class="col-sm-4 card-contact"><h2>Events Team</h2><p>events@rdv-iitd.com</p><h4>Sambhav Jain<br />(+91-9968933854)</h4><h4>Deevanshu Goyal<br />(+91-9971743380)</h4></div>
+			<div class="col-sm-4 card-contact"><h2>Publicity Team</h2><p>publicity@rdv-iitd.com</p><h4>Akanksha Puwar<br />(+91-8376848090)</h4></div>
 		</div>
 	</div>
 	<hr>
