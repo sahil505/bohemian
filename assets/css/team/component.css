@@ -336,12 +336,6 @@ a:focus {
 	background-repeat: no-repeat;
 }
 
-#section-1 { background-image: url(../images/cat1.png); }
-#section-2 { background-image: url(../images/cat2.png); }
-#section-3 { background-image: url(../images/cat3.png); }
-#section-4 { background-image: url(../images/cat4.png); }
-#section-5 { background-image: url(../images/cat5.png); }
-
 .vs-triplelayout .vs-wrapper > section {
 	position: absolute;
 	top: 0;
