@@ -1171,6 +1171,8 @@ if($rootScope.reg_path != '/home'){
   REGISTER_PATH = $rootScope.reg_path;
 }
 
+$scope.isLogin = false;
+
 
   $rootScope.isPath= function(viewLocation) {
       return viewLocation === $location.path();
@@ -1186,6 +1188,7 @@ if($rootScope.reg_path != '/home'){
 
 
     $scope.logInUser=function (user) {
+      $scope.isLogin = true;
     if (user===undefined) {
       $mdToast.show(
         $mdToast.simple()
@@ -1197,8 +1200,10 @@ if($rootScope.reg_path != '/home'){
     Auth.login(user).then(function(response) {
       console.log(response);
       $scope.userDetails = response;
+      $scope.isLogin = false;
+
       if(REGISTER_PATH == undefined){
-        $window.location.href = "http://rdv-iitd.com";
+        $window.location.href = "http://rdv-iitd.com/";
       }
       else{
         $location.path(REGISTER_PATH);
@@ -1213,14 +1218,14 @@ if($rootScope.reg_path != '/home'){
 
     }, function (error) {
       console.log(error);
-      if (error.status=400) {
+      $scope.isLogin = false;
         $mdToast.show(
           $mdToast.simple()
-          .textContent('Username or password is incorrect')
+          .textContent(error.data.message)
           .position('bottom right')
           .hideDelay(5000)
         );
-      }
+
 
   });
 };
@@ -2066,6 +2071,8 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
       return viewLocation === $location.path();
     };
 
+    $scope.isRegister = false;
+
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
@@ -2101,6 +2108,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
     }
   $scope.signUp=function (user) {
     $rootScope.preuser = user;
+
       if(user.password == user.confirm_password){
         console.log(user);
         $rootScope.showAdvanced();
@@ -2135,14 +2143,14 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
         }
       }, function errorCallback(error) {
         console.log(error);
-        if (error.status===302){
+
           $mdToast.show(
             $mdToast.simple()
-            .textContent('Something went wrong, Please try again!')
+            .textContent(error.data.message)
             .position('bottom right')
             .hideDelay(3000)
           );
-        }
+
       });
     }
 
@@ -2157,6 +2165,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
     };
 
   $scope.submitOtp = function(user){
+    $scope.isRegister = true;
     var preuser = $rootScope.preuser;
     console.log(user);
     console.log(preuser);
@@ -2178,6 +2187,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
       }
     }).then(function sucessCallback(response) {
       console.log(response);
+      $scope.isRegister = false;
       userFullDetails = {
           first_name: response.data.user.first_name,
           last_name: response.data.user.last_name,
@@ -2189,7 +2199,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
       if (response.status===200){
         console.log(response);
         // $location.path("/home");
-        $window.location.href = "http://rdv-iitd.com/test/";
+        $window.location.href = "http://rdv-iitd.com";
         $mdToast.show(
           $mdToast.simple()
           .textContent("Successfully Logged In")
@@ -2198,14 +2208,14 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
         );
       }
     }, function errorCallback(error) {
-      if (error.status===401){
+          $scope.isRegister = false;
         $mdToast.show(
           $mdToast.simple()
-          .textContent('Wrong OTP')
+          .textContent(error.data.message)
           .position('bottom right')
           .hideDelay(3000)
         );
-      }
+
     });
 
   };
