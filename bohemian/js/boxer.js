@@ -2063,8 +2063,11 @@ $scope.init = function(){
 
 });
 
-app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToast,$http,$mdDialog,$rootScope,$window,$location,Auth) {
+app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToast,$http,$mdDialog,$rootScope,$window,$location,Auth,md5) {
 
+
+  // console.log(md5.createHash("korkudeepak@gmail.com"));
+  // console.log("hashing works");
   $scope.userDetails = Auth.getuserFullDetails();
 
   $rootScope.isPath= function(viewLocation) {
@@ -2123,11 +2126,12 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
           'email':user.email,
           'gender':user.gender,
           'college':user.college,
+          'gender':user.gender,
           'contact_number':user.contact_number,
           'first_name':user.firstname,
           'last_name':user.lastname,
           'referral_code':user.referral_code,
-          'password':user.password
+          'password':md5.createHash(user.password)
         }
       }).then(function sucessCallback(response) {
         console.log(response);
@@ -2180,9 +2184,10 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
         'first_name':preuser.firstname,
         'last_name':preuser.lastname,
         'college':preuser.college,
+        'gender':preuser.gender,
         'contact_number':preuser.contact_number,
         'referral_code':preuser.referral_code,
-        'password':preuser.password,
+        'password':md5.createHash(preuser.password),
         'otp':user.otp
       }
     }).then(function sucessCallback(response) {

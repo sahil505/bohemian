@@ -1,4 +1,4 @@
-var app = angular.module('boxer', ['ngMaterial','ngRoute','ngAnimate','duScroll','angular-scroll-animate','ngParallax','angular-carousel','ngSanitize']);
+var app = angular.module('boxer', ['ngMaterial','ngRoute','ngAnimate','duScroll','angular-scroll-animate','ngParallax','angular-carousel','ngSanitize','ngMd5']);
 
 var URL_PREFIX = 'http://rdv-iitd.com/api/'
 
@@ -86,7 +86,7 @@ app.run(["$rootScope", "$location", function ($rootScope, $location) {
         }
     });
 }]);
-app.factory("Auth", ["$http","$q","$window",function ($http, $q, $window) {
+app.factory("Auth", ["$http","$q","$window","md5",function ($http, $q, $window,md5) {
     var userFullDetails;
     function login(user) {
         var url=URL_PREFIX+'login/';
@@ -101,7 +101,7 @@ app.factory("Auth", ["$http","$q","$window",function ($http, $q, $window) {
             //  },
              data: {
                 'login_id':user.username,
-                'password':user.password
+                'password':md5.createHash(user.password)
 
              },
              headers: {
