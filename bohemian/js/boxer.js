@@ -1198,7 +1198,7 @@ if($rootScope.reg_path != '/home'){
       console.log(response);
       $scope.userDetails = response;
       if(REGISTER_PATH == undefined){
-        $window.location.href = "http://rdv-iitd.com/test/";
+        $window.location.href = "http://rdv-iitd.com";
       }
       else{
         $location.path(REGISTER_PATH);
