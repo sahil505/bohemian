@@ -298,7 +298,7 @@ a:focus {
 	}
 
 	.vs-container {
-		overflow-y: scroll;
+		overflow-y: scroll !important;
 	}
 
 	.vs-container > header h1 {
