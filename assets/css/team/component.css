@@ -32,6 +32,10 @@ a:focus {
 	outline-offset: -2px;
 }
 
+.no-touch .vs-container {
+	overflow-x: hidden;
+}
+
 .vs-header {
 	z-index: 200;
 	margin: 0 auto;
@@ -185,6 +189,7 @@ a:focus {
 .vs-wrapper {
 	position: relative;
 	display: block;
+	overflow: hidden;
 	min-height: 100%;
 	width: 100%;
 }
@@ -323,6 +328,71 @@ a:focus {
 	padding: 0;
 }
 
+/* Media queries */
+@media screen and (max-width: 72.875em) {
+
+	.vs-header,
+	.vs-wrapper {
+		font-size: 80%;
+	}
+
+	.vs-content {
+		width: 85%;
+	}
+
+	.vs-content h2 {
+		font-size: 1.8em;
+	}
+
+	.vs-nav li a {
+		width: 160px;
+	}
+
+	.vs-content .col {
+		-webkit-column-width: 50%;
+		-moz-column-width: 50%;
+		column-width: 50%;
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+	}
+}
+
+@media screen and (max-width: 45.25em) {
+
+	.vs-container > header h1 {
+		margin-bottom: 0;
+	}
+
+	.vs-content h2 {
+		margin: 0 0 1em;
+	}
+
+	.vs-wrapper {
+		font-size: 80%;
+	}
+
+	.vs-triplelayout .vs-nav li a {
+		width: auto;
+		font-size: 70%;
+	}
+
+	.vs-wrapper > section {
+		background-position: 0 28em;
+		background-size: 100%;
+	}
+
+	.vs-content .col {
+		-webkit-column-width: auto;
+		-moz-column-width: auto;
+		column-width: auto;
+		-webkit-column-count: auto;
+		-moz-column-count: auto;
+		column-count: auto;
+	}
+
+
+}
 
 /* Animation Timers
 ---------------------------------*/
