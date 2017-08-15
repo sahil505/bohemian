@@ -307,6 +307,7 @@ a:focus {
 
 	.vs-wrapper {
 		font-size: 80%;
+		overflow-y: scroll !important;
 	}
 
 	.vs-triplelayout .vs-nav li a {
