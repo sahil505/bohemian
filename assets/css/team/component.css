@@ -289,83 +289,16 @@ a:focus {
 	right: 0px;
 }
 
-/* inner content */
-.vs-content {
-	position: relative;
-	margin: auto;
-	padding: 1em 0;
-	width: 95%;
-	text-align: left;
-	font-size: 1.5em;
-}
-
-.vs-content h2 {
-	position: relative;
-	margin: 30px 0 40px;
-	color: #893027;
-	font-weight: 700;
-	font-size: 1em;
-}
-
-.vs-content .col {
-	margin: 0 auto;
-	color: #893027;
-	text-align: justify;
-	line-height: 1.4;
-	-webkit-column-width: 30%;
-	-moz-column-width: 30%;
-	column-width: 30%;
-	-webkit-column-count: 3;
-	-moz-column-count: 3;
-	column-count: 3;
-	-webkit-column-gap: 1%;
-	-moz-column-gap: 1%;
-	column-gap: 1%;
-}
-
-.vs-content p {
-	margin: 0 0 20px 0;
-	padding: 0;
-}
-
 /* Media queries */
-@media screen and (max-width: 72.875em) {
 
-	.vs-header,
-	.vs-wrapper {
-		font-size: 80%;
+@media screen and (max-width: 500px) {
+
+	body {
+		background-image: none !important;
 	}
-
-	.vs-content {
-		width: 85%;
-	}
-
-	.vs-content h2 {
-		font-size: 1.8em;
-	}
-
-	.vs-nav li a {
-		width: 160px;
-	}
-
-	.vs-content .col {
-		-webkit-column-width: 50%;
-		-moz-column-width: 50%;
-		column-width: 50%;
-		-webkit-column-count: 2;
-		-moz-column-count: 2;
-		column-count: 2;
-	}
-}
-
-@media screen and (max-width: 45.25em) {
 
 	.vs-container > header h1 {
 		margin-bottom: 0;
-	}
-
-	.vs-content h2 {
-		margin: 0 0 1em;
 	}
 
 	.vs-wrapper {
@@ -378,20 +311,8 @@ a:focus {
 	}
 
 	.vs-wrapper > section {
-		background-position: 0 28em;
 		background-size: 100%;
 	}
-
-	.vs-content .col {
-		-webkit-column-width: auto;
-		-moz-column-width: auto;
-		column-width: auto;
-		-webkit-column-count: auto;
-		-moz-column-count: auto;
-		column-count: auto;
-	}
-
-
 }
 
 /* Animation Timers
