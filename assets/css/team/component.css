@@ -297,6 +297,10 @@ a:focus {
 		background-image: none !important;
 	}
 
+	.vs-container {
+		overflow: scroll;
+	}
+
 	.vs-container > header h1 {
 		margin-bottom: 0;
 	}
