@@ -1,0 +1,42 @@
+<div class="right-main" ng-controller = "HomeCtrl">
+  <div class=" leader-head" layout = "row" >
+    <h1>Leader board</h1>
+  </div>
+  <div class="tables-container">
+    <div class="leaderboard" layout = "row" md-white-frame = "1" md-whiteframe = "1">
+      <div class="" flex = "10">
+        S.No
+      </div>
+      <div class="" flex = "33">
+        Name
+      </div>
+      <div class="" flex = "33">
+        College
+      </div>
+      <div class="" flex = "33">
+        City
+      </div>
+      <div class="" flex = "33">
+        Points
+      </div>
+    </div>
+    <div class="leaderboard" layout = "row" ng-repeat = "x in leaderboardData " md-whiteframe = "1">
+      <div class="" flex = "10">
+        {{$index +1}}
+      </div>
+      <div class="valign-wrapper" flex = "35" >
+        <img src={{x.image_url}} alt="">
+        {{x.name}}
+      </div>
+      <div class="valign-wrapper" flex = "33">
+        {{x.college}}
+      </div>
+      <div class="valign-wrapper" flex = "33">
+        {{x.city}}
+      </div>
+      <div class="valign-wrapper" flex = "33">
+        {{x.points/1000000000000000 | number:0}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="submitDialog" layout = "column" layout-align = "center center" ng-controller = "SubmitCtrl">
+  <form class="" name = "updateForm" layout-align = "center center" >
+    <h1>Update Task Details</h1>
+    <div class="" layout = "row" layout-align = "center center">
+      <md-input-container flex = "100">
+        <label>Name</label>
+        <input ng-model="task.name">
+      </md-input-container>
+    </div>
+    <div class="" layout = "row" layout-align = "center center">
+      <md-input-container flex = "100">
+        <label>Details</label>
+        <textarea ng-model="task.details"></textarea>
+      </md-input-container>
+    </div>
+    <div class="" layout = "row" layout-align = "center center">
+      <md-input-container flex = "100">
+        <label>Image Url</label>
+        <textarea ng-model="task.image_url"></textarea>
+      </md-input-container>
+    </div>
+
+    <div class="" layout = "row" layout-align = "center center">
+      <a md-whiteframe = "2"  ng-click = "updateTask(task); answer('useful')" class="btn1" ng-disabled="true">Update</a>
+    </div>
+  </form>
+</div>

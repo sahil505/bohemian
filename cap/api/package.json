@@ -1,0 +1,44 @@
+{
+  "name": "rdv-cap-portal",
+  "version": "1.0.0",
+  "description": "Campus Representative Portal for RDV 2017",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ozym4nd145/rdv-cap-portal.git"
+  },
+  "author": "Suyash Agrawal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ozym4nd145/rdv-cap-portal/issues"
+  },
+  "homepage": "https://github.com/ozym4nd145/rdv-cap-portal#readme",
+  "dependencies": {
+    "aws-sdk": "^2.66.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.3",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "faker": "^4.1.0",
+    "formidable": "^1.1.1",
+    "jsonwebtoken": "^7.4.1",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "request": "^2.81.0",
+    "uuid": "^3.0.1"
+  },
+  "devDependencies": {}
+}

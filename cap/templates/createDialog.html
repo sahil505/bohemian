@@ -1,0 +1,41 @@
+<div class="createTask" ng-controller = "SubmitCtrl">
+  <form class="" name = "createTaskForm">
+    <h1>Create Task</h1>
+    <div class="" layout = "column" layout-wrap>
+      <md-input-container class="md-block" flex = "100">
+        <label>Task Id</label>
+        <input  required md-no-asterisk name="task_id" ng-model="task.task_id">
+        <div ng-messages="createTaskForm.task_id.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-block" flex = "100">
+        <label>Task Name</label>
+        <input required md-no-asterisk name="name" ng-model="task.name">
+        <div ng-messages="createTaskForm.name.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-block" flex = "100">
+        <label>Task Details</label>
+        <textarea required md-no-asterisk name="details" ng-model="task.details"></textarea>
+        <div ng-messages="createTaskForm.details.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-block" flex = "100">
+        <label>Image Url</label>
+        <input  required md-no-asterisk name="image_url" ng-model="task.image_url">
+        <div ng-messages="createTaskForm.image_url.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+
+
+    </div>
+    <div class="" layout = "row" layout-align = "center center">
+      <md-button class="md-raised md-primary btn3" ng-disabled="createTaskForm.$invalid" ng-click="createTask(task)">Create</md-button>
+    </div>
+
+  </form>
+</div>
