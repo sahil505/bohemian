@@ -928,6 +928,11 @@ $scope.init = function(){
           }
   }).then(function (response) {
       $scope.isDance = false;
+      
+      var temp = response.data.events[1];
+      response.data.events[1] = response.data.events[0];
+      response.data.events[0] = temp;
+
       $scope.glamourData = response.data.events;
       var imageLink = response.data.events[glamourIndex].photos[0];
       $scope.imgLink = 'background-image:url('+imageLink+')';
