@@ -71,7 +71,7 @@ $scope.init = function(){
 
     function DialogController($scope, $mdDialog) {
 
-      $scope.hide = function() {
+      $rootScope.hide = function() {
         $mdDialog.hide();
       };
 
@@ -222,7 +222,7 @@ $rootScope.showAdvanced = function(ev) {
 
   function DialogController($scope, $mdDialog) {
 
-    $scope.hide = function() {
+    $rootScope.hide = function() {
       $mdDialog.hide();
     };
 
@@ -367,7 +367,7 @@ $rootScope.showAdvanced = function(ev) {
 
   function DialogController($scope, $mdDialog) {
 
-    $scope.hide = function() {
+    $rootScope.hide = function() {
       $mdDialog.hide();
     };
 
@@ -696,7 +696,7 @@ $scope.init = function(){
 
     function DialogController($scope, $mdDialog) {
 
-      $scope.hide = function() {
+      $rootScope.hide = function() {
         $mdDialog.hide();
       };
 
@@ -842,7 +842,7 @@ $rootScope.showAdvanced = function(ev) {
 
   function DialogController($scope, $mdDialog) {
 
-    $scope.hide = function() {
+    $rootScope.hide = function() {
       $mdDialog.hide();
     };
 
@@ -994,7 +994,7 @@ $scope.init = function(){
 
     function DialogController($scope, $mdDialog) {
 
-      $scope.hide = function() {
+      $rootScope.hide = function() {
         $mdDialog.hide();
       };
 
@@ -1143,7 +1143,7 @@ $scope.init = function(){
 
     function DialogController($scope, $mdDialog) {
 
-      $scope.hide = function() {
+      $rootScope.hide = function() {
         $mdDialog.hide();
       };
 
@@ -1292,7 +1292,7 @@ $scope.init = function(){
 
     function DialogController($scope, $mdDialog) {
 
-      $scope.hide = function() {
+      $rootScope.hide = function() {
         $mdDialog.hide();
       };
 
@@ -1701,7 +1701,7 @@ $scope.init = function(){
 
     function DialogController($scope, $mdDialog) {
 
-      $scope.hide = function() {
+      $rootScope.hide = function() {
         $mdDialog.hide();
       };
 
@@ -1852,7 +1852,7 @@ $scope.init = function(){
 
       function DialogController($scope, $mdDialog) {
 
-        $scope.hide = function() {
+        $rootScope.hide = function() {
           $mdDialog.hide();
         };
 
@@ -2002,7 +2002,7 @@ $scope.init = function(){
 
     function DialogController($scope, $mdDialog) {
 
-      $scope.hide = function() {
+      $rootScope.hide = function() {
         $mdDialog.hide();
       };
 
@@ -2151,7 +2151,7 @@ $scope.init = function(){
 
     function DialogController($scope, $mdDialog) {
 
-      $scope.hide = function() {
+      $rootScope.hide = function() {
         $mdDialog.hide();
       };
 
@@ -2301,7 +2301,7 @@ $scope.init = function(){
 
     function DialogController($scope, $mdDialog) {
 
-      $scope.hide = function() {
+      $rootScope.hide = function() {
         $mdDialog.hide();
       };
 
@@ -2678,6 +2678,7 @@ if(RDVdetails != null){
         data
       }).then(function sucessCallback(response) {
         console.log(response);
+        $rootScope.hide();
         if (response.status===200){
           console.log(response);
           $mdToast.show(
