@@ -7,7 +7,7 @@
         <div class="overlay-left">
 
         </div>
-        <h1 class="headline">{{culinaryData[culinaryIndex].name}} <button ng-show = culinaryData[danceIndex].reg_status ng-click = "Register(culinaryData[culinaryIndex],culinaryData[0].poc[0].email,'/culinary')" class="outline-button pass"><a>Register</a></button></h1>
+        <h1 class="headline">{{culinaryData[culinaryIndex].name}} <button ng-show = culinaryData[culinaryIndex].reg_status ng-click = "Register(culinaryData[culinaryIndex],culinaryData[culinaryIndex].reg_email,'/culinary')" class="outline-button pass"><a>Register</a></button></h1>
         <!-- <h1 class="headline">{{culinaryData[culinaryIndex].name}} <button ng-click = "Register(culinaryData[culinaryIndex],culinaryData[0].poc[0].email,'/culinary')" class="outline-button pass"><a>Register</a></button></h1> -->
         <h3>{{culinaryData[culinaryIndex].subheading}}</h2>
           <span ng-bind-html="culinaryData[culinaryIndex].description">

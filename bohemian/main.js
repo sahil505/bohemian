@@ -161,3 +161,12 @@ app.factory("Auth", ["$http","$q","$window","md5",function ($http, $q, $window,m
         getuserFullDetails: getuserFullDetails
     };
 }]);
+
+
+// app.directive('focusMe', function(){
+//   return function($scope, element, attr){
+//     if($scope.$eval(attr.focusMe)){
+//        element[0].focus();
+//     }
+//   };
+// });

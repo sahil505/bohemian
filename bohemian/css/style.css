@@ -103,6 +103,18 @@
   letter-spacing: 2px;
 }
 
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .outline-button {
+    padding: 10px 24px;
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 599px) {
+  .outline-button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}
 .outline-button::before, .outline-button::after {
   content: "";
   position: absolute;
@@ -199,7 +211,7 @@
 }
 .main-left .outline-button {
   position: absolute;
-  right: 0%;
+  right: 10%;
 }
 .main-left .outline-button a {
   text-decoration: none;
@@ -720,6 +732,31 @@
 
 .register-email {
   min-height: 20vh;
+  min-width: 40vh;
+}
+.register-email md-input-container {
+  min-width: 30vh;
+  position: relative;
+}
+.register-email .submitTeam {
+  margin-top: 20px;
+}
+.register-email .cancelNum {
+  position: absolute;
+  top: 0;
+}
+.register-email .cancelNum:hover {
+  cursor: pointer;
+}
+.register-email .cancelNum:focus {
+  outline: none;
+}
+.register-email .add-member {
+  margin: 0;
+  padding: 0;
+}
+.register-email .add-member .add-button {
+  margin: 0;
 }
 .register-email h1 {
   font-size: 1.7em;

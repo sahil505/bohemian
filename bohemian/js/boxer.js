@@ -87,6 +87,7 @@ $scope.init = function(){
 
   $rootScope.Register = function(data,email,path){
 
+    if($rootScope.userDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -110,8 +111,32 @@ $scope.init = function(){
         // console.log(fullData);
     }
 
+    else if (data.reg_mode == "External") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = true;
+
+    }
+
+  }
+
+
+    else{
+      $rootScope.reg_path = path;
+      $location.path("/login");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Please Login First")
+        .position('top left')
+        .hideDelay(3000)
+      );
+    }
 
   };
+
+
+
 
   $rootScope.toggleLeft = buildToggler('left');
       $rootScope.toggleRight = buildToggler('right');
@@ -212,7 +237,7 @@ $rootScope.showAdvanced = function(ev) {
 
 
 $rootScope.Register = function(data,email,path){
-
+if($rootScope.userDetails != null){
 $rootScope.reg_path = path;
 console.log(path);
 $rootScope.data_regemail = email;
@@ -234,6 +259,27 @@ console.log(data);
       $rootScope.reg_modeEmail = false;
 
       // console.log(fullData);
+  }
+
+  else if (data.reg_mode == "External") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = true;
+
+  }
+
+ }
+
+  else{
+    $rootScope.reg_path = path;
+    $location.path("/login");
+    $mdToast.show(
+      $mdToast.simple()
+      .textContent("Please Login First")
+      .position('top left')
+      .hideDelay(3000)
+    );
   }
 
 
@@ -336,7 +382,7 @@ $rootScope.showAdvanced = function(ev) {
 
 
 $rootScope.Register = function(data,email,path){
-
+if($rootScope.userDetails != null){
 $rootScope.reg_path = path;
 console.log(path);
 $rootScope.data_regemail = email;
@@ -358,6 +404,27 @@ console.log(data);
       $rootScope.reg_modeEmail = false;
 
       // console.log(fullData);
+  }
+
+  else if (data.reg_mode == "External") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = true;
+
+  }
+
+ }
+
+  else{
+    $rootScope.reg_path = path;
+    $location.path("/login");
+    $mdToast.show(
+      $mdToast.simple()
+      .textContent("Please Login First")
+      .position('top left')
+      .hideDelay(3000)
+    );
   }
 
 
@@ -386,6 +453,12 @@ $rootScope.reg_modeEmail = false;
 $rootScope.reg_modeWebsite = false;
 $scope.danceIndex = 0;
 // $rootScope.data_reg = [];
+if($rootScope.userDetails != null){
+  console.log("logged in");
+}
+else {
+  console.log("not logged in");
+}
 var danceIndex = $scope.danceIndex;
 
 console.log(danceIndex);
@@ -460,7 +533,7 @@ $rootScope.showAdvanced = function(ev) {
 
   function DialogController($scope, $mdDialog) {
 
-    $scope.hide = function() {
+    $rootScope.hide = function() {
       $mdDialog.hide();
     };
 
@@ -476,6 +549,9 @@ $rootScope.showAdvanced = function(ev) {
 
 $rootScope.Register = function(data,email,path){
 
+if($rootScope.userDetails != null){
+
+console.log($rootScope.userDetails);
 $rootScope.reg_path = path;
 console.log(path);
 $rootScope.data_regemail = email;
@@ -488,6 +564,7 @@ console.log(data);
       console.log(data.reg_mode);
       $rootScope.reg_modeEmail = true;
       $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeLink = false;
 
   }
 
@@ -495,10 +572,30 @@ console.log(data);
     $rootScope.showAdvanced();
       $rootScope.reg_modeWebsite = true;
       $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = false;
 
       // console.log(fullData);
   }
 
+  else if (data.reg_mode == "External") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = true;
+
+  }
+
+}
+  else{
+    $rootScope.reg_path = path;
+    $location.path("/login");
+    $mdToast.show(
+      $mdToast.simple()
+      .textContent("Please Login First")
+      .position('top left')
+      .hideDelay(3000)
+    );
+  }
 
 };
 
@@ -614,7 +711,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-
+if($rootScope.userDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -636,6 +733,27 @@ $scope.init = function(){
         $rootScope.reg_modeEmail = false;
 
         // console.log(fullData);
+    }
+
+    else if (data.reg_mode == "External") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = true;
+
+    }
+
+  }
+
+    else{
+      $rootScope.reg_path = path;
+      $location.path("/login");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Please Login First")
+        .position('top left')
+        .hideDelay(3000)
+      );
     }
 
 
@@ -741,6 +859,8 @@ $rootScope.showAdvanced = function(ev) {
 // $scope.init();
 
 $rootScope.Register = function(data,email,path){
+
+  if($rootScope.userDetails != null){
 console.log(data);
 $rootScope.reg_path = path;
 console.log(path);
@@ -763,6 +883,27 @@ console.log(data);
       $rootScope.reg_modeEmail = false;
 
       // console.log(fullData);
+  }
+
+  else if (data.reg_mode == "External") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = true;
+
+  }
+
+ }
+
+  else{
+    $rootScope.reg_path = path;
+    $location.path("/login");
+    $mdToast.show(
+      $mdToast.simple()
+      .textContent("Please Login First")
+      .position('top left')
+      .hideDelay(3000)
+    );
   }
 
 
@@ -868,7 +1009,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-
+    if($rootScope.userDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -890,6 +1031,27 @@ $scope.init = function(){
         $rootScope.reg_modeEmail = false;
 
         // console.log(fullData);
+    }
+
+    else if (data.reg_mode == "External") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = true;
+
+    }
+
+  }
+
+    else{
+      $rootScope.reg_path = path;
+      $location.path("/login");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Please Login First")
+        .position('top left')
+        .hideDelay(3000)
+      );
     }
 
 
@@ -996,7 +1158,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-
+if($rootScope.userDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -1018,6 +1180,28 @@ $scope.init = function(){
         $rootScope.reg_modeEmail = false;
 
         // console.log(fullData);
+    }
+
+    else if (data.reg_mode == "External") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = true;
+
+    }
+
+  }
+
+
+    else{
+      $rootScope.reg_path = path;
+      $location.path("/login");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Please Login First")
+        .position('top left')
+        .hideDelay(3000)
+      );
     }
 
 
@@ -1123,7 +1307,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-
+    if($rootScope.userDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -1147,6 +1331,27 @@ $scope.init = function(){
         // console.log(fullData);
     }
 
+    else if (data.reg_mode == "External") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = true;
+
+    }
+
+  }
+
+    else{
+      $rootScope.reg_path = path;
+      $location.path("/login");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Please Login First")
+        .position('top left')
+        .hideDelay(3000)
+      );
+    }
+
 
   };
 
@@ -1168,7 +1373,8 @@ app.controller('MainCtrl', function($scope, $document,$timeout, $log, Auth,$loca
 
 
 if($rootScope.reg_path != '/home'){
-  REGISTER_PATH = $rootScope.reg_path;
+  var REGISTER_PATH = $rootScope.reg_path;
+  console.log(REGISTER_PATH + "korku");
 }
 
 $scope.isLogin = false;
@@ -1510,7 +1716,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-
+    if($rootScope.userDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -1532,6 +1738,28 @@ $scope.init = function(){
         $rootScope.reg_modeEmail = false;
 
         // console.log(fullData);
+    }
+
+    else if (data.reg_mode == "External") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = true;
+
+    }
+
+  }
+
+
+    else{
+      $rootScope.reg_path = path;
+      $location.path("/login");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Please Login First")
+        .position('top left')
+        .hideDelay(3000)
+      );
     }
 
 
@@ -1639,7 +1867,7 @@ $scope.init = function(){
 
 
     $rootScope.Register = function(data,email,path){
-
+      if($rootScope.userDetails != null){
     $rootScope.reg_path = path;
     console.log(path);
     $rootScope.data_regemail = email;
@@ -1661,6 +1889,27 @@ $scope.init = function(){
           $rootScope.reg_modeEmail = false;
 
           // console.log(fullData);
+      }
+
+      else if (data.reg_mode == "External") {
+        $rootScope.showAdvanced();
+          $rootScope.reg_modeWebsite = false;
+          $rootScope.reg_modeEmail = false;
+          $rootScope.reg_modeLink = true;
+
+      }
+
+    }
+
+      else{
+        $rootScope.reg_path = path;
+        $location.path("/login");
+        $mdToast.show(
+          $mdToast.simple()
+          .textContent("Please Login First")
+          .position('top left')
+          .hideDelay(3000)
+        );
       }
 
 
@@ -1768,7 +2017,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-
+if($rootScope.userDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -1790,6 +2039,28 @@ $scope.init = function(){
         $rootScope.reg_modeEmail = false;
 
         // console.log(fullData);
+    }
+
+    else if (data.reg_mode == "External") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = true;
+
+    }
+
+  }
+
+
+    else{
+      $rootScope.reg_path = path;
+      $location.path("/login");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Please Login First")
+        .position('top left')
+        .hideDelay(3000)
+      );
     }
 
 
@@ -1895,7 +2166,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-
+if($rootScope.userDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -1911,12 +2182,35 @@ $scope.init = function(){
 
     }
 
+
+
     else if (data.reg_mode == "Website") {
       $rootScope.showAdvanced();
         $rootScope.reg_modeWebsite = true;
         $rootScope.reg_modeEmail = false;
 
         // console.log(fullData);
+    }
+
+    else if (data.reg_mode == "External") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = true;
+
+    }
+
+  }
+
+    else{
+      $rootScope.reg_path = path;
+      $location.path("/login");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Please Login First")
+        .position('top left')
+        .hideDelay(3000)
+      );
     }
 
 
@@ -2022,7 +2316,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-
+    if($rootScope.userDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -2044,6 +2338,27 @@ $scope.init = function(){
         $rootScope.reg_modeEmail = false;
 
         // console.log(fullData);
+    }
+
+    else if (data.reg_mode == "External") {
+      $rootScope.showAdvanced();
+        $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = true;
+
+    }
+
+  }
+
+    else{
+      $rootScope.reg_path = path;
+      $location.path("/login");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Please Login First")
+        .position('top left')
+        .hideDelay(3000)
+      );
     }
 
 
@@ -2234,17 +2549,32 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
 app.controller('RegisterDialogCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
 // console.log($rootScope.userDetails);
+if($rootScope.userDetails){
+  $scope.fullName = $rootScope.userDetails.first_name + " "+ $rootScope.userDetails.last_name;
+}
+$scope.userDetails = $rootScope.userDetails
 var RDVdetails = $rootScope.userDetails;
 console.log(RDVdetails);
-
-// $scope.regPath = $rootScope.reg_path;
-// REGISTER_PATH = $rootScope.reg_path;
+  $scope.checkLogin = function(){
+    if(RDVdetails != null){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+$scope.regPath = $rootScope.reg_path;
+REGISTER_PATH = $rootScope.reg_path;
 console.log(REGISTER_PATH);
 console.log($scope.regPath);
 $scope.regData = $rootScope.data_reg;
+
 $scope.regDataEmail = $rootScope.data_regemail;
-// console.log($scope.regData);
+console.log($scope.regDataEmail);
 $scope.regWebsite = $rootScope.reg_modeWebsite;
+$scope.regLink = $rootScope.reg_modeLink;
+console.log($scope.regLink);
+
 console.log("reg website");
 console.log($scope.regWebsite);
 $scope.regEmail = $rootScope.reg_modeEmail;
@@ -2260,11 +2590,82 @@ $scope.checkRegType = function(type){
 };
 // console.log($scope.regData);
 console.log("korku");
+$scope.checkRDV_Num = function(number){
+  if(number === RDVdetails.rdv_number){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
 
-$scope.submitRegister = function(user,id){
-  console.log(user.username);
+
+if(RDVdetails){
+  $scope.TeamUpload = [RDVdetails.rdv_number];
+  console.log($scope.TeamUpload);
+}
+
+
+$scope.addMember = function(){
+  $scope.TeamUpload.push('');
+}
+
+$scope.test = function(){
+  console.log($scope.TeamUpload);
+}
+
+$scope.setNum = function(data,index,$event){
+
+  $scope.TeamUpload[index] = data;
+  console.log($scope.TeamUpload);
+}
+
+
+$scope.deleteNum = function(index){
+  $scope.TeamUpload.splice(index, 1);
+  console.log($scope.TeamUpload);
+}
+if($scope.regData.reg_type == "Single"  && $scope.regData.reg_link_upload){
+  $scope.singleLink = true;
+}
+
+if($scope.regData.reg_type == "Single"  && !$scope.regData.reg_link_upload){
+  $scope.single = true;
+}
+
+if($scope.regData.reg_type == "Team"  && $scope.regData.reg_link_upload){
+  $scope.teamLink = true;
+}
+
+if($scope.regData.reg_type == "Team"  && !$scope.regData.reg_link_upload){
+  $scope.team = true;
+}
+
+
+
+$scope.singleLinkRegister = function(user,id){
+  console.log(user);
   console.log(id);
+  console.log($scope.TeamUpload);
+  if($scope.singleLink){
+    var data = {};
+    data['register'] = RDVdetails.rdv_number;
+    data['submission'] = user.submission;
+    data['team_name'] = user.team_name;
+
+    console.log(data);
+  }
+  else if($scope.single){
+    var data = {};
+    data['register'] = RDVdetails.rdv_number;
+    data['register'] = RDVdetails.rdv_number;
+    data['team_name'] = user.team_name;
+    console.log(data);
+
+  }
+
+
 
 if(RDVdetails != null){
 
@@ -2274,18 +2675,15 @@ if(RDVdetails != null){
         headers:{
           'Content-Type': 'application/json; charset=UTF-8'
         },
-        data:{
-          'team_name':user.username,
-          'register':RDVdetails.rdv_number
-        }
+        data
       }).then(function sucessCallback(response) {
         console.log(response);
         if (response.status===200){
           console.log(response);
           $mdToast.show(
             $mdToast.simple()
-            .textContent(response)
-            .position('bottom right')
+            .textContent("Registered Successfully")
+            .position('top left')
             .hideDelay(3000)
           );
         }
@@ -2296,7 +2694,7 @@ if(RDVdetails != null){
             $mdToast.simple()
             .textContent(error.data.message)
             .position('top left')
-            .hideDelay(3000)
+            .hideDelay(5000)
           );
 
       });
@@ -2314,7 +2712,74 @@ if(RDVdetails != null){
 
 };
 
+$scope.teamLinkRegister = function(user,id){
+  console.log(user);
+  if(user === undefined){
+    $mdToast.show(
+      $mdToast.simple()
+      .textContent("Please check the fields")
+      .position('top left')
+      .hideDelay(3000)
+    );
+  }
+
+  else{
+
+  console.log(user);
+  console.log(id);
+  console.log($scope.TeamUpload);
+
+  if($scope.teamLink){
+    var data = {};
+    data['team_name'] = user.team_name;
+    data['submission'] = user.submission;
+    data['register'] = $scope.TeamUpload;
+
+    console.log(data);
+  }
+  else if($scope.team){
+    var data = {};
+    data['team_name'] = user.team_name;
+    data['register'] = $scope.TeamUpload;
+    console.log(data);
+
+  }
+
+  $http({
+    url:URL_PREFIX+"event/register/"+id,
+    method:"POST",
+    headers:{
+      'Content-Type': 'application/json; charset=UTF-8'
+    },
+    data
+  }).then(function sucessCallback(response) {
+    console.log(response);
+    if (response.status===200){
+      console.log(response);
+      $rootScope.hide();
+      console.log("hide");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Registered Successfully")
+        .position('top left')
+        .hideDelay(3000)
+      );
+    }
 
 
+  }, function errorCallback(error) {
+    console.log(error);
+
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent(error.data.message)
+        .position('top left')
+        .hideDelay(5000)
+      );
+
+  });
+
+  }
+}
 
 });
