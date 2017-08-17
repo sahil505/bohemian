@@ -1415,12 +1415,14 @@ $scope.isLogin = false;
         $location.path(REGISTER_PATH);
       }
 
+      $window.location.reload();
       $mdToast.show(
         $mdToast.simple()
         .textContent('User sucessfully logged in!')
         .position('bottom right')
         .hideDelay(3000)
       );
+
 
     }, function (error) {
       console.log(error);
@@ -2645,6 +2647,8 @@ if($scope.regData.reg_type == "Team"  && !$scope.regData.reg_link_upload){
 
 
 $scope.singleLinkRegister = function(user,id){
+
+
   console.log(user);
   console.log(id);
   console.log($scope.TeamUpload);
@@ -2652,7 +2656,6 @@ $scope.singleLinkRegister = function(user,id){
     var data = {};
     data['register'] = RDVdetails.rdv_number;
     data['submission'] = user.submission;
-    data['team_name'] = user.team_name;
 
     console.log(data);
   }
@@ -2660,7 +2663,6 @@ $scope.singleLinkRegister = function(user,id){
     var data = {};
     data['register'] = RDVdetails.rdv_number;
     data['register'] = RDVdetails.rdv_number;
-    data['team_name'] = user.team_name;
     console.log(data);
 
   }
