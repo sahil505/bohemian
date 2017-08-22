@@ -53,7 +53,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -204,7 +204,7 @@ $scope.tabComedy = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -349,7 +349,7 @@ $scope.tabCulinary = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -515,7 +515,7 @@ $scope.tabDance = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -678,7 +678,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -824,7 +824,7 @@ $scope.tabDramatics = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -976,7 +976,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1125,7 +1125,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1274,7 +1274,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1407,7 +1407,7 @@ $scope.isLogin = false;
       console.log(response);
       $scope.userDetails = response;
       $scope.isLogin = false;
-
+      console.log(REGISTER_PATH);
       if(REGISTER_PATH == undefined){
         $window.location.href = "http://rdv-iitd.com/";
       }
@@ -1415,7 +1415,7 @@ $scope.isLogin = false;
         $location.path(REGISTER_PATH);
       }
 
-      $window.location.reload();
+      // $window.location.reload();
       $mdToast.show(
         $mdToast.simple()
         .textContent('User sucessfully logged in!')
@@ -1685,7 +1685,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1836,7 +1836,7 @@ $scope.init = function(){
     $rootScope.showAdvanced = function(ev) {
         $mdDialog.show({
           controller: DialogController,
-          templateUrl: 'templates/registeremail.html',
+          templateUrl: '../templates/registeremail.html',
           parent: angular.element(document.body),
           targetEvent: ev,
           clickOutsideToClose:true,
@@ -1986,7 +1986,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2135,7 +2135,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2285,7 +2285,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2396,7 +2396,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/otpdialog.html',
+        templateUrl: '../templates/otpdialog.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,

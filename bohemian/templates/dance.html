@@ -26,8 +26,8 @@
             <h3>{{data.type}}</h3>
             <div class="" layout = "column" >
               <span>Date: {{data.date}}</span><br>
-              <span>Start DateTime :{{data.start_time | date:'dd-MMM-yyyy @ h:mma'}}</span><br>
-              <span>End DateTime: {{data.end_time | date:'dd-MMM-yyyy @ h:mma'}}</span><br>
+              <span>Start Time :{{data.start_time | date:'h:mma'}}</span><br>
+              <span>End Time: {{data.end_time | date:'h:mma'}}</span><br>
               <span>Venue: {{data.venue}}</span>
             </div>
           </div>
@@ -50,7 +50,7 @@
   </div>
 
 
-<i class="ti-menu nav-icon" ng-click="toggleLeft()" hide-gt-sm></i>
+<i class="ti-menu nav-icon"ng-init = "toggleLeft()" ng-click="toggleLeft()" hide-gt-sm></i>
 
   <md-sidenav class="" md-component-id="left" md-whiteframe="4">
     <div class="main-right" flex = "100" layout-align = "center center">

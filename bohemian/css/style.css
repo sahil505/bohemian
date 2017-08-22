@@ -730,14 +730,10 @@
   padding: 10px;
 }
 
-.register-email {
-  min-height: 20vh;
-  min-width: 40vh;
+.rg-btn {
+  background-color: #b71c1c;
 }
-.register-email md-input-container {
-  min-width: 30vh;
-  position: relative;
-}
+
 .register-email .submitTeam {
   margin-top: 20px;
 }
@@ -826,4 +822,30 @@
   .cover-head {
     font-size: 1.8em;
   }
+}
+.dialogdemoBasicUsage #popupContainer {
+  position: relative;
+}
+
+.dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px;
+}
+
+.dialogdemoBasicUsage button {
+  width: 200px;
+}
+
+.dialogdemoBasicUsage div#status {
+  color: #c60008;
+}
+
+.dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
+  margin-bottom: 0;
 }
