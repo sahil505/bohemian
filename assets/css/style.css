@@ -948,8 +948,18 @@ img{ max-width:100%;}
 .bandi-fool {
 	background-image: url("../img/fly-fool-2.png");
 	background-repeat: no-repeat;
-	background-size: 300px 400px;
-	background-position: 0 10px;
+	background-size: 350px 470px;
+	background-position: 0 30px;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+	.bandi-fool {
+		background-image: url("../img/fly-fool-2.png");
+		background-repeat: no-repeat;
+		background-size: 300px 400px;
+		background-position: 0 30px;
+	}
 }
 
 @media screen and (max-width: 500px) {
