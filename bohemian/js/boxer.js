@@ -1,4 +1,4 @@
-app.controller('AdventureCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('AdventureCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.adventureIndex = 0;
 var adventureIndex = $scope.adventureIndex;
@@ -152,7 +152,7 @@ $scope.init = function(){
 
 });
 
-app.controller('ComedyCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('ComedyCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
 
@@ -298,7 +298,7 @@ $rootScope.toggleLeft = buildToggler('left');
 
 });
 
-app.controller('CulinaryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('CulinaryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 
 
@@ -632,7 +632,7 @@ $rootScope.toggleLeft = buildToggler('left');
 
 });
 
-app.controller('DebateCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('DebateCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
 
@@ -785,7 +785,7 @@ if($window.localStorage.userFullDetails != null){
 
 });
 
-app.controller('DramaCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('DramaCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDrama = true;
 
@@ -934,7 +934,7 @@ $rootScope.toggleLeft = buildToggler('left');
 
 });
 
-app.controller('FacCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('FacCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
 
@@ -1083,7 +1083,7 @@ $scope.init = function(){
 
 });
 
-app.controller('GlamourCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('GlamourCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
 
@@ -1233,7 +1233,7 @@ if($window.localStorage.userFullDetails != null){
 
 });
 
-app.controller('HindiCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('HindiCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
 
@@ -1644,7 +1644,7 @@ $scope.pronitesCarousel = [
 
 });
 
-app.controller('LiteraryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('LiteraryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
 
@@ -1793,7 +1793,7 @@ $scope.init = function(){
 
 });
 
-app.controller('MagicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('MagicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
 
@@ -1943,7 +1943,7 @@ $scope.init = function(){
 
 });
 
-app.controller('MusicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('MusicCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
 
@@ -2093,7 +2093,7 @@ if($window.localStorage.userFullDetails != null){
 
 });
 
-app.controller('PfcCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('PfcCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
 
@@ -2243,7 +2243,7 @@ if($window.localStorage.userFullDetails != null){
 
 });
 
-app.controller('QuizCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('QuizCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
 
