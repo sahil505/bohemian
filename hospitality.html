@@ -36,7 +36,7 @@ body {
 		margin-right: 100px;
 		margin-left: 100px;
 		font-family: 'Montserrat', sans-serif;
-	line-height: 30px;
+		line-height: 30px;
 	}
 	.pin {
 		width: 30px;
@@ -50,7 +50,7 @@ body {
 		-ms-transform: rotate(-45deg);
 		transform: rotate(-45deg);
 		left: 160px;
-		top: 69%;
+		top: 65%;
 		margin: -20px 0 0 -20px;
 		-webkit-animation-name: bounce;
 		-moz-animation-name: bounce;
@@ -84,7 +84,7 @@ body {
 		width: 14px;
 		position: absolute;
 		left: 160px;
-		top: 69%;
+		top: 65%;
 		margin: 11px 0px 0px -12px;
 		-webkit-transform: rotateX(55deg);
 		-moz-transform: rotateX(55deg);
@@ -375,8 +375,52 @@ body {
 	}
 
 	.get-directions {
-		margin-top: 5%;
+		margin-top: 72px;
 		margin-left: 100px;
+		font-size: 24px;
+	}
+
+	@media screen and (min-width: 500px) and (max-width: 1500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+
+		.pin, .pulse {
+			top: 69%;
+		}
+
+		.get-directions {
+			margin-top: 5%;
+			margin-left: 100px;
+			font-size: 24px;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+
+		.hospitality-container {
+			margin-right: 20px;
+			margin-left: 20px;
+			font-family: 'Montserrat', sans-serif;
+			line-height: 30px;
+		}
+
+		.get-directions {
+			font-size: 20px;
+			margin-left: 50px;
+			margin-top: 40px;
+		}
+
+		.pulse, .pin {
+			left: 48px;
+		}
+
+		.hospitality-container h2 {
+			font-size: 20px;
+		}
+
+		.vs-nav {
+			margin-top: 20px;
+		}
 	}
 
 	.hosp-rdv {
@@ -398,7 +442,7 @@ body {
 
 	<div id="vs-container" class="vs-container">
 		<header class="vs-header">
-			<img src="assets/img/footer-logo.png">
+			<a href="./"><img src="assets/img/footer-logo.png"></a>
 			<h1 class="hosp-rdv"><span>Rendezvous-2017</span></h1>
 			<h1 class="hosp-head">Hospitality</h1>
 			<ul class="vs-nav">
@@ -410,26 +454,23 @@ body {
 		<div class="vs-wrapper">
 			<section id="section-1">
 				<div class="hospitality-container">
-					<h2>Essentials</h2>
+					<h2>Register</h2>
+					<p>Register <a href="" target="_blank">here</a> for accommodation</p>
+					<h2>Charges</h2>
 					<ul>
-						<li>Accommodation will be provided in secured air-conditioned Hostel Common Rooms in the campus of IIT Delhi and it will be separate for boys and girls.</li>
-						<li>Payment for accommodation will only be accepted in cash (card payments are not accepted) and the procedure will take place at the Registration Desk, located near the Biotech Lawns in the campus. Location for the same is mentioned on IIT Delhi map, which shall be displayed at the entrance of the Main Gate.</li>
-						<li>All registered students can avail the accommodation services for 1-2/3-4/5-6 days from 11th October’17 (evening) to 16th October’17.</li>
-						<li>The staggered accommodation charges for the fest are Rs 1200(for 1-2 days), Rs 1600 (for 3-4 days) and Rs 2000 (for 5-6 days). These charges are fully non-refundable under circumstances of any nature.</li>
-						<li>Each registered student is allowed to have a maximum of two luggage bags.</li>
+						<li>All registered students can avail the accommodation services from <strong>11th October 2017 (evening) to 16th October 2017.</strong>
+							<strong><ul>
+								<li>1 or 2 days -  &#x20B9; 1200</li>
+								<li>3 or 4 days -  &#x20B9; 1600</li>
+								<li>5 or 6 days -  &#x20B9; 1800</li>
+							</ul></strong>
+						</li>
 					</ul>
-					<h2>How To Avail</h2>
+					<h2>Policy</h2>
 					<ul>
-						<li>All registered students must bring their valid college identity card and a passport size photograph, for the insurance of the Accommodation Pass.</li>
-						<li>On reaching the IIT Delhi campus, each student would be given an Accommodation Pass after the payment of the aforementioned charges. It is mandatory for all registered students to carry this pass throughout their stay at the campus.</li>
-						<li>Each student, registered under the Accommodation Policy, will be provided with a mattress, bedding and pillow only but they will have to make their own food arrangements. It shall be noted that no toiletries or buckets would be provided.</li>
-					</ul>
-					<h2>Things To Remember</h2>
-					<ul>
-						<li>The check-out time is 10 AM on the following day. Students should strictly vacate the common rooms once the period of their registration ends, failing which a fine of 1000/- will be imposed and their belongings will be put outside the common rooms for which Rendezvous team will not be responsible.</li>
+						<li>The check-in time is 11 AM while the check-out time is 10 AM on the following day. Students should strictly vacate the common rooms once the period of their registration ends, failing which a fine of 1000/- will be imposed and their belongings will be put outside the common rooms for which Rendezvous team will not be responsible.</li>
 						<li>Allotment of the rooms made by the Rendezvous team will be final and binding.</li>
-						<li>Rendezvous, IIT Delhi does not bear any responsibility for any material loss during your stay at the campus. It is recommended that you carry minimum amount of valuable items.</li>
-						<li>Please be cautious during the stay. The registered student is responsible and liable for any breakages or damage that is caused during their stay in the allotted room, including any accidents that may occur. If any damage is caused, the concerned student is liable to pay full cost of replacement or repair.</li>
+						<li>Kindly go through the detailed <a href="./accommodation-policy.pdf" target="_blank">Accommodation Policy</a>.</li>
 					</ul>
 				</div>
 			</section>
@@ -437,10 +478,10 @@ body {
 				<div class="hospitality-container">
 					<p>The IIT Delhi campus is located in Hauz Khas in South Delhi, with the Main Gate around 1.2 km from the nearest Metro Station of Hauz Khas. Roughly, it is 12-13 kms away from the New Delhi Railway Station opening into Ajmeri Gate, and about the same from the Hazrat Nizamuddin station or the IGI airport.</p>
 					<p>The Campus is well connected by road to each of these three major arrival points. As such, you can readily hire a taxi, cabs or an auto-rickshaw from any of these to reach the Campus, but the metro will be by far the most economical means.</p>
-					<p>Do read this <a href="https://leanpub.com/getting-to-iit-delhi/read">primer</a> on getting to IIT Delhi.</p>
+					<p>Do read this <a href="https://leanpub.com/getting-to-iit-delhi/read" target="_blank">primer</a> on getting to IIT Delhi.</p>
 					<div class='pin'></div>
 					<div class='pulse'></div>
-					<p class="get-directions"><a href="https://goo.gl/oFXjQs">GET DIRECTIONS</a></p>
+					<p class="get-directions"><a href="https://goo.gl/oFXjQs" target="_blank">GET DIRECTIONS</a></p>
 				</div>
 			</section>
 			<section id="section-3">
