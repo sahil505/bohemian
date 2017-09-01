@@ -87,7 +87,7 @@ $scope.init = function(){
 
   $rootScope.Register = function(data,email,path){
 
-    if($rootScope.userDetails != null){
+    if($window.localStorage.userFullDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -237,7 +237,7 @@ $rootScope.showAdvanced = function(ev) {
 
 
 $rootScope.Register = function(data,email,path){
-if($rootScope.userDetails != null){
+if($window.localStorage.userFullDetailss != null){
 $rootScope.reg_path = path;
 console.log(path);
 $rootScope.data_regemail = email;
@@ -382,7 +382,7 @@ $rootScope.showAdvanced = function(ev) {
 
 
 $rootScope.Register = function(data,email,path){
-if($rootScope.userDetails != null){
+if($window.localStorage.userFullDetails != null){
 $rootScope.reg_path = path;
 console.log(path);
 $rootScope.data_regemail = email;
@@ -446,7 +446,7 @@ $rootScope.toggleLeft = buildToggler('left');
 
 });
 
-app.controller('DanceCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav) {
+app.controller('DanceCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
 $rootScope.reg_modeEmail = false;
@@ -464,6 +464,7 @@ var danceIndex = $scope.danceIndex;
 console.log(danceIndex);
 
 $scope.load = function(){
+  console.log("bro");
 
   $http({
       method: "GET",
@@ -485,6 +486,12 @@ $scope.load = function(){
 };
 
 // $scope.init();
+
+$scope.refresh = function(){
+  // $window.location.reload();
+  var REGISTER_PATH;
+  console.log("reload called");
+}
 
 $scope.tabDance = function(a) {
   // console.log(a);
@@ -548,8 +555,9 @@ $rootScope.showAdvanced = function(ev) {
 
 
 $rootScope.Register = function(data,email,path){
-
-if($rootScope.userDetails != null){
+  // console.log($rootScope.reg_path);
+  // console.log($window.localStorage.userFullDetails);
+if($window.localStorage.userFullDetails != null){
 
 console.log($rootScope.userDetails);
 $rootScope.reg_path = path;
@@ -608,6 +616,10 @@ $rootScope.toggleLeft = buildToggler('left');
         $mdSidenav(componentId).toggle();
       };
     }
+
+
+
+  console.log("working left");
 
 
 
@@ -711,7 +723,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-if($rootScope.userDetails != null){
+if($window.localStorage.userFullDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -860,7 +872,7 @@ $rootScope.showAdvanced = function(ev) {
 
 $rootScope.Register = function(data,email,path){
 
-  if($rootScope.userDetails != null){
+  if($window.localStorage.userFullDetails != null){
 console.log(data);
 $rootScope.reg_path = path;
 console.log(path);
@@ -1009,7 +1021,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-    if($rootScope.userDetails != null){
+    if($window.localStorage.userFullDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -1158,7 +1170,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-if($rootScope.userDetails != null){
+if($window.localStorage.userFullDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -1307,7 +1319,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-    if($rootScope.userDetails != null){
+    if($window.localStorage.userFullDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -1718,7 +1730,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-    if($rootScope.userDetails != null){
+    if($window.localStorage.userFullDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -1869,7 +1881,7 @@ $scope.init = function(){
 
 
     $rootScope.Register = function(data,email,path){
-      if($rootScope.userDetails != null){
+      if($window.localStorage.userFullDetails != null){
     $rootScope.reg_path = path;
     console.log(path);
     $rootScope.data_regemail = email;
@@ -2019,7 +2031,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-if($rootScope.userDetails != null){
+if($window.localStorage.userFullDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -2168,7 +2180,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-if($rootScope.userDetails != null){
+if($window.localStorage.userFullDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
@@ -2318,7 +2330,7 @@ $scope.init = function(){
 
 
   $rootScope.Register = function(data,email,path){
-    if($rootScope.userDetails != null){
+    if($window.localStorage.userFullDetails != null){
   $rootScope.reg_path = path;
   console.log(path);
   $rootScope.data_regemail = email;
