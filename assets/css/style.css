@@ -162,6 +162,7 @@ img{ max-width:100%;}
 	left: 0;
 	height: 100%;
 	width: 100%;
+	text-align: center;
 }
 
 .video-container .fillWidth {
@@ -173,6 +174,16 @@ img{ max-width:100%;}
 
 .mobile-landing {
 	display: none;
+}
+
+.register-btn {
+	position: absolute;
+	top: 70vh;
+	left: 90vh;
+}
+
+.register-btn img {
+	width: 200px;
 }
 
 @media screen and (max-width: 500px) {
@@ -187,6 +198,16 @@ img{ max-width:100%;}
 
 	.mobile-landing {
 		display: block;
+	}
+
+	.register-btn-mob {
+		position: absolute;
+		top: 70vh;
+		left: 33%;
+	}
+
+	.register-btn-mob img {
+		width: 150px;
 	}
 }
 
