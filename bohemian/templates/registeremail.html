@@ -19,8 +19,9 @@
         <span ng-show = {{regEmail}}>
           {{regDataEmail}}
         </span>
-        <h1 ng-show = {{regLink}}>Please submit your registration on the following link</h1>
-        <span ng-show = {{regLink}}>
+
+        <span ng-show = {{extraType}}>
+          <h1>Please submit your registration on the following link</h1>
           <a href = {{regData.reg_link}} target="_blank">{{regData.reg_link}}</a>
         </span>
         <h1 ng-show = {{regWebsite}}>Registration Form</h1>

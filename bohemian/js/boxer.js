@@ -678,8 +678,8 @@ $scope.init = function(){
         var imageLink = response.data.events[debateIndex].photos[0];
         // console.log(danceIndex);
         $scope.imgLink = 'background-image:url('+imageLink+')';
-        console.log(imageLink);
-        console.log($scope.imgLink);
+        // console.log(imageLink);
+        // console.log($scope.imgLink);
 
     });
 
@@ -725,15 +725,15 @@ $scope.init = function(){
   $rootScope.Register = function(data,email,path){
 if($window.localStorage.userFullDetails != null){
   $rootScope.reg_path = path;
-  console.log(path);
+  // console.log(path);
   $rootScope.data_regemail = email;
   $rootScope.data_reg = data;
-  console.log(data);
-    console.log(data.reg_mode);
+  // console.log(data);
+    // console.log(data.reg_mode);
 
     if(data.reg_mode == "Email"){
         $rootScope.showAdvanced();
-        console.log(data.reg_mode);
+        // console.log(data.reg_mode);
         $rootScope.reg_modeEmail = true;
         $rootScope.reg_modeWebsite = false;
 
@@ -2562,13 +2562,13 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
 
 app.controller('RegisterDialogCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog) {
 
-// console.log($rootScope.userDetails);
+console.log($rootScope.userDetails);
 if($rootScope.userDetails){
   $scope.fullName = $rootScope.userDetails.first_name + " "+ $rootScope.userDetails.last_name;
 }
 $scope.userDetails = $rootScope.userDetails
 var RDVdetails = $rootScope.userDetails;
-console.log(RDVdetails);
+// console.log(RDVdetails);
   $scope.checkLogin = function(){
     if(RDVdetails != null){
       return true;
@@ -2579,18 +2579,18 @@ console.log(RDVdetails);
   }
 $scope.regPath = $rootScope.reg_path;
 REGISTER_PATH = $rootScope.reg_path;
-console.log(REGISTER_PATH);
-console.log($scope.regPath);
+// console.log(REGISTER_PATH);
+// console.log($scope.regPath);
 $scope.regData = $rootScope.data_reg;
 
 $scope.regDataEmail = $rootScope.data_regemail;
-console.log($scope.regDataEmail);
+// console.log($scope.regDataEmail);
 $scope.regWebsite = $rootScope.reg_modeWebsite;
 $scope.regLink = $rootScope.reg_modeLink;
 console.log($scope.regLink);
 
-console.log("reg website");
-console.log($scope.regWebsite);
+// console.log("reg website");
+// console.log($scope.regWebsite);
 $scope.regEmail = $rootScope.reg_modeEmail;
 console.log("reg email");
 console.log($scope.regEmail);
@@ -2602,8 +2602,8 @@ $scope.checkRegType = function(type){
     return false;
   }
 };
-// console.log($scope.regData);
-console.log("korku");
+console.log($scope.regData);
+// console.log("korku");
 $scope.checkRDV_Num = function(number){
   if(number === RDVdetails.rdv_number){
     return true;
@@ -2617,7 +2617,7 @@ $scope.checkRDV_Num = function(number){
 
 if(RDVdetails){
   $scope.TeamUpload = [RDVdetails.rdv_number];
-  console.log($scope.TeamUpload);
+  // console.log($scope.TeamUpload);
 }
 
 
@@ -2626,56 +2626,62 @@ $scope.addMember = function(){
 }
 
 $scope.test = function(){
-  console.log($scope.TeamUpload);
+  // console.log($scope.TeamUpload);
 }
 
 $scope.setNum = function(data,index,$event){
 
   $scope.TeamUpload[index] = data;
-  console.log($scope.TeamUpload);
+  // console.log($scope.TeamUpload);
 }
 
 
 $scope.deleteNum = function(index){
   $scope.TeamUpload.splice(index, 1);
-  console.log($scope.TeamUpload);
+  // console.log($scope.TeamUpload);
 }
-if($scope.regData.reg_type == "Single"  && $scope.regData.reg_link_upload){
+if($scope.regData.reg_type == "Single"  && $scope.regData.reg_link_upload && $scope.regData.reg_mode != "External"){
   $scope.singleLink = true;
 }
 
-if($scope.regData.reg_type == "Single"  && !$scope.regData.reg_link_upload){
+if($scope.regData.reg_type == "Single"  && !$scope.regData.reg_link_upload && $scope.regData.reg_mode != "External"){
   $scope.single = true;
 }
 
-if($scope.regData.reg_type == "Team"  && $scope.regData.reg_link_upload){
+if($scope.regData.reg_type == "Team"  && $scope.regData.reg_link_upload && $scope.regData.reg_mode != "External"){
   $scope.teamLink = true;
 }
 
-if($scope.regData.reg_type == "Team"  && !$scope.regData.reg_link_upload){
+if($scope.regData.reg_type == "Team"  && !$scope.regData.reg_link_upload && $scope.regData.reg_mode != "External"){
   $scope.team = true;
 }
 
+if($scope.regData.reg_mode == "External"){
+  $scope.extraType = true;
+}
+else{
+  $scope.extraType = false;
+}
 
 
 $scope.singleLinkRegister = function(user,id){
 
 
-  console.log(user);
-  console.log(id);
-  console.log($scope.TeamUpload);
+  // console.log(user);
+  // console.log(id);
+  // console.log($scope.TeamUpload);
   if($scope.singleLink){
     var data = {};
     data['register'] = RDVdetails.rdv_number;
     data['submission'] = user.submission;
 
-    console.log(data);
+    // console.log(data);
   }
   else if($scope.single){
     var data = {};
     data['register'] = RDVdetails.rdv_number;
     data['register'] = RDVdetails.rdv_number;
-    console.log(data);
+    // console.log(data);
 
   }
 
@@ -2691,10 +2697,10 @@ if(RDVdetails != null){
         },
         data
       }).then(function sucessCallback(response) {
-        console.log(response);
+        // console.log(response);
         $rootScope.hide();
         if (response.status===200){
-          console.log(response);
+          // console.log(response);
           $mdToast.show(
             $mdToast.simple()
             .textContent("Registered Successfully")
@@ -2703,7 +2709,7 @@ if(RDVdetails != null){
           );
         }
       }, function errorCallback(error) {
-        console.log(error);
+        // console.log(error);
 
           $mdToast.show(
             $mdToast.simple()
@@ -2728,7 +2734,7 @@ if(RDVdetails != null){
 };
 
 $scope.teamLinkRegister = function(user,id){
-  console.log(user);
+  // console.log(user);
   if(user === undefined){
     $mdToast.show(
       $mdToast.simple()
@@ -2740,9 +2746,9 @@ $scope.teamLinkRegister = function(user,id){
 
   else{
 
-  console.log(user);
-  console.log(id);
-  console.log($scope.TeamUpload);
+  // console.log(user);
+  // console.log(id);
+  // console.log($scope.TeamUpload);
 
   if($scope.teamLink){
     var data = {};
@@ -2750,13 +2756,13 @@ $scope.teamLinkRegister = function(user,id){
     data['submission'] = user.submission;
     data['register'] = $scope.TeamUpload;
 
-    console.log(data);
+    // console.log(data);
   }
   else if($scope.team){
     var data = {};
     data['team_name'] = user.team_name;
     data['register'] = $scope.TeamUpload;
-    console.log(data);
+    // console.log(data);
 
   }
 
@@ -2768,11 +2774,11 @@ $scope.teamLinkRegister = function(user,id){
     },
     data
   }).then(function sucessCallback(response) {
-    console.log(response);
+    // console.log(response);
     if (response.status===200){
-      console.log(response);
+      // console.log(response);
       $rootScope.hide();
-      console.log("hide");
+      // console.log("hide");
       $mdToast.show(
         $mdToast.simple()
         .textContent("Registered Successfully")
@@ -2783,7 +2789,7 @@ $scope.teamLinkRegister = function(user,id){
 
 
   }, function errorCallback(error) {
-    console.log(error);
+    // console.log(error);
 
       $mdToast.show(
         $mdToast.simple()
