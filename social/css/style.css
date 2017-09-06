@@ -96,15 +96,19 @@ p{
 ---------------------------------*/
 
 .header{
-  /*I wrote the lines 100 and 101*/
+  /*I wrote the lines 100 to 107*/
   height:100vh;
   margin: 0 auto;
 	text-align:center;
-	background:url(../img/pw_maze_black_2X.png) left top repeat;
+	background:url(../img/lp1.jpg);
+  /*background-image:    url(images/background.svg);*/
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
 	padding:280px 0;
 }
 .logo{
-	width:130px;
+	width:330px;
 	margin:0 auto 35px;
 }
 .header h1{
