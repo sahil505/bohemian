@@ -1679,38 +1679,3 @@ img{ max-width:100%;}
 	color: #ffffff;
 	font-family: 'Advent Pro', sans-serif;
 }
-
-/*.alert {
-  border: 0;
-  border-radius: 0;
-  color: #FFFFFF;
-  padding: 10px 15px;
-  font-size: 14px; }
-  .container .alert {
-    border-radius: 4px; }
-  .navbar .alert {
-    border-radius: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 85px;
-    width: 100%;
-    z-index: 3; }
-  .navbar:not(.navbar-transparent) .alert {
-    top: 70px; }
-  .alert span[data-notify="icon"] {
-    font-size: 30px;
-    display: block;
-    left: 15px;
-    position: absolute;
-    top: 50%;
-    margin-top: -20px; }
-  .alert .close ~ span {
-    display: block;
-    max-width: 89%; }
-  .alert[data-notify="container"] {
-    padding: 10px 10px 10px 20px;
-    border-radius: 4px; }
-  .alert.alert-with-icon {
-    padding-left: 65px; }
-*/
