@@ -322,10 +322,11 @@ Author URL: https://sahil505.com
 		})
 	</script>
 	<!-- Pre-loader ends -->
-		<!--  Charts Plugin -->
+	
+	<!--  Charts Plugin -->
 	<script src="assets/js/chartist.min.js"></script>
-			<script src="assets/js/demo.js"></script>
-	    <!--  Notifications Plugin    -->
+	<script src="assets/js/demo.js"></script>
+	<!-- Notifications Plugin -->
     <script src="assets/js/bootstrap-notify.js"></script>
 	<!-- Notifier Starts -->
 	<script type="text/javascript">
@@ -641,11 +642,11 @@ Author URL: https://sahil505.com
 		if(window.localStorage.getItem("userFullDetails")){
 			var userDetails =  window.localStorage.getItem("userFullDetails");
 			var userFullDetails = JSON.parse(userDetails);
+			console.log(userFullDetails);
 			document.getElementById("userName").innerHTML = "Hey, " + userFullDetails.first_name;
 			document.getElementById("login-button").style.display = 'none';
 			document.getElementById("login-button2").style.display = 'none';
 			document.getElementById("logout-button2").style.visibility = 'visible';
-			document.getElementById("logout-button").style.visibility = 'visible';
 			var access_token = userFullDetails.access_token;
 			$.ajax({
 				url: 'http://rdv-iitd.com/api/login',
@@ -664,7 +665,6 @@ Author URL: https://sahil505.com
 		}
 		else{
 			document.getElementById("logout-button2").style.display = 'none';
-			document.getElementById("logout-button").style.display = 'none';
 		}
 	</script>
 	<!-- Get Userdata Ends -->
