@@ -84,7 +84,7 @@ Author URL: https://sahil505.com
 			<ul class="menu-list-left">
 				<li class="menu__item"><a href="./bohemian/#!/login" class="menu__link" id= "login-button">Login</a></li>
 				<!-- <li class="menu__item"><a href="./bohemian/#!/login" class="menu__link" id= "logout-button">Logout</a></li> -->
-				<li class="menu__item"><a href="./contactus.html" target="_blank" class="menu__link">Contact Us</a></li>
+				<li class="menu__item"><a href="./contactus/" target="_blank" class="menu__link">Contact Us</a></li>
 				<li class="menu__item"><a href="./comingsoon.html" target="_blank" class="menu__link">Sponsors</a></li>
 			</ul>
 		</div>
@@ -94,7 +94,7 @@ Author URL: https://sahil505.com
 			<li class="menu__item"><a href="./bohemian/#!/pronites" class="menu__link">Pronites</a></li>
 			<li class="menu__item"><a href="./comingsoon.html" target="_blank" class="menu__link">Workshop</a></li>
 			<li class="menu__item"><a href="./comingsoon.html" target="_blank" class="menu__link">Social</a></li>
-			<li class="menu__item"><a href="./comingsoon.html" target="_blank" class="menu__link">Accommodation</a></li>
+			<li class="menu__item"><a href="./hospitality/" target="_blank" class="menu__link">Accommodation</a></li>
 		</ul>
 
 	</nav>
@@ -121,9 +121,9 @@ Author URL: https://sahil505.com
 					<p class="para-content">Rendezvous is the annual cultural fest of IIT Delhi. It will be held from <span class="dates">October 13th till October 16th.</span><br/>It is an inimitable product of Delhi’s unique lust for life and <a href="http://brca.iitd.ac.in/" target="_blank" style="text-decoration: none;">BRCA’s</a> proverbial tendency towards excellence. <span class="break"><br /></span>It is a 4 day extravaganza with equal parts of awesomeness in organization and turnout.<br />We are young, wild, free and exuberant. Come join us as we celebrate and indulge in the joys of life.</p>
 				</div>
 				<div class="main-btn-wrap">
-					<a href = "bohemian/#!/login" id= "login-button2"><button class="outline-button" >Login</button></a><br class="mob-btn" /><br class="mob-btn" />
+					<a href = "bohemian/#!/login" id= "login-button2"><button class="outline-button" >Login</button></a>
 					<a id= "logout-button2"><button class="outline-button">Logout</button></a>
-					<a href = "bohemian" target="_blank"><button class="outline-button pass">Events at a Glance</button></a>
+					<a href = "bohemian" target="_blank"><button class="outline-button pass">Events</button></a>
 				</div>
 				<div class="boho-arrow"><img src="assets/img/participate-arrow.svg"></div>
 			</div>
@@ -244,9 +244,6 @@ Author URL: https://sahil505.com
 						<img src= "assets/img/mobile/melange.png" alt="Melange">
 					</div>
 					<div class="main-heading-3-box ground-zero">
-						<img src= "assets/img/mobile/dj.png" alt="DJ">
-					</div>
-					<div class="main-heading-3-box ground-zero">
 						<img src= "assets/img/mobile/duo.png" alt="Duo">
 					</div>
 					<div class="main-heading-3-box pronite">
@@ -261,17 +258,8 @@ Author URL: https://sahil505.com
 					<div class="main-heading-3-box ground-zero">
 						<img src= "assets/img/mobile/gaming.png" alt="Gaming">
 					</div>
-					<div class="main-heading-3-box dreamville">
-						<img src= "assets/img/mobile/bonfire.png" alt="Bonfire">
-					</div>
 					<div class="main-heading-3-box pronite" >
 						<img src= "assets/img/mobile/scope.png" alt="Kaliedoscope">
-					</div>
-					<div class="main-heading-3-box dreamville">
-						<img src= "assets/img/mobile/dandia.png" alt="Dandia">
-					</div>
-					<div class="main-heading-3-box dreamville">
-						<img src= "assets/img/mobile/poker.png" alt="Poker">
 					</div>
 				</div>
 			</section>
@@ -295,7 +283,7 @@ Author URL: https://sahil505.com
 								<p class="card-para" slot="content">Meet the soul of Rendezvous.</p>
 							</card>
 						</a></div>
-						<div class="card-hospitality"><a href="comingsoon.html" target="_blank">
+						<div class="card-hospitality"><a href="hospitality/" target="_blank">
 							<card class="hospitality wow fadeInDown delay-09s" data-image="https://images.pexels.com/photos/79691/night-79691.jpeg?w=940&h=650&auto=compress&cs=tinysrgb">
 								<h1 class="card-head accod" slot="header">Hospitality</h1>
 								<p class="card-para" slot="content">The difference a stay can make.</p>
@@ -334,6 +322,30 @@ Author URL: https://sahil505.com
 		})
 	</script>
 	<!-- Pre-loader ends -->
+	
+	<!--  Charts Plugin -->
+	<script src="assets/js/chartist.min.js"></script>
+	<script src="assets/js/demo.js"></script>
+	<!-- Notifications Plugin -->
+    <script src="assets/js/bootstrap-notify.js"></script>
+	<!-- Notifier Starts -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			demo.initChartist();
+
+			$.notify({
+				icon: 'ti-gift',
+				message: "Welcome to <b>Rendezvous'17</b> - A Bohemian Getaway.<br>Haven't registered for events yet? <b><a href='./bohemian/#!/compevents'>Register here</a></b>"
+
+			},{
+				type: 'success',
+				timer: 4000
+			});
+
+		});
+	</script>
+	<!-- Notifier Ends -->
 
 	<!-- Number Counter -->
 	<script type="text/javascript">
@@ -620,12 +632,10 @@ Author URL: https://sahil505.com
 	<!-- Get Userdata -->
 	<script type="text/javascript">
 		$("#logout-button2").click(function(){
-			console.log("logout clicked");
 			localStorage.clear();
 			location.reload();
 		});
 		$("#logout-button").click(function(){
-			console.log("logout clicked");
 			localStorage.clear();
 			location.reload();
 		});

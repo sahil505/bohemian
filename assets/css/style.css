@@ -775,10 +775,10 @@ img{ max-width:100%;}
 		min-height: 100px;
 	}
 
-	.pass {
-		margin-left: 0;
+	/*.pass {
+		margin-left: 10px;
 	}
-
+*/
 	.main-btn-wrap {
 		margin-left: 16px;
 	}

@@ -5,38 +5,42 @@
 	<meta name="viewport" content="width=device-width, maximum-scale=1">
 
 	<title>Contact Us | Rendezvous'17</title>
-	<link rel="icon" href="assets/img/rdv-bruh.png" type="image/png">
-	<link rel="shortcut icon" href="assets/img/rdv-bruh.ico" type="img/x-icon">
+	<link rel="icon" href="../assets/img/rdv-bruh.png" type="image/png">
+	<link rel="shortcut icon" href="../assets/img/rdv-bruh.ico" type="img/x-icon">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style>
-
+		@import url('https://fonts.googleapis.com/css?family=Advent+Pro:400,700');
 		@import url('https://fonts.googleapis.com/css?family=Nixie+One');
 		@import url('https://fonts.googleapis.com/css?family=Nunito');
 		@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
 
 		body {
-			background-image: url("assets/img/coming-soon.png");
+			background-image: url("../assets/img/coming-soon.png");
 			background-size: cover;
 			text-align: center;
 		}
 
 		.coming-logo {
-			float: left;
 			margin-top: 5vh;
+			font-family: 'Advent Pro', sans-serif;
+			font-size: 24px;
+			font-weight: 600;
+			letter-spacing: 1px;
 		}
 
-		.cover-head {
-			margin-top: 5vh;
+		.coming-logo-head {
+			margin-top: 10px;
 		}
 
 
 		@media screen and (min-width: 500px) {
 			/* applies only if the screen is more than 500px */
 			.cover-head {
-				font: normal 80px/ 120px 'Nixie One', Helvetica, Arial;
+				margin-top: 0;
+				font: normal 56px 'Nixie One', Helvetica, Arial;
 				letter-spacing: -2px;
 				/*font-weight: 700;*/
 				text-shadow: 0 0 30px #EC637B, 
@@ -153,13 +157,12 @@
 
 		.card-contact:hover {
 			background-color: white;
-			transform:scale(1.05);
+			transform:scale(1.03);
 			box-shadow:0px 0px 10px rgba(0,0,0,0.3);
 		}
 
 		.contact-head {
-			margin-left: 400px;
-			margin-right: 400px;
+			margin-bottom: 40px;
 		}
 
 		@media screen and (max-width: 500px) {
@@ -181,8 +184,8 @@
 			}
 
 			.footer-address {
-			display: none;
-		}
+				display: none;
+			}
 
 		}
 
@@ -191,23 +194,26 @@
 <body>
 	<div class="container-fluid" style="padding-left: 30px; padding-right: 30px;">
 		<div class="coming-logo">
-			<a href="./"><img src="assets/img/footer-logo.png"></a>
+			<a href="../"><img src="../assets/img/footer-logo.png"></a>
+			<p class="coming-logo-head">RENDEZVOUS-2017</p>
 		</div>
 		<div class="container cover-neon">
 			<h1 class="cover-head">Contact Us</h1>
+			<hr>
 		</div>
-		<div class="card-contact contact-head"><h2>Overall Coordinator</h2><p>master@rdv-iitd.com</p><h4>Rishabh Nagpal<br />(+91-9650255230)</h4></div>
+		<div class="card-contact col-sm-12 contact-head"><h2>Overall Coordinator</h2><p>master@rdv-iitd.com</p><h4>Rishabh Nagpal<br />(+91-9650255230)</h4></div>
 		<div class="row">
 			<div class="col-sm-4 card-contact"><h2>Marketing Team</h2><p>marketing@rdv-iitd.com</p><h4>Manas Poddar<br />(+91-9801700960)</h4></div>
 			<div class="col-sm-4 card-contact"><h2>Events Team</h2><p>events@rdv-iitd.com</p><h4>Sambhav Jain<br />(+91-9968933854)</h4><h4>Deevanshu Goyal<br />(+91-9971743380)</h4></div>
 			<div class="col-sm-4 card-contact"><h2>Publicity Team</h2><p>publicity@rdv-iitd.com</p><h4>Akanksha Puwar<br />(+91-8376848090)</h4></div>
 		</div>
+		<div class="card-contact col-sm-12 contact-head"><h2>Technical Team</h2><p>Facing technical difficulty?<br>Drop a mail at:</p><p>technical@rdv-iitd.com</p></div>
 	</div>
 	<hr>
 	<!--footer begins-->
 	<footer class="footer">
 		<div class="footer-logo scroll wow fadeInUp delay-02s">
-			<a href="#landing-video"><img class="footer-img" src="assets/img/rdv-footer.png" alt=""></a>
+			<a href="../"><img class="footer-img" src="../assets/img/rdv-footer.png" alt=""></a>
 		</div>
 		<div class="social-wrapper wow fadeInUp delay-02s">
 			<a class="social-icon" href="https://www.facebook.com/rendezvous.iitd/"><i class="fa fa-5x fa-facebook-square"></i></a>

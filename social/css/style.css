@@ -7,7 +7,7 @@
 
 /* CSS Document */
 
-/* Float Elements 
+/* Float Elements
 ---------------------------------*/
 .fl-lt {float:left;}
 .fl-rt {float:right;}
@@ -67,7 +67,7 @@ h2{
 	font-family: 'Montserrat', sans-serif;
 	font-weight:700;
 	letter-spacing: -1px;
-	margin:0 0 15px 0;
+	margin:0 0 40px 0;
 	text-align:center;
 	text-transform:uppercase;
 }
@@ -96,12 +96,19 @@ p{
 ---------------------------------*/
 
 .header{
+  /*I wrote the lines 100 to 107*/
+  height:100vh;
+  margin: 0 auto;
 	text-align:center;
-	background:url(../img/pw_maze_black_2X.png) left top repeat;
+	background:url(../img/lp1.jpg);
+  /*background-image:    url(images/background.svg);*/
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;
 	padding:280px 0;
 }
 .logo{
-	width:130px;
+	width:330px;
 	margin:0 auto 35px;
 }
 .header h1{
@@ -203,12 +210,12 @@ color: #fff;
 	-webkit-transition:all 0.3s ease-in-out;
 }
 
-.main-nav li a:hover{ 
+.main-nav li a:hover{
 	text-decoration:none;
 	color: #7cc576;
 }
 
-.small-logo{ 
+.small-logo{
 	padding:0 32px;
 }
 
@@ -238,7 +245,7 @@ color: #fff;
 	line-height:38px;
 }
 .service-list-col2{
-	overflow:hidden;	
+	overflow:hidden;
 }
 .main-section.alabaster{
 	background:#fafafa;
@@ -254,11 +261,12 @@ color: #fff;
 }
 .featured-box{
 	padding:0 0 0 0;
-	margin-bottom:25px;
-	font-size:14px;
+	margin-bottom:40px;
+	font-size:20px;
+	font-weight:bold;
 }
 .featured-box h3{
-	margin-bottom:5px;
+	margin-bottom:40px;
 }
 .featured-box p{
 	line-height:22px;
@@ -302,11 +310,11 @@ color: #fff;
 	-webkit-transition:all 0.3s ease-in-out;
 	display: none;
 }
-.Learn-More i{ 
+.Learn-More i{
 	padding-right:15px;
 }
 
-.Learn-More:hover, .Learn-More:focus{ 
+.Learn-More:hover, .Learn-More:focus{
 	text-decoration:none;
 	color: #111;
 }
@@ -363,7 +371,7 @@ color: #fff;
 	margin-bottom:25px;
 	transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
-	-webkit-transition:all 0.3s ease-in-out;	
+	-webkit-transition:all 0.3s ease-in-out;
 }
 
 .Portfolio-box img:hover {
@@ -516,7 +524,7 @@ border: 2px solid #fff;
 	border-radius:50%;
 	box-shadow:0px 0px 0px 7px rgba(241,241,241,0.80);
 	margin:7px 7px 25px 7px;
-	
+
 }
 .team-leader-shadow{
 	transition:all 0.3s ease-in-out;
@@ -567,7 +575,7 @@ border: 2px solid #fff;
 	font-family: 'FontAwesome';
 	display:inline-block;
 	font-size:28px;
-	color:#fff;	
+	color:#fff;
 	transition:all 0.3s ease-in-out;
 	-moz-transition:all 0.3s ease-in-out;
 	-webkit-transition:all 0.3s ease-in-out;
@@ -706,7 +714,7 @@ border: 2px solid #fff;
 	border: 1px solid #7cc576;
 	outline:0;
 	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 197, 118, 0.3);
-	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 197, 118, 0.3);	
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 197, 118, 0.3);
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 197, 118, 0.3);
 }
 
@@ -825,46 +833,108 @@ border: 2px solid #fff;
 
 /* Animation Timers
 ---------------------------------*/
-.delay-02s { 
-	animation-delay: 0.2s; 
-	-webkit-animation-delay: 0.2s; 
+.delay-02s {
+	animation-delay: 0.2s;
+	-webkit-animation-delay: 0.2s;
 }
-.delay-03s { 
-	animation-delay: 0.3s; 
-	-webkit-animation-delay: 0.3s; 
+.delay-03s {
+	animation-delay: 0.3s;
+	-webkit-animation-delay: 0.3s;
 }
-.delay-04s { 
-	animation-delay: 0.4s; 
-	-webkit-animation-delay: 0.4s; 
-}
-
-.delay-05s { 
-	animation-delay: 0.5s; 
-	-webkit-animation-delay: 0.5s; 
-}
-.delay-06s { 
-	animation-delay: 0.6s; 
-	-webkit-animation-delay: 0.6s; 
+.delay-04s {
+	animation-delay: 0.4s;
+	-webkit-animation-delay: 0.4s;
 }
 
-.delay-07s { 
-	animation-delay: 0.7s; 
-	-webkit-animation-delay: 0.7s; 
+.delay-05s {
+	animation-delay: 0.5s;
+	-webkit-animation-delay: 0.5s;
 }
-.delay-08s { 
-	animation-delay: 0.8s; 
-	-webkit-animation-delay: 0.8s; 
+.delay-06s {
+	animation-delay: 0.6s;
+	-webkit-animation-delay: 0.6s;
 }
 
-.delay-09s { 
-	animation-delay: 0.9s; 
-	-webkit-animation-delay: 0.9s; 
+.delay-07s {
+	animation-delay: 0.7s;
+	-webkit-animation-delay: 0.7s;
 }
-.delay-1s { 
-	animation-delay: 1s; 
-	-webkit-animation-delay: 1s; 
+.delay-08s {
+	animation-delay: 0.8s;
+	-webkit-animation-delay: 0.8s;
 }
-.delay-12s { 
-	animation-delay: 1.2s; 
-	-webkit-animation-delay: 1.2s; 
+
+.delay-09s {
+	animation-delay: 0.9s;
+	-webkit-animation-delay: 0.9s;
 }
+.delay-1s {
+	animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+}
+.delay-12s {
+	animation-delay: 1.2s;
+	-webkit-animation-delay: 1.2s;
+}
+
+
+ /*UDIT CSS */
+
+
+ /*Scroll Button*/
+ .scroll a span {
+ 	position: absolute;
+ 	top: 92vh;
+ 	left: 50%;
+ 	width: 24px;
+ 	height: 24px;
+ 	margin-left: -12px;
+ 	border-left: 2px solid #FFFEFF;
+ 	border-bottom: 2px solid #FFFEFF;
+ 	-webkit-transform: rotate(-45deg);
+ 	transform: rotate(-45deg);
+ 	-webkit-animation: sdb04 2s infinite;
+ 	animation: sdb04 2s infinite;
+ 	box-sizing: border-box;
+ }
+
+
+ @-webkit-keyframes sdb04 {
+ 	0% {
+ 		-webkit-transform: rotate(-45deg) translate(0, 0);
+ 	}
+ 	20% {
+ 		-webkit-transform: rotate(-45deg) translate(-10px, 10px);
+ 	}
+ 	40% {
+ 		-webkit-transform: rotate(-45deg) translate(0, 0);
+ 	}
+ }
+ @keyframes sdb04 {
+ 	0% {
+ 		transform: rotate(-45deg) translate(0, 0);
+ 	}
+ 	20% {
+ 		transform: rotate(-45deg) translate(-10px, 10px);
+ 	}
+ 	40% {
+ 		transform: rotate(-45deg) translate(0, 0);
+ 	}
+ }
+ /*Scroll Button Ends*/
+
+
+/*.stats h2{
+	font-size:34px;
+	color:#222222;
+	font-family: 'Montserrat', sans-serif;
+	font-weight:700;
+	letter-spacing: -1px;
+	margin:0 0 40px 0 !important;
+	text-align:center;
+	text-transform:uppercase;
+}
+
+.stats .featured-box h3{
+	margin-bottom:40px !important;
+}*/
