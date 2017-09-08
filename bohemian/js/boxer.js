@@ -100,6 +100,7 @@ $scope.init = function(){
         console.log(data.reg_mode);
         $rootScope.reg_modeEmail = true;
         $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeLink = false;
 
     }
 
@@ -107,6 +108,7 @@ $scope.init = function(){
       $rootScope.showAdvanced();
         $rootScope.reg_modeWebsite = true;
         $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = false;
 
         // console.log(fullData);
     }
@@ -237,7 +239,7 @@ $rootScope.showAdvanced = function(ev) {
 
 
 $rootScope.Register = function(data,email,path){
-if($window.localStorage.userFullDetailss != null){
+if($window.localStorage.userFullDetails != null){
 $rootScope.reg_path = path;
 console.log(path);
 $rootScope.data_regemail = email;
@@ -250,6 +252,7 @@ console.log(data);
       console.log(data.reg_mode);
       $rootScope.reg_modeEmail = true;
       $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeLink = false;
 
   }
 
@@ -257,6 +260,7 @@ console.log(data);
     $rootScope.showAdvanced();
       $rootScope.reg_modeWebsite = true;
       $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = false;
 
       // console.log(fullData);
   }
@@ -395,6 +399,7 @@ console.log(data);
       console.log(data.reg_mode);
       $rootScope.reg_modeEmail = true;
       $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeLink = false;
 
   }
 
@@ -402,6 +407,7 @@ console.log(data);
     $rootScope.showAdvanced();
       $rootScope.reg_modeWebsite = true;
       $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = false;
 
       // console.log(fullData);
   }
@@ -736,6 +742,7 @@ if($window.localStorage.userFullDetails != null){
         // console.log(data.reg_mode);
         $rootScope.reg_modeEmail = true;
         $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeLink = false;
 
     }
 
@@ -743,6 +750,7 @@ if($window.localStorage.userFullDetails != null){
       $rootScope.showAdvanced();
         $rootScope.reg_modeWebsite = true;
         $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = false;
 
         // console.log(fullData);
     }
@@ -886,6 +894,7 @@ console.log(data);
       console.log(data.reg_mode);
       $rootScope.reg_modeEmail = true;
       $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeLink = false;
 
   }
 
@@ -893,6 +902,7 @@ console.log(data);
     $rootScope.showAdvanced();
       $rootScope.reg_modeWebsite = true;
       $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = false;
 
       // console.log(fullData);
   }
@@ -933,6 +943,7 @@ $rootScope.toggleLeft = buildToggler('left');
 
 
 });
+
 
 app.controller('FacCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
@@ -1034,6 +1045,7 @@ $scope.init = function(){
         console.log(data.reg_mode);
         $rootScope.reg_modeEmail = true;
         $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeLink = false;
 
     }
 
@@ -1041,6 +1053,7 @@ $scope.init = function(){
       $rootScope.showAdvanced();
         $rootScope.reg_modeWebsite = true;
         $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = false;
 
         // console.log(fullData);
     }
@@ -1183,6 +1196,7 @@ if($window.localStorage.userFullDetails != null){
         console.log(data.reg_mode);
         $rootScope.reg_modeEmail = true;
         $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeLink = false;
 
     }
 
@@ -1190,6 +1204,7 @@ if($window.localStorage.userFullDetails != null){
       $rootScope.showAdvanced();
         $rootScope.reg_modeWebsite = true;
         $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = false;
 
         // console.log(fullData);
     }
@@ -1332,6 +1347,7 @@ $scope.init = function(){
         console.log(data.reg_mode);
         $rootScope.reg_modeEmail = true;
         $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeLink = false;
 
     }
 
@@ -1339,6 +1355,7 @@ $scope.init = function(){
       $rootScope.showAdvanced();
         $rootScope.reg_modeWebsite = true;
         $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = false;
 
         // console.log(fullData);
     }
@@ -1743,6 +1760,7 @@ $scope.init = function(){
         console.log(data.reg_mode);
         $rootScope.reg_modeEmail = true;
         $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeLink = false;
 
     }
 
@@ -1750,6 +1768,7 @@ $scope.init = function(){
       $rootScope.showAdvanced();
         $rootScope.reg_modeWebsite = true;
         $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = false;
 
         // console.log(fullData);
     }
@@ -1894,6 +1913,7 @@ $scope.init = function(){
           console.log(data.reg_mode);
           $rootScope.reg_modeEmail = true;
           $rootScope.reg_modeWebsite = false;
+          $rootScope.reg_modeLink = false;
 
       }
 
@@ -1901,6 +1921,7 @@ $scope.init = function(){
         $rootScope.showAdvanced();
           $rootScope.reg_modeWebsite = true;
           $rootScope.reg_modeEmail = false;
+          $rootScope.reg_modeLink = false;
 
           // console.log(fullData);
       }
@@ -2044,6 +2065,7 @@ if($window.localStorage.userFullDetails != null){
         console.log(data.reg_mode);
         $rootScope.reg_modeEmail = true;
         $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeLink = false;
 
     }
 
@@ -2051,6 +2073,7 @@ if($window.localStorage.userFullDetails != null){
       $rootScope.showAdvanced();
         $rootScope.reg_modeWebsite = true;
         $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = false;
 
         // console.log(fullData);
     }
@@ -2193,6 +2216,7 @@ if($window.localStorage.userFullDetails != null){
         console.log(data.reg_mode);
         $rootScope.reg_modeEmail = true;
         $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeLink = false;
 
     }
 
@@ -2202,6 +2226,7 @@ if($window.localStorage.userFullDetails != null){
       $rootScope.showAdvanced();
         $rootScope.reg_modeWebsite = true;
         $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = false;
 
         // console.log(fullData);
     }
@@ -2343,6 +2368,7 @@ $scope.init = function(){
         console.log(data.reg_mode);
         $rootScope.reg_modeEmail = true;
         $rootScope.reg_modeWebsite = false;
+        $rootScope.reg_modeLink = false;
 
     }
 
@@ -2350,6 +2376,7 @@ $scope.init = function(){
       $rootScope.showAdvanced();
         $rootScope.reg_modeWebsite = true;
         $rootScope.reg_modeEmail = false;
+        $rootScope.reg_modeLink = false;
 
         // console.log(fullData);
     }
