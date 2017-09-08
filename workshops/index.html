@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<title>Workshops | Rendezvous'17</title>
 	<link rel="icon" href="../assets/img/rdv-bruh.png" type="image/png">
-	<link rel="shortcut icon" href="../assets/img/rdv-bruh.ico" type="img/x-icon"> 
+	<link rel="shortcut icon" href="../assets/img/rdv-bruh.ico" type="img/x-icon">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/default.css" />
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<script src="js/modernizr.custom.js"></script>
@@ -55,6 +56,38 @@
 	</style>
 </head>
 <body>
+<!-- <div id="loader-wrapper">
+		<div id="loader"></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div> -->
+	<!-- full screen menu bar  -->
+	<div class="burger">
+		<div class="burger__patty"></div>
+		<div class="burger__patty"></div>
+		<div class="burger__patty"></div>
+	</div>
+	<nav class="menu">
+		<div class="menu__brand">
+			<img class="menu-bar-img" src="../assets/img/footer-logo.png" alt="rdv-logo">
+			<ul class="menu-list-left">
+				<li class="menu__item"><a href="./bohemian/#!/login" class="menu__link" id= "login-button">Login</a></li>
+				<!-- <li class="menu__item"><a href="./bohemian/#!/login" class="menu__link" id= "logout-button">Logout</a></li> -->
+				<li class="menu__item"><a href="./contactus/" target="_blank" class="menu__link">Contact Us</a></li>
+				<li class="menu__item"><a href="./comingsoon.html" target="_blank" class="menu__link">Sponsors</a></li>
+			</ul>
+		</div>
+		<ul  class="menu__list">
+			<img class="menu-bar-img mob-menu-bar-img" src="../assets/img/footer-logo.png" alt="rdv-logo">
+			<li class="menu__item"><a href="./bohemian/#!/compevents"  class="menu__link">Competitive Events</a></li>
+			<li class="menu__item"><a href="./bohemian/#!/pronites" class="menu__link">Pronites</a></li>
+			<li class="menu__item"><a href="./comingsoon.html" target="_blank" class="menu__link">Workshop</a></li>
+			<li class="menu__item"><a href="./comingsoon.html" target="_blank" class="menu__link">Social</a></li>
+			<li class="menu__item"><a href="./hospitality/" target="_blank" class="menu__link">Accommodation</a></li>
+		</ul>
+
+	</nav>
+	<!-- full screen menu bar ends -->
 	<div class="container demo-1">
 		<header>
 			<div class="coming-logo">
@@ -327,7 +360,75 @@
 				</figure>
 			</li>
 		</ul>
+		<hr>
+		<!--footer begins-->
+			<footer class="footer">
+				<div class="footer-logo">
+					<a href="#landing-video"><img class="footer-img" src="../assets/img/rdv-footer.png" alt=""></a>
+				</div>
+				<div class="social-wrapper">
+					<a class="social-icon" href="https://www.facebook.com/rendezvous.iitd/" target="_blank"><i class="fa fa-5x fa-facebook-square"></i></a>
+					<a class="social-icon" href="https://www.instagram.com/rendezvous.iitdelhi/" target="_blank"><i class="fa fa-5x fa-instagram"></i></a>
+					<a class="social-icon" href="https://www.youtube.com/watch?v=YwcosZyHILA" target="_blank"><i class="fa fa-5x fa-youtube"></i></a>
+				</div>
+				<div class="footer-copyright">
+					<span class="copyright">&copy; 2017. All Rights Reserved<br />BRCA IIT DELHI</span>
+				</div>
+			</footer>
+			<!--footer ends-->
 	</div><!-- /container -->
+		<!-- Side menu-bar -->
+	<script type="text/javascript">
+		(function() {
+			var Menu = (function() {
+				var burger = document.querySelector('.burger');
+				var menu = document.querySelector('.menu');
+				var menuList = document.querySelector('.menu__list');
+				var brand = document.querySelector('.menu__brand');
+				var menuItems = document.querySelectorAll('.menu__item');
+				var active = false;
+				var toggleMenu = function() {
+					if (!active) {
+						menu.classList.add('menu--active');
+						menuList.classList.add('menu__list--active');
+						brand.classList.add('menu__brand--active');
+						burger.classList.add('burger--close');
+						for (var i = 0, ii = menuItems.length; i < ii; i++) {
+							menuItems[i].classList.add('menu__item--active');
+						}
+						active = true;
+					} else {
+						menu.classList.remove('menu--active');
+						menuList.classList.remove('menu__list--active');
+						brand.classList.remove('menu__brand--active');
+						burger.classList.remove('burger--close');
+						for (var i = 0, ii = menuItems.length; i < ii; i++) {
+							menuItems[i].classList.remove('menu__item--active');
+						}
+						active = false;
+					}
+				};
+				var bindActions = function() {
+					burger.addEventListener('click', toggleMenu, false);
+				};
+				var init = function() {
+					bindActions();
+				};
+				return {
+					init: init
+				};
+			}());
+			Menu.init();
+		}());
+	</script>
+	<!-- Side menu-bar ends -->
+		<!-- Pre-loader starts -->
+	<script type="text/javascript">
+		$(window).on('load', function() {
+			$('body').delay(350).addClass('loaded');
+		})
+	</script>
+	<!-- Pre-loader ends -->
 	<script src="js/toucheffects.js"></script>
 </body>
 </html>
