@@ -642,7 +642,6 @@ Author URL: https://sahil505.com
 		if(window.localStorage.getItem("userFullDetails")){
 			var userDetails =  window.localStorage.getItem("userFullDetails");
 			var userFullDetails = JSON.parse(userDetails);
-			console.log(userFullDetails);
 			document.getElementById("userName").innerHTML = "Hey, " + userFullDetails.first_name;
 			document.getElementById("login-button").style.display = 'none';
 			document.getElementById("login-button2").style.display = 'none';
