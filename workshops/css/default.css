@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nixie+One');
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 @import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+@import url('https://fonts.googleapis.com/css?family=Dosis');
 
 @font-face {
 	font-family: 'codropsicons';
@@ -26,8 +27,13 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 
 body {
 	font-family: 'Lato', Calibri, Arial, sans-serif;
-	background-image: url("../../assets/img/coming-soon.png");
+	background-image: url("../../assets/img/workshops.png"), url("../../assets/img/feathers-2.png");
+	background-size: 40%, 90%;
+	background-position: -160px 0px, top right;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 	text-align: center;
+	background-color: #eaeaff;
 }
 
 a {
@@ -51,6 +57,15 @@ a:active {
 	margin-top: 10px;
 }
 
+.workshop-underliner {
+	margin-top: -30px;
+	margin-bottom: 30px;
+}
+
+.workshop-underliner img {
+	width: 10%;
+}
+
 
 @media screen and (min-width: 500px) {
 	/* applies only if the screen is more than 500px */
@@ -64,16 +79,28 @@ a:active {
 		0 0 100px #E6A1AD, 
 		0 0 500px #F36780, 
 		5px 9px 5px rgba(0, 0, 0, 0.5);
+		text-transform: uppercase;
 	}
 }
 
 @media screen and (max-width: 500px) {
 	/* applies only if the screen is narrower than 500px */
 	.cover-head {
-		font-size: 72px;
+		font-size: 48px;
+		font-family: 'Nixie One';
+		font-weight: 200;
 		color: #222222;
 		margin: 0 0 15px 0;
 		text-shadow: 2px 2px 8px grey;
+		text-transform: uppercase;
+	}
+
+	body {
+		background-image: none;
+	}
+
+	.workshop-underliner {
+		display: none;
 	}
 }
 
@@ -484,7 +511,7 @@ a:active {
 }
 
 .menu__list a {
-	font-family: 'Dosis', sans-serif;
+	font-family: 'Dosis', sans-serif !important;
 	color: #000;
 }
 
