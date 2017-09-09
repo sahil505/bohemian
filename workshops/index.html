@@ -11,49 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="css/default.css" />
 	<link rel="stylesheet" type="text/css" href="css/component.css" />
 	<script src="js/modernizr.custom.js"></script>
-	<style type="text/css">
-		@import url('https://fonts.googleapis.com/css?family=Advent+Pro:400,700');
-		@import url('https://fonts.googleapis.com/css?family=Nixie+One');
-		@import url('https://fonts.googleapis.com/css?family=Nunito');
-		@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
-		.coming-logo {
-			margin-top: 5vh;
-			font-family: 'Advent Pro', sans-serif;
-			font-size: 24px;
-			font-weight: 600;
-			letter-spacing: 1px;
-		}
-
-		.coming-logo-head {
-			margin-top: 10px;
-		}
-
-
-		@media screen and (min-width: 500px) {
-			/* applies only if the screen is more than 500px */
-			.cover-head {
-				margin-top: 0;
-				font: normal 72px 'Nixie One', Helvetica, Arial !important;
-				letter-spacing: -2px;
-				/*font-weight: 700;*/
-				text-shadow: 0 0 30px #EC637B, 
-				0 0 10px rgba(230, 161, 173, 0.41), 
-				0 0 100px #E6A1AD, 
-				0 0 500px #F36780, 
-				5px 9px 5px rgba(0, 0, 0, 0.5);
-			}
-		}
-
-		@media screen and (max-width: 500px) {
-			/* applies only if the screen is narrower than 500px */
-			.cover-head {
-				font-size: 72px;
-				color: #222222;
-				margin: 0 0 15px 0;
-				text-shadow: 2px 2px 8px grey;
-			}
-		}
-	</style>
 </head>
 <body>
 <!-- <div id="loader-wrapper">
@@ -61,6 +18,7 @@
 		<div class="loader-section section-left"></div>
 		<div class="loader-section section-right"></div>
 	</div> -->
+	
 	<!-- full screen menu bar  -->
 	<div class="burger">
 		<div class="burger__patty"></div>
@@ -351,7 +309,7 @@
 			</li>
 			<li>
 				<figure>
-					<img src="images/26.jpg" alt="img25">
+					<img src="images/26.jpg" alt="img26">
 					<figcaption>
 						<h3>Water Rocket</h3>
 						<span>Robosapiens</span>
@@ -362,22 +320,23 @@
 		</ul>
 		<hr>
 		<!--footer begins-->
-			<footer class="footer">
-				<div class="footer-logo">
-					<a href="../"><img class="footer-img" src="../assets/img/rdv-footer.png" alt=""></a>
-				</div>
-				<div class="social-wrapper">
-					<a class="social-icon" href="https://www.facebook.com/rendezvous.iitd/" target="_blank"><i class="fa fa-5x fa-facebook-square"></i></a>
-					<a class="social-icon" href="https://www.instagram.com/rendezvous.iitdelhi/" target="_blank"><i class="fa fa-5x fa-instagram"></i></a>
-					<a class="social-icon" href="https://www.youtube.com/watch?v=YwcosZyHILA" target="_blank"><i class="fa fa-5x fa-youtube"></i></a>
-				</div>
-				<div class="footer-copyright">
-					<span class="copyright">&copy; 2017. All Rights Reserved<br />BRCA IIT DELHI</span>
-				</div>
-			</footer>
-			<!--footer ends-->
+		<footer class="footer">
+			<div class="footer-logo">
+				<a href="../"><img class="footer-img" src="../assets/img/rdv-footer.png" alt=""></a>
+			</div>
+			<div class="social-wrapper">
+				<a class="social-icon" href="https://www.facebook.com/rendezvous.iitd/" target="_blank"><i class="fa fa-5x fa-facebook-square"></i></a>
+				<a class="social-icon" href="https://www.instagram.com/rendezvous.iitdelhi/" target="_blank"><i class="fa fa-5x fa-instagram"></i></a>
+				<a class="social-icon" href="https://www.youtube.com/watch?v=YwcosZyHILA" target="_blank"><i class="fa fa-5x fa-youtube"></i></a>
+			</div>
+			<div class="footer-copyright">
+				<span class="copyright">&copy; 2017. All Rights Reserved<br />BRCA IIT DELHI</span>
+			</div>
+		</footer>
+		<!--footer ends-->
 	</div><!-- /container -->
-		<!-- Side menu-bar -->
+
+	<!-- Side menu-bar -->
 	<script type="text/javascript">
 		(function() {
 			var Menu = (function() {
@@ -422,13 +381,15 @@
 		}());
 	</script>
 	<!-- Side menu-bar ends -->
-		<!-- Pre-loader starts -->
+
+	<!-- Pre-loader starts -->
 	<script type="text/javascript">
 		$(window).on('load', function() {
 			$('body').delay(350).addClass('loaded');
 		})
 	</script>
 	<!-- Pre-loader ends -->
+
 	<script src="js/toucheffects.js"></script>
 </body>
 </html>
