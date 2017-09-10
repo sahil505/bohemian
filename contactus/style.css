@@ -10,6 +10,14 @@ body {
 	text-align: center;
 }
 
+.contact-head a {
+	text-decoration: none;
+}
+
+.card-contact a {
+	text-decoration: none;
+}
+
 /* Pre-loader starts*/
 #loader-wrapper {
 	position: fixed;
@@ -152,6 +160,14 @@ body {
 	transition: all 0.3s 1s ease-out;
 }
 /*Pre-loader ends*/
+
+.contact-underliner {
+	margin-bottom: 32px;
+}
+
+.contact-underliner img {
+	width: 8%;
+}
 
 /*Side menu bar*/
 .burger {
@@ -471,7 +487,7 @@ body {
 	/* applies only if the screen is more than 500px */
 	.cover-head {
 		margin-top: 0;
-		font: normal 56px 'Nixie One', Helvetica, Arial;
+		font: normal 64px 'Nixie One', Helvetica, Arial;
 		letter-spacing: -2px;
 		/*font-weight: 700;*/
 		text-shadow: 0 0 30px #EC637B, 
@@ -489,6 +505,10 @@ body {
 		color: #222222;
 		margin: 0 0 15px 0;
 		text-shadow: 2px 2px 8px grey;
+	}
+
+	.contact-underliner {
+		display: none;
 	}
 }
 
@@ -605,12 +625,9 @@ body {
 
 	.coming-logo {
 		text-align: center;
-		/*margin-top: 5vh;*/
-		display: none;
 	}
 
 	.cover-head {
-		margin-top: 5vh;
 		font-size: 50px;
 	}
 
