@@ -33,7 +33,7 @@ Author URL: https://sahil505.com
 <body>
 
 	<!--header-start-->
-	<header class="header" id="header" >
+	<header class="header" id="header">
 		<div class="container">
 			<div id="scroll-btn" class="scroll">
 				<a href="#redwar"><span></span></a>
@@ -138,7 +138,6 @@ Author URL: https://sahil505.com
 							<p>35-40 million carriers across the country , 95% of treatment expenses are borne by the patients.</p>
 						</div>
 					</div>
-					<a class="Learn-More" href="#">Learn More</a>
 				</div>
 			</div>
 		</div>
@@ -169,32 +168,9 @@ Author URL: https://sahil505.com
 
 	<div class="container">
 		<section class="main-section contact" id="contact">
-
 			<div class="row">
 				<div class="col-lg-6 col-sm-7 wow fadeInLeft">
-					<div class="contact-info-box address clearfix">
-						<h3><i class=" icon-map-marker"></i>Address:</h3>
-						<span>308 Negra Arroyo Lane<br>Albuquerque, New Mexico, 87111.</span>
-					</div>
-					<div class="contact-info-box phone clearfix">
-						<h3><i class="fa-phone"></i>Phone:</h3>
-						<span>1-800-BOO-YAHH</span>
-					</div>
-					<div class="contact-info-box email clearfix">
-						<h3><i class="fa-pencil"></i>email:</h3>
-						<span>hello@knightstudios.com</span>
-					</div>
-					<div class="contact-info-box hours clearfix">
-						<h3><i class="fa-clock-o"></i>Hours:</h3>
-						<span><strong>Monday - Thursday:</strong> 10am - 6pm<br><strong>Friday:</strong> People work on Fridays now?<br><strong>Saturday - Sunday:</strong> Best not to ask.</span>
-					</div>
-					<ul class="social-link">
-						<li class="twitter"><a href="#"><i class="fa-twitter"></i></a></li>
-						<li class="facebook"><a href="#"><i class="fa-facebook"></i></a></li>
-						<li class="pinterest"><a href="#"><i class="fa-pinterest"></i></a></li>
-						<li class="gplus"><a href="#"><i class="fa-google-plus"></i></a></li>
-						<li class="dribbble"><a href="#"><i class="fa-dribbble"></i></a></li>
-					</ul>
+					
 				</div>
 				<div class="col-lg-6 col-sm-5 wow fadeInUp delay-05s">
 					<div class="form">
@@ -247,6 +223,7 @@ Author URL: https://sahil505.com
 		wow.init();
 	</script>
 
+	<!-- Scroll Down Animation for navbar -->
 	<script type="text/javascript">
 		$(window).load(function(){
 			$('.main-nav li a').bind('click',function(event){
@@ -258,14 +235,15 @@ Author URL: https://sahil505.com
 			});
 		})
 	</script>
-
-	<!-- Scroll Down Animation -->
+	<!-- Scroll Down Animation Ends -->
+	
+	<!-- Scroll Down Animation for arrow -->
 	<script type="text/javascript">
 		$(window).load(function(){
 			$('.scroll a').bind('click',function(event){
 				var $anchor = $(this);
 				$('html, body').stop().animate({
-					scrollTop: $($anchor.attr('href')).offset().top
+					scrollTop: $($anchor.attr('href')).offset().top - 102
 				}, 1500,'easeInOutExpo');
 				event.preventDefault();
 			});
