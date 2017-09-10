@@ -218,10 +218,19 @@ p{
 }
 .main-section.alabaster{
 	background:#fafafa;
+	padding-top: 32px;
+	padding-bottom: 40px;
 }
 
 /* Featured Work
 ---------------------------------*/
+
+.stats-right-content-head {
+	margin-left: 27%;
+	padding-bottom: 24px;
+}
+
+
 .featured-work{
 	font-size:14px;
 }
