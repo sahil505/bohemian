@@ -5,6 +5,7 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 /* Primary Styles
 ---------------------------------*/
@@ -25,14 +26,7 @@ h2{
 	text-align:center;
 	text-transform:uppercase;
 }
-h3{
-	font-family: 'Montserrat', sans-serif;
-	color:#222222;
-	font-size:16px;
-	margin:0 0 5px 0;
-	text-transform:uppercase;
-	font-weight:400;
-}
+
 h6{
 	font-size:24px;
 	color:#888888;
@@ -117,12 +111,12 @@ p{
 }
 
 .campaign-content {
-	margin-top: 80px;
+	margin-top: 56px;
 }
 
 
 .campaign {
-	padding-top: 24px;
+	padding-top: 8px;
 }
 
 .campaign-left-content {
@@ -135,11 +129,12 @@ p{
 .campaign-content .campaign-img {
 	width: 100%;
 	height: 100%;
-	margin-top: -120px;
+	margin-top: -100px;
 }
 
 .service-list{
-	font-size:14px;
+	padding-left: 10px;
+	border-left: thick solid grey;
 }
 .service-list-col1{
 	float:left;
@@ -156,11 +151,32 @@ p{
 .service-list-col2{
 	overflow:hidden;
 }
+
+.service-list-col2 h3 {
+	font-family: verdana;
+	color:#5b5e6d;
+	font-size:20px;
+	margin:0 0 5px 0;
+	font-weight:200;
+	line-height: 24px;
+}
+
 .main-section.alabaster{
 	background:#fafafa;
 	padding-top: 32px;
 	padding-bottom: 40px;
 }
+
+hr.style14 { 
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+
+
 
 /* Featured Work
 ---------------------------------*/
