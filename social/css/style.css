@@ -44,8 +44,8 @@ p{
 
 .header{
 	height:100vh;
-	background: url(../img/lp1.jpg);
-	background-size: cover;
+	background: url(../img/social-landing.png);
+	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
 }
