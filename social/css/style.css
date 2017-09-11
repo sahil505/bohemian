@@ -1,10 +1,4 @@
-@font-face {
-	font-family: 'FontAwesome';
-	src: url('../fonts/fontawesome-webfont.eot?v=4.1.0');
-	src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
+
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 /* Primary Styles
@@ -168,12 +162,12 @@ p{
 }
 
 hr.style14 { 
-  border: 0; 
-  height: 1px; 
-  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+	border: 0; 
+	height: 1px; 
+	background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+	background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+	background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+	background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
 }
 
 
@@ -258,16 +252,25 @@ img {
 .client-part{
 	/*background:url(../img/section-bg1.jpg) center center no-repeat;*/
 	background-size:cover;
-	padding:55px 0;
+	padding-top: 24px;
 	text-align:center;
 }
+
+.upcoming-camp-head {
+	font-size:32px;
+	color:#222222;
+	font-family: 'Montserrat', sans-serif;
+	font-weight:400;
+	letter-spacing: 1px;
+	text-align:center;
+	text-transform:uppercase;
+}
+
 .client-part-haead{
-	/*color:#fdfdfd;*/
-	font-size:28px;
-	line-height:41px;
+	font-size:24px;
+	line-height:40px;
 	margin:30px 0 10px;
 	font-family: ''Open Sans',sans-serif';
-	font-style: italic;
 }
 .client{
 	padding:0;
@@ -461,6 +464,97 @@ img {
 .portfolioContainer{
 	max-width: 1140px;
 }
+
+
+/* Footer */
+.footer-fool {
+	background-image: url("../img/footer-fool-2.png");
+	background-repeat: no-repeat;
+	background-size: 600px 600px;
+	background-position: right bottom;
+}
+
+@media screen and (min-width: 500px) and (max-width: 1500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+	.footer-fool {
+		background-image: url("../img/footer-fool-2.png");
+		background-repeat: no-repeat;
+		background-size: 400px 400px;
+		background-position: right bottom;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	/*applies only if the screen is less than 500px*/
+	.footer-fool {
+		background-image: none !important;
+	}
+}
+
+.footer{
+	padding:0 0 35px;
+}
+
+.footer-logo{
+	text-align: center;
+}
+
+.footer-copyright {
+	color:black;
+	font-size:14px;
+	display:block;
+	text-align:center;
+}
+
+.social-wrapper {
+	padding-bottom: 24px;
+	text-align: center;
+}
+
+.social-wrapper a {
+	padding: 0px 5px;
+}
+
+.social-wrapper a:nth-child(1) {
+	color: #4867AA;
+	cursor: pointer;
+	text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+	transition: all ease-in-out 150ms;
+}
+
+.social-wrapper a:nth-child(1):hover {
+	margin-top: -10px;
+	text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+	transform: translate(0, -8);
+}
+
+.social-wrapper a:nth-child(2) {
+	color: #3f729b;
+	cursor: pointer;
+	text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+	transition: all ease-in-out 150ms;
+}
+
+.social-wrapper a:nth-child(2):hover {
+	margin-top: -10px;
+	text-shadow: 0px 14px 10px rgba(0, 0, 0, 0.4);
+	transform: translate(0, -5);
+}
+
+.social-wrapper a:nth-child(3) {
+	color: #e62117;
+	cursor: pointer;
+	text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+	transition: all ease-in-out 150ms;
+}
+
+.social-wrapper a:nth-child(3):hover {
+	margin-top: -10px;
+	text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+	transform: translate(0, -8);
+}
+/*Footer ends*/
+
 
 
 /* Animation Timers
