@@ -358,15 +358,15 @@ img {
 
 .schedule-cards .month {
 	color: #666 !important;
-	font-size: 24px;
+	font-size: 20px;
 	float: left;
-	top: 20px;
+	margin-top: 12px;
 
 }  
 
 .schedule-cards .day {
 	display: block;
-	font-size: 80px;
+	font-size: 72px;
 }
 
 .schedule-cards .content {
@@ -374,7 +374,7 @@ img {
 	color: #666;
 	font-family: Helvetica, Arial, sans-serif;
 	float: right;
-	margin-top: 20px;
+	margin-top: 16px;
 } 
 
 /* Contact*/
