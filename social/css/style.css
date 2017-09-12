@@ -373,81 +373,26 @@ img {
 .main-section.contact{
 	/*padding:90px 0 100px;*/
 	padding-top: 24px;
+	padding-bottom: 24px;
 }
 
 .pledge-form {
-	padding-top: 80px;
+	padding-top: 200px;
 }
 
 .main-section.contact{
-	background:url(../img/pledge.png) left 190px no-repeat;
-	background-size: 500px;
-}
-.contact-info-box{
-	font-size:15px;
-	margin:0 0 14px 68px;
-	padding-left:0;
-}
-.contact-info-box h3{
-	font-size: 15px;
-	font-weight:400;
-	float:left;
-	width:102px;
-	margin-right:12px;
-	line-height:28px;
-}
-.contact-info-box h3 i{
-	font-style:normal;
-	font-size:18px;
-	color:#222222;
-	font-family: 'FontAwesome';
-	font-weight:normal;
-	margin-right:7px;
-}
-.contact-info-box span{
-	line-height:28px;
-	display:block;
-	overflow:hidden;
+	background:url(../img/pledge.png) 80px 120px no-repeat;
+	background-size: 450px;
+	height: 640px;
 }
 
-.form{
-	margin:0 66px 0 30px;
-}
-.input-text{
-	padding:15px 16px;
-	border:1px solid #ccc;
-	width:100%;
-	height:50px;
-	display:block;
-	border-radius:4px;
-	font-size:15px;
-	color:#aaa;
-	font-family: 'Open Sans', sans-serif;
-	margin:0 0 15px 0;
-	transition:all 0.3s ease-in-out;
-	-moz-transition:all 0.3s ease-in-out;
-	-webkit-transition:all 0.3s ease-in-out;
-}
-.input-text:focus {
-	border: 1px solid #7cc576;
-	outline:0;
-	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 197, 118, 0.3);
-	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 197, 118, 0.3);
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(124, 197, 118, 0.3);
-}
-
-.input-text.text-area{
-	height:165px;
-	resize:none;
-	overflow:auto;
-}
 .input-btn{
-	width:175px;
+	width:200px;
 	height:50px;
 	background:#9b0404;
 	border-radius:4px;
 	color:#ffffff;
-	font-size:14px;
+	font-size:20px;
 	text-transform:uppercase;
 	font-family: 'Montserrat', sans-serif;
 	font-weight:400;
@@ -460,38 +405,6 @@ img {
 .input-btn:hover{
 	background: #111;
 	color: #fff;
-}
-
-.validation {
-	color: red;
-	display:none;
-	margin: 0 0 20px;
-	font-weight:400;
-	font-size:13px;
-}
-
-#sendmessage {
-	color: #7cc576;
-	border:1px solid #7cc576;
-	display:none;
-	text-align:center;
-	padding:15px;
-	font-weight:600;
-	margin-bottom:15px;
-}
-
-#errormessage {
-	color: red;
-	display:none;
-	border:1px solid red;
-	text-align:center;
-	padding:15px;
-	font-weight:600;
-	margin-bottom:15px;
-}
-
-#sendmessage.show, #errormessage.show, .show {
-	display:block;
 }
 
 .res-nav_click {
