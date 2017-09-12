@@ -220,13 +220,19 @@ hr.style14 {
 	color:#777777;
 	font-style:normal;
 }
-.featured-box-col2{ overflow:hidden;}
+.featured-box-col2 {
+	overflow:hidden;
+	padding-left: 20px;
+}
+
 .featured-box.magic{
 	background:url(../img/magic.png) left top no-repeat;
 }
+
 .featured-box.packaged{
 	background:url(../img/packaged.png) left top no-repeat;
 }
+
 .featured-box.seo{
 	background:url(../img/seo.png) left top no-repeat;
 }
