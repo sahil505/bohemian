@@ -291,19 +291,24 @@ img {
 .client li a{
 	display:inline-block;
 }
+
 .client li a img{
 	margin-bottom:15px;
 	border-radius:50%;
 }
+
 .client li a:hover{
 	text-decoration:none;
 }
+
 .client li a h3{
 	color:#ffffff;
 }
+
 .client li a span{
 	color:#f1f1f1;
 }
+
 .quote-right{
 	font-style:normal;
 	width:68px;
@@ -344,11 +349,13 @@ img {
 	width: 300px; 
 	margin-right: 20px;
 }
+
 .schedule-cards li {
 	display: inline-block;
 	font-family: Helvetica, Arial, sans-serif;
 	list-style-type: none; 
 } 
+
 .schedule-cards .month {
 	color: #666 !important;
 	font-size: 24px;
@@ -356,10 +363,12 @@ img {
 	top: 20px;
 
 }  
+
 .schedule-cards .day {
 	display: block;
 	font-size: 80px;
 }
+
 .schedule-cards .content {
 	display: block;
 	color: #666;
@@ -368,8 +377,7 @@ img {
 	margin-top: 20px;
 } 
 
-/* Contact
----------------------------------*/
+/* Contact*/
 .main-section.contact{
 	/*padding:90px 0 100px;*/
 	padding-top: 24px;
@@ -431,9 +439,11 @@ img {
 	max-width: 1140px;
 }
 
-
 /* Footer */
 
+.foot {
+	margin-top: 0 !important;
+}
 .footer{
 	padding:0 0 35px;
 }
@@ -498,8 +508,6 @@ img {
 }
 /*Footer ends*/
 
-
-
 /* Animation Timers
 ---------------------------------*/
 .delay-02s {
@@ -545,10 +553,6 @@ img {
 	animation-delay: 1.2s;
 	-webkit-animation-delay: 1.2s;
 }
-
-
-/*UDIT CSS */
-
 
 /*Scroll Button*/
 .scroll a span {
