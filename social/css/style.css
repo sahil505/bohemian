@@ -822,11 +822,8 @@ img {
  }
 
  .main-section.team{
- 	padding:40px 0;
+ 	padding:24px 0;
  	background:#fafafa;
- }
- .main-section.team h6{
- 	margin-bottom:40px;
  }
 
 
@@ -840,7 +837,7 @@ img {
 	display: inline-block;
 	width:30.66%;
 	margin-right: 3.82979%;
-	height: 490px;
+	height: 400px;
 	overflow: hidden;
 	text-align: center;
 	margin-left: 12%;
