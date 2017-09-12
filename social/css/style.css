@@ -333,8 +333,13 @@ img {
 	padding:90px 0 100px;
 }
 
+.pledge-form {
+	padding-top: 80px;
+}
+
 .main-section.contact{
-	background:url(../img/bg-map.png) left 190px no-repeat;
+	background:url(../img/pledge.png) left 190px no-repeat;
+	background-size: 500px;
 }
 .contact-info-box{
 	font-size:15px;
