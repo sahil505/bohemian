@@ -610,20 +610,20 @@ img {
 }
 /*Scroll Button Ends*/
 
- /* main-heading-3
- ---------------------------------*/
- .main-heading-3Container{
- 	max-width: 1500px;
- }
+ /* main-heading-3*/
  .main-heading-3Container{
  	text-align: center;
+ 	padding-bottom: 24px;
  }
 
  .main-heading-3-box{
- 	margin-bottom:8px;
+ 	margin-bottom:0px;
+ 	min-width: 340px;
  	overflow:hidden;
  	display: inline-block;
  	text-align: center;
+ 	margin-left: 10px;
+ 	margin-right: 10px;
  }
 
  .main-heading-3-nav li a.current{
