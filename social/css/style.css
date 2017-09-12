@@ -188,6 +188,7 @@ hr.style14 {
 
 .featured-work{
 	font-size:14px;
+	padding-top: 40px;
 }
 .featured-work h2{
 	text-align:left;
@@ -256,8 +257,7 @@ img {
 /* Clients
 ---------------------------------*/
 .client-part{
-	/*background:url(../img/section-bg1.jpg) center center no-repeat;*/
-	background-size:cover;
+	background:#fafafa;
 	padding-top: 24px;
 	text-align:center;
 }
@@ -478,32 +478,10 @@ img {
 
 
 /* Footer */
-.footer-fool {
-	background-image: url("../img/footer-fool-2.png");
-	background-repeat: no-repeat;
-	background-size: 600px 600px;
-	background-position: right bottom;
-}
-
-@media screen and (min-width: 500px) and (max-width: 1500px) {
-	/* applies only if the screen is more than 500px & less than 1500px*/
-	.footer-fool {
-		background-image: url("../img/footer-fool-2.png");
-		background-repeat: no-repeat;
-		background-size: 400px 400px;
-		background-position: right bottom;
-	}
-}
-
-@media screen and (max-width: 500px) {
-	/*applies only if the screen is less than 500px*/
-	.footer-fool {
-		background-image: none !important;
-	}
-}
 
 .footer{
 	padding:0 0 35px;
+	background:#fafafa;
 }
 
 .footer-logo{
