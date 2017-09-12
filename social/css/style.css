@@ -378,6 +378,14 @@ img {
 } 
 
 /* Contact*/
+.pledge-content {
+	font-size:24px;
+	text-align: center !important;
+	line-height:40px;
+	margin:30px 0 10px;
+	font-family: ''Open Sans',sans-serif';
+}
+
 .main-section.contact{
 	/*padding:90px 0 100px;*/
 	padding-top: 24px;
