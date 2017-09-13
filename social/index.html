@@ -93,7 +93,7 @@ Author URL: https://sahil505.com
 			<h2 class="campaign-head wow fadeInDown delay-03s">Statistics</h2>
 			<hr class="style14 wow fadeInDown delay-03s">
 			<div class="row">
-				<figure class="col-lg-5 col-sm-4 wow fadeInLeft">
+				<figure class="col-lg-5 col-sm-4 wow fadeInLeft delay-04s">
 					<img  src="img/Stats_edited.png" alt="">
 				</figure>
 				<div class="col-lg-7 col-sm-8 featured-work stats-right-content">
@@ -214,7 +214,7 @@ Author URL: https://sahil505.com
 	<!--main-section team-start-->
 	<section class="main-section team" id="contact">
 		<div class="container wow fadeInUp delay-03s">
-			<h2>team</h2>
+			<h2 class="campaign-head">team</h2>
 			<hr class="style14">
 			<div class="team-leader-block" clearfix"">
 				<div class="team-leader-box-tohead">
@@ -268,12 +268,13 @@ Author URL: https://sahil505.com
 	</footer>
 	<!--footer ends-->
 
-	<!-- Activate Carousel -->
+	<!-- Pre-loader starts -->
 	<script type="text/javascript">
-		$('.carousel').carousel({
-			interval: 4000
-		});
+		$(window).on('load', function() {
+			$('body').delay(350).addClass('loaded');
+		})
 	</script>
+	<!-- Pre-loader ends -->
 
 	<script type="text/javascript">
 		$(document).ready(function(e) {
