@@ -44,6 +44,21 @@ p{
 	background-position: center center;
 }
 
+.mobile-landing {
+	display: none;
+}
+
+@media screen and (max-width: 500px) {
+	/* applies only if the screen is more than 500px & less than 1500px*/
+	.header {
+		display: none;
+	}
+
+	.mobile-landing {
+		display: block;
+	}
+}
+
 /* Navigation
 ---------------------------------*/
 .main-nav-outer{
@@ -158,7 +173,6 @@ p{
 .main-section.alabaster{
 	background:#fafafa;
 	padding-top: 32px;
-	padding-bottom: 40px;
 }
 
 hr.style14 { 
@@ -366,9 +380,14 @@ img {
 } 
 
 /* Contact*/
+
+.pledge-image {
+	padding-left: 120px;
+}
+
 .pledge-content {
 	font-size:24px;
-	text-align: center !important;
+	text-align: left !important;
 	line-height:40px;
 	margin:30px 0 10px;
 	font-family: ''Open Sans',sans-serif';
@@ -381,13 +400,12 @@ img {
 }
 
 .pledge-form {
-	padding-top: 200px;
+	/*padding-top: 10px;*/
 }
 
 .main-section.contact{
-	background:url(../img/pledge.png) 80px 120px no-repeat;
-	background-size: 450px;
-	height: 640px;
+	height: 450px;
+	overflow: hidden;
 }
 
 .input-btn{
@@ -618,7 +636,6 @@ img {
  	text-transform: uppercase;
  	text-shadow: rgba(0, 0, 0, 0.7) 1px 1px 5px;
  	color: white;
- 	font-weight: bold;
  	font-family: 'Dosis', sans-serif;
  	background-color: #444444;
  	font-size: 20px;
