@@ -190,51 +190,33 @@ hr.style14 {
 	font-size:14px;
 	padding-top: 40px;
 }
+
 .featured-work h2{
 	text-align:left;
 }
+
 .featured-box{
 	padding:0 0 0 0;
-	margin-bottom:40px;
+	margin-bottom:32px;
 	font-size:20px;
-	font-weight:bold;
+	font-family: ''Open Sans',sans-serif';
 }
+
 .featured-box h3{
 	margin-bottom:40px;
 }
-.featured-box p{
-	line-height:22px;
-}
-.featured-work p.padding-b{
-	padding-bottom:35px;
-}
+
 .featured-box-col1{
 	width:60px;
 	float:left;
 }
-.featured-box-col1 i{
-	display:block;
-	line-height:38px;
-	font-family: 'FontAwesome';
-	font-size:38px;
-	color:#777777;
-	font-style:normal;
-}
+
 .featured-box-col2 {
-	overflow:hidden;
-	padding-left: 20px;
+	padding-left: 80px;
 }
 
-.featured-box.magic{
-	background:url(../img/magic.png) left top no-repeat;
-}
-
-.featured-box.packaged{
-	background:url(../img/packaged.png) left top no-repeat;
-}
-
-.featured-box.seo{
-	background:url(../img/seo.png) left top no-repeat;
+.featured-box-col2 p {
+	line-height: 32px;
 }
 
 img {
