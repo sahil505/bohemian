@@ -53,7 +53,7 @@ Author URL: https://sahil505.com
 	</div>
 	<div class="mobile-landing">
 		<img class="landing-mobile" src="assets/img/mobile/mobile-landing.png">
-		<div class="register-btn-mob"  id="register-button">
+		<div class="register-btn-mob"  id="register-button-mobile">
 			<a href = "bohemian/#!/register"><img src="assets/img/register-button.png"></a>
 		</div>
 	</div>
@@ -648,6 +648,7 @@ Author URL: https://sahil505.com
 			document.getElementById("login-button").style.display = 'none';
 			document.getElementById("login-button2").style.display = 'none';
 			document.getElementById("register-button").style.display = 'none';
+			document.getElementById("register-button-mobile").style.display = 'none';
 			document.getElementById("logout-button2").style.visibility = 'visible';
 			var access_token = userFullDetails.access_token;
 			$.ajax({
