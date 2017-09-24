@@ -1,0 +1,67 @@
+<div class="main-div" layout = "row" ng-controller = "InformalCtrl" ng-init="load()">
+  <div class="main-left" flex-gt-sm = "75" style={{imgLink}}>
+
+      <a href = "../"><img class = "rdv-tag" src="images/white-logo.png" alt="" hide-xs hide-sm ></a>
+
+      <div class="left-content ">
+      <span hide-gt-sm style=" padding-left: 47%; font-weight: bold;">More Events &nbsp; &#x27bc;</span>
+      <br><br>
+        <div class="overlay-left">
+
+        </div>
+        <!-- <h1 class="headline">{{informalData[informalIndex].name}}<button ng-show = informalData[informalIndex].reg_status ng-click = "Register(informalData[informalIndex],informalData[informalIndex].reg_email,'/informal')" class="outline-button pass"><a>Register</a></button></h1> -->
+        <!-- <h1 class="headline">{{informalData[informalIndex].name}}<button ng-click = "Register(informalData[informalIndex],informalData[0].poc[0].email,'/informal')" class="outline-button pass"><a>Register</a></button></h1> -->
+        <h3>{{informalData[informalIndex].subheading}}</h2>
+          <span ng-bind-html="informalData[informalIndex].description">
+
+          </span><br>
+          <h1>Rules</h1>
+          <span ng-bind-html="informalData[informalIndex].rules">
+          </span><br>
+          <h1>Prizes</h1>
+          <span ng-bind-html="informalData[informalIndex].prizes">
+          </span>
+          <br>
+          <h1>Date Time Venue</h1>
+
+          <div ng-repeat = "data in informalData[informalIndex].dtv" layout = "column">
+            <h3>{{data.type}}</h3>
+            <div class="" layout = "column" >
+              <span>Date: {{data.date}}</span><br>
+              <span>Start Time :{{data.start_time | date:'h:mma'}}</span><br>
+              <span>End Time: {{data.end_time | date:'h:mma'}}</span><br>
+              <span>Venue: {{data.venue}}</span>
+            </div>
+          </div>
+          <div class="" layout = "column">
+            <h3>Point of Contact</h3>
+            <span>{{informalData[informalIndex].poc[0].name}}</span><br>
+            <span>{{informalData[informalIndex].poc[0].designation}}</span><br>
+            <span>{{informalData[informalIndex].poc[0].email}}</span><br>
+            <span>{{informalData[informalIndex].poc[0].contact}}</span>
+          </div>
+
+
+        </div>
+  </div>
+  <div class="main-right" flex = "25" layout-align = "center center" hide-sm hide-xs >
+    <h1 class="center " md-whiteframe = "1">Informal</h1>
+    <ul class="tab-list">
+      <li  class="" ng-repeat = "x in informalData" ng-click = "tabDance($index)" >{{x.name}}</li>
+    </ul>
+  </div>
+
+
+<i class="ti-menu nav-icon"ng-init = "toggleLeft()" ng-click="toggleLeft()" hide-gt-sm></i>
+
+  <md-sidenav class="" md-component-id="left" md-whiteframe="4">
+    <div class="main-right" flex = "100" layout-align = "center center">
+      <h1 class="center " md-whiteframe = "1">Informal</h1>
+      <ul class="tab-list">
+        <li class=""  ng-repeat = "x in informalData" ng-click = "tabDance($index); toggleLeft()">{{x.name}}</li>
+      </ul>
+    </div>
+  </md-sidenav>
+
+
+</div>

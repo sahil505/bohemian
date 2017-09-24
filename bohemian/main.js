@@ -68,6 +68,15 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
   }).when("/coming", {
     controller: "MainCtrl",
     templateUrl: "templates/comingsoon.html"
+  }).when("/sports", {
+    controller: "SportsCtrl",
+    templateUrl: "templates/adventure_sports.html"
+  }).when("/professional", {
+    controller: "ProfessionalCtrl",
+    templateUrl: "templates/professional.html"
+  }).when("/informal", {
+    controller: "InformalCtrl",
+    templateUrl: "templates/informal.html"
   }).otherwise({
     controller: "MainCtrl",
     templateUrl: "templates/error.html"
