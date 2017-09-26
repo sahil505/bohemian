@@ -8,7 +8,7 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 
 @font-face {
-	font-family: 'codropsicons';
+	font-family: 'codropsicons' !important;
 	src:url('../fonts/codropsicons/codropsicons.eot');
 	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
 	url('../fonts/codropsicons/codropsicons.woff') format('woff'),
@@ -26,7 +26,7 @@ body, html { font-size: 100%; padding: 0; margin: 0;}
 .clearfix:after { clear: both; }
 
 body {
-	font-family: 'Lato', Calibri, Arial, sans-serif;
+	font-family: 'Lato', Calibri, Arial, sans-serif !important;
 	background-image: url("../../assets/img/workshops.png"), url("../../assets/img/feathers-2.png");
 	background-size: 40%, 90%;
 	background-position: -160px 0px, top right;
@@ -37,8 +37,8 @@ body {
 }
 
 a {
-	color: #888;
-	text-decoration: none;
+	color: #888 ;
+	text-decoration: none !important;
 }
 
 a:hover,
@@ -57,10 +57,10 @@ a:active {
 	margin-top: 10px;
 }
 
-.workshop-underliner {
+/*.workshop-underliner {
 	margin-top: -30px;
 	margin-bottom: 30px;
-}
+}*/
 
 .workshop-underliner img {
 	width: 10%;
