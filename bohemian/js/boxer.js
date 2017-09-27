@@ -53,7 +53,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -154,6 +154,192 @@ $scope.init = function(){
 
 });
 
+app.controller('SportsCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
+
+$scope.isDance = true;
+$rootScope.reg_modeEmail = false;
+$rootScope.reg_modeWebsite = false;
+$scope.sportsIndex = 0;
+// $rootScope.data_reg = [];
+if($rootScope.userDetails != null){
+  console.log("logged in");
+}
+else {
+  console.log("not logged in");
+}
+var sportsIndex = $scope.sportsIndex;
+
+console.log(sportsIndex);
+
+$scope.load = function(){
+  console.log("bro");
+
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/adventure_sports",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      $scope.sportsData = response.data.events;
+      $scope.data = $scope.sportsData;
+      // $scope.sportsImage = "background-image:url('')"$scope.sportsData[sportsIndex].photos[0];
+      var imageLink = $scope.sportsData[sportsIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
+
+  });
+
+
+};
+
+// $scope.init();
+
+$scope.refresh = function(){
+  // $window.location.reload();
+  var REGISTER_PATH;
+  console.log("reload called");
+}
+
+$scope.tabDance = function(a) {
+  // console.log(a);
+  // $scope.init();
+  $scope.sportsIndex = a;
+  var sportsIndex = a;
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/adventure_sports",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      // $scope.sportsData = response.data.events;
+      // $scope.sportsImage = "background-image:url('')"$scope.sportsData[sportsIndex].photos[0];
+      var imageLink = response.data.events[sportsIndex].photos[0];
+      console.log(sportsIndex);
+      $scope.imgLink = 'background-image:url('+imageLink+')';
+      console.log(imageLink);
+      console.log($scope.imgLink);
+
+  });
+  // $scope.imgLink = 'background-image:url('+imageLink+')';
+
+};
+
+$rootScope.showAdvanced = function(ev) {
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: '../templates/registeremail.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+  };
+
+
+  function DialogController($scope, $mdDialog) {
+
+    $rootScope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
+
+
+$rootScope.Register = function(data,email,path){
+  // console.log($rootScope.reg_path);
+  // console.log($window.localStorage.userFullDetails);
+if($window.localStorage.userFullDetails != null){
+
+console.log($rootScope.userDetails);
+$rootScope.reg_path = path;
+console.log(path);
+$rootScope.data_regemail = email;
+$rootScope.data_reg = data;
+console.log(data);
+  console.log(data.reg_mode);
+
+  if(data.reg_mode == "Email"){
+      $rootScope.showAdvanced();
+      console.log(data.reg_mode);
+      $rootScope.reg_modeEmail = true;
+      $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeLink = false;
+
+  }
+
+  else if (data.reg_mode == "Website") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = true;
+      $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = false;
+
+      // console.log(fullData);
+  }
+
+  else if (data.reg_mode == "External") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = true;
+
+  }
+
+}
+  else{
+    $rootScope.reg_path = path;
+    $location.path("/login");
+    $mdToast.show(
+      $mdToast.simple()
+      .textContent("Please Login First")
+      .position('top left')
+      .hideDelay(3000)
+    );
+  }
+
+};
+
+
+$rootScope.toggleLeft = buildToggler('left');
+    $rootScope.toggleRight = buildToggler('right');
+
+    function buildToggler(componentId) {
+      return function() {
+        $mdSidenav(componentId).toggle();
+      };
+    }
+
+
+
+  console.log("working left");
+
+
+
+
+
+
+
+
+
+
+});
+
 app.controller('ComedyCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
@@ -206,7 +392,7 @@ $scope.tabComedy = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -353,7 +539,7 @@ $scope.tabCulinary = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -528,7 +714,7 @@ $scope.tabDance = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -696,7 +882,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -844,7 +1030,7 @@ $scope.tabDramatics = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -999,7 +1185,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1150,7 +1336,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1301,7 +1487,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1661,6 +1847,192 @@ $scope.pronitesCarousel = [
 
 });
 
+app.controller('InformalCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
+
+$scope.isDance = true;
+$rootScope.reg_modeEmail = false;
+$rootScope.reg_modeWebsite = false;
+$scope.informalIndex = 0;
+// $rootScope.data_reg = [];
+if($rootScope.userDetails != null){
+  console.log("logged in");
+}
+else {
+  console.log("not logged in");
+}
+var informalIndex = $scope.informalIndex;
+
+console.log(informalIndex);
+
+$scope.load = function(){
+  console.log("bro");
+
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/informal",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      $scope.informalData = response.data.events;
+      $scope.data = $scope.informalData;
+      // $scope.informalImage = "background-image:url('')"$scope.informalData[informalIndex].photos[0];
+      var imageLink = $scope.informalData[informalIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
+
+  });
+
+
+};
+
+// $scope.init();
+
+$scope.refresh = function(){
+  // $window.location.reload();
+  var REGISTER_PATH;
+  console.log("reload called");
+}
+
+$scope.tabDance = function(a) {
+  // console.log(a);
+  // $scope.init();
+  $scope.informalIndex = a;
+  var informalIndex = a;
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/informal",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      // $scope.informalData = response.data.events;
+      // $scope.informalImage = "background-image:url('')"$scope.informalData[informalIndex].photos[0];
+      var imageLink = response.data.events[informalIndex].photos[0];
+      console.log(informalIndex);
+      $scope.imgLink = 'background-image:url('+imageLink+')';
+      console.log(imageLink);
+      console.log($scope.imgLink);
+
+  });
+  // $scope.imgLink = 'background-image:url('+imageLink+')';
+
+};
+
+$rootScope.showAdvanced = function(ev) {
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: '../templates/registeremail.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+  };
+
+
+  function DialogController($scope, $mdDialog) {
+
+    $rootScope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
+
+
+$rootScope.Register = function(data,email,path){
+  // console.log($rootScope.reg_path);
+  // console.log($window.localStorage.userFullDetails);
+if($window.localStorage.userFullDetails != null){
+
+console.log($rootScope.userDetails);
+$rootScope.reg_path = path;
+console.log(path);
+$rootScope.data_regemail = email;
+$rootScope.data_reg = data;
+console.log(data);
+  console.log(data.reg_mode);
+
+  if(data.reg_mode == "Email"){
+      $rootScope.showAdvanced();
+      console.log(data.reg_mode);
+      $rootScope.reg_modeEmail = true;
+      $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeLink = false;
+
+  }
+
+  else if (data.reg_mode == "Website") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = true;
+      $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = false;
+
+      // console.log(fullData);
+  }
+
+  else if (data.reg_mode == "External") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = true;
+
+  }
+
+}
+  else{
+    $rootScope.reg_path = path;
+    $location.path("/login");
+    $mdToast.show(
+      $mdToast.simple()
+      .textContent("Please Login First")
+      .position('top left')
+      .hideDelay(3000)
+    );
+  }
+
+};
+
+
+$rootScope.toggleLeft = buildToggler('left');
+    $rootScope.toggleRight = buildToggler('right');
+
+    function buildToggler(componentId) {
+      return function() {
+        $mdSidenav(componentId).toggle();
+      };
+    }
+
+
+
+  console.log("working left");
+
+
+
+
+
+
+
+
+
+
+});
+
 app.controller('LiteraryCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
@@ -1714,7 +2086,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1867,7 +2239,7 @@ $scope.init = function(){
     $rootScope.showAdvanced = function(ev) {
         $mdDialog.show({
           controller: DialogController,
-          templateUrl: 'templates/registeremail.html',
+          templateUrl: '../templates/registeremail.html',
           parent: angular.element(document.body),
           targetEvent: ev,
           clickOutsideToClose:true,
@@ -2019,7 +2391,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2170,7 +2542,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2268,6 +2640,192 @@ if($window.localStorage.userFullDetails != null){
 
 });
 
+app.controller('ProfessionalCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
+
+$scope.isDance = true;
+$rootScope.reg_modeEmail = false;
+$rootScope.reg_modeWebsite = false;
+$scope.professionalIndex = 0;
+// $rootScope.data_reg = [];
+if($rootScope.userDetails != null){
+  console.log("logged in");
+}
+else {
+  console.log("not logged in");
+}
+var professionalIndex = $scope.professionalIndex;
+
+console.log(professionalIndex);
+
+$scope.load = function(){
+  console.log("bro");
+
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/professional",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      $scope.professionalData = response.data.events;
+      $scope.data = $scope.professionalData;
+      // $scope.professionalImage = "background-image:url('')"$scope.professionalData[professionalIndex].photos[0];
+      var imageLink = $scope.professionalData[professionalIndex].photos[0];
+      $scope.imgLink = 'background-image:url('+imageLink+')';
+
+  });
+
+
+};
+
+// $scope.init();
+
+$scope.refresh = function(){
+  // $window.location.reload();
+  var REGISTER_PATH;
+  console.log("reload called");
+}
+
+$scope.tabDance = function(a) {
+  // console.log(a);
+  // $scope.init();
+  $scope.professionalIndex = a;
+  var professionalIndex = a;
+  $http({
+      method: "GET",
+      url: URL_PREFIX+"category-event/professional",
+      headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+          }
+  }).then(function (response) {
+      $scope.isDance = false;
+      // $scope.professionalData = response.data.events;
+      // $scope.professionalImage = "background-image:url('')"$scope.professionalData[professionalIndex].photos[0];
+      var imageLink = response.data.events[professionalIndex].photos[0];
+      console.log(professionalIndex);
+      $scope.imgLink = 'background-image:url('+imageLink+')';
+      console.log(imageLink);
+      console.log($scope.imgLink);
+
+  });
+  // $scope.imgLink = 'background-image:url('+imageLink+')';
+
+};
+
+$rootScope.showAdvanced = function(ev) {
+    $mdDialog.show({
+      controller: DialogController,
+      templateUrl: '../templates/registeremail.html',
+      parent: angular.element(document.body),
+      targetEvent: ev,
+      clickOutsideToClose:true,
+    })
+    .then(function(answer) {
+      $scope.status = 'You said the information was "' + answer + '".';
+
+
+
+    }, function() {
+      $scope.status = 'You cancelled the dialog.';
+    });
+  };
+
+
+  function DialogController($scope, $mdDialog) {
+
+    $rootScope.hide = function() {
+      $mdDialog.hide();
+    };
+
+    $scope.cancel = function() {
+      $mdDialog.cancel();
+    };
+
+    $scope.answer = function(answer) {
+      $mdDialog.hide(answer);
+    };
+  }
+
+
+$rootScope.Register = function(data,email,path){
+  // console.log($rootScope.reg_path);
+  // console.log($window.localStorage.userFullDetails);
+if($window.localStorage.userFullDetails != null){
+
+console.log($rootScope.userDetails);
+$rootScope.reg_path = path;
+console.log(path);
+$rootScope.data_regemail = email;
+$rootScope.data_reg = data;
+console.log(data);
+  console.log(data.reg_mode);
+
+  if(data.reg_mode == "Email"){
+      $rootScope.showAdvanced();
+      console.log(data.reg_mode);
+      $rootScope.reg_modeEmail = true;
+      $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeLink = false;
+
+  }
+
+  else if (data.reg_mode == "Website") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = true;
+      $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = false;
+
+      // console.log(fullData);
+  }
+
+  else if (data.reg_mode == "External") {
+    $rootScope.showAdvanced();
+      $rootScope.reg_modeWebsite = false;
+      $rootScope.reg_modeEmail = false;
+      $rootScope.reg_modeLink = true;
+
+  }
+
+}
+  else{
+    $rootScope.reg_path = path;
+    $location.path("/login");
+    $mdToast.show(
+      $mdToast.simple()
+      .textContent("Please Login First")
+      .position('top left')
+      .hideDelay(3000)
+    );
+  }
+
+};
+
+
+$rootScope.toggleLeft = buildToggler('left');
+    $rootScope.toggleRight = buildToggler('right');
+
+    function buildToggler(componentId) {
+      return function() {
+        $mdSidenav(componentId).toggle();
+      };
+    }
+
+
+
+  console.log("working left");
+
+
+
+
+
+
+
+
+
+
+});
+
 app.controller('QuizCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
@@ -2322,7 +2880,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2435,7 +2993,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/otpdialog.html',
+        templateUrl: '../templates/otpdialog.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,

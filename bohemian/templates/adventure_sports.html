@@ -1,0 +1,67 @@
+<div class="main-div" layout = "row" ng-controller = "SportsCtrl" ng-init="load()">
+  <div class="main-left" flex-gt-sm = "75" style={{imgLink}}>
+
+      <a href = "../"><img class = "rdv-tag" src="images/white-logo.png" alt="" hide-xs hide-sm ></a>
+
+      <div class="left-content ">
+      <span hide-gt-sm style=" padding-left: 47%; font-weight: bold;">More Events &nbsp; &#x27bc;</span>
+      <br><br>
+        <div class="overlay-left">
+
+        </div>
+        <!-- <h1 class="headline">{{sportsData[sportsIndex].name}}<button ng-show = sportsData[sportsIndex].reg_status ng-click = "Register(sportsData[sportsIndex],sportsData[sportsIndex].reg_email,'/sports')" class="outline-button pass"><a>Register</a></button></h1> -->
+        <!-- <h1 class="headline">{{sportsData[sportsIndex].name}}<button ng-click = "Register(sportsData[sportsIndex],sportsData[0].poc[0].email,'/sports')" class="outline-button pass"><a>Register</a></button></h1> -->
+        <h3>{{sportsData[sportsIndex].subheading}}</h2>
+          <span ng-bind-html="sportsData[sportsIndex].description">
+
+          </span><br>
+          <!-- <h1>Rules</h1>
+          <span ng-bind-html="sportsData[sportsIndex].rules">
+          </span><br> -->
+          <!-- <h1>Prizes</h1> -->
+          <!-- <span ng-bind-html="sportsData[sportsIndex].prizes"> -->
+          <!-- </span> -->
+          <!-- <br> -->
+          <h1>Date Time Venue</h1>
+
+          <div ng-repeat = "data in sportsData[sportsIndex].dtv" layout = "column">
+            <h3>{{data.type}}</h3>
+            <div class="" layout = "column" >
+              <span>Date: {{data.date}}</span><br>
+              <span>Start Time :{{data.start_time | date:'h:mma'}}</span><br>
+              <span>End Time: {{data.end_time | date:'h:mma'}}</span><br>
+              <span>Venue: {{data.venue}}</span>
+            </div>
+          </div>
+          <div class="" layout = "column">
+            <h3>Point of Contact</h3>
+            <span>{{sportsData[sportsIndex].poc[0].name}}</span><br>
+            <span>{{sportsData[sportsIndex].poc[0].designation}}</span><br>
+            <span>{{sportsData[sportsIndex].poc[0].email}}</span><br>
+            <span>{{sportsData[sportsIndex].poc[0].contact}}</span>
+          </div>
+
+
+        </div>
+  </div>
+  <div class="main-right" flex = "25" layout-align = "center center" hide-sm hide-xs >
+    <h1 class="center " md-whiteframe = "1">Adventure Games</h1>
+    <ul class="tab-list">
+      <li  class="" ng-repeat = "x in sportsData" ng-click = "tabDance($index)" >{{x.name}}</li>
+    </ul>
+  </div>
+
+
+<i class="ti-menu nav-icon"ng-init = "toggleLeft()" ng-click="toggleLeft()" hide-gt-sm></i>
+
+  <md-sidenav class="" md-component-id="left" md-whiteframe="4">
+    <div class="main-right" flex = "100" layout-align = "center center">
+      <h1 class="center " md-whiteframe = "1">Adventure Games</h1>
+      <ul class="tab-list">
+        <li class=""  ng-repeat = "x in sportsData" ng-click = "tabDance($index); toggleLeft()">{{x.name}}</li>
+      </ul>
+    </div>
+  </md-sidenav>
+
+
+</div>
