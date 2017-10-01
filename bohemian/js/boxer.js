@@ -1282,6 +1282,107 @@ $scope.init = function(){
 
 });
 
+app.controller('ForgotCtrl', function($scope,$http, $document,$timeout, $log,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
+
+
+  $scope.isSuccess = false;
+  $scope.isLoading = false;
+  $scope.isForgot = true;
+  // $scope.Forgot = function(user){
+  //   console.log("korku_msg");
+  //   $scope.isLoading = true;
+  //   $scope.isForgot = false;
+  //   $http({
+  //       method: "POST",
+  //       url: URL_PREFIX+"forgot",
+  //       headers: {
+  //         'Content-Type': 'application/json; charset=UTF-8',
+  //           }
+  //       data:{
+  //         "email":user.email
+  //       }
+  //   }).then(function sucessCallback(response) {
+  //     console.log(response);
+  //     $scope.msg = response.data.message
+  //     if (response.status===200){
+  //       console.log(response);
+  //
+  //       $scope.isSucess = true;
+  //       $scope.isLoading=false;
+  //       $mdToast.show(
+  //         $mdToast.simple()
+  //         .textContent(response.data.message)
+  //         .position('bottom right')
+  //         .hideDelay(3000)
+  //       );
+  //     }
+  //   }, function errorCallback(error) {
+  //     console.log(error);
+  //
+  //       $mdToast.show(
+  //         $mdToast.simple()
+  //         .textContent(error.data.message)
+  //         .position('bottom right')
+  //         .hideDelay(3000)
+  //       );
+  //
+  //   });
+  //
+  // };
+
+  $scope.Forgot=function (user) {
+    console.log(user);
+    console.log("korku_msg");
+      $scope.isLoading = true;
+      $scope.isForgot = false;
+
+      $http({
+        url: URL_PREFIX+"forgot",
+        method:"POST",
+        headers:{
+          'Content-Type': 'application/json; charset=UTF-8'
+        },
+        data:{
+          'email':user.email,
+
+        }
+      }).then(function sucessCallback(response) {
+        console.log(response);
+        $scope.isSuccess = true;
+        $scope.isLoading = false;
+        $scope.msg = response.data.message
+        if (response.status===200){
+          console.log(response);
+          // $location.path("/login");
+          $mdToast.show(
+            $mdToast.simple()
+            .textContent(response.data.message)
+            .position('bottom right')
+            .hideDelay(3000)
+          );
+        }
+      }, function errorCallback(error) {
+        console.log(error);
+
+          $mdToast.show(
+            $mdToast.simple()
+            .textContent(error.data.message)
+            .position('bottom right')
+            .hideDelay(3000)
+          );
+
+      });
+
+
+
+    };
+
+
+
+
+
+});
+
 app.controller('GlamourCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;

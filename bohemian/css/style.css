@@ -849,3 +849,8 @@
 .dialogdemoBasicUsage .dialog-demo-prerendered md-checkbox {
   margin-bottom: 0;
 }
+
+.pass-message {
+  color: #388E3C;
+  font-size: 2.5em;
+}

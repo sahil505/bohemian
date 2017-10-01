@@ -77,6 +77,9 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
   }).when("/informal", {
     controller: "InformalCtrl",
     templateUrl: "templates/informal.html"
+  }).when("/forgot", {
+    controller: "ForgotCtrl",
+    templateUrl: "templates/forgot.html"
   }).otherwise({
     controller: "MainCtrl",
     templateUrl: "templates/error.html"
