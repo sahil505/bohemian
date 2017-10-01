@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+
+	<title>Book Your Passes | Rendezvous'17</title>
+	<link rel="icon" href="../../assets/img/rdv-bruh.png" type="image/png">
+	<link rel="shortcut icon" href="../../assets/img/rdv-bruh.ico" type="img/x-icon">
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Nixie+One');
+	@import url('https://fonts.googleapis.com/css?family=Nunito');
+	@import url('https://fonts.googleapis.com/css?family=Architects+Daughter');
+	body {
+		background-image: url("../../assets/img/coming-soon.png");
+		background-size: cover;
+		text-align: center;
+	}
+	/* Main section */
+	.main-section{
+		/*height: 100vh;*/
+	}
+
+	.main-section.introduction {
+		
+	}
+
+	.coming-logo {
+		margin-top: 5vh;
+	}
+
+	@media screen and (min-width: 500px) {
+		/* applies only if the screen is more than 500px */
+		.cover-head {
+			color: #222222;
+			margin-top: 5vh;
+			text-shadow: 2px 2px 8px grey;
+		}
+
+		.cover-head i {
+			font: normal 112px/ 120px 'Nixie One', Helvetica, Arial;
+			letter-spacing: -2px;
+			/*font-weight: 700;*/
+			text-shadow: 0 0 30px #EC637B, 
+			0 0 10px rgba(230, 161, 173, 0.41), 
+			0 0 100px #E6A1AD, 
+			0 0 500px #F36780, 
+			5px 9px 5px rgba(0, 0, 0, 0.5);
+		}
+
+		.cover-head i.off {
+			color: rgba(46, 46, 46, 0.61);
+			text-shadow: 7px 7px 5px rgba(0, 0, 0, 0.5);
+		}
+
+	}
+
+	@media screen and (max-width: 500px) {
+		/* applies only if the screen is narrower than 500px */
+  /*.cover-head {
+    font-size: 72px;
+    color: #222222;
+    margin: 0 0 15px 0;
+    text-shadow: 2px 2px 8px grey;
+    }*/
+}
+</style>
+<!-- =======================================================
+Author: Sahil Khokhar
+Author URL: www.sahilkhokhar.com
+======================================================= -->
+</head>
+<body>
+	<!--main-section-start-->
+	<section class="main-section introduction" id="events">
+		<div class="coming-logo">
+			<a href="../../"><img src="../../assets/img/rdv-logo.png" height="250" width="150"></a>
+		</div>
+		<div class="container cover-neon">
+			<h1 class="cover-head">Coming Soon</h1>
+		</div>
+	</section>
+	<!--main-section-end-->
+
+	<script type="text/javascript">
+		var textHolder = document.getElementsByClassName("cover-head")[0],
+		text = textHolder.innerHTML,
+		chars = text.length,
+		newText = '',
+		i;
+		for (i = 0; i < chars; i += 1) {
+			newText += '<i>' + text.charAt(i) + '</i>';
+		}
+		textHolder.innerHTML = newText;
+		var letters = document.getElementsByTagName('i'),
+		flickers = [5, 7, 9, 11, 13, 15, 17],
+		randomLetter,
+		flickerNumber,
+		counter;
+		function randomFromInterval(from,to) {
+			return Math.floor(Math.random()*(to-from+1)+from);
+		}
+		function hasClass(element, cls) {
+			return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+		}
+		function flicker() {    
+			counter += 1;
+
+			if (counter === flickerNumber) {
+				return;
+			}
+			setTimeout(function () {
+				if(hasClass(randomLetter, 'off')) {
+					randomLetter.className = '';
+				}
+				else {
+					randomLetter.className = 'off';
+				}
+				flicker();
+			}, 30);
+		}
+		(function loop() {
+			var rand = randomFromInterval(300,700);
+			randomLetter = randomFromInterval(0, 18);
+			randomLetter = letters[randomLetter];
+
+			flickerNumber = randomFromInterval(0, 3);
+			flickerNumber = flickers[flickerNumber];
+			setTimeout(function() {
+				counter = 0;
+				flicker();
+				loop();  
+			}, rand);
+		}());
+	</script>
+	<!-- Created & Developed by Sahil Khokhar (sahilkhokhar.com) -->
+</body>
+</html>

@@ -18,88 +18,91 @@
         <md-input-container class="md-icon-float md-block " flex-gt-sm = "50">
           <label>Email</label>
           <md-icon>mail</md-icon>
-            <input required md-no-asterisk name="email" ng-model="user.email">
-            <div ng-messages="userForm.username.$error">
-              <div ng-message="required">This is required.</div>
-            </div>
-          </md-input-container>
-          <md-input-container class="md-icon-float md-block " flex-gt-sm = "50">
-            <label>First Name</label>
-            <md-icon>edit</md-icon>
-              <input required md-no-asterisk name="firstname" ng-model="user.firstname">
-              <div ng-messages="userForm.firstname.$error">
-                <div ng-message="required">This is required.</div>
-              </div>
-            </md-input-container>
-        </div>
+          <input required md-no-asterisk name="email" ng-model="user.email">
+          <div ng-messages="userForm.username.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block " flex-gt-sm = "50">
+          <label>First Name</label>
+          <md-icon>edit</md-icon>
+          <input required md-no-asterisk name="firstname" ng-model="user.firstname">
+          <div ng-messages="userForm.firstname.$error">
+            <div ng-message="required">This is required.</div>
+          </div>
+        </md-input-container>
+      </div>
 
-        <div class="" layout = "row" layout-xs = "column">
-            <md-input-container class="md-icon-float md-block " flex-gt-sm = "50">
-              <label>Last Name</label>
-              <md-icon>edits</md-icon>
-                <input required md-no-asterisk name="lastname" ng-model="user.lastname">
-                <div ng-messages="userForm.lastname.$error">
-                  <div ng-message="required">This is required.</div>
-                </div>
-              </md-input-container>
-            </md-input-container><md-input-container class="md-icon-float md-block " flex-gt-sm = "50">
-              <label>Gender</label>
-              <md-icon>person</md-icon>
-              <md-select required name="gender" ng-model="user.gender">
-                <md-option  value="Male">Male</md-option>
-                <md-option  value="Female">Female</md-option>
-              </md-select>
-              </md-input-container>
-        </div>
-        <div class="" layout = "row" layout-xs = "column">
-              <md-input-container class="md-icon-float md-block " flex-gt-sm = "50">
-                <label>College</label>
-                <md-icon>home</md-icon>
-                  <input md-maxlength="300" required md-no-asterisk name="college" ng-model="user.college">
-                  <div ng-messages="userForm.college.$error">
-                    <div ng-message="required">This is required.</div>
-                  </div>
-              </md-input-container>
-              <md-input-container class="md-icon-float md-block " flex-gt-sm = "50">
-                <label>Contact no</label>
-                <md-icon>phone</md-icon>
-                  <input required md-no-asterisk name="contact_number" ng-model="user.contact_number">
-                  <div ng-messages="userForm.contact_number.$error">
-                    <div ng-message="required">This is required.</div>
-                  </div>
-              </md-input-container>
-          </div>
       <div class="" layout = "row" layout-xs = "column">
-        <md-input-container class="md-icon-float md-block" flex-gt-sm = "50">
-          <label>Password</label>
-          <md-icon>vpn_key</md-icon>
-          <input required ng-model="user.password" md-no-asterisk type="password" name = "password">
-          <div ng-messages="userForm.password.$error" role="alert">
+        <md-input-container class="md-icon-float md-block " flex-gt-sm = "50">
+          <label>Last Name</label>
+          <md-icon>edits</md-icon>
+          <input required md-no-asterisk name="lastname" ng-model="user.lastname">
+          <div ng-messages="userForm.lastname.$error">
             <div ng-message="required">This is required.</div>
           </div>
         </md-input-container>
-        <md-input-container class="md-icon-float md-block" flex-gt-sm = "50">
-          <label>Confirm Password</label>
-          <md-icon>vpn_key</md-icon>
-          <input required ng-model="user.confirm_password" md-no-asterisk type="password" name = "confirm_password">
-          <div ng-messages="userForm.confirm_password.$error" role="alert">
-            <div ng-message="required">This is required.</div>
-          </div>
-        </md-input-container>
-      </div>
-      <div layout = "row" layout-align = "center center">
-        <md-input-container class="md-icon-float md-block " flex-gt-sm = "100">
-          <label>Referal Code</label>
-          <md-icon>code</md-icon>
-            <input md-maxlength="300"  md-no-asterisk name="referral_code" ng-model="user.referral_code">
-        </md-input-container>
-      </div>
-        <div layout = "row" layout-align = "center center">
-        <md-button value = "Submit valid inputs" ng-disabled="userForm.$invalid" class="md-raised md-primary" ng-click = "signUp(user)">Register</md-button>
+      </md-input-container><md-input-container class="md-icon-float md-block " flex-gt-sm = "50">
+        <label>Gender</label>
+        <md-icon>person</md-icon>
+        <md-select required name="gender" ng-model="user.gender">
+          <md-option  value="Male">Male</md-option>
+          <md-option  value="Female">Female</md-option>
+        </md-select>
+      </md-input-container>
+    </div>
+    <div class="" layout = "row" layout-xs = "column">
+      <md-input-container class="md-icon-float md-block " flex-gt-sm = "50">
+        <label>College</label>
+        <md-icon>home</md-icon>
+        <input md-maxlength="300" required md-no-asterisk name="college" ng-model="user.college">
+        <div ng-messages="userForm.college.$error">
+          <div ng-message="required">This is required.</div>
         </div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block " flex-gt-sm = "50">
+        <label>Contact no</label>
+        <md-icon>phone</md-icon>
+        <input required md-no-asterisk name="contact_number" ng-model="user.contact_number">
+        <div ng-messages="userForm.contact_number.$error">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+    <div class="" layout = "row" layout-xs = "column">
+      <md-input-container class="md-icon-float md-block" flex-gt-sm = "50">
+        <label>Password</label>
+        <md-icon>vpn_key</md-icon>
+        <input required ng-model="user.password" md-no-asterisk type="password" name = "password">
+        <div ng-messages="userForm.password.$error" role="alert">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+      <md-input-container class="md-icon-float md-block" flex-gt-sm = "50">
+        <label>Confirm Password</label>
+        <md-icon>vpn_key</md-icon>
+        <input required ng-model="user.confirm_password" md-no-asterisk type="password" name = "confirm_password">
+        <div ng-messages="userForm.confirm_password.$error" role="alert">
+          <div ng-message="required">This is required.</div>
+        </div>
+      </md-input-container>
+    </div>
+    <div layout = "row" layout-align = "center center">
+      <md-input-container class="md-icon-float md-block " flex-gt-sm = "100">
+        <label>Referal Code (Not Mandatory)</label>
+        <md-icon>code</md-icon>
+        <input md-maxlength="300"  md-no-asterisk name="referral_code" ng-model="user.referral_code">
+      </md-input-container>
+    </div>
+    <div layout = "row" layout-align = "center center">
+      <md-button value = "Submit valid inputs" ng-disabled="userForm.$invalid" class="md-raised md-primary" ng-click = "signUp(user)">Register</md-button>
+    </div>
+    <div layout = "row" layout-align = "center center">
+     <p>Facing any technical difficulty? Drop an Email at: <b>technical@rdv-iitd.com</b></p>
+   </div>
         <!-- <div layout="row" layout-sm="column" layout-align="space-around" >
            <md-progress-circular ng-show = "isLoading" md-mode="indeterminate"></md-progress-circular>
-        </div> -->
+         </div> -->
         <!-- <div class="signup-link" layout = "row" layout-align="center center">
           <a ng-href="#!/login">
             <span>Already have an account?</span>
@@ -108,12 +111,12 @@
         </div> -->
 
         <div layout="row" layout-sm="column" layout-align="center center" >
-            <md-progress-linear  ng-show = "isRegister" md-mode="indeterminate"></md-progress-linear>
+          <md-progress-linear  ng-show = "isRegister" md-mode="indeterminate"></md-progress-linear>
         </div>
-    </form>
+      </form>
+
+
+    </div>
 
 
   </div>
-
-
-</div>
