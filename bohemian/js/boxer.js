@@ -3129,7 +3129,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
 
       if(user.password == user.confirm_password){
         console.log(user);
-        $rootScope.showAdvanced();
+        // $rootScope.showAdvanced();
 
       $http({
         url:URL_PREFIX+"register/",
@@ -3163,12 +3163,23 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
       }, function errorCallback(error) {
         console.log(error);
 
+        if(error.data.message == "Email Verification Required"){
+          $rootScope.showAdvanced();
           $mdToast.show(
             $mdToast.simple()
             .textContent(error.data.message)
             .position('bottom right')
             .hideDelay(3000)
           );
+        }
+        else{
+          $mdToast.show(
+            $mdToast.simple()
+            .textContent("Internal Server Error! Please check the info")
+            .position('bottom right')
+            .hideDelay(3000)
+          );
+        }
 
       });
     }
