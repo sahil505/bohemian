@@ -3175,7 +3175,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
         else{
           $mdToast.show(
             $mdToast.simple()
-            .textContent("Internal Server Error! Please check the info")
+            .textContent(error.data.message)
             .position('bottom right')
             .hideDelay(3000)
           );
