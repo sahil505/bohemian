@@ -3194,6 +3194,12 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
     }
     };
 
+
+    var preuser1 = $rootScope.preuser;
+    // console.log(preuser1);
+    // console.log("preuser1");
+    $scope.user_test = preuser1;
+
   $scope.submitOtp = function(user){
     $scope.isRegister = true;
     var preuser = $rootScope.preuser;
