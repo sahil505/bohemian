@@ -854,3 +854,25 @@
   color: #388E3C;
   font-size: 2.5em;
 }
+
+.book-pass .book-headline h1, .book-pass .book-headline h2 {
+  font-family: "Montserrat", sans-serif;
+}
+.book-pass .book-grid .book-message {
+  font-family: "Montserrat", sans-serif;
+}
+.book-pass .book-grid .book-col {
+  padding: 10px;
+  position: relative;
+}
+.book-pass .book-grid .book-col .book-btn {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+.book-pass .book-grid .book-col .book-btn .md-primary {
+  margin: 0 auto;
+}
+.book-pass .book-grid .book-col .book-btn .prof-select {
+  margin: 0 auto;
+}

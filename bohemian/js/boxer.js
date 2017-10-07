@@ -53,7 +53,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -230,7 +230,7 @@ $scope.tabDance = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -340,6 +340,192 @@ $rootScope.toggleLeft = buildToggler('left');
 
 });
 
+app.controller('BookCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
+
+// console.log("book karo. Khush raho");
+
+$scope.showBooking = true;
+var startTime = new Date("2017-10-07 9:00 AM +530");
+var endTime = new Date("2017-10-07 11:00 AM +530");
+var currTime  = new Date();
+
+if(currTime >endTime){
+  $scope.showBooking = false;
+}
+// var startDate = new DateTime
+if($window.localStorage.userFullDetails){
+  $scope.userDetails = JSON.parse($window.localStorage.userFullDetails);
+  $scope.showName = true;
+  // $scope.showName2 = false;
+}
+
+var query_params = $location.search();
+// console.log(query);
+$scope.beforeBook = true;
+$scope.isProf = false;
+$scope.isLoading = false;
+
+var PROF = "IIT Delhi Staff";
+
+$scope.checkProf = function(){
+  if(query_params.token){
+    // console.log(user);
+    $http({
+      url:URL_PREFIX+"login/",
+      method:"POST",
+      headers:{
+        'Content-Type': 'application/json; charset=UTF-8'
+      },
+      data:{
+        'token':query_params.token
+      }
+    }).then(function sucessCallback(response) {
+      console.log(response);
+      $scope.profData = response.data;
+      if(response.data.user.college == PROF){
+        $scope.isProf = true;
+      }
+    }, function errorCallback(error) {
+      console.log(error);
+
+    });
+    }
+
+
+}
+
+$scope.checkLogin = function(path){
+  if($window.localStorage.userFullDetails == null && query_params.token ==null){
+      $rootScope.reg_path = path;
+      $location.path("/login");
+      $mdToast.show(
+        $mdToast.simple()
+        .textContent("Please Login First")
+        .position('top left')
+        .hideDelay(3000)
+      );
+  }
+}
+
+
+$scope.pronites = [
+              {
+                "title":"Dhoom",
+                "api":"api1",
+                "key":"dhoom",
+                "msg":""
+              },
+              {
+                "title":"Spectrum",
+                "api":"api2",
+                "key":"spectrum",
+                "msg":""
+              },
+              {
+                "title":"Melange",
+                "api":"api3",
+                "key":"melange",
+                "msg":""
+              },
+              {
+                "title":"Kaleidoscope",
+                "api":"api4",
+                "key":"kaleidoscope",
+                "msg":""
+              }
+];
+
+
+
+$scope.bookPass = function(data,prof,path){
+
+    $scope.isLoading = true;
+    $scope.beforeBook = false;
+    console.log($scope.userDetails);
+    var params = {};
+    $rootScope.reg_path = path;
+    $rootScope.data_reg = data;
+    if($scope.isProf){
+      console.log("is prof");
+      console.log(prof);
+      if(prof !=undefined){
+        console.log("no num");
+        params['num_passes'] = prof.no;
+        params['rdv_number'] = $scope.profData.user.rdv_number;
+        params['pronite'] = data.key;
+      }
+      else{
+        $mdToast.show(
+          $mdToast.simple()
+          .textContent('Please select the no of passes')
+          .position('bottom right')
+          .hideDelay(3000)
+        );
+      }
+
+    }
+    else{
+        console.log("not prof");
+        params['rdv_number'] = $scope.userDetails.rdv_number;
+        params['pronite'] = data.key;
+      }
+
+      console.log("params");
+      console.log(params);
+      $http.get(URL_PREFIX+"pronite/book/", {
+          params:params,
+          headers: {
+            'Content-Type': 'application/json; charset=UTF-8',
+          }
+      }).then(function (response) {
+         console.log(response);
+         $scope.isLoading = false;
+         $scope.errorBook = false;
+
+
+         if(params.pronite == "kaleidoscope"){
+           $scope.pronites[3].msg = response.data;
+         }
+         else if(params.pronite == "melange"){
+           $scope.pronites[2].msg = response.data;
+         }
+         else if(params.pronite == "spectrum"){
+           $scope.pronites[1].msg = response.data;
+         }
+         else if(params.pronite == "dhoom"){
+           $scope.pronites[0].msg = response.data;
+         }
+      }, function errorCallback(error) {
+        console.log(error);
+        $scope.isLoading = false;
+        $scope.errorBook = true;
+        if(params.pronite == "kaleidoscope"){
+          $scope.pronites[3].msg = error.data.message;
+        }
+        else if(params.pronite == "melange"){
+          $scope.pronites[2].msg = error.data.message;
+        }
+        else if(params.pronite == "spectrum"){
+          $scope.pronites[1].msg = error.data.message;
+        }
+        else if(params.pronite == "dhoom"){
+          $scope.pronites[0].msg = error.data.message;
+        }
+
+      });
+
+
+
+  }
+
+
+
+
+
+
+
+});
+
 app.controller('ComedyCtrl', function($scope,$http, $document,$timeout, $log, Auth,$location,$mdToast,$rootScope,$mdDialog,$mdSidenav,$window) {
 
 $scope.isDance = true;
@@ -392,7 +578,7 @@ $scope.tabComedy = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -539,7 +725,7 @@ $scope.tabCulinary = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -714,7 +900,7 @@ $scope.tabDance = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -882,7 +1068,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1030,7 +1216,7 @@ $scope.tabDramatics = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -1185,7 +1371,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1437,7 +1623,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -1588,7 +1774,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2024,7 +2210,7 @@ $scope.tabDance = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -2187,7 +2373,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2340,7 +2526,7 @@ $scope.init = function(){
     $rootScope.showAdvanced = function(ev) {
         $mdDialog.show({
           controller: DialogController,
-          templateUrl: 'templates/registeremail.html',
+          templateUrl: '../templates/registeremail.html',
           parent: angular.element(document.body),
           targetEvent: ev,
           clickOutsideToClose:true,
@@ -2492,7 +2678,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2643,7 +2829,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -2817,7 +3003,7 @@ $scope.tabDance = function(a) {
 $rootScope.showAdvanced = function(ev) {
     $mdDialog.show({
       controller: DialogController,
-      templateUrl: 'templates/registeremail.html',
+      templateUrl: '../templates/registeremail.html',
       parent: angular.element(document.body),
       targetEvent: ev,
       clickOutsideToClose:true,
@@ -2981,7 +3167,7 @@ $scope.init = function(){
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/registeremail.html',
+        templateUrl: '../templates/registeremail.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -3083,6 +3269,9 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
 
   // console.log(md5.createHash("korkudeepak@gmail.com"));
   // console.log("hashing works");
+  // $scope.preuser1 = {};
+  console.log($rootScope.preuser);
+
   $scope.userDetails = Auth.getuserFullDetails();
 
   $rootScope.isPath= function(viewLocation) {
@@ -3094,7 +3283,7 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
   $rootScope.showAdvanced = function(ev) {
       $mdDialog.show({
         controller: DialogController,
-        templateUrl: 'templates/otpdialog.html',
+        templateUrl: '../templates/otpdialog.html',
         parent: angular.element(document.body),
         targetEvent: ev,
         clickOutsideToClose:true,
@@ -3126,10 +3315,12 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
     }
   $scope.signUp=function (user) {
     $rootScope.preuser = user;
-
+    $scope.new = $rootScope.preuser;
+    console.log($rootScope.preuser);
+    console.log($scope.new);
       if(user.password == user.confirm_password){
-        console.log(user);
-        // $rootScope.showAdvanced();
+        // console.log(user);
+
 
       $http({
         url:URL_PREFIX+"register/",
@@ -3175,11 +3366,12 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
         else{
           $mdToast.show(
             $mdToast.simple()
-            .textContent(error.data.message)
+            .textContent("Internal Server Error! Please check the info")
             .position('bottom right')
             .hideDelay(3000)
           );
         }
+
 
       });
     }
@@ -3194,12 +3386,10 @@ app.controller('RegisterCtrl', function($scope, $document,$timeout, $log,$mdToas
     }
     };
 
-
-    var preuser1 = $rootScope.preuser;
-    // console.log(preuser1);
-    // console.log("preuser1");
-    $scope.user_test = preuser1;
-
+  var preuser1 = $rootScope.preuser;
+  // console.log(preuser1);
+  // console.log("preuser1");
+  $scope.user_test = preuser1;
   $scope.submitOtp = function(user){
     $scope.isRegister = true;
     var preuser = $rootScope.preuser;

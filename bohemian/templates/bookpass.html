@@ -1,0 +1,34 @@
+<div class="book-pass" ng-controller="BookCtrl" ng-init="checkProf(); checkLogin('/book')">
+
+<div class="book-headline" layout="column" layout-align="center center">
+  <h1>Book your passes here!</h1>
+  <h2 ng-show="showName">Welcome {{userDetails.first_name}} {{userDetails.last_name}}</h2>
+  <h2 ng-show="isProf">Welcome {{profData.user.first_name}} {{userDetails.first_name}}</h2>
+  <h2 ng-show="!showBooking">Booking Period is Over!</h2>
+
+</div>
+<div layout="row" layout-sm="column" layout-align="space-around" >
+   <md-progress-circular ng-show = "isLoading" md-mode="indeterminate"></md-progress-circular>
+</div>
+<div class="container events-grid book-grid " layout = "row" layout-wrap layout-xs = "column" layout-align = "center center" ng-show="showBooking">
+
+    <div md-whiteframe = "1" class="center book-col events-col" flex-gt-sm = "33"  ng-repeat = "data in pronites" layout = "center center">
+      <div class="book-btn center" layout="column">
+        <md-input-container class=" prof-select" ng-show="isProf">
+          <label>No of Passes</label>
+          <md-icon>no</md-icon>
+          <md-select required name="no" ng-model="prof.no">
+            <md-option  value="1">1</md-option>
+            <md-option  value="2">2</md-option>
+            <md-option  value="3">3</md-option>
+            <md-option  value="4">4</md-option>
+          </md-select>
+          </md-input-container>
+            <h3 class="book-message">{{data.msg}}</h2>
+        <md-button class="md-raised md-primary " ng-click="bookPass(data,prof,'/book')">Book Pass</md-button>
+      </div>
+
+        <h1>{{data.title}}</h1>
+
+    </div>
+</div>
