@@ -26,7 +26,21 @@ function showhide(id)
 }
 
 
+var IIT_STD = "iitd.ac.in";
 
+function checkStd(){
+  splitemail = userFullDetails.user.college.split("@")[1];
+  if(val==splitemail){
+    show("passes-grid");
+  }
+  else{
+    hide("passes-grid");
+    getById("error-msgstatus").innerHTML = "Booking Period is closed";
+  }
+}
+
+
+var isBooking;
 function proniteConfirm(key,startTime, endTime,id,closeId){
   if(currTime >endTime){
     hide(id);
@@ -57,9 +71,22 @@ function proniteBook(key,startTime, endTime,id,closeId){
   if(currTime >endTime){
     hide(id);
     getById(closeId).innerHTML ="Booking is Closed";
+    isBooking = false;
+  }
+  else{
+    isBooking = true;
   }
 }
 
+
+  function checkDownload(id){
+    if(userFullDetails && userFullDetails.user.college == PROF){
+      show(id);
+    }
+    else{
+      hide(id);
+    }
+  }
 
 
 var query_token = getQueryStringValue("token");
@@ -232,10 +259,20 @@ function isConfirm(data){
   }
 }
 
-function disableDownload(data,id){
-  if(data && data.substring(0,6) == "Booked" && data.substring(0,9) !="Confirmed"){
-    getById(id).disabled = true;
+function downloadBtn(data,id){
+  if(userFullDetails && userFullDetails.user.college == PROF){
+    getById(id).style.display = 'Visible';
+
+    if(data && data.substring(0,6) == "Booked" && data.substring(0,9) !="Confirmed"){
+      getById(id).disabled = true;
+    }
   }
+  else{
+    if(data && data.substring(0,6) == "Booked" && data.substring(0,9) !="Confirmed"){
+      getById(id).disabled = true;
+    }
+  }
+
 }
 
 
@@ -249,15 +286,15 @@ function updateType(id){
   }
 }
 function updateStatus(){
-  proniteBook("dhoom",startTime,endTime,"book-btn1","closed-booking1");
-  proniteBook("melange",startTime,endTime,"book-btn2","closed-booking2");
-  proniteBook("spectrum",startTime,endTime,"book-btn3","closed-booking3");
-  proniteBook("kaleidoscope",startTime,endTime,"book-btn4","closed-booking4");
+  // proniteBook("dhoom",startTime,endTime,"book-btn1","closed-booking1");
+  // proniteBook("melange",startTime,endTime,"book-btn2","closed-booking2");
+  // proniteBook("spectrum",startTime,endTime,"book-btn3","closed-booking3");
+  // proniteBook("kaleidoscope",startTime,endTime,"book-btn4","closed-booking4");
 
-  // proniteConfirm("dhoom",startTime1,endTime1,"confirm-btn1","closed-booking1");
-  // proniteConfirm("melange",startTime1,endTime1,"confirm-btn2","closed-booking2");
-  // proniteConfirm("spectrum",startTime1,endTime1,"confirm-btn3","closed-booking3");
-  // proniteConfirm("kaleidoscope",startTime1,endTime1,"confirm-btn4","closed-booking4");
+  proniteConfirm("dhoom",startTime1,endTime1,"confirm-btn1","closed-booking1");
+  proniteConfirm("melange",startTime1,endTime1,"confirm-btn2","closed-booking2");
+  proniteConfirm("spectrum",startTime1,endTime1,"confirm-btn3","closed-booking3");
+  proniteConfirm("kaleidoscope",startTime1,endTime1,"confirm-btn4","closed-booking4");
 
   disableBtn1(userFullDetails.user.dhoom,"status-msg1","book-btn1","dhoom");
   disableBtn1(userFullDetails.user.melange,"status-msg2","book-btn2","melange");
@@ -273,6 +310,10 @@ function updateStatus(){
   // disableDownload(userFullDetails.user.melange,,'download-melange');
   // disableDownload(userFullDetails.user.spectrum,,"download-spectrum");
   // disableDownload(userFullDetails.user.kaleidoscope,,"download-kaleidoscope");
+  checkDownload("download-dhoom");
+  checkDownload("download-melange");
+  checkDownload("download-spectrum");
+  checkDownload("download-kaleidoscope");
 
   updateType("num-prof1");
   updateType("num-prof2");
