@@ -30,7 +30,7 @@ function showhide(id)
 function proniteConfirm(key,startTime, endTime,id,closeId){
   if(currTime >endTime){
     hide(id);
-    getById(closeId).innerHTML ="Confirmation Period is over";
+    // getById(closeId).innerHTML ="Confirmation Period is over";
   }
 }
 
