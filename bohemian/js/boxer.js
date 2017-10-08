@@ -345,8 +345,8 @@ app.controller('BookCtrl', function($scope,$http, $document,$timeout, $log, Auth
 // console.log("book karo. Khush raho");
 
 $scope.showBooking = true;
-var startTime = new Date("2017-10-07 9:00 AM +530");
-var endTime = new Date("2017-10-07 11:00 AM +530");
+var startTime = new Date("2017-10-08 9:00 AM +530");
+var endTime = new Date("2017-10-08 11:00 PM +530");
 var currTime  = new Date();
 
 if(currTime >endTime){
