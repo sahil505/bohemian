@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Book Passes</title>
+    <link rel="stylesheet" href="main.css">
+
+  </head>
+  <body>
+
+  <div class="main-headline" >
+    <h1>Book your passes here!</h1>
+    <h2 id = "welcome"></h2>
+    <h3 id = "error-msg"></h3>
+  </div>
+
+  <div class="passes-grid container valign-wrapper">
+    <div class="pass-col test center">
+      <h1 class="">Dhoom</h1>
+      <div class="book-btn">
+        <h3 id="status-msg1"></h3>
+        <h3 id="closed-booking1"></h3>
+        <div id="num-prof1" >
+          <label for="">No of Passes</label><br>
+          <select name="num_pass" id="prof-dropdown1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select><br><br>
+        </div>
+
+        <button type="button" name="button" class="" id="book-btn1" onclick="bookPass('prof-dropdown1','dhoom')">Book Pass</button>
+        <button type="button" name="button" class="" id="confirm-btn1" onclick="confirmPass('dhoom','download-dhoom')">Confirm Pass</button>
+        <button type="button" name="button" class="" id="download-dhoom" onclick="downloadPass('dhoom')">Download Pass</button>
+      </div>
+
+    </div>
+    <div class="pass-col center test">
+      <h1>Melange</h1>
+      <div class="book-btn">
+        <h3 id="status-msg2"></h3>
+        <h3 id="closed-booking2"></h3>
+        <div id="num-prof2" >
+          <label for="">No of Passes</label><br>
+          <select name="num_pass" id="prof-dropdown2">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select><br><br>
+        </div>
+
+        <button type="button" name="button" class=""  id="book-btn2" onclick="bookPass('prof-dropdown2','melange')">Book Pass</button>
+        <button type="button" name="button" class="" id="confirm-btn2" onclick="confirmPass('melange','download-melange')">Confirm Pass</button>
+        <button type="button" name="button" class="" id="download-melange" onclick="downloadPass('melange')">Download Pass</button>
+      </div>
+    </div>
+    <div class="pass-col center test">
+      <h1>Spectrum</h1>
+      <div class="book-btn">
+        <h3 id="status-msg3"></h3>
+        <h3 id="closed-booking3"></h3>
+        <div id="num-prof3">
+          <label for="">No of Passes</label><br>
+          <select name="num_pass" id="prof-dropdown3">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select><br><br>
+        </div>
+        <button type="button" name="button" class=""  id="book-btn3" onclick="bookPass('prof-dropdown3','spectrum')">Book Pass</button>
+        <button type="button" name="button" class="" id="confirm-btn3" onclick="confirmPass('spectrum','download-spectrum')">Confirm Pass</button>
+        <button type="button" name="button" class="" id="download-spectrum" onclick="downloadPass('spectrum')">Download Pass</button>
+      </div>
+    </div>
+    <div class="pass-col center test">
+      <h1>Kaleidoscope</h1>
+      <div class="book-btn">
+        <h3 id="status-msg4"></h3>
+        <h3 id="closed-booking4"></h3>
+        <div id="num-prof4" >
+          <label for="">No of Passes</label><br>
+          <select name="num_pass" id="prof-dropdown4">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select><br><br>
+        </div>
+
+        <button type="button" name="button" class="" id="book-btn4" onclick="bookPass('prof-dropdown4','kaleidoscope')">Book Pass</button>
+        <button type="button" name="button" class="" id="confirm-btn4" onclick="confirmPass('kaleidoscope','download-kaleidoscope')">Confirm Pass</button>
+        <button type="button" name="button" class="" id="download-kaleidoscope" onclick="downloadPass('kaleidoscope')">Download Pass</button>
+      </div>
+    </div>
+  </div>
+
+<div class="" id="demo">
+
+</div>
+
+
+
+  <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
