@@ -1,13 +1,15 @@
-
 body{
   background-color: #ECEFF1;
 }
+
 .center-margin{
   margin: 0 auto;
 }
+
 .not-visible {
-       			visibility: hidden;
+  visibility: hidden;
 }
+
 .valign-wrapper {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -31,48 +33,56 @@ body{
     padding-left: 15px;
   }
 }
+
 @media (min-width: 768px) {
   .container {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
+
 @media (min-width: 992px) {
   .container {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
+
 @media (min-width: 576px) {
   .container {
     width: 540px;
     max-width: 100%;
   }
 }
+
 @media (min-width: 768px) {
   .container {
     width: 720px;
     max-width: 100%;
   }
 }
+
 @media (min-width: 992px) {
   .container {
     width: 960px;
     max-width: 100%;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
     width: 1140px;
     max-width: 100%;
   }
 }
+
 @media only screen and (max-width: 992px) {
   .hide-on-med-and-down {
     display: none !important;
@@ -86,7 +96,9 @@ body{
 .test{
   border: 1px solid red;
 }
+
 .main-headline{
+  margin-top: 24px;
   width: 100%;
   text-align: center;
 }
@@ -107,28 +119,38 @@ body{
   height: 80%;
   margin: 10px;
   position: relative;
-  border: 1px solid #90A4AE;
-  background-color: #ffffff;
+  border: 1px solid #78909C;
+  border-radius: 5px;
+  background-color: #f2f2f2;
 }
 
 .pass-col .book-btn{
   position: absolute;
   bottom: 10px;
   width: 100%;
-
 }
+
 .pass-col .book-btn button{
   margin: auto;
   height: 40px;
   width: 200px;
   font-size: 1em;
   cursor: pointer;
+  margin: 5px;
+  background-color: #4CAF50;
+  color: white;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+}
+
+.pass-col .book-btn button:hover{
+  background-color: #45a049;
 }
 
 .pass-col .book-btn select{
   width: 50%;
 }
-
 
 .login-div{
   height: 70vh;
@@ -140,17 +162,84 @@ body{
   margin: 0 auto;
   border: 1px solid #78909C;
   padding: 30px 10px;
-  background-color: #fff;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
+
 .login-div .login-form input{
-  height: 25px;
   margin: 5px;
   width: 300px;
-  border: 1px solid #78909C;
-  
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
+
+.book-btn select {
+  margin: 5px;
+  width: 300px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; 
+}
+
 .login-div .login-form button{
   height: 30px;
   margin: 5px;
   width: 150px;
+  background-color: #4CAF50;
+  color: white;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-div .login-form button:hover{
+  background-color: #45a049;
+}
+
+.login-div .login-form label{
+  display: block;
+  text-align: left;
+}
+
+.log-heading {
+  text-align: center;
+}
+
+#melange-head {
+  color: #2980B9;
+}
+
+#dhoom-head {
+  color: #E74C3C;
+}
+
+#kaleido-head {
+  color:#588d86;
+}
+
+#spectrum-head {
+  color: #7D3C98;
+}
+
+.pass-heading {
+  font-size: 40px;
+  color: grey;
+  font-family: verdana;
+}
+
+#closed-booking1, #closed-booking2, #closed-booking3, #closed-booking4, #error-msg {
+  color: #cc0000;
+}
+
+#welcome {
+  color:#1F618D;
 }
