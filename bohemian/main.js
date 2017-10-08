@@ -80,6 +80,9 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
   }).when("/forgot", {
     controller: "ForgotCtrl",
     templateUrl: "templates/forgot.html"
+  }).when("/book", {
+    controller: "BookCtrl",
+    templateUrl: "templates/bookpass.html"
   }).otherwise({
     controller: "MainCtrl",
     templateUrl: "templates/error.html"
