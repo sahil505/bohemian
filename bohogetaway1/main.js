@@ -8,11 +8,11 @@ function getById(a){
 }
 
 function show(id){
-  getById(id).style.display = 'Visible';
+  getById(id).style.display = 'visible';
 }
 
 function hide(id){
-  getById(id).style.display = 'None';
+  getById(id).style.display = 'none';
 }
 
 function showDownload(key,id,data){

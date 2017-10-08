@@ -19,7 +19,7 @@ function userLogin(){
           if (this.readyState == 4 && this.status == 200) {
               var userData = JSON.parse(this.responseText);
               // console.log(userData);
-              localStorage.setItem("userFullDetails", JSON.stringify(userData));
+              localStorage.setItem("token", JSON.stringify(userData.token));
               window.location.href= "/";
          }
          else{
