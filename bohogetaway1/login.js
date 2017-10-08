@@ -18,13 +18,11 @@ function userLogin(){
       xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
               var userData = JSON.parse(this.responseText);
-              // console.log(userData);
               localStorage.setItem("token", JSON.stringify(userData.token));
               window.location.href= "/";
          }
          else{
            document.getElementById("login-error").innerHTML = JSON.parse(this.responseText).message;
-
          }
       };
       xhttp.open("POST", "http://rdv-iitd.com/api/login/", true);

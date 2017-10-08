@@ -127,9 +127,6 @@ if(!query_token && !userFullDetails){
   console.log("login please!");
 }
 
-// console.log(getDetails());
-
-
 function bookPass(dropdown ,key){
 
   // showhide("loader");
