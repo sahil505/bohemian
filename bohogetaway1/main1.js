@@ -55,7 +55,7 @@ function proniteConfirm(key,startTime, endTime,id,closeId){
 }
 
 function disableBtn1(data,id1,id2,key){
-  if(data && data.substring(0,6) == "Booked" && data.substring(0,9) !="Confirmed"){
+  if(!checkIfProf() && data && (data.substring(0,6) == "Booked" || data.substring(0,9) =="Confirmed")){
     getById(id1).innerHTML = data;
     disableBtn(id2);
   }
