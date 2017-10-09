@@ -62,6 +62,7 @@ function disableBtn1(data,id1,id2,key){
   else if(checkIfProf() && data && data.substring(0,9) == "Confirmed"){
       getById(id1).innerHTML = data;
       disableBtn(id2);
+      hideBtn("prof-dropdown"+dropdown[dropdown.length-1])
   }
 }
 
@@ -204,7 +205,7 @@ function bookPass(dropdown ,key){
      }
      else{
        getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
-          // enableBtn("book-btn"+dropdown[dropdown.length-1]);
+       enableBtn("book-btn"+dropdown[dropdown.length-1]);
      }
   };
   if(checkIfProf()){
