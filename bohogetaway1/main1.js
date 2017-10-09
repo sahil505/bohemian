@@ -318,6 +318,14 @@ function updateType(id){
   }
 }
 
+function logout() {
+    if(checkIfProf()){
+        window.location = "http://brca.iitd.ac.in/rdv-reg";
+    }
+    else
+        window.location = "login.html";
+}
+
 function checksTimeStudent() {
     return (currTime>=startTime_s1 && currTime<=endTime_s1) ||
         (currTime>=startTime_s2 && currTime<=endTime_s2) ||
