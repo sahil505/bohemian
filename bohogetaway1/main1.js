@@ -62,7 +62,7 @@ function disableBtn1(data,id1,id2,key){
   else if(checkIfProf() && data && data.substring(0,9) == "Confirmed"){
       getById(id1).innerHTML = data;
       disableBtn(id2);
-      hideBtn("prof-dropdown"+dropdown[dropdown.length-1])
+      hideBtn("prof-dropdown"+id2[id2.length-1])
   }
 }
 
@@ -145,6 +145,7 @@ function checkProf() {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             userFullDetails = JSON.parse(this.responseText);
+            getById('profile').innerHTML = "Welcome "+userFullDetails.user.first_name+" "+userFullDetails.user.last_name+" - "+userFullDetails.user.rdv_number;
             localStorage.setItem("token", JSON.stringify(userFullDetails.token));
        }
     };
@@ -160,6 +161,7 @@ function getDetails(){
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           userFullDetails = JSON.parse(this.responseText);
+          getById('profile').innerHTML = "Welcome "+userFullDetails.user.first_name+" "+userFullDetails.user.last_name+" - "+userFullDetails.user.rdv_number;
           localStorage.setItem("token", JSON.stringify(userFullDetails.token));
      }
   };
