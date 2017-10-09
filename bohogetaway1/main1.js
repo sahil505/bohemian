@@ -68,7 +68,7 @@ function disableBtn1(data,id1,id2,key){
 function disableBtn2(data,id1,id2,key){
   if(data && data.substring(0,9) == "Confirmed" && data.substring(0,6) !="Booked"){
     getById(id1).innerHTML = data;
-      disableBtn(id2);
+      hideBtn(id2);
       console.log(id2);
   }
 }
@@ -109,8 +109,8 @@ function proniteBook(key,startTime, endTime,id,closeId){
 }
 
 
-  function checkDownload(id){
-    if(userFullDetails && userFullDetails.user.college == PROF){
+  function checkDownload(id,data){
+    if(userFullDetails && userFullDetails.user.college == PROF || (data && data.substring(0,9) == "Confirmed")){
       show(id);
     }
     else{
@@ -227,7 +227,7 @@ function confirmPass(key,id){
   xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
           console.log(this.responseText);
-          getById("error-msg").innerHTML =this.responseText;
+          getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
           // location.reload();
      }
      else{
@@ -255,7 +255,7 @@ function downloadPass(key){
       );
      }
      else{
-       getById("error-msg").innerHTML ="Please Confirm first";
+          getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
      }
   };
   xhttp.open("GET", "http://rdv-iitd.com/api/pronite/pdf?"+"pronite="+key+"&token="+userFullDetails.token, false);
@@ -434,10 +434,10 @@ function updateStatus() {
     // disableDownload(userFullDetails.user.melange,,'download-melange');
     // disableDownload(userFullDetails.user.spectrum,,"download-spectrum");
     // disableDownload(userFullDetails.user.kaleidoscope,,"download-kaleidoscope");
-    checkDownload("download-dhoom");
-    checkDownload("download-melange");
-    checkDownload("download-spectrum");
-    checkDownload("download-kaleidoscope");
+    checkDownload("download-dhoom",userFullDetails.user.dhoom);
+    checkDownload("download-melange",userFullDetails.user.melange);
+    checkDownload("download-spectrum",userFullDetails.user.spectrum);
+    checkDownload("download-kaleidoscope",userFullDetails.user.kaleidoscope);
 
     updateType("num-prof1");
     updateType("num-prof2");
