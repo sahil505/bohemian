@@ -235,7 +235,7 @@ function confirmPass(key,id){
      }
   };
 
-    xhttp.open("GET", "http://rdv-iitd.com/api/pronite/confirm/?"+"pronite="+key+"&token="+userFullDetails.user.rdv_number+"&token="+token, true);
+    xhttp.open("GET", "http://rdv-iitd.com/api/pronite/confirm/?"+"pronite="+key+"&rdv_number="+userFullDetails.user.rdv_number+"&token="+token, true);
 
 
   xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -374,8 +374,8 @@ function updateStatus() {
 
         }
         else {
+            getById("error-msg").innerHTML ="Not open for booking now";
             hideB();
-            hideC();
         }
     }
     else if (checkIfProf()) {
@@ -398,6 +398,7 @@ function updateStatus() {
                 hideBtn("book-btn4");
         }
         else{
+            getById("error-msg").innerHTML ="Not open for booking now";
             hideB();
         }
     }
