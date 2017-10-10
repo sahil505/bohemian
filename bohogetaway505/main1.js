@@ -60,17 +60,28 @@ function disableBtn1(data,id1,id2,key){
     disableBtn(id2);
   }
   else if(checkIfProf() && data && data.substring(0,9) == "Confirmed"){
+<<<<<<< HEAD:bohogetaway505/main1.js
     getById(id1).innerHTML = data;
     disableBtn(id2);
     hideBtn("prof-dropdown"+id2[id2.length-1])
+=======
+      getById(id1).innerHTML = data;
+      disableBtn(id2);
+      hideBtn("prof-dropdown"+id2[id2.length-1])
+>>>>>>> c778b64e66f7a64e239742f25be9c66200b44b71:bohogetaway1/main1.js
   }
 }
 
 function disableBtn2(data,id1,id2,key){
   if(data && data.substring(0,9) == "Confirmed" && data.substring(0,6) !="Booked"){
     getById(id1).innerHTML = data;
+<<<<<<< HEAD:bohogetaway505/main1.js
     hideBtn(id2);
     console.log(id2);
+=======
+      hideBtn(id2);
+      console.log(id2);
+>>>>>>> c778b64e66f7a64e239742f25be9c66200b44b71:bohogetaway1/main1.js
   }
 }
 
@@ -112,9 +123,19 @@ function proniteBook(key,startTime, endTime,id,closeId){
 }
 
 
+<<<<<<< HEAD:bohogetaway505/main1.js
 function checkDownload(id,data){
   if(userFullDetails && userFullDetails.user.college == PROF || (data && data.substring(0,9) == "Confirmed")){
     show(id);
+=======
+  function checkDownload(id,data){
+    if(userFullDetails && userFullDetails.user.college == PROF || (data && data.substring(0,9) == "Confirmed")){
+      show(id);
+    }
+    else{
+      hide(id);
+    }
+>>>>>>> c778b64e66f7a64e239742f25be9c66200b44b71:bohogetaway1/main1.js
   }
   else{
     hide(id);
@@ -158,6 +179,7 @@ xhttp.send(params);
 
 
 function checkProf() {
+<<<<<<< HEAD:bohogetaway505/main1.js
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -169,6 +191,19 @@ function checkProf() {
   xhttp.open("POST", "http://rdv-iitd.com/api/login/", false);
   xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
   xhttp.send(JSON.stringify(query_token_data));
+=======
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            userFullDetails = JSON.parse(this.responseText);
+            getById('profile').innerHTML = "Welcome "+userFullDetails.user.first_name+" "+userFullDetails.user.last_name+" - "+userFullDetails.user.rdv_number;
+            localStorage.setItem("token", JSON.stringify(userFullDetails.token));
+       }
+    };
+    xhttp.open("POST", "http://rdv-iitd.com/api/login/", false);
+    xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    xhttp.send(JSON.stringify(query_token_data));
+>>>>>>> c778b64e66f7a64e239742f25be9c66200b44b71:bohogetaway1/main1.js
 }
 
 
@@ -176,11 +211,19 @@ function checkProf() {
 function getDetails(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
+<<<<<<< HEAD:bohogetaway505/main1.js
     if (this.readyState == 4 && this.status == 200) {
       userFullDetails = JSON.parse(this.responseText);
       getById('profile').innerHTML = "Welcome "+userFullDetails.user.first_name+" "+userFullDetails.user.last_name+" - "+userFullDetails.user.rdv_number;
       localStorage.setItem("token", JSON.stringify(userFullDetails.token));
     }
+=======
+      if (this.readyState == 4 && this.status == 200) {
+          userFullDetails = JSON.parse(this.responseText);
+          getById('profile').innerHTML = "Welcome "+userFullDetails.user.first_name+" "+userFullDetails.user.last_name+" - "+userFullDetails.user.rdv_number;
+          localStorage.setItem("token", JSON.stringify(userFullDetails.token));
+     }
+>>>>>>> c778b64e66f7a64e239742f25be9c66200b44b71:bohogetaway1/main1.js
   };
   xhttp.open("POST", "http://rdv-iitd.com/api/login/", false);
   xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -221,6 +264,7 @@ function bookPass(dropdown ,key){
       getById("error-msg").innerHTML = JSON.parse(this.responseText).message + " for " + key;
           // showhide("loader");
           // window.location.reload;
+<<<<<<< HEAD:bohogetaway505/main1.js
         }
         else{
          getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
@@ -233,6 +277,20 @@ function bookPass(dropdown ,key){
     else {
       xhttp.open("GET", "http://rdv-iitd.com/api/pronite/book/?"+"token="+token+"&pronite="+key+"&rdv_number="+userFullDetails.user.rdv_number, false);
     }
+=======
+     }
+     else{
+       getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
+       enableBtn("book-btn"+dropdown[dropdown.length-1]);
+     }
+  };
+  if(checkIfProf()){
+    xhttp.open("GET", "http://rdv-iitd.com/api/pronite/book/?"+"token="+token+"&pronite="+key+"&rdv_number="+userFullDetails.user.rdv_number+"&num_passes="+strUser, false);
+  }
+  else {
+    xhttp.open("GET", "http://rdv-iitd.com/api/pronite/book/?"+"token="+token+"&pronite="+key+"&rdv_number="+userFullDetails.user.rdv_number, false);
+  }
+>>>>>>> c778b64e66f7a64e239742f25be9c66200b44b71:bohogetaway1/main1.js
 
     xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
     xhttp.send();
@@ -245,9 +303,15 @@ function confirmPass(key,id){
 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
+<<<<<<< HEAD:bohogetaway505/main1.js
     if (this.readyState == 4 && this.status == 200) {
       console.log(this.responseText);
       getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
+=======
+      if (this.readyState == 4 && this.status == 200) {
+          console.log(this.responseText);
+          getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
+>>>>>>> c778b64e66f7a64e239742f25be9c66200b44b71:bohogetaway1/main1.js
           // location.reload();
         }
         else{
@@ -272,6 +336,7 @@ function confirmPass(key,id){
         window.open(
           "http://rdv-iitd.com/api/pronite/pdf?"+"pronite="+key+"&token="+userFullDetails.token,
         '_blank' // <- This is what makes it open in a new window.
+<<<<<<< HEAD:bohogetaway505/main1.js
         );
       }
       else{
@@ -279,6 +344,15 @@ function confirmPass(key,id){
       }
     };
     xhttp.open("GET", "http://rdv-iitd.com/api/pronite/pdf?"+"pronite="+key+"&token="+userFullDetails.token, false);
+=======
+      );
+     }
+     else{
+          getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
+     }
+  };
+  xhttp.open("GET", "http://rdv-iitd.com/api/pronite/pdf?"+"pronite="+key+"&token="+userFullDetails.token, false);
+>>>>>>> c778b64e66f7a64e239742f25be9c66200b44b71:bohogetaway1/main1.js
   // xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
   xhttp.send();
 
@@ -337,6 +411,7 @@ function updateType(id){
 }
 
 function logout() {
+<<<<<<< HEAD:bohogetaway505/main1.js
   if(checkIfProf()){
     localStorage.clear();
     window.location = "http://brca.iitd.ac.in/rdv-reg";
@@ -345,6 +420,13 @@ function logout() {
     localStorage.clear();
     window.location = "login.html";
   }
+=======
+    if(checkIfProf()){
+        window.location = "http://brca.iitd.ac.in/rdv-reg";
+    }
+    else
+        window.location = "login.html";
+>>>>>>> c778b64e66f7a64e239742f25be9c66200b44b71:bohogetaway1/main1.js
 }
 
 function checksTimeStudent() {
