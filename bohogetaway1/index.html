@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Book Passes</title>
-    <link rel="stylesheet" href="main.css">
+<head>
+  <meta charset="utf-8">
+  <title>Book Your Passes | Rendezvous 2017</title>
+  <link rel="stylesheet" href="main.css">
 
-  </head>
-  <body>
+  <script type="text/javascript">
+    var onloadCallback = function() {
+      grecaptcha.render('html_element', {
+        'sitekey' : '6Lef9DMUAAAAAO2cZHY78kOJRYDWUBzQAOFRT2Iy'
+      });
+    };
+  </script>
+
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+<body>
 
   <div class="main-headline" >
     <h1 class="pass-heading">Rendezvous Pass System</h1>
     <h2 id = "welcome"></h2>
+    <h2 id = "profile"></h2>
+    <h2 style="color: maroon;">All Passes for IIT Delhi Students have been exhausted :(</h2>
+    <h3 style="color: green;">Schedule for Confirmation (Those who have already booked)</h3>
+    <h4>1. Melange - 11:00 AM to 01:00 PM, 13th October</h4>
+    <h4>2. Spectrum - 11:00 AM to 01:00 PM, 14th October</h4>
+    <h4>3. Kaleidoscope - 11:00 AM to 01:00 PM, 15th October</h4>
+    <h4>4. Dhoom - 11:00 AM to 01:00 PM, 16th October</h4>
+    <h3>​To confirm your entry for a ProNite, you have to visit here again on the morning of the particular ProNite and click on 'Confirm Booking'. The confirmation can be done anytime during the assigned slot (No first come first serve), but do not forget to do this, put a reminder!</h3>
+    <h3 style="color: green;">Do not forget to confirm your pass according to above schedule or your booking will be cancelled.</h3>
+    <h4 style="color: red;">This portal is not compatible with Mozilla firefox. Please use either Google Chrome only.</h4>
+
+
     <h3 id = "error-msg"></h3>
     <h3 id = "error-msgstatus"></h3>
+
   </div>
 
+  <button type="button" name="logout" class="right"  id="logout" onclick="logout()">Log Out</button>
+
   <div class="passes-grid container valign-wrapper">
-    <div class="pass-col test center">
-      <h1 class="" id="dhoom-head">Dhoom</h1>
-      <div class="book-btn">
-        <h3 id="status-msg1"></h3>
-        <h3 id="closed-booking1"></h3>
-        <div id="num-prof1" >
-          <label for="">No of Passes</label><br>
-          <select name="num_pass" id="prof-dropdown1">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-          </select><br><br>
-        </div>
-
-        <button type="button" name="button" class="" id="book-btn1" onclick="bookPass('prof-dropdown1','dhoom')">Book Pass</button>
-        <button type="button" name="button" class="" id="confirm-btn1" onclick="confirmPass('dhoom','download-dhoom')">Confirm Pass</button>
-        <button type="button" name="button" class="" id="download-dhoom" onclick="downloadPass('dhoom')">Download Pass</button>
-      </div>
-
-    </div>
     <div class="pass-col center test">
       <h1 id="melange-head">Melange</h1>
+      <h2>13th October</h2>
       <div class="book-btn">
+        <br />
         <h3 id="status-msg2"></h3>
         <h3 id="closed-booking2"></h3>
+        <br />
         <div id="num-prof2" >
+          <br />
           <label for="">No of Passes</label><br>
           <select name="num_pass" id="prof-dropdown2">
             <option value="1">1</option>
@@ -51,7 +59,7 @@
             <option value="4">4</option>
           </select><br><br>
         </div>
-
+        <div class="g-recaptcha" data-sitekey="6Lef9DMUAAAAAO2cZHY78kOJRYDWUBzQAOFRT2Iy"></div>
         <button type="button" name="button" class=""  id="book-btn2" onclick="bookPass('prof-dropdown2','melange')">Book Pass</button>
         <button type="button" name="button" class="" id="confirm-btn2" onclick="confirmPass('melange','download-melange')">Confirm Pass</button>
         <button type="button" name="button" class="" id="download-melange" onclick="downloadPass('melange')">Download Pass</button>
@@ -59,10 +67,14 @@
     </div>
     <div class="pass-col center test">
       <h1 id="spectrum-head">Spectrum</h1>
+      <h2>14th October</h2>
       <div class="book-btn">
+        <br />
         <h3 id="status-msg3"></h3>
         <h3 id="closed-booking3"></h3>
+        <br />
         <div id="num-prof3">
+          <br />
           <label for="">No of Passes</label><br>
           <select name="num_pass" id="prof-dropdown3">
             <option value="1">1</option>
@@ -78,10 +90,14 @@
     </div>
     <div class="pass-col center test">
       <h1 id="kaleido-head">Kaleidoscope</h1>
+      <h2>15th October</h2>
       <div class="book-btn">
+        <br />
         <h3 id="status-msg4"></h3>
         <h3 id="closed-booking4"></h3>
+        <br />
         <div id="num-prof4" >
+          <br />
           <label for="">No of Passes</label><br>
           <select name="num_pass" id="prof-dropdown4">
             <option value="1">1</option>
@@ -96,14 +112,38 @@
         <button type="button" name="button" class="" id="download-kaleidoscope" onclick="downloadPass('kaleidoscope')">Download Pass</button>
       </div>
     </div>
+    <div class="pass-col test center">
+      <h1 class="" id="dhoom-head">Dhoom</h1>
+      <h2>16th October</h2>
+      <div class="book-btn">
+        <br />
+        <h3 id="status-msg1"></h3>
+        <h3 id="closed-booking1"></h3>
+        <br />
+        <div id="num-prof1" >
+          <br />
+          <label for="">No of Passes</label><br>
+          <select name="num_pass" id="prof-dropdown1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select><br><br>
+        </div>
+
+        <button type="button" name="button" class="" id="book-btn1" onclick="bookPass('prof-dropdown1','dhoom')">Book Pass</button>
+        <button type="button" name="button" class="" id="confirm-btn1" onclick="confirmPass('dhoom','download-dhoom')">Confirm Pass</button>
+        <button type="button" name="button" class="" id="download-dhoom" onclick="downloadPass('dhoom')">Download Pass</button>
+      </div>
+
+    </div>
   </div>
-
-
+  <h3>Note: We've tried to make the system as light and seamless as possible but<br>if you still face any difficulty please drop an email at technical@rdv-iitd.com</h3>
 
 </div>
-
-
-
-  <script type="text/javascript" src="main1.js"></script>
-  </body>
+   <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
+<script type="text/javascript" src="main1.js"></script>
+</body>
 </html>

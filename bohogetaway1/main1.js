@@ -15,22 +15,22 @@ function hide(id){
 }
 
 function showhide(id)
-   {
-         var div = document.getElementById(id);
-  if (div.style.display !== "none") {
-      div.style.display = "none";
-  }
-  else {
-      div.style.display = "block";
-  }
+{
+ var div = document.getElementById(id);
+ if (div.style.display !== "none") {
+  div.style.display = "none";
+}
+else {
+  div.style.display = "block";
+}
 }
 
 
 var IIT_STD = "iitd.ac.in";
 
 function checkStudent() {
-    splitemail = userFullDetails.user.email.split("@")[1];
-    return (IIT_STD===splitemail)
+  splitemail = userFullDetails.user.email.split("@")[1];
+  return (IIT_STD===splitemail)
 
 }
 
@@ -55,45 +55,48 @@ function proniteConfirm(key,startTime, endTime,id,closeId){
 }
 
 function disableBtn1(data,id1,id2,key){
-  if(data && data.substring(0,6) == "Booked" && data.substring(0,9) !="Confirmed"){
+  if(!checkIfProf() && data && (data.substring(0,6) == "Booked" || data.substring(0,9) =="Confirmed")){
     getById(id1).innerHTML = data;
     disableBtn(id2);
   }
   else if(checkIfProf() && data && data.substring(0,9) == "Confirmed"){
-      getById(id1).innerHTML = data;
-      disableBtn(id2);
+    getById(id1).innerHTML = data;
+    disableBtn(id2);
+    hideBtn("prof-dropdown"+id2[id2.length-1])
   }
 }
 
 function disableBtn2(data,id1,id2,key){
   if(data && data.substring(0,9) == "Confirmed" && data.substring(0,6) !="Booked"){
     getById(id1).innerHTML = data;
-      disableBtn(id2);
-      console.log(id2);
+    hideBtn(id2);
+    console.log(id2);
   }
 }
 
-
+// IIT
 var startTime_s1 = new Date("2017-10-09 9:00 PM +530");
 var endTime_s1 = new Date("2017-10-09 10:00 PM +530");
-var startTime_s2 = new Date("2017-10-10 9:00 PM +530");
-var endTime_s2 = new Date("2017-10-10 10:00 PM +530");
+var startTime_s2 = new Date("2017-10-10 11:00 PM +530");
+var endTime_s2 = new Date("2017-10-11 12:05 AM +530");
 var startTime_s3 = new Date("2017-10-11 8:00 PM +530");
 var endTime_s3 = new Date("2017-10-11 10:00 PM +530");
 
+// External
 var startTime_n1 = new Date("2017-10-09 5:00 PM +530");
 var endTime_n1 = new Date("2017-10-09 7:00 PM +530");
-var startTime_n2 = new Date("2017-10-10 5:00 PM +530");
+var startTime_n2 = new Date("2017-10-10 4:55 PM +530");
 var endTime_n2 = new Date("2017-10-10 7:00 PM +530");
 var startTime_n3 = new Date("2017-10-11 5:00 PM +530");
 var endTime_n3 = new Date("2017-10-11 7:00 PM +530");
 
+// Faculty
 var startTime_f1 = new Date("2017-10-09 3:00 PM +530");
 var endTime_f1 = new Date("2017-10-09 5:00 PM +530");
-var startTime_f2 = new Date("2017-10-10 3:00 PM +530");
+var startTime_f2 = new Date("2017-10-10 2:35 PM +530");
 var endTime_f2 = new Date("2017-10-10 5:00 PM +530");
-var startTime_f3 = new Date("2017-10-11 3:00 PM +530");
-var endTime_f3 = new Date("2017-10-11 5:00 PM +530");
+var startTime_f3 = new Date("2017-10-11 3:00 AM +530");
+var endTime_f3 = new Date("2017-10-11 3:30 AM +530");
 
 var currTime  = new Date();
 
@@ -109,18 +112,18 @@ function proniteBook(key,startTime, endTime,id,closeId){
 }
 
 
-  function checkDownload(id){
-    if(userFullDetails && userFullDetails.user.college == PROF){
-      show(id);
-    }
-    else{
-      hide(id);
-    }
+function checkDownload(id,data){
+  if(userFullDetails && userFullDetails.user.college == PROF || (data && data.substring(0,9) == "Confirmed")){
+    show(id);
   }
+  else{
+    hide(id);
+  }
+}
 
-  function checkIfProf() {
-      return userFullDetails && userFullDetails.user.college == PROF;
-  }
+function checkIfProf() {
+  return userFullDetails && userFullDetails.user.college == PROF;
+}
 
 var query_token = getQueryStringValue("token");
 // console.log(query_token);
@@ -138,18 +141,34 @@ var isLoading = false;
 var PROF = "IIT Delhi Staff";
 
 
+var xhttp = new XMLHttpRequest();
+var params = {
+  'secret': '6Lef9DMUAAAAANzX-DCuLu0WWDT4el95-W71thJA',
+  'response': 'g-recaptcha-response'
+
+}
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+  }
+};
+xhttp.open("POST", "https://www.google.com/recaptcha/api/siteverify", false);
+xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+xhttp.send(params);
+
+
 
 function checkProf() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            userFullDetails = JSON.parse(this.responseText);
-            localStorage.setItem("token", JSON.stringify(userFullDetails.token));
-       }
-    };
-    xhttp.open("POST", "http://rdv-iitd.com/api/login/", false);
-    xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-    xhttp.send(JSON.stringify(query_token_data));
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      userFullDetails = JSON.parse(this.responseText);
+      getById('profile').innerHTML = "Welcome "+userFullDetails.user.first_name+" "+userFullDetails.user.last_name+" - "+userFullDetails.user.rdv_number;
+      localStorage.setItem("token", JSON.stringify(userFullDetails.token));
+    }
+  };
+  xhttp.open("POST", "http://rdv-iitd.com/api/login/", false);
+  xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+  xhttp.send(JSON.stringify(query_token_data));
 }
 
 
@@ -157,16 +176,17 @@ function checkProf() {
 function getDetails(){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          userFullDetails = JSON.parse(this.responseText);
-          localStorage.setItem("token", JSON.stringify(userFullDetails.token));
-     }
+    if (this.readyState == 4 && this.status == 200) {
+      userFullDetails = JSON.parse(this.responseText);
+      getById('profile').innerHTML = "Welcome "+userFullDetails.user.first_name+" "+userFullDetails.user.last_name+" - "+userFullDetails.user.rdv_number;
+      localStorage.setItem("token", JSON.stringify(userFullDetails.token));
+    }
   };
   xhttp.open("POST", "http://rdv-iitd.com/api/login/", false);
   xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
   xhttp.send(JSON.stringify(token_data));
 
-return userFullDetails;
+  return userFullDetails;
 
 }
 
@@ -196,27 +216,27 @@ function bookPass(dropdown ,key){
   var strUser = e.options[e.selectedIndex].value;
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          console.log(this.responseText);
-          getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText);
+      getById("error-msg").innerHTML = JSON.parse(this.responseText).message + " for " + key;
           // showhide("loader");
           // window.location.reload;
-     }
-     else{
-       getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
-          // enableBtn("book-btn"+dropdown[dropdown.length-1]);
-     }
-  };
-  if(checkIfProf()){
-    xhttp.open("GET", "http://rdv-iitd.com/api/pronite/book/?"+"token="+token+"&pronite="+key+"&rdv_number="+userFullDetails.user.rdv_number+"&num_passes="+strUser, false);
-  }
-  else {
-    xhttp.open("GET", "http://rdv-iitd.com/api/pronite/book/?"+"token="+token+"&pronite="+key+"&rdv_number="+userFullDetails.user.rdv_number, false);
-  }
+        }
+        else{
+         getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
+         enableBtn("book-btn"+dropdown[dropdown.length-1]);
+       }
+     };
+     if(checkIfProf()){
+      xhttp.open("GET", "http://rdv-iitd.com/api/pronite/book/?"+"token="+token+"&pronite="+key+"&rdv_number="+userFullDetails.user.rdv_number+"&num_passes="+strUser, false);
+    }
+    else {
+      xhttp.open("GET", "http://rdv-iitd.com/api/pronite/book/?"+"token="+token+"&pronite="+key+"&rdv_number="+userFullDetails.user.rdv_number, false);
+    }
 
-  xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-  xhttp.send();
-}
+    xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    xhttp.send();
+  }
 
 // bookPass("prof-dropdown1","dhoom");
 // console.log("book called");
@@ -225,40 +245,40 @@ function confirmPass(key,id){
 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-          console.log(this.responseText);
-          getById("error-msg").innerHTML =this.responseText;
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(this.responseText);
+      getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
           // location.reload();
-     }
-     else{
-       getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
-     }
-  };
+        }
+        else{
+         getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
+       }
+     };
 
-    xhttp.open("GET", "http://rdv-iitd.com/api/pronite/confirm/?"+"pronite="+key+"&rdv_number="+userFullDetails.user.rdv_number+"&token="+token, true);
-
-
-  xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-  xhttp.send();
-
-}
+     xhttp.open("GET", "http://rdv-iitd.com/api/pronite/confirm/?"+"pronite="+key+"&rdv_number="+userFullDetails.user.rdv_number+"&token="+token, true);
 
 
-function downloadPass(key){
+     xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+     xhttp.send();
 
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
+   }
+
+
+   function downloadPass(key){
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         window.open(
-        "http://rdv-iitd.com/api/pronite/pdf?"+"pronite="+key+"&token="+userFullDetails.token,
+          "http://rdv-iitd.com/api/pronite/pdf?"+"pronite="+key+"&token="+userFullDetails.token,
         '_blank' // <- This is what makes it open in a new window.
-      );
-     }
-     else{
-       getById("error-msg").innerHTML ="Please Confirm first";
-     }
-  };
-  xhttp.open("GET", "http://rdv-iitd.com/api/pronite/pdf?"+"pronite="+key+"&token="+userFullDetails.token, false);
+        );
+      }
+      else{
+        getById("error-msg").innerHTML = JSON.parse(this.responseText).message;
+      }
+    };
+    xhttp.open("GET", "http://rdv-iitd.com/api/pronite/pdf?"+"pronite="+key+"&token="+userFullDetails.token, false);
   // xhttp.setRequestHeader("Content-type", "application/json; charset=UTF-8");
   xhttp.send();
 
@@ -304,9 +324,7 @@ function downloadBtn(data,id){
       getById(id).disabled = true;
     }
   }
-
 }
-
 
 function updateType(id){
   if(userFullDetails && userFullDetails.user.college == PROF){
@@ -318,89 +336,100 @@ function updateType(id){
   }
 }
 
+function logout() {
+  if(checkIfProf()){
+    localStorage.clear();
+    window.location = "http://brca.iitd.ac.in/rdv-reg";
+  }
+  else {
+    localStorage.clear();
+    window.location = "login.html";
+  }
+}
+
 function checksTimeStudent() {
-    return (currTime>=startTime_s1 && currTime<=endTime_s1) ||
-        (currTime>=startTime_s2 && currTime<=endTime_s2) ||
-        (currTime>=startTime_s3 && currTime<=endTime_s3);
+  return (currTime>=startTime_s1 && currTime<=endTime_s1) ||
+  (currTime>=startTime_s2 && currTime<=endTime_s2) ||
+  (currTime>=startTime_s3 && currTime<=endTime_s3);
 }
 
 function checksTimeProf() {
-    return (currTime>=startTime_f1 && currTime<=endTime_f1) ||
-        (currTime>=startTime_f2 && currTime<=endTime_f2) ||
-        (currTime>=startTime_f3 && currTime<=endTime_f3);
+  return (currTime>=startTime_f1 && currTime<=endTime_f1) ||
+  (currTime>=startTime_f2 && currTime<=endTime_f2) ||
+  (currTime>=startTime_f3 && currTime<=endTime_f3);
 }
 
 function checksTimeExt() {
-    return (currTime>=startTime_n1 && currTime<=endTime_n1) ||
-        (currTime>=startTime_n2 && currTime<=endTime_n2) ||
-        (currTime>=startTime_n3 && currTime<=endTime_n3);
+  return (currTime>=startTime_n1 && currTime<=endTime_n1) ||
+  (currTime>=startTime_n2 && currTime<=endTime_n2) ||
+  (currTime>=startTime_n3 && currTime<=endTime_n3);
 }
 
 function hideBtn(name) {
-    console.log(name);
-    getById(name).style.display = "none";
+  console.log(name);
+  getById(name).style.display = "none";
 }
 
 function disableBtn(name) {
-    console.log(name);
-    getById(name).disabled = true;
+  console.log(name);
+  getById(name).disabled = true;
 }
 
 function enableBtn(name) {
-    console.log(name);
-    getById(name).disabled = false;
+  console.log(name);
+  getById(name).disabled = false;
 }
 
 function hideC() {
-    for(var i=1;i<5;i++)
-        hideBtn("confirm-btn"+i);
+  for(var i=1;i<5;i++)
+    hideBtn("confirm-btn"+i);
 }
 function hideB() {
-    for(var i=1;i<5;i++)
-        hideBtn("book-btn"+i);
+  for(var i=1;i<5;i++)
+    hideBtn("book-btn"+i);
 }
 function hideP() {
-    for (var i = 1; i < 5; i++)
-        hideBtn("prof-dropdown" + i);
+  for (var i = 1; i < 5; i++)
+    hideBtn("prof-dropdown" + i);
 }
 function checksTime(s,e) {
-    return currTime >= s && currTime <= e;
+  return currTime >= s && currTime <= e;
 }
 function updateStatus() {
-    console.log(userFullDetails);
-    if (checkStudent()) {
-        console.log('checks student');
-        if (checksTimeStudent()) {
+  console.log(userFullDetails);
+  if (checkStudent()) {
+    console.log('checks student');
+    if (checksTimeStudent()) {
 
-        }
-        else {
-            getById("error-msg").innerHTML ="Not open for booking now";
-            hideB();
-        }
     }
-    else if (checkIfProf()) {
-        if (checksTimeProf()) {
+    else {
+      getById("error-msg").innerHTML ="Not open for booking now";
+      hideB();
+    }
+  }
+  else if (checkIfProf()) {
+    if (checksTimeProf()) {
 
-        }
-        else {
-            hideB();hideC();hideP();
-        }
     }
+    else {
+      hideB();hideC();hideP();
+    }
+  }
     else{ // external hi hoga ab
-        if(checksTimeExt()){
-            if(!checksTime(startTime_n3,endTime_n3))
-                hideBtn("book-btn1");
-            if(!checksTime(startTime_n1,endTime_n1))
-                hideBtn("book-btn2");
-            if(!checksTime(startTime_n2,endTime_n2))
-                hideBtn("book-btn3");
-            if(!checksTime(startTime_n1,endTime_n1))
-                hideBtn("book-btn4");
-        }
-        else{
-            getById("error-msg").innerHTML ="Not open for booking now";
-            hideB();
-        }
+      if(checksTimeExt()){
+        if(!checksTime(startTime_n3,endTime_n3))
+          hideBtn("book-btn1");
+        if(!checksTime(startTime_n1,endTime_n1))
+          hideBtn("book-btn2");
+        if(!checksTime(startTime_n2,endTime_n2))
+          hideBtn("book-btn3");
+        if(!checksTime(startTime_n1,endTime_n1))
+          hideBtn("book-btn4");
+      }
+      else{
+        getById("error-msg").innerHTML ="Not open for booking now";
+        hideB();
+      }
     }
     // proniteBook("dhoom",startTime,endTime,"book-btn1","closed-booking1");
     // proniteBook("melange",startTime,endTime,"book-btn2","closed-booking2");
@@ -426,15 +455,15 @@ function updateStatus() {
     // disableDownload(userFullDetails.user.melange,,'download-melange');
     // disableDownload(userFullDetails.user.spectrum,,"download-spectrum");
     // disableDownload(userFullDetails.user.kaleidoscope,,"download-kaleidoscope");
-    checkDownload("download-dhoom");
-    checkDownload("download-melange");
-    checkDownload("download-spectrum");
-    checkDownload("download-kaleidoscope");
+    checkDownload("download-dhoom",userFullDetails.user.dhoom);
+    checkDownload("download-melange",userFullDetails.user.melange);
+    checkDownload("download-spectrum",userFullDetails.user.spectrum);
+    checkDownload("download-kaleidoscope",userFullDetails.user.kaleidoscope);
 
     updateType("num-prof1");
     updateType("num-prof2");
     updateType("num-prof3");
     updateType("num-prof4");
-}
+  }
 
-window.onload = updateStatus();
+  window.onload = updateStatus();
